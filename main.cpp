@@ -1,6 +1,8 @@
 #include <iostream>
 
-int main()
-{
-  
+#include "scacchiera.h"
+
+int main() {
+  Scacchiera test;
+  std::cout<<"TEST";
 }
