@@ -2,6 +2,9 @@
 #define TORRE_H_
 
 class Torre{
+  private:
+
+  public:
   
 }
 
