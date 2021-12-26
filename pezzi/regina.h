@@ -5,7 +5,10 @@
 
 class Regina : public Pezzo{
   public:
-    Regina(int rig, int col) : riga{rig}, colonna{col} {  }
+     Regina(int rig, int col) {
+      riga = rig;
+      colonna = col;
+    }
 }
 
 #endif // REGINA_H
