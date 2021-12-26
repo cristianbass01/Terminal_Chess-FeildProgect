@@ -5,8 +5,8 @@
 
 class Pedone: public Pezzo{
   public:
-    Pedone(int rig, int col) : riga{rig}, colonna {col}{ }
+    Pedone(int rig, int col) : riga{rig}, colonna{col}{ }
     
 
-}
+};
 #endif // PEDONE_H
