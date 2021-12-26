@@ -5,4 +5,5 @@
 int main() {
   Scacchiera test;
   std::cout<<"TEST";
+  test.stampa();
 }
