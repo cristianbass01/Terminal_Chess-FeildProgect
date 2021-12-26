@@ -8,7 +8,7 @@ class Re : public Pezzo {
     Re(int rig, int col, int color) { 
       riga = rig;
       colonna = col;
-      
+      colore = Pezzo::Colore(color);
     }
     void mossa(int r, int c) override {} //metodo virtuale puro che sposta il pezzo
     bool mossa_valida(int r, int c) override {return false;}
