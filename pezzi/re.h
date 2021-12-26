@@ -8,4 +8,4 @@ class Re : public Pezzo {
     Re(int rig, int col) : riga{rig}, colonna{col} {  }
 }
 
-#endif // RE_H_
+#endif // RE_H

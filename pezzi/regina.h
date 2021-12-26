@@ -1,8 +1,8 @@
-#ifndef REGINA_H_
-#define REGINA_H_
+#ifndef REGINA_H
+#define REGINA_H
 
 class Regina{
   
 }
 
-#endif // REGINA_H_
+#endif // REGINA_H
