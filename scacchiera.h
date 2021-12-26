@@ -1,7 +1,7 @@
 #ifndef SCACCHIERA_H
 #define SCACCHIERA_H
 
-//#include "pezzi/pezzo.h"
+#include "pezzi/pezzo.h"
 #include "pezzi/alfiere.h"
 #include "pezzi/re.h"
 #include "pezzi/regina.h"

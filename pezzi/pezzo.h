@@ -6,6 +6,9 @@ class Pezzo { //classe virtuale pura
     virtual void mossa(int r, int c) = 0; //metodo virtuale puro che sposta il pezzo
     virtual bool mossa_valida(int r, int c) = 0; //metodo virtuale puro che controlla se la mossa è valida
     char get_figura() { return figura; }
+    enum class Colore {
+      bianco, nero        // bianco=0, nero=1
+    };
   protected:
     //DA DECIDERE SE USARE STRUCT O NO
     int riga;
@@ -14,9 +17,7 @@ class Pezzo { //classe virtuale pura
     char figura; //contiene la figura che viene rappresentata nella scachiera
     
         
-    enum class Colore {
-        bianco, nero        // bianco=0, nero=1
-    };
+    
 
     Colore colore;
 };
