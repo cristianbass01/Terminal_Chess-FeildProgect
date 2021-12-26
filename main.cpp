@@ -4,6 +4,6 @@
 
 int main() {
   Scacchiera test;
-  std::cout<<"TEST";
   test.stampa();
+  std::cout<<"Cinel merda";
 }

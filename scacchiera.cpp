@@ -2,6 +2,13 @@
 
 Scacchiera::Scacchiera() {
 
+  //inizializzazione tutti puntatori a nullptr
+  for(int i = 0; i < RIGHE; i++) 
+    for(int j = 0; j < COLONNE; j++) 
+      scacchiera[i][j] = nullptr;
+
+
+  //inizializzazione vari puntatori caselle bianche 
   scacchiera[0][0] = new Torre(0,0,Pezzo::Colore::bianco);
   scacchiera[0][7] = new Torre(0,7,Pezzo::Colore::bianco);
 
@@ -19,7 +26,7 @@ Scacchiera::Scacchiera() {
     scacchiera[RIGA_PEDONI_BIANCHI][i] = new Pedone(RIGA_PEDONI_BIANCHI, i, Pezzo::Colore::bianco);
   }
 
-
+  //inizializzazione vari puntatori caselle nere
   scacchiera[7][0] = new Torre(7,0,Pezzo::Colore::nero);
   scacchiera[7][7] = new Torre(7,7,Pezzo::Colore::nero);
 
@@ -42,15 +49,14 @@ void Scacchiera::stampa() {
   for(int i = RIGHE - 1; i >= 0; i--) {
     std::cout<<i + 1<<' ';
     for(int j = COLONNE - 1; j >= 0; j--) {
-      if((scacchiera[i][j]))
+      if((scacchiera[i][j] == nullptr))
         std::cout<<" ";
       else 
         std::cout<<(*scacchiera[i][j]).get_figura();
       }
       std::cout<<std::endl;
     }
-  std::cout<<"  "<<"ABCDEFGH"<<std::endl;
-            
+  std::cout<<"  "<<"ABCDEFGH"<<std::endl;          
 }
 
 void Scacchiera::mossa(int riga_in, int colonna_in, int riga_fin, int colonna_fin) {
