@@ -1,11 +1,17 @@
+#include "scacchiera.h"
+
+Scacchiera::Scacchiera() {
+  
+}
+
 void Scacchiera::stampa() {
     for(int i = 0; i < RIGHE; i++) {
         std::cout<<RIGHE-i<<' ';
         for(int j = 0; j < COLONNE; j++) {
-            if(scacchiera[i][j]==nullptr)
+            if((scacchiera[i][j]))
                 std::cout<<" ";
             else 
-                std::cout<<scacchiera[i][j].figura;
+                std::cout<<(*scacchiera[i][j]).get_figura();
         }
         std::cout<<std::endl;
     }

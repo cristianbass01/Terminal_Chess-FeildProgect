@@ -1,5 +1,5 @@
-#ifndef RE_H_
-#define RE_H_
+#ifndef RE_H
+#define RE_H
 
 #include "pezzo.h"
 

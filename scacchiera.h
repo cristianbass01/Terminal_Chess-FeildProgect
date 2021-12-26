@@ -1,7 +1,7 @@
-#ifndef SCACCHIERA_H_
-#define SCACCHIERA_H_
+#ifndef SCACCHIERA_H
+#define SCACCHIERA_H
 
-#include "pezzo.h"
+#include "./pezzi/pezzo.h"
 
 #include <iostream>
 
@@ -16,11 +16,11 @@ class Scacchiera {
 
         void mossa(int riga_in, int colonna_in, int riga_fin, int colonna_fin); //controllo mossa fatto prima
 
-        class enum Colonne {
-            char 'A','B','C','D','E','F','G','H'
-        }
+        enum class Colonne {
+            A ,B ,C, D, E, F, G, H
+        };
     private:
-        pezzo[RIGHE][COLONNE] scacchiera; //CONTROLLARE CHE SIA GIUSTO
-}
+        Pezzo* scacchiera[RIGHE][COLONNE]; //CONTROLLARE CHE SIA GIUSTO
+};
 
-#endif // SCACCHIRA_H
+#endif // SCACCHIERA_H

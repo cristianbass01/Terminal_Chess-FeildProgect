@@ -1,8 +1,8 @@
-#ifndef CAVALLO_H_
-#define CAVALLO_H_
+#ifndef CAVALLO_H
+#define CAVALLO_H
 
 class Cavallo{
 
 }
 
-#endif // CAVALLO_H_
+#endif // CAVALLO_H
