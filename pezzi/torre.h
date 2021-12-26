@@ -5,15 +5,7 @@
 
 class Torre : public Pezzo{
   public:
-     Torre(int rig, int col, int color) {
-      riga = rig;
-      colonna = col;
-      colore = Pezzo::Colore(color);
-      if(colore == Colore::nero)
-        figura = 'T';
-      else 
-        figura = 't';
-    }
+     Torre(int rig, int col, Colore color);
 };
 
 #endif // TORRE_H

@@ -5,15 +5,7 @@
 
 class Regina : public Pezzo{
   public:
-     Regina(int rig, int col, int color) {
-      riga = rig;
-      colonna = col;
-      colore = Pezzo::Colore(color);
-      if(colore == Colore::nero)
-        figura = 'D';
-      else 
-        figura = 'd';
-    }
+     Regina(int rig, int col, Colore color);
 };
 
 #endif // REGINA_H
