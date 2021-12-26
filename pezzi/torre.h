@@ -9,9 +9,10 @@ class Torre : public Pezzo{
       riga = rig;
       colonna = col;
       colore = Pezzo::Colore(color);
-      if(color == 0)
+      if(colore == Colore::nero)
+        figura = 'T';
+      else 
         figura = 't';
-      else figura = 'T';
     }
 };
 
