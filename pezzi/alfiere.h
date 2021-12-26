@@ -5,7 +5,8 @@
 
 class Alfiere : public Pezzo {
   public:
-    Alfiere(int rig, int col) {
+    Alfiere(int rig, int col, int color) {
+      colore = color;
       riga = rig;
       colonna = col;
     }
