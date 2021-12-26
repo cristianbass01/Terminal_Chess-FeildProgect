@@ -5,6 +5,7 @@ class Pezzo { //classe virtuale pura
     public:
         void mossa(int r, int c) = 0; //metodo virtuale puro che sposta il pezzo
         bool valida(int r, int c) = 0; //metodo virtuale puro che controlla se la mossa è valida
+        char get_figura() { return figura; }
     protected:
         //DA DECIDERE SE USARE STRUCT O NO
         int riga;
