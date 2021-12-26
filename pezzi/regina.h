@@ -9,9 +9,10 @@ class Regina : public Pezzo{
       riga = rig;
       colonna = col;
       colore = Pezzo::Colore(color);
-      if(color == 0)
+      if(colore == Colore::nero)
+        figura = 'D';
+      else 
         figura = 'd';
-      else figura = 'D';
     }
 }
 
