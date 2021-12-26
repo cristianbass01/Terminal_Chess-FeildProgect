@@ -4,6 +4,10 @@
 #include "pezzi/pezzo.h"
 #include "pezzi/alfiere.h"
 #include "pezzi/re.h"
+#include "pezzi/regina.h"
+#include "pezzi/cavallo.h"
+#include "pezzi/torre.h"
+#include "pezzi/pedone.h"
 
 #include <iostream>
 
