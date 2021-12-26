@@ -14,6 +14,6 @@ class Regina : public Pezzo{
       else 
         figura = 'd';
     }
-}
+};
 
 #endif // REGINA_H
