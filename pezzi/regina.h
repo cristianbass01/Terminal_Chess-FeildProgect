@@ -3,7 +3,7 @@
 
 #include "pezzo.h"
 
-class Regina{
+class Regina : public Pezzo{
   public:
     Regina(int rig, int col) : riga{rig}, colonna{col} {  }
 }
