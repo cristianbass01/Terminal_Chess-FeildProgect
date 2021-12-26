@@ -21,4 +21,4 @@ class Scacchiera {
         pezzo[RIGHE][COLONNE] scacchiera; //CONTROLLARE CHE SIA GIUSTO
 }
 
-#endif // SCACCHIRA_H_
+#endif // SCACCHIRA_H
