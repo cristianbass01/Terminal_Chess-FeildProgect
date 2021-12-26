@@ -3,6 +3,7 @@
 
 class Pezzo { //classe virtuale pura
   public:
+    Pezzo(int rig, int col);
     virtual void mossa(int r, int c) = 0; //metodo virtuale puro che sposta il pezzo
     virtual bool mossa_valida(int r, int c) = 0; //metodo virtuale puro che controlla se la mossa è valida
     char get_figura() { return figura; }
