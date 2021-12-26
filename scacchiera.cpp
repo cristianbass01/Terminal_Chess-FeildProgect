@@ -1,7 +1,9 @@
 #include "scacchiera.h"
 
 Scacchiera::Scacchiera() {
-  
+  for(int i = 0; i < COLONNE; i++) {
+
+  }
 }
 
 void Scacchiera::stampa() {
