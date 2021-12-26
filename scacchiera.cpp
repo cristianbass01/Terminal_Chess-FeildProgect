@@ -1,5 +1,5 @@
 #include "scacchiera.h"
-#include "pezzi/alfiere.h"
+
 
 Scacchiera::Scacchiera() {
   
