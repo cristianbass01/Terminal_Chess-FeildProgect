@@ -3,6 +3,7 @@
 
 #include "pezzi/pezzo.h"
 #include "pezzi/alfiere.h"
+#include "pezzi/re.h"
 
 #include <iostream>
 
