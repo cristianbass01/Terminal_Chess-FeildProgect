@@ -5,8 +5,6 @@
 
 class Alfiere : public Pezzo {
   public:
-    //PERCHE' NON FUNZIONA
-    //Alfiere(int rig, int col) : riga{rig}, colonna {col}{ }
     Alfiere(int rig, int col) {
       riga = rig;
       colonna = col;
