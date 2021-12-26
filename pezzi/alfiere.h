@@ -1,5 +1,5 @@
-#ifndef ALFIERE_H_
-#define ALFIERE_H_
+#ifndef ALFIERE_H
+#define ALFIERE_H
 
 #include "pezzo.h"
 
@@ -8,4 +8,4 @@ class Alfiere: public Pezzo {
     Alfiere(int rig, int col) : riga{rig}, colonna {col}{ }
 }
 
-#endif // ALFIERE_H_
+#endif // ALFIERE_H

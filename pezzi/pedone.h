@@ -1,5 +1,5 @@
-#ifndef PEDONE_H_
-#define PEDONE_H_
+#ifndef PEDONE_H
+#define PEDONE_H
 
 #include "pezzo.h"
 
@@ -9,4 +9,4 @@ class Pedone: public Pezzo{
     
 
 }
-#endif // PEDONE_H_
+#endif // PEDONE_H

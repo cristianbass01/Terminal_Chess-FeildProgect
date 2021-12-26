@@ -1,5 +1,5 @@
-#ifndef TORRE_H_
-#define TORRE_H_
+#ifndef TORRE_H
+#define TORRE_H
 
 #include "pezzo.h"
 
@@ -8,4 +8,4 @@ class Torre : public Pezzo{
     Torre(int rig, int col) : riga{rig}, colonna{col} {  }
 };
 
-#endif // TORRE_H_
+#endif // TORRE_H
