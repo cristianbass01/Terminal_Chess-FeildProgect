@@ -11,4 +11,4 @@ Per vedere come e quali file sono stati modiicati o per aiuti
 
 Per cose piu' complicate chiedere a Gianluca Nordio
 
-P.s. per un uso facilitato in modalità grafica consiglio di scaricare gitkraken
+Per lo stile: https://google.github.io/styleguide/cppguide.html
