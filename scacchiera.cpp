@@ -1,14 +1,13 @@
 #include "scacchiera.h"
 
-
 Scacchiera::Scacchiera() {
   
 }
 
 void Scacchiera::stampa() {
-    for(int i = 0; i < RIGHE; i++) {
-        std::cout<<RIGHE-i<<' ';
-        for(int j = 0; j < COLONNE; j++) {
+    for(int i = RIGHE - 1; i >= 0; i--) {
+        std::cout<<i + 1<<' ';
+        for(int j = COLONNE - 1; j >= 0; j--) {
             if((scacchiera[i][j]))
                 std::cout<<" ";
             else 
