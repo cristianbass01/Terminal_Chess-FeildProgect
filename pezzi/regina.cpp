@@ -5,7 +5,7 @@ Regina::Regina(int rig, int col, Colore color) {
   colonna = col;
   colore = color;
   if(colore == Colore::nero)
-    figura = 'T';
+    figura = 'D';
   else 
-    figura = 't';
+    figura = 'd';
 }

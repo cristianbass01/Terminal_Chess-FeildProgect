@@ -5,5 +5,4 @@
 int main() {
   Scacchiera test;
   test.stampa();
-  std::cout<<"Cinel merda";
 }
