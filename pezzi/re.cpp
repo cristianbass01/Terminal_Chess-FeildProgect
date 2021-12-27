@@ -1,4 +1,5 @@
 #include "re.h"
+
 Re::Re(Casella posizione, Pezzo::Colore colore) { 
   posizione_ = posizione;
   colore_ = colore;
