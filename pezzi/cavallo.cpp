@@ -8,3 +8,10 @@ Cavallo::Cavallo(Casella posizione, Colore colore){
   else
     figura_ = 'c';
 }
+void Cavallo::mossa(Casella posizione_finale){
+
+}
+
+bool Cavallo::mossa_valida(Casella posizione_finale){
+  return false;
+}

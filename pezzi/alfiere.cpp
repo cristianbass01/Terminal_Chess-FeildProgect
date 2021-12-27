@@ -8,3 +8,11 @@ Alfiere::Alfiere(Casella posizione, Colore colore) {
   else
     figura_ = 'a';
 }
+
+void Alfiere::mossa(Casella posizione_finale){
+
+}
+
+bool Alfiere::mossa_valida(Casella posizione_finale){
+  return false;
+}
