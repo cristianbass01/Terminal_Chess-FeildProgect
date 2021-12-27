@@ -12,6 +12,7 @@ class Pezzo { //classe virtuale pura
     enum class Colore {
       bianco, nero        // bianco=0, nero=1
     };
+    
   protected:
     //classe casella che contiene riga e colonna
     Casella posizione_;
