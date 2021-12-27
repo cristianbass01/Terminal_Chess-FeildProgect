@@ -5,6 +5,7 @@
 
 class Pezzo { //classe virtuale pura
   public:
+    Pezzo() = delete;
     virtual void mossa(Casella posizione) = 0; //metodo virtuale puro che sposta il pezzo
     virtual bool mossa_valida(Casella posizione) = 0; //metodo virtuale puro che controlla se la mossa è valida
     char get_figura() { return figura_; }
