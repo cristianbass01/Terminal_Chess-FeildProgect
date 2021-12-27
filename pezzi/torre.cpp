@@ -9,3 +9,7 @@ Torre::Torre(int rig, int col, Colore color) {
   else 
     figura = 't';
 }
+
+bool mossa_valida(int r, int c) {
+  return false;
+}

@@ -15,6 +15,10 @@ class Pezzo { //classe virtuale pura
     int colonna;
         
     char figura; //contiene la figura che viene rappresentata nella scachiera
+<<<<<<< Updated upstream
+=======
+    
+>>>>>>> Stashed changes
     Colore colore;
 };
 
