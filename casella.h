@@ -6,7 +6,12 @@ class Casella{
     int colonna;
   public:
     //costruttore
+    Casella() {}
     Casella(int r, int c);
+    Casella(const Casella&);
+    
+    //assegnatore di copia
+    Casella& operator=(const Casella& pos);
     
     //Eccezione
     class CasellaErrata{};
