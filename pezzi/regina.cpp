@@ -1,11 +1,10 @@
 #include "regina.h"
 
-Regina::Regina(int rig, int col, Colore color) {
-  riga = rig;
-  colonna = col;
-  colore = color;
-  if(colore == Colore::nero)
-    figura = 'D';
+Regina::Regina(Casella posizione, Colore colore) {
+  posizione_ = posizione;
+  colore_ = colore;
+  if(colore_ == Colore::nero)
+    figura_ = 'D';
   else 
-    figura = 'd';
+    figura_ = 'd';
 }
