@@ -3,11 +3,10 @@
 
 #include "pezzo.h"
 
-class Pedone : public Pezzo 
-{
+class Pedone : public Pezzo {
   public:
     Pedone(Casella posizione, Pezzo::Colore colore);
-    void mossa(Casella posizione) override {} //metodo virtuale puro che sposta il pezzo
-    bool mossa_valida(Casella posizione) override {return false;}
+    void mossa(Casella posizione) override; //metodo virtuale puro che sposta il pezzo
+    bool mossa_valida(Casella posizione) override;
 };
 #endif // PEDONE_H
