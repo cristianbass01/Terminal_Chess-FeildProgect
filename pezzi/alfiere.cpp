@@ -1,7 +1,6 @@
 #include "alfiere.h"
-Alfiere::Alfiere(int rig, int col, Colore color) {
-  colore = color;
-  riga = rig;
+Alfiere::Alfiere(Casella posizione, Colore color) {
+  Casella posizione_
   colonna = col;
   if(colore == Colore::nero)
     figura = 'A';
