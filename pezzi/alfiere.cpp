@@ -1,8 +1,10 @@
 #include "alfiere.h"
-Alfiere::Alfiere(Casella posizione, Colore color) {
-  Casella posizione_
+
+Alfiere::Alfiere(Casella posizione, Colore colore) {
+  colore_ = colore;
+  posizione_ = posizione;
   if(colore == Colore::nero)
-    figura = 'A';
+    figura_ = 'A';
   else
-    figura = 'a';
+    figura_ = 'a';
 }

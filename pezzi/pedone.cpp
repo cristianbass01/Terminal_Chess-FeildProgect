@@ -1,10 +1,9 @@
 #include "pedone.h"
-Pedone::Pedone(int rig, int col, Pezzo::Colore color) { 
-  riga = rig;
-  colonna = col;
-  colore = color;
+Pedone::Pedone(Casella posizione, Pezzo::Colore colore) { 
+  posizione_ = posizione;
+  colore_ = colore;
   if(colore == Colore::nero)
-    figura = 'P';
+    figura_ = 'P';
   else
-    figura = 'p';
+    figura_ = 'p';
 }

@@ -1,10 +1,10 @@
 #include "cavallo.h"
-Cavallo::Cavallo(int rig, int col, Colore color){
-  colore = color; 
-  riga = rig;
-  colonna = col;
+
+Cavallo::Cavallo(Casella posizione, Colore colore){
+  colore_ = colore; 
+  posizione_ = posizione;
   if(colore == Colore::nero)
-    figura = 'C';
+    figura_ = 'C';
   else
-    figura = 'c';
+    figura_ = 'c';
 }
