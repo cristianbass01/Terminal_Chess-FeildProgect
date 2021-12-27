@@ -1,6 +1,6 @@
 #include "re.h"
 
-Re::Re(Casella posizione, Pezzo::Colore colore) { 
+Re::Re(Casella posizione, Colore colore) { 
   posizione_ = posizione;
   colore_ = colore;
   if(colore_ == Colore::nero)
