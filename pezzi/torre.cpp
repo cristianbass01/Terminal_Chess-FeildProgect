@@ -9,6 +9,10 @@ Torre::Torre(Casella posizione, Colore colore) {
     figura_ = 't';
 }
 
-bool mossa_valida(Casella posizione) {
+bool Torre::mossa_valida(Casella posizione_finale) {
   return false;
+}
+
+void Torre::mossa(Casella posizione_finale){
+
 }

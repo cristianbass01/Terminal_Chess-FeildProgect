@@ -1,4 +1,5 @@
 #include "re.h"
+
 Re::Re(Casella posizione, Pezzo::Colore colore) { 
   posizione_ = posizione;
   colore_ = colore;
@@ -8,3 +9,10 @@ Re::Re(Casella posizione, Pezzo::Colore colore) {
     figura_ = 'r';
 }
 
+bool Re::mossa_valida(Casella posizione_finale) {
+  return false;
+}
+
+void Re::mossa(Casella posizione_finale){
+
+}
