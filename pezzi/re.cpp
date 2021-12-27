@@ -8,3 +8,10 @@ Re::Re(Casella posizione, Pezzo::Colore colore) {
     figura_ = 'r';
 }
 
+bool Re::mossa_valida(Casella posizione_finale) {
+  return false;
+}
+
+void Re::mossa(Casella posizione_finale){
+
+}

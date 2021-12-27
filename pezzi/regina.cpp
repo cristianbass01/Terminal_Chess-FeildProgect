@@ -8,3 +8,11 @@ Regina::Regina(Casella posizione, Colore colore) {
   else 
     figura_ = 'd';
 }
+
+bool Regina::mossa_valida(Casella posizione_finale) {
+  return false;
+}
+
+void Regina::mossa(Casella posizione_finale){
+
+}
