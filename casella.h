@@ -6,13 +6,18 @@ class Casella{
     int colonna;
   public:
     //costruttore
+    Casella() = delete;
     Casella(int r, int c);
     
+    //Eccezione
+    class CasellaErrata{};
+
     //metodi base
     int get_riga() {return riga;}
     int get_colonna() {return colonna;}
     void set_riga(int r);
     void set_colonna(int c);
+    void set(int r, int c);
 };
 
-#endif // 
+#endif // CASELLA_H
