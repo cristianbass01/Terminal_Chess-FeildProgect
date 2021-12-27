@@ -6,8 +6,8 @@
 class Torre : public Pezzo{
   public:
     Torre(Casella posizione, Colore color);
-    void mossa(int r, int c) override {} //metodo virtuale puro che sposta il pezzo
-    bool mossa_valida(int r, int c) override;
+    void mossa(Casella posizione_fin) override {} //metodo virtuale puro che sposta il pezzo
+    bool mossa_valida(Casella posizione_fin) override;
 };
 
 #endif // TORRE_H
