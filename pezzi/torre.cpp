@@ -1,15 +1,14 @@
 #include "torre.h"
 
-Torre::Torre(int rig, int col, Colore color) {
-  riga = rig;
-  colonna = col;
-  colore = color;
-  if(colore == Colore::nero)
-    figura = 'T';
+Torre::Torre(Casella posizione, Colore colore) {
+  posizione_ = posizione;
+  colore_ = colore;
+  if(colore_ == Colore::nero)
+    figura_ = 'T';
   else 
-    figura = 't';
+    figura_ = 't';
 }
 
-bool mossa_valida(int r, int c) {
+bool mossa_valida(Casella posizione) {
   return false;
 }
