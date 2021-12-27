@@ -6,7 +6,6 @@ class Casella{
     int colonna;
   public:
     //costruttore
-    Casella() = delete;
     Casella(int r, int c);
     
     //Eccezione
