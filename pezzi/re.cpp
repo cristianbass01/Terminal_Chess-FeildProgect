@@ -1,11 +1,10 @@
 #include "re.h"
-Re::Re(int rig, int col, Pezzo::Colore color) { 
-  riga = rig;
-  colonna = col;
-  colore = color;
-  if(colore == Colore::nero)
-    figura = 'R';
+Re::Re(Casella posizione, Pezzo::Colore colore) { 
+  posizione_ = posizione;
+  colore_ = colore;
+  if(colore_ == Colore::nero)
+    figura_ = 'R';
   else
-    figura = 'r';
+    figura_ = 'r';
 }
 
