@@ -3,6 +3,8 @@
 
 #include "pezzo.h"
 
+class Scacchiera;
+
 class Pedone : public Pezzo {
   public:
     Pedone(Casella posizione, Colore colore);

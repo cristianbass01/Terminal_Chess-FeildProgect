@@ -1,6 +1,10 @@
 #ifndef SCACCHIERA_H
 #define SCACCHIERA_H
 
+
+
+#include <iostream>
+
 #include "pezzi/pezzo.h"
 #include "pezzi/alfiere.h"
 #include "pezzi/re.h"
@@ -8,8 +12,6 @@
 #include "pezzi/cavallo.h"
 #include "pezzi/torre.h"
 #include "pezzi/pedone.h"
-
-#include <iostream>
 
 class Scacchiera {
   public:
@@ -28,5 +30,7 @@ class Scacchiera {
   private:
     Pezzo* scacchiera[RIGHE][COLONNE]; //CONTROLLARE CHE SIA GIUSTO
 };
+
+
 
 #endif // SCACCHIERA_H

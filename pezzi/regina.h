@@ -3,6 +3,8 @@
 
 #include "pezzo.h"
 
+class Scacchiera;
+
 class Regina : public Pezzo{
   public:
     Regina(Casella posizione, Colore colore);

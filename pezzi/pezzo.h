@@ -1,8 +1,11 @@
 #ifndef PEZZO_H
 #define PEZZO_H
 
+
+
 #include "./../casella.h"
-#include "./../scacchiera.h"
+
+class Scacchiera; // forward declaration
 
 class Pezzo { //classe virtuale pura
   public:
@@ -27,5 +30,4 @@ class Pezzo { //classe virtuale pura
     char figura_; //contiene la figura che viene rappresentata nella scachiera
     Colore colore_;
 };
-
 #endif  // PEZZO_H

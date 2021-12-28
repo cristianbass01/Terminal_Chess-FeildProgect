@@ -1,3 +1,4 @@
+#include "./../scacchiera.h"
 #include "cavallo.h"
 
 Cavallo::Cavallo(Casella posizione, Colore colore){

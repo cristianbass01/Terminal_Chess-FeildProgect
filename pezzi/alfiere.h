@@ -3,6 +3,8 @@
 
 #include "pezzo.h"
 
+class Scacchiera;
+
 class Alfiere : public Pezzo {
   public:
     Alfiere(Casella posizione, Colore colore);
