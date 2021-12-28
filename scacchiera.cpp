@@ -59,8 +59,8 @@ void Scacchiera::stampa() {
   std::cout<<"  "<<"ABCDEFGH"<<std::endl;          
 }
 
-Pezzo* get_casella(Casella posizione){
-  return *(scacchiera[posizione.get_riga()][posizione.get_colonna()]);
+Pezzo* Scacchiera::get_casella(Casella posizione){
+  return (scacchiera[posizione.get_riga()][posizione.get_colonna()]);
 }
 
 void Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {

@@ -16,12 +16,14 @@ class Pezzo { //classe virtuale pura
       }
       return false;
     }
-    
+
     virtual bool mossa_valida(Casella posizione, Scacchiera& scacchiera) = 0; //metodo virtuale puro che controlla se la mossa è valida
     char get_figura() { return figura_; }
     enum class Colore {
       bianco, nero        // bianco=0, nero=1
     };
+    
+    Pezzo::Colore get_colore(){ return colore_; }
     
   protected:
     //classe casella che contiene riga e colonna
