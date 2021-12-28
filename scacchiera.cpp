@@ -20,7 +20,7 @@ Scacchiera::Scacchiera() {
 
   scacchiera[0][3] = new Regina(Casella(0,3),Pezzo::Colore::bianco);
   scacchiera[0][4] = new Re(Casella(0,4),Pezzo::Colore::bianco);
-  Re_bianco = *(scacchiera[0][4]);
+  Re_bianco = scacchiera[0][4];
 
   constexpr int RIGA_PEDONI_BIANCHI = 1;
   for(int i = 0; i < COLONNE; i++) {
@@ -39,7 +39,7 @@ Scacchiera::Scacchiera() {
 
   scacchiera[7][3] = new Regina(Casella(7,3),Pezzo::Colore::nero);
   scacchiera[7][4] = new Re(Casella(7,4),Pezzo::Colore::nero);
-  Re_nero = *(scacchiera[7][4]);
+  Re_nero = scacchiera[7][4];
 
   constexpr int RIGA_PEDONI_NERI = 6;
   for(int i = 0; i < COLONNE; i++) {
@@ -67,10 +67,10 @@ Pezzo* Scacchiera::get_casella(Casella posizione){
 
 bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
   Pezzo* Re_scelto;
-  colore == Pezzo::Colore::bianco ?  Re_scelto = Re_bianco , Re_scelto = Re_nero;  
+  colore == Pezzo::Colore::bianco ?  Re_scelto = Re_bianco : Re_scelto = Re_nero;  
   for(int i = 0; i < RIGHE ; i++){
     for(int j = 0; j< COLONNE ; j++){
-      if((*(scacchiera[i][j])).get_colore() != colore && (*(scacchiera[i][j])).mossa_valida(Re_scelto.get_position())){
+      if(((*(scacchiera[i][j])).get_colore() != colore && (*(scacchiera[i][j])).mossa_valida((*Re_scelto).get_posizione(), *this))){
         return true;
       }
     }
@@ -90,8 +90,8 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
     scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
 
     if(controllo_scacco(pezzo_mosso.get_colore())){
-      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
-      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = &pezzo_mosso;
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = &pezzo_mangiato;
       return false;
     }
 
@@ -102,4 +102,5 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
 
     return true;
   }
+  return false;
 }
