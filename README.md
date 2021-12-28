@@ -20,3 +20,5 @@ Per compilare su windows: g++ -o test main.cpp scacchiera.cpp .\pezzi\pezzo.h .\
 
 
 Per Cinel  C:\Users\Giovanni Cinel\Desktop\Università\Laboratorio di programmazione\Feild Progect\Feild_Progect
+
+Per Gianluca C:\Users\Gianluca\Documents\GitHub\Feild_Progect
