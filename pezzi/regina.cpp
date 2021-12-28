@@ -12,7 +12,3 @@ Regina::Regina(Casella posizione, Colore colore) {
 bool Regina::mossa_valida(Casella posizione_finale) {
   return false;
 }
-
-void Regina::mossa(Casella posizione_finale){
-
-}

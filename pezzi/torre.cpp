@@ -12,7 +12,3 @@ Torre::Torre(Casella posizione, Colore colore) {
 bool Torre::mossa_valida(Casella posizione_finale) {
   return false;
 }
-
-void Torre::mossa(Casella posizione_finale){
-
-}

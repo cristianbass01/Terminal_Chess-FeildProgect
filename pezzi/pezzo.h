@@ -5,7 +5,13 @@
 
 class Pezzo { //classe virtuale pura
   public:
-    virtual void mossa(Casella posizione) = 0; //metodo virtuale puro che sposta il pezzo
+    bool mossa(Casella posizione) { //metodo virtuale puro che sposta il pezzo
+      if(mossa_valida(posizione)) {
+        posizione_ = posizione;
+        return true;
+      }
+      return false;
+    }
     virtual bool mossa_valida(Casella posizione) = 0; //metodo virtuale puro che controlla se la mossa è valida
     char get_figura() { return figura_; }
     enum class Colore {
