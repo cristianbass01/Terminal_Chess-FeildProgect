@@ -1,6 +1,8 @@
 #ifndef CASELLA_H
 #define CASELLA_H
 
+#include "eccezione.h"
+
 class Casella{
     int riga;
     int colonna;
@@ -12,9 +14,6 @@ class Casella{
     
     //assegnatore di copia
     Casella& operator=(const Casella& pos);
-    
-    //Eccezione
-    class CasellaErrata{};
 
     //metodi base
     int get_riga() {return riga;}
