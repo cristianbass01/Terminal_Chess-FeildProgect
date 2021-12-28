@@ -22,15 +22,20 @@ class Scacchiera {
 
     void stampa(); //stampa la scacchiera
 
-    void mossa(Casella posizione_in, Casella posizione_fin); //controllo mossa fatto prima
+    bool mossa(Casella posizione_in, Casella posizione_fin); //controllo mossa fatto prima
 
     Pezzo* get_casella(Casella posizione);
+
+    bool controllo_scacco(Pezzo::Colore colore);
 
     enum class Colonne {
       A ,B ,C, D, E, F, G, H
     };
   private:
     Pezzo* scacchiera[RIGHE][COLONNE]; //CONTROLLARE CHE SIA GIUSTO
+
+    Pezzo* Re_nero;
+    Pezzo* Re_bianco;
 };
 
 
