@@ -9,6 +9,6 @@ Pedone::Pedone(Casella posizione, Colore colore) {
     figura_ = 'p';
 }
 
-bool Pedone::mossa_valida(Casella posizione_finale){
-  return false;
+bool Pedone::mossa_valida(Casella posizione_finale, Scacchiera& const scacchiera){
+  if()
 }
