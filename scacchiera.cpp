@@ -62,7 +62,7 @@ void Scacchiera::stampa() {
 void Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   //caso in cui nella posizione iniziale si trova nullptr
   if(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] == nullptr)
-    throw Eccezione("ERRORE A RIGA 65 SCACCHIERA"); //DA RIMUOVERE PERCHE' GIA' FATTO CONTROLLO
+    throw Eccezione("[Eccezione::NessunPezzo] Nella casella selezionata non c'è nessun pezzo da muovere");
 
   Pezzo& pezzo_mosso = *(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()]);
   Pezzo& pezzo_mangiato = *(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()]);

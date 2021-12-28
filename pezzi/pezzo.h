@@ -6,7 +6,7 @@
 
 class Pezzo { //classe virtuale pura
   public:
-    bool mossa(Casella posizione, Scacchiera& scacchiera) { //metodo virtuale puro che sposta il pezzo
+    bool mossa(Casella posizione, Scacchiera& scacchiera) { //metodo che sposta il pezzo
       if(mossa_valida(posizione, scacchiera)) {
         posizione_ = posizione;
         return true;
