@@ -1,11 +1,14 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef GIOCATORE_H
+#define GIOCATORE_H
 
-class Player{
+#include "scacchiera.h"
+
+class Giocatore{
   private:
+    Scacchiera scacchiera_;
 
   public:
-
+    virtual void gioca() = 0; // metodo virtuale puro che fa eseguire una mossa al giocatore
 };
 
-#endif // PLAYER_H
+#endif // GIOCATORE_H
