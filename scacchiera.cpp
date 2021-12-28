@@ -66,7 +66,7 @@ void Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
 
   Pezzo& pezzo_mosso = *(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()]);
   Pezzo& pezzo_mangiato = *(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()]);
-  if(pezzo_mosso.mossa(posizione_fin, this)) {
+  if(pezzo_mosso.mossa(posizione_fin, *(this))) {
     if(&pezzo_mangiato != nullptr) {
       delete &pezzo_mangiato;
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
