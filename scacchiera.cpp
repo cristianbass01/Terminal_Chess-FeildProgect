@@ -60,11 +60,18 @@ void Scacchiera::stampa() {
 }
 
 void Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
-  &Pezzo = *scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
-  /**if((*scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()]).mossa_valida(posizione_fin)) {
-    if()
+  //caso in cui nella posizione iniziale si trova nullptr
+  if(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] == nullptr)
+    throw "ERRORE A RIGA 65 SCACCHIERA"; //DA RIMUOVERE PERCHE' GIA' FATTO CONTROLLO
+
+  Pezzo& pezzo_mosso = *(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()]);
+  Pezzo& pezzo_mangiato = *(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()]);
+  if(pezzo_mosso.mossa_valida(posizione_fin)) {
+    if(&pezzo_mangiato != nullptr) {
+      delete &pezzo_mangiato;
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
+    }
     scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
     scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
-  **/
-  
+  }
 }
