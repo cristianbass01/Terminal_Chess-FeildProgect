@@ -24,6 +24,8 @@ class Scacchiera {
 
     void mossa(Casella posizione_in, Casella posizione_fin); //controllo mossa fatto prima
 
+    Pezzo* get_casella(Casella posizione);
+
     enum class Colonne {
       A ,B ,C, D, E, F, G, H
     };

@@ -59,6 +59,10 @@ void Scacchiera::stampa() {
   std::cout<<"  "<<"ABCDEFGH"<<std::endl;          
 }
 
+Pezzo* get_casella(Casella posizione){
+  return *(scacchiera[posizione.get_riga()][posizione.get_colonna()]);
+}
+
 void Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   //caso in cui nella posizione iniziale si trova nullptr
   if(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] == nullptr)

@@ -11,5 +11,5 @@ Cavallo::Cavallo(Casella posizione, Colore colore){
 }
 
 bool Cavallo::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
-  return false;
+  if(scacchiera.getCasella(posizione_finale))
 }
