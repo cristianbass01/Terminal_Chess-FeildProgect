@@ -12,7 +12,3 @@ Re::Re(Casella posizione, Colore colore) {
 bool Re::mossa_valida(Casella posizione_finale) {
   return false;
 }
-
-void Re::mossa(Casella posizione_finale){
-
-}
