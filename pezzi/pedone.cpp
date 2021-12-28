@@ -1,5 +1,4 @@
 #include "pedone.h"
-
 Pedone::Pedone(Casella posizione, Colore colore) { 
   posizione_ = posizione;
   colore_ = colore;
@@ -9,6 +8,6 @@ Pedone::Pedone(Casella posizione, Colore colore) {
     figura_ = 'p';
 }
 
-bool Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
+bool Pedone::mossa_valida(Casella posizione_finale, char** scacchiera){
   return false;
 }
