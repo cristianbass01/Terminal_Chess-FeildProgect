@@ -3,6 +3,6 @@
 
 class Computer{
   
-}
+};
 
 #endif // COMPUTER_H
