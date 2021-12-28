@@ -6,7 +6,7 @@
 class Torre : public Pezzo{
   public:
     Torre(Casella posizione, Colore colore);
-    bool mossa_valida(Casella posizione_finale) override;
+    bool mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) override;
 };
 
 #endif // TORRE_H

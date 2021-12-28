@@ -9,6 +9,6 @@ Alfiere::Alfiere(Casella posizione, Colore colore) {
     figura_ = 'a';
 }
 
-bool Alfiere::mossa_valida(Casella posizione_finale){
+bool Alfiere::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   return false;
 }

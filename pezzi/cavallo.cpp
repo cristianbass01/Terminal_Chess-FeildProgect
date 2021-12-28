@@ -9,6 +9,6 @@ Cavallo::Cavallo(Casella posizione, Colore colore){
     figura_ = 'c';
 }
 
-bool Cavallo::mossa_valida(Casella posizione_finale){
+bool Cavallo::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   return false;
 }

@@ -6,7 +6,7 @@
 class Cavallo : public Pezzo {
   public:
     Cavallo(Casella posizione, Colore colore);
-    bool mossa_valida(Casella posizione) override;
+    bool mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
 };
 
 #endif // CAVALLO_H
