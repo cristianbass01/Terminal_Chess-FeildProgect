@@ -60,10 +60,11 @@ void Scacchiera::stampa() {
 }
 
 void Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
-  if((*scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()]).mossa_valida(posizione_fin)) {
-    (*scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()]).mossa(posizione_fin);
+  &Pezzo = *scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
+  /**if((*scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()]).mossa_valida(posizione_fin)) {
+    if()
     scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
     scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
-  }
+  **/
   
 }
