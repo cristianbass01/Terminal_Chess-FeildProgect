@@ -9,10 +9,6 @@ Pedone::Pedone(Casella posizione, Colore colore) {
     figura_ = 'p';
 }
 
-void Pedone::mossa(Casella posizione_finale){
-
-}
-
 bool Pedone::mossa_valida(Casella posizione_finale){
   return false;
 }
