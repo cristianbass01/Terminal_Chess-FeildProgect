@@ -4,23 +4,23 @@
 #include "eccezione.h"
 
 class Casella{
-    int riga;
-    int colonna;
+    int riga_;
+    int colonna_;
   public:
     //costruttore
     Casella() {}
-    Casella(int r, int c);
+    Casella(int riga, int colonna);
     Casella(const Casella&);
     
     //assegnatore di copia
     Casella& operator=(const Casella& pos);
 
     //metodi base
-    int get_riga() {return riga;}
-    int get_colonna() {return colonna;}
-    void set_riga(int r);
-    void set_colonna(int c);
-    void set(int r, int c);
+    int get_riga() {return riga_;}
+    int get_colonna() {return colonna_;}
+    void set_riga(int riga);
+    void set_colonna(int colonna);
+    void set(int riga, int colonna);
 };
 
 #endif // CASELLA_H
