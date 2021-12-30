@@ -103,7 +103,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
     }
     if(pezzo_mangiato != nullptr) {
       delete pezzo_mangiato;
-      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
     }
 
     return true;
