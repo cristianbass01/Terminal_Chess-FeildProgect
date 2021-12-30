@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcavallo.a CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.o
+/usr/bin/ranlib libcavallo.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcasella.a CMakeFiles/casella.dir/src/casella.cpp.o
+/usr/bin/ranlib libcasella.a

@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Feild_Progect.dir/src/main.cpp.o -o Feild_Progect  libalfiere.a libcavallo.a libpedone.a libre.a libregina.a libtorre.a libcasella.a libcomputer.a libeccezione.a libscacchiera.a libumano.a 

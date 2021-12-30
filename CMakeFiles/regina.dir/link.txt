@@ -1,0 +1,2 @@
+/usr/bin/ar qc libregina.a CMakeFiles/regina.dir/pezzi/src/regina.cpp.o
+/usr/bin/ranlib libregina.a
