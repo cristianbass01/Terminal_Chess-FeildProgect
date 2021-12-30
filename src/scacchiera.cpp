@@ -69,11 +69,21 @@ Pezzo* Scacchiera::get_casella(Casella posizione){
 
 bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
   Pezzo* Re_scelto;
-  colore == Pezzo::Colore::bianco ?  Re_scelto = Re_bianco : Re_scelto = Re_nero;  
+  colore == Pezzo::Colore::bianco ?  Re_scelto = Re_bianco : Re_scelto = Re_nero; 
+  /**if(colore == Pezzo::Colore::bianco)
+    Re_scelto = Re_bianco;
+  else
+    Re_scelto = Re_nero; **/ 
   for(int i = 0; i < RIGHE ; i++){
     for(int j = 0; j< COLONNE ; j++){
-      if(((*(scacchiera[i][j])).get_colore() != colore && (*(scacchiera[i][j])).mossa_valida((*Re_scelto).get_posizione(), *this))){
-        return true;
+      std::cout<< i;
+      std::cout<< j<<std::endl;
+      if(scacchiera[i][j] != nullptr){
+        std::cout<< "entrato"<<std::endl;
+        if(((*(scacchiera[i][j])).get_colore() != colore && (*(scacchiera[i][j])).mossa_valida((*Re_scelto).get_posizione(), *this))){
+           std::cout<< i<<" "<< j<<std::endl;
+          return true;
+        }
       }
     }
   }
@@ -90,13 +100,12 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   if(pezzo_mosso.mossa(posizione_fin, *(this))) {
     scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
     scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
-
     if(controllo_scacco(pezzo_mosso.get_colore())){
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = &pezzo_mosso;
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = &pezzo_mangiato;
       return false;
     }
-
+    std::cout<<"sgs";
     if(&pezzo_mangiato != nullptr) {
       delete &pezzo_mangiato;
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
