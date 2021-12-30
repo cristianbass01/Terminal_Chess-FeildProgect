@@ -9,7 +9,7 @@
                 "-g",
                 "*.cpp",
                 "-o",
-                "${fileDirname}/../Feild_Progect"
+                "${fileDirname}/../build/Feild_Progect"
             ],
             "options": {
                 "cwd": "${fileDirname}"
