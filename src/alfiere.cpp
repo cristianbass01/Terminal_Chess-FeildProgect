@@ -12,8 +12,8 @@ Alfiere::Alfiere(Casella posizione, Colore colore) {
 
 bool Alfiere::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   //calcolo di delta riga e delta colonna
-  int delta_riga = posizione_.get_riga() - posizione_finale.get_riga();
-  int delta_colonna = posizione_.get_colonna() - posizione_finale.get_colonna();
+  int delta_riga = posizione_finale.get_riga() - posizione_.get_riga();
+  int delta_colonna = posizione_finale.get_colonna() - posizione_.get_colonna();
   
   //verifica che non ci sia una pedina dello stesso colore nella posizione finale
   if(scacchiera.get_casella(posizione_finale) != nullptr)
@@ -29,14 +29,14 @@ bool Alfiere::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
     temp_driga = delta_riga -1;
   else
     temp_driga = delta_riga +1;
-  if(delta_riga > 0)
+  if(delta_colonna > 0)
     temp_dcolonna = delta_colonna -1;
   else
     temp_dcolonna = delta_colonna +1;
   
   //verifica che le posizioni in diagonale tra posizione finale e inziale siano libere
   Casella temp_casella(0,0);
-  while(temp_dcolonna != 0){
+  while(temp_dcolonna != 0 && temp_driga != 0){
     //crea una casella (richiesto per poter utilizzare scacchiera.get_casella())
     std::cout<<"arrivato"<<std::endl;
     temp_casella.set_colonna(posizione_.get_colonna() + temp_dcolonna);

@@ -11,7 +11,7 @@ int main() {
   if(test.mossa(cavallo, cavallo1))
     std::cout<<"cazzo"<<std::endl;
   else
-  std::cout<< "Gianluchino"<<std::endl;
+    std::cout<< "Gianluchino"<<std::endl;
   test.stampa();
   Casella alfiere(0,2);  
   Casella alfiere1(3,5);
