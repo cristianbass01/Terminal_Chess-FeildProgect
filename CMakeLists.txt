@@ -18,8 +18,6 @@ src/regina.cpp
 src/torre.cpp
 )
 
-include_directories(pezzi)
-
 add_library(alfiere
 include/pezzo.h
 include/alfiere.h

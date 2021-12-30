@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi"
+CXX_INCLUDES = 
 
 CXX_FLAGS = 
 

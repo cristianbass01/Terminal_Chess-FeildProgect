@@ -8,9 +8,8 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "*.cpp",
-                "./pezzi/*.cpp",
                 "-o",
-                "${fileDirname}/build/test"
+                "${fileDirname}/../Feild_Progect"
             ],
             "options": {
                 "cwd": "${fileDirname}"
