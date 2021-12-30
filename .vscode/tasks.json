@@ -10,7 +10,7 @@
                 "*.cpp",
                 "./pezzi/*.cpp",
                 "-o",
-                "${fileDirname}/test"
+                "${fileDirname}/build/test"
             ],
             "options": {
                 "cwd": "${fileDirname}"
