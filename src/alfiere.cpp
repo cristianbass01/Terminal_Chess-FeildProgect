@@ -15,14 +15,16 @@ bool Alfiere::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   int delta_colonna = posizione_.get_colonna() - posizione_finale.get_colonna());
   if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
     return false;
+  int temp_driga
   if(delta_riga > 0)
-    int temp_driga = delta_riga -1;
+    temp_driga = delta_riga -1;
   else
-    int temp_driga = delta_riga +1;
+    temp_driga = delta_riga +1;
+  int temp_dcolonna;
   if(delta_riga > 0)
-    int temp_dcolonna = delta_colonna -1;
+    temp_dcolonna = delta_colonna -1;
   else
-    int temp_dcolonna = delta_colonna +1;
+    temp_dcolonna = delta_colonna +1;
   Casella temp_casella;
   while(temp_dcolonna != 0){
     temp_casella.set_colonna(posizione_.get_colonna() + temp_dcolonna);
