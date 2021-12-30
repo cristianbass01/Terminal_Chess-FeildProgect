@@ -13,8 +13,10 @@ Alfiere::Alfiere(Casella posizione, Colore colore) {
 bool Alfiere::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   int delta_riga = posizione_.get_riga() - posizione_finale.get_riga();
   int delta_colonna = posizione_.get_colonna() - posizione_finale.get_colonna();
-  if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
-    return false;
+  if(scacchiera.get_casella(posizione_finale) != nullpts){
+    if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
+      return false;
+  }
   int temp_driga;
   int temp_dcolonna;
   if(delta_riga > 0)

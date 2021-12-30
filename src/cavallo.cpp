@@ -11,10 +11,11 @@ Cavallo::Cavallo(Casella posizione, Colore colore){
 }
 
 bool Cavallo::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
-  //verifica che non ci sia una pedina dello stesso colore nella posizione_finale
-  if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
-    return false;
-  
+  if(scacchiera.get_casella(posizione_finale) != nullptr){
+    //verifica che non ci sia una pedina dello stesso colore nella posizione_finale
+    if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
+      return false;
+  }
   //calcolo di delta riga e delta colonna
   int delta_riga = posizione_.get_riga() - posizione_finale.get_riga();
   int delta_colonna = posizione_.get_colonna() - posizione_finale.get_colonna();
@@ -23,8 +24,7 @@ bool Cavallo::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   if( delta_colonna < 0)
     delta_colonna *= -1; 
   if( delta_riga < 0)
-    delta_riga *= -1; 
-
+    delta_riga *= -1;
   //verifica del movimento a L controllando che si sposti di 2 e 1
   if(((delta_colonna == 2)&&(delta_riga == 1)) || ((delta_colonna == 1)&&(delta_riga == 2)))
     return true;
