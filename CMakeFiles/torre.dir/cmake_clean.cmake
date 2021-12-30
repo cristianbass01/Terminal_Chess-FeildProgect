@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/torre.dir/pezzi/src/torre.cpp.o"
+  "CMakeFiles/torre.dir/src/torre.cpp.o"
   "libtorre.a"
   "libtorre.pdb"
 )

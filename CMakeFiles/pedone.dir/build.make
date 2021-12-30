@@ -76,27 +76,27 @@ include CMakeFiles/pedone.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/pedone.dir/flags.make
 
-CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.o: CMakeFiles/pedone.dir/flags.make
-CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.o: pezzi/src/pedone.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/pedone.cpp"
+CMakeFiles/pedone.dir/src/pedone.cpp.o: CMakeFiles/pedone.dir/flags.make
+CMakeFiles/pedone.dir/src/pedone.cpp.o: src/pedone.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pedone.dir/src/pedone.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pedone.dir/src/pedone.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pedone.cpp"
 
-CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/pedone.cpp" > CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.i
+CMakeFiles/pedone.dir/src/pedone.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pedone.dir/src/pedone.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pedone.cpp" > CMakeFiles/pedone.dir/src/pedone.cpp.i
 
-CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/pedone.cpp" -o CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.s
+CMakeFiles/pedone.dir/src/pedone.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pedone.dir/src/pedone.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pedone.cpp" -o CMakeFiles/pedone.dir/src/pedone.cpp.s
 
 # Object files for target pedone
 pedone_OBJECTS = \
-"CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.o"
+"CMakeFiles/pedone.dir/src/pedone.cpp.o"
 
 # External object files for target pedone
 pedone_EXTERNAL_OBJECTS =
 
-libpedone.a: CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.o
+libpedone.a: CMakeFiles/pedone.dir/src/pedone.cpp.o
 libpedone.a: CMakeFiles/pedone.dir/build.make
 libpedone.a: CMakeFiles/pedone.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libpedone.a"

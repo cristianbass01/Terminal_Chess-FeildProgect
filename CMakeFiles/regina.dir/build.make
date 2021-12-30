@@ -76,27 +76,27 @@ include CMakeFiles/regina.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/regina.dir/flags.make
 
-CMakeFiles/regina.dir/pezzi/src/regina.cpp.o: CMakeFiles/regina.dir/flags.make
-CMakeFiles/regina.dir/pezzi/src/regina.cpp.o: pezzi/src/regina.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/regina.dir/pezzi/src/regina.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/regina.dir/pezzi/src/regina.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/regina.cpp"
+CMakeFiles/regina.dir/src/regina.cpp.o: CMakeFiles/regina.dir/flags.make
+CMakeFiles/regina.dir/src/regina.cpp.o: src/regina.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/regina.dir/src/regina.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/regina.dir/src/regina.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/regina.cpp"
 
-CMakeFiles/regina.dir/pezzi/src/regina.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/regina.dir/pezzi/src/regina.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/regina.cpp" > CMakeFiles/regina.dir/pezzi/src/regina.cpp.i
+CMakeFiles/regina.dir/src/regina.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/regina.dir/src/regina.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/regina.cpp" > CMakeFiles/regina.dir/src/regina.cpp.i
 
-CMakeFiles/regina.dir/pezzi/src/regina.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/regina.dir/pezzi/src/regina.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/regina.cpp" -o CMakeFiles/regina.dir/pezzi/src/regina.cpp.s
+CMakeFiles/regina.dir/src/regina.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/regina.dir/src/regina.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/regina.cpp" -o CMakeFiles/regina.dir/src/regina.cpp.s
 
 # Object files for target regina
 regina_OBJECTS = \
-"CMakeFiles/regina.dir/pezzi/src/regina.cpp.o"
+"CMakeFiles/regina.dir/src/regina.cpp.o"
 
 # External object files for target regina
 regina_EXTERNAL_OBJECTS =
 
-libregina.a: CMakeFiles/regina.dir/pezzi/src/regina.cpp.o
+libregina.a: CMakeFiles/regina.dir/src/regina.cpp.o
 libregina.a: CMakeFiles/regina.dir/build.make
 libregina.a: CMakeFiles/regina.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libregina.a"

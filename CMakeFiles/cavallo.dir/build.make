@@ -76,27 +76,27 @@ include CMakeFiles/cavallo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/cavallo.dir/flags.make
 
-CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.o: CMakeFiles/cavallo.dir/flags.make
-CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.o: pezzi/src/cavallo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/cavallo.cpp"
+CMakeFiles/cavallo.dir/src/cavallo.cpp.o: CMakeFiles/cavallo.dir/flags.make
+CMakeFiles/cavallo.dir/src/cavallo.cpp.o: src/cavallo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cavallo.dir/src/cavallo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cavallo.dir/src/cavallo.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/cavallo.cpp"
 
-CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/cavallo.cpp" > CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.i
+CMakeFiles/cavallo.dir/src/cavallo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cavallo.dir/src/cavallo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/cavallo.cpp" > CMakeFiles/cavallo.dir/src/cavallo.cpp.i
 
-CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/cavallo.cpp" -o CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.s
+CMakeFiles/cavallo.dir/src/cavallo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cavallo.dir/src/cavallo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/cavallo.cpp" -o CMakeFiles/cavallo.dir/src/cavallo.cpp.s
 
 # Object files for target cavallo
 cavallo_OBJECTS = \
-"CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.o"
+"CMakeFiles/cavallo.dir/src/cavallo.cpp.o"
 
 # External object files for target cavallo
 cavallo_EXTERNAL_OBJECTS =
 
-libcavallo.a: CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.o
+libcavallo.a: CMakeFiles/cavallo.dir/src/cavallo.cpp.o
 libcavallo.a: CMakeFiles/cavallo.dir/build.make
 libcavallo.a: CMakeFiles/cavallo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcavallo.a"

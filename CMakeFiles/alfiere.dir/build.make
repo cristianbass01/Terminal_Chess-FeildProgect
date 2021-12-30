@@ -76,27 +76,27 @@ include CMakeFiles/alfiere.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/alfiere.dir/flags.make
 
-CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.o: CMakeFiles/alfiere.dir/flags.make
-CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.o: pezzi/src/alfiere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/alfiere.cpp"
+CMakeFiles/alfiere.dir/src/alfiere.cpp.o: CMakeFiles/alfiere.dir/flags.make
+CMakeFiles/alfiere.dir/src/alfiere.cpp.o: src/alfiere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/alfiere.dir/src/alfiere.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/alfiere.dir/src/alfiere.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp"
 
-CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/alfiere.cpp" > CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.i
+CMakeFiles/alfiere.dir/src/alfiere.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/alfiere.dir/src/alfiere.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp" > CMakeFiles/alfiere.dir/src/alfiere.cpp.i
 
-CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/alfiere.cpp" -o CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.s
+CMakeFiles/alfiere.dir/src/alfiere.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/alfiere.dir/src/alfiere.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp" -o CMakeFiles/alfiere.dir/src/alfiere.cpp.s
 
 # Object files for target alfiere
 alfiere_OBJECTS = \
-"CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.o"
+"CMakeFiles/alfiere.dir/src/alfiere.cpp.o"
 
 # External object files for target alfiere
 alfiere_EXTERNAL_OBJECTS =
 
-libalfiere.a: CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.o
+libalfiere.a: CMakeFiles/alfiere.dir/src/alfiere.cpp.o
 libalfiere.a: CMakeFiles/alfiere.dir/build.make
 libalfiere.a: CMakeFiles/alfiere.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libalfiere.a"

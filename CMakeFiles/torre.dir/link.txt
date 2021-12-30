@@ -1,2 +1,2 @@
-/usr/bin/ar qc libtorre.a CMakeFiles/torre.dir/pezzi/src/torre.cpp.o
+/usr/bin/ar qc libtorre.a CMakeFiles/torre.dir/src/torre.cpp.o
 /usr/bin/ranlib libtorre.a

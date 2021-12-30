@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.o"
+  "CMakeFiles/alfiere.dir/src/alfiere.cpp.o"
   "libalfiere.a"
   "libalfiere.pdb"
 )

@@ -125,12 +125,12 @@ CMakeFiles/Feild_Progect.dir/all: CMakeFiles/umano.dir/all
 CMakeFiles/Feild_Progect.dir/all: CMakeFiles/scacchiera.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=1,2 "Built target Feild_Progect"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target Feild_Progect"
 .PHONY : CMakeFiles/Feild_Progect.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Feild_Progect.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" 24
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" 35
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Feild_Progect.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" 0
 .PHONY : CMakeFiles/Feild_Progect.dir/rule
@@ -152,7 +152,7 @@ CMakeFiles/Feild_Progect.dir/clean:
 CMakeFiles/casella.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/casella.dir/build.make CMakeFiles/casella.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/casella.dir/build.make CMakeFiles/casella.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=5,6 "Built target casella"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=16,17 "Built target casella"
 .PHONY : CMakeFiles/casella.dir/all
 
 # Build rule for subdir invocation for target.
@@ -179,7 +179,7 @@ CMakeFiles/casella.dir/clean:
 CMakeFiles/alfiere.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/alfiere.dir/build.make CMakeFiles/alfiere.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/alfiere.dir/build.make CMakeFiles/alfiere.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=3,4 "Built target alfiere"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=14,15 "Built target alfiere"
 .PHONY : CMakeFiles/alfiere.dir/all
 
 # Build rule for subdir invocation for target.
@@ -206,7 +206,7 @@ CMakeFiles/alfiere.dir/clean:
 CMakeFiles/pedone.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pedone.dir/build.make CMakeFiles/pedone.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pedone.dir/build.make CMakeFiles/pedone.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=13,14 "Built target pedone"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=24,25 "Built target pedone"
 .PHONY : CMakeFiles/pedone.dir/all
 
 # Build rule for subdir invocation for target.
@@ -233,7 +233,7 @@ CMakeFiles/pedone.dir/clean:
 CMakeFiles/regina.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/regina.dir/build.make CMakeFiles/regina.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/regina.dir/build.make CMakeFiles/regina.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=17,18 "Built target regina"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=28,29 "Built target regina"
 .PHONY : CMakeFiles/regina.dir/all
 
 # Build rule for subdir invocation for target.
@@ -260,7 +260,7 @@ CMakeFiles/regina.dir/clean:
 CMakeFiles/torre.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torre.dir/build.make CMakeFiles/torre.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torre.dir/build.make CMakeFiles/torre.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=21,22 "Built target torre"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=32,33 "Built target torre"
 .PHONY : CMakeFiles/torre.dir/all
 
 # Build rule for subdir invocation for target.
@@ -287,7 +287,7 @@ CMakeFiles/torre.dir/clean:
 CMakeFiles/computer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/computer.dir/build.make CMakeFiles/computer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/computer.dir/build.make CMakeFiles/computer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=9,10 "Built target computer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=20,21 "Built target computer"
 .PHONY : CMakeFiles/computer.dir/all
 
 # Build rule for subdir invocation for target.
@@ -314,7 +314,7 @@ CMakeFiles/computer.dir/clean:
 CMakeFiles/cavallo.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cavallo.dir/build.make CMakeFiles/cavallo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cavallo.dir/build.make CMakeFiles/cavallo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=7,8 "Built target cavallo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=18,19 "Built target cavallo"
 .PHONY : CMakeFiles/cavallo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -341,7 +341,7 @@ CMakeFiles/cavallo.dir/clean:
 CMakeFiles/re.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/re.dir/build.make CMakeFiles/re.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/re.dir/build.make CMakeFiles/re.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=15,16 "Built target re"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=26,27 "Built target re"
 .PHONY : CMakeFiles/re.dir/all
 
 # Build rule for subdir invocation for target.
@@ -368,7 +368,7 @@ CMakeFiles/re.dir/clean:
 CMakeFiles/eccezione.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/eccezione.dir/build.make CMakeFiles/eccezione.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/eccezione.dir/build.make CMakeFiles/eccezione.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=11,12 "Built target eccezione"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=22,23 "Built target eccezione"
 .PHONY : CMakeFiles/eccezione.dir/all
 
 # Build rule for subdir invocation for target.
@@ -395,7 +395,7 @@ CMakeFiles/eccezione.dir/clean:
 CMakeFiles/umano.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/umano.dir/build.make CMakeFiles/umano.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/umano.dir/build.make CMakeFiles/umano.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=23,24 "Built target umano"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=34,35 "Built target umano"
 .PHONY : CMakeFiles/umano.dir/all
 
 # Build rule for subdir invocation for target.
@@ -422,7 +422,7 @@ CMakeFiles/umano.dir/clean:
 CMakeFiles/scacchiera.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=19,20 "Built target scacchiera"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=30,31 "Built target scacchiera"
 .PHONY : CMakeFiles/scacchiera.dir/all
 
 # Build rule for subdir invocation for target.

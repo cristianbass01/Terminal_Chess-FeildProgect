@@ -89,14 +89,179 @@ CMakeFiles/Feild_Progect.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/main.cpp" -o CMakeFiles/Feild_Progect.dir/src/main.cpp.s
 
+CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.o: CMakeFiles/Feild_Progect.dir/flags.make
+CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.o: src/scacchiera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/scacchiera.cpp"
+
+CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/scacchiera.cpp" > CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.i
+
+CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/scacchiera.cpp" -o CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.s
+
+CMakeFiles/Feild_Progect.dir/src/computer.cpp.o: CMakeFiles/Feild_Progect.dir/flags.make
+CMakeFiles/Feild_Progect.dir/src/computer.cpp.o: src/computer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Feild_Progect.dir/src/computer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feild_Progect.dir/src/computer.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/computer.cpp"
+
+CMakeFiles/Feild_Progect.dir/src/computer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feild_Progect.dir/src/computer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/computer.cpp" > CMakeFiles/Feild_Progect.dir/src/computer.cpp.i
+
+CMakeFiles/Feild_Progect.dir/src/computer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/computer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/computer.cpp" -o CMakeFiles/Feild_Progect.dir/src/computer.cpp.s
+
+CMakeFiles/Feild_Progect.dir/src/umano.cpp.o: CMakeFiles/Feild_Progect.dir/flags.make
+CMakeFiles/Feild_Progect.dir/src/umano.cpp.o: src/umano.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Feild_Progect.dir/src/umano.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feild_Progect.dir/src/umano.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/umano.cpp"
+
+CMakeFiles/Feild_Progect.dir/src/umano.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feild_Progect.dir/src/umano.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/umano.cpp" > CMakeFiles/Feild_Progect.dir/src/umano.cpp.i
+
+CMakeFiles/Feild_Progect.dir/src/umano.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/umano.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/umano.cpp" -o CMakeFiles/Feild_Progect.dir/src/umano.cpp.s
+
+CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.o: CMakeFiles/Feild_Progect.dir/flags.make
+CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.o: src/eccezione.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/eccezione.cpp"
+
+CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/eccezione.cpp" > CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.i
+
+CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/eccezione.cpp" -o CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.s
+
+CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.o: CMakeFiles/Feild_Progect.dir/flags.make
+CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.o: src/alfiere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp"
+
+CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp" > CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.i
+
+CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp" -o CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.s
+
+CMakeFiles/Feild_Progect.dir/src/casella.cpp.o: CMakeFiles/Feild_Progect.dir/flags.make
+CMakeFiles/Feild_Progect.dir/src/casella.cpp.o: src/casella.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Feild_Progect.dir/src/casella.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feild_Progect.dir/src/casella.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/casella.cpp"
+
+CMakeFiles/Feild_Progect.dir/src/casella.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feild_Progect.dir/src/casella.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/casella.cpp" > CMakeFiles/Feild_Progect.dir/src/casella.cpp.i
+
+CMakeFiles/Feild_Progect.dir/src/casella.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/casella.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/casella.cpp" -o CMakeFiles/Feild_Progect.dir/src/casella.cpp.s
+
+CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.o: CMakeFiles/Feild_Progect.dir/flags.make
+CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.o: src/cavallo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/cavallo.cpp"
+
+CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/cavallo.cpp" > CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.i
+
+CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/cavallo.cpp" -o CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.s
+
+CMakeFiles/Feild_Progect.dir/src/pedone.cpp.o: CMakeFiles/Feild_Progect.dir/flags.make
+CMakeFiles/Feild_Progect.dir/src/pedone.cpp.o: src/pedone.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Feild_Progect.dir/src/pedone.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feild_Progect.dir/src/pedone.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pedone.cpp"
+
+CMakeFiles/Feild_Progect.dir/src/pedone.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feild_Progect.dir/src/pedone.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pedone.cpp" > CMakeFiles/Feild_Progect.dir/src/pedone.cpp.i
+
+CMakeFiles/Feild_Progect.dir/src/pedone.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/pedone.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pedone.cpp" -o CMakeFiles/Feild_Progect.dir/src/pedone.cpp.s
+
+CMakeFiles/Feild_Progect.dir/src/re.cpp.o: CMakeFiles/Feild_Progect.dir/flags.make
+CMakeFiles/Feild_Progect.dir/src/re.cpp.o: src/re.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Feild_Progect.dir/src/re.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feild_Progect.dir/src/re.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/re.cpp"
+
+CMakeFiles/Feild_Progect.dir/src/re.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feild_Progect.dir/src/re.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/re.cpp" > CMakeFiles/Feild_Progect.dir/src/re.cpp.i
+
+CMakeFiles/Feild_Progect.dir/src/re.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/re.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/re.cpp" -o CMakeFiles/Feild_Progect.dir/src/re.cpp.s
+
+CMakeFiles/Feild_Progect.dir/src/regina.cpp.o: CMakeFiles/Feild_Progect.dir/flags.make
+CMakeFiles/Feild_Progect.dir/src/regina.cpp.o: src/regina.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Feild_Progect.dir/src/regina.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feild_Progect.dir/src/regina.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/regina.cpp"
+
+CMakeFiles/Feild_Progect.dir/src/regina.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feild_Progect.dir/src/regina.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/regina.cpp" > CMakeFiles/Feild_Progect.dir/src/regina.cpp.i
+
+CMakeFiles/Feild_Progect.dir/src/regina.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/regina.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/regina.cpp" -o CMakeFiles/Feild_Progect.dir/src/regina.cpp.s
+
+CMakeFiles/Feild_Progect.dir/src/torre.cpp.o: CMakeFiles/Feild_Progect.dir/flags.make
+CMakeFiles/Feild_Progect.dir/src/torre.cpp.o: src/torre.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Feild_Progect.dir/src/torre.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feild_Progect.dir/src/torre.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/torre.cpp"
+
+CMakeFiles/Feild_Progect.dir/src/torre.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feild_Progect.dir/src/torre.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/torre.cpp" > CMakeFiles/Feild_Progect.dir/src/torre.cpp.i
+
+CMakeFiles/Feild_Progect.dir/src/torre.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feild_Progect.dir/src/torre.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/torre.cpp" -o CMakeFiles/Feild_Progect.dir/src/torre.cpp.s
+
 # Object files for target Feild_Progect
 Feild_Progect_OBJECTS = \
-"CMakeFiles/Feild_Progect.dir/src/main.cpp.o"
+"CMakeFiles/Feild_Progect.dir/src/main.cpp.o" \
+"CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.o" \
+"CMakeFiles/Feild_Progect.dir/src/computer.cpp.o" \
+"CMakeFiles/Feild_Progect.dir/src/umano.cpp.o" \
+"CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.o" \
+"CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.o" \
+"CMakeFiles/Feild_Progect.dir/src/casella.cpp.o" \
+"CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.o" \
+"CMakeFiles/Feild_Progect.dir/src/pedone.cpp.o" \
+"CMakeFiles/Feild_Progect.dir/src/re.cpp.o" \
+"CMakeFiles/Feild_Progect.dir/src/regina.cpp.o" \
+"CMakeFiles/Feild_Progect.dir/src/torre.cpp.o"
 
 # External object files for target Feild_Progect
 Feild_Progect_EXTERNAL_OBJECTS =
 
 Feild_Progect: CMakeFiles/Feild_Progect.dir/src/main.cpp.o
+Feild_Progect: CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.o
+Feild_Progect: CMakeFiles/Feild_Progect.dir/src/computer.cpp.o
+Feild_Progect: CMakeFiles/Feild_Progect.dir/src/umano.cpp.o
+Feild_Progect: CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.o
+Feild_Progect: CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.o
+Feild_Progect: CMakeFiles/Feild_Progect.dir/src/casella.cpp.o
+Feild_Progect: CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.o
+Feild_Progect: CMakeFiles/Feild_Progect.dir/src/pedone.cpp.o
+Feild_Progect: CMakeFiles/Feild_Progect.dir/src/re.cpp.o
+Feild_Progect: CMakeFiles/Feild_Progect.dir/src/regina.cpp.o
+Feild_Progect: CMakeFiles/Feild_Progect.dir/src/torre.cpp.o
 Feild_Progect: CMakeFiles/Feild_Progect.dir/build.make
 Feild_Progect: libalfiere.a
 Feild_Progect: libcavallo.a
@@ -110,7 +275,7 @@ Feild_Progect: libeccezione.a
 Feild_Progect: libscacchiera.a
 Feild_Progect: libumano.a
 Feild_Progect: CMakeFiles/Feild_Progect.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Feild_Progect"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Feild_Progect"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Feild_Progect.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

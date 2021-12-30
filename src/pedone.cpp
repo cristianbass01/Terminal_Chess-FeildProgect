@@ -1,4 +1,4 @@
-#include "./../../include/scacchiera.h"
+#include "./../include/scacchiera.h"
 #include "./../include/pedone.h"
 
 

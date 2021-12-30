@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/regina.dir/pezzi/src/regina.cpp.o"
+  "CMakeFiles/regina.dir/src/regina.cpp.o"
   "libregina.a"
   "libregina.pdb"
 )

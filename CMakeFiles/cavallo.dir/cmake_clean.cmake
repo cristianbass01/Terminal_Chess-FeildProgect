@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/cavallo.dir/pezzi/src/cavallo.cpp.o"
+  "CMakeFiles/cavallo.dir/src/cavallo.cpp.o"
   "libcavallo.a"
   "libcavallo.pdb"
 )

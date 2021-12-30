@@ -1,46 +1,57 @@
 cmake_minimum_required(VERSION 3.18.4)
 
-project(Feild_Progect)
 
+project(Feild_Progect)
 
 add_executable(${PROJECT_NAME}
 src/main.cpp
+src/scacchiera.cpp
+src/computer.cpp
+src/umano.cpp
+src/eccezione.cpp
+src/alfiere.cpp
+src/casella.cpp
+src/cavallo.cpp
+src/pedone.cpp
+src/re.cpp
+src/regina.cpp
+src/torre.cpp
 )
 
 include_directories(pezzi)
 
 add_library(alfiere
-pezzi/include/pezzo.h
-pezzi/include/alfiere.h
-pezzi/src/alfiere.cpp
+include/pezzo.h
+include/alfiere.h
+src/alfiere.cpp
 )
 
 add_library(cavallo
-pezzi/include/pezzo.h
-pezzi/include/cavallo.h
-pezzi/src/cavallo.cpp
+include/pezzo.h
+include/cavallo.h
+src/cavallo.cpp
 )
 
 add_library(pedone
-pezzi/include/pezzo.h    
-pezzi/include/pedone.h
-pezzi/src/pedone.cpp
+include/pezzo.h    
+include/pedone.h
+src/pedone.cpp
 )
 
 add_library(re
-pezzi/include/pezzo.h
-pezzi/include/re.h
-pezzi/src/re.cpp
+include/pezzo.h
+include/re.h
+src/re.cpp
 )
 add_library(regina
-pezzi/include/pezzo.h
-pezzi/include/regina.h
-pezzi/src/regina.cpp
+include/pezzo.h
+include/regina.h
+src/regina.cpp
 )
 add_library(torre
-pezzi/include/pezzo.h
-pezzi/include/torre.h
-pezzi/src/torre.cpp
+include/pezzo.h
+include/torre.h
+src/torre.cpp
 )
 
 add_library(casella

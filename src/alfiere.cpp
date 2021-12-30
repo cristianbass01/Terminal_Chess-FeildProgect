@@ -1,4 +1,4 @@
-#include "./../../include/scacchiera.h"
+#include "./../include/scacchiera.h"
 #include "./../include/alfiere.h"
 
 Alfiere::Alfiere(Casella posizione, Colore colore) {

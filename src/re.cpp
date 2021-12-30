@@ -1,4 +1,4 @@
-#include "./../../include/scacchiera.h"
+#include "./../include/scacchiera.h"
 #include "./../include/re.h"
 
 Re::Re(Casella posizione, Colore colore) { 

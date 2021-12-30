@@ -1,7 +1,7 @@
 #ifndef PEZZO_H
 #define PEZZO_H
 
-#include "./../../include/casella.h"
+#include "casella.h"
 
 class Scacchiera; // forward declaration
 

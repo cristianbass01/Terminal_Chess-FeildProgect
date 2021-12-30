@@ -1,4 +1,4 @@
-#include "./../../include/scacchiera.h"
+#include "./../include/scacchiera.h"
 #include "./../include/torre.h"
 
 Torre::Torre(Casella posizione, Colore colore) {

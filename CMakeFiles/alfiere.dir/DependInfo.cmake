@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/pezzi/src/alfiere.cpp" "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles/alfiere.dir/pezzi/src/alfiere.cpp.o"
+  "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp" "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/CMakeFiles/alfiere.dir/src/alfiere.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

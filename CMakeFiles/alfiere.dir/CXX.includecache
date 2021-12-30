@@ -6,3 +6,63 @@
 
 #IncludeRegexTransform: 
 
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/alfiere.h
+pezzo.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
+
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/casella.h
+eccezione.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/eccezione.h
+
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/cavallo.h
+pezzo.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
+
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/eccezione.h
+string
+-
+
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pedone.h
+pezzo.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
+
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
+casella.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/casella.h
+
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/re.h
+pezzo.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
+
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/regina.h
+pezzo.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
+
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/scacchiera.h
+iostream
+-
+pezzo.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
+alfiere.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/alfiere.h
+re.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/re.h
+regina.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/regina.h
+cavallo.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/cavallo.h
+torre.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/torre.h
+pedone.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pedone.h
+
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/torre.h
+pezzo.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
+
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp
+./../include/scacchiera.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/scacchiera.h
+./../include/alfiere.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/alfiere.h
+

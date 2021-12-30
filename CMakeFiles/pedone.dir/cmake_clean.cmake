@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/pedone.dir/pezzi/src/pedone.cpp.o"
+  "CMakeFiles/pedone.dir/src/pedone.cpp.o"
   "libpedone.a"
   "libpedone.pdb"
 )

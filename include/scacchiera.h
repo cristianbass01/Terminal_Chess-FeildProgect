@@ -3,13 +3,13 @@
 
 #include <iostream>
 
-#include "./../pezzi/include/pezzo.h"
-#include "./../pezzi/include/alfiere.h"
-#include "./../pezzi/include/re.h"
-#include "./../pezzi/include/regina.h"
-#include "./../pezzi/include/cavallo.h"
-#include "./../pezzi/include/torre.h"
-#include "./../pezzi/include/pedone.h"
+#include "pezzo.h"
+#include "alfiere.h"
+#include "re.h"
+#include "regina.h"
+#include "cavallo.h"
+#include "torre.h"
+#include "pedone.h"
 
 class Scacchiera {
   public:

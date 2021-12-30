@@ -1,4 +1,4 @@
-#include "./../../include/scacchiera.h"
+#include "./../include/scacchiera.h"
 #include "./../include/regina.h"
 
 Regina::Regina(Casella posizione, Colore colore) {
