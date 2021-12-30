@@ -27,3 +27,11 @@ Con CMake
 Per Cinel  C:\Users\Giovanni Cinel\Desktop\Università\Laboratorio di programmazione\Feild Progect\Feild_Progect
 
 Per Gianluca C:\Users\Gianluca\Documents\GitHub\Feild_Progect
+
+Per compilare da terminale senza CMake:
+- Con Linux: 
+$ g++ src/*.cpp
+$ ./a.out
+- Con Windows
+$ g++ src/*.cpp
+$ .\a.out
