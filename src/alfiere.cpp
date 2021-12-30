@@ -14,11 +14,11 @@ bool Alfiere::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   //calcolo di delta riga e delta colonna
   int delta_riga = posizione_.get_riga() - posizione_finale.get_riga();
   int delta_colonna = posizione_.get_colonna() - posizione_finale.get_colonna();
-
+  
   //verifica che non ci sia una pedina dello stesso colore nella posizione finale
-  if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
-    return false;
-
+  if(scacchiera.get_casella(posizione_finale) != nullptr)
+    if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
+      return false;
   //temp_*** sono variabili temporanee che consentono di determinare di quanto si è spostato 
   //fin adesso l'alfiere
   int temp_driga;
@@ -35,12 +35,14 @@ bool Alfiere::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
     temp_dcolonna = delta_colonna +1;
   
   //verifica che le posizioni in diagonale tra posizione finale e inziale siano libere
-  Casella temp_casella;
+  Casella temp_casella(0,0);
   while(temp_dcolonna != 0){
     //crea una casella (richiesto per poter utilizzare scacchiera.get_casella())
+    std::cout<<"arrivato"<<std::endl;
     temp_casella.set_colonna(posizione_.get_colonna() + temp_dcolonna);
+    std::cout<<"arrivato"<<std::endl;
     temp_casella.set_riga(posizione_.get_riga() + temp_driga);
-
+    std::cout<<"arrivato"<<std::endl;
     //verifica che non ci siano pedine in mezzo alla diagonale di movimento
     if(scacchiera.get_casella(temp_casella) != nullptr )
       return false;
@@ -55,7 +57,6 @@ bool Alfiere::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
     else
       temp_dcolonna++;
   }
-
   //calcolo del modulo di delta_riga e delta_colonna
   if( delta_colonna < 0)
     delta_colonna *= -1; 
