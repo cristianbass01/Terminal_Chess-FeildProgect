@@ -38,11 +38,8 @@ bool Alfiere::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   Casella temp_casella(0,0);
   while(temp_dcolonna != 0 && temp_driga != 0){
     //crea una casella (richiesto per poter utilizzare scacchiera.get_casella())
-    std::cout<<"arrivato"<<std::endl;
     temp_casella.set_colonna(posizione_.get_colonna() + temp_dcolonna);
-    std::cout<<"arrivato"<<std::endl;
     temp_casella.set_riga(posizione_.get_riga() + temp_driga);
-    std::cout<<"arrivato"<<std::endl;
     //verifica che non ci siano pedine in mezzo alla diagonale di movimento
     if(scacchiera.get_casella(temp_casella) != nullptr )
       return false;

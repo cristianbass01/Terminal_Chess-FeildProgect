@@ -5,16 +5,28 @@
 int main() {
   Scacchiera test;
   test.stampa();
-  std::cout<< "Gianluchino"<<std::endl;
   Casella cavallo(0,1);  
   Casella cavallo1(2,2);
-  if(test.mossa(cavallo, cavallo1))
-    std::cout<<"cazzo"<<std::endl;
-  else
-    std::cout<< "Gianluchino"<<std::endl;
+  test.mossa(cavallo, cavallo1);
+  std::cout << "\n";
+
+  test.mossa(Casella(7,1), Casella(5,2));
   test.stampa();
-  Casella alfiere(0,2);  
-  Casella alfiere1(3,5);
+  std::cout << "\n";
+
+  test.mossa(Casella(5,2), Casella(3,3));
+  test.stampa();
+  std::cout << "\n";
+  
+
+  test.mossa(Casella(3,3), Casella(1,4));
+  test.stampa();
+  std::cout << "\n";
+
+
+  Casella alfiere(0,5);  
+  Casella alfiere1(1,4);
   test.mossa(alfiere, alfiere1);
   test.stampa();
+  std::cout << "\n";
 }

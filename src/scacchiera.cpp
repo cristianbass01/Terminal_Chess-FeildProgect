@@ -76,12 +76,8 @@ bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
     Re_scelto = Re_nero; **/ 
   for(int i = 0; i < RIGHE ; i++){
     for(int j = 0; j< COLONNE ; j++){
-      std::cout<< i;
-      std::cout<< j<<std::endl;
       if(scacchiera[i][j] != nullptr){
-        std::cout<< "entrato"<<std::endl;
         if(((*(scacchiera[i][j])).get_colore() != colore && (*(scacchiera[i][j])).mossa_valida((*Re_scelto).get_posizione(), *this))){
-           std::cout<< i<<" "<< j<<std::endl;
           return true;
         }
       }
@@ -105,7 +101,6 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
       return false;
     }
-    std::cout<<"sgs";
     if(pezzo_mangiato != nullptr) {
       delete pezzo_mangiato;
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
