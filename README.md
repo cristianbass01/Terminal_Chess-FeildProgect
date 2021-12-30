@@ -18,7 +18,7 @@ Da un qualsiasi file cpp con VSCode
 - Per compilare facilmente da Visual Studio Code usare ctrl + shift + B
 - Per lanciare direttamente senza dover prima compilare usare ctrl + F5
 - Per debuggare facilmente da Visual Studio Code premere F5
-- Entrambi creano un file eseguibile chiamato test all'interno della cartella build
+- Entrambi creano un file eseguibile chiamato Feild_Progect all'interno della cartella build
 
 Con CMake
 1) Andare sulla cartella Feild_Progect e da terminale $cmake -S . -B ./build
