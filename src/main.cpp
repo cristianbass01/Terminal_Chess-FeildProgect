@@ -5,7 +5,6 @@
 
 int main() {
   Scacchiera test;
-  test.stampa();
   /*
   Casella cavallo(0,1);  
   Casella cavallo1(2,2);
@@ -33,12 +32,18 @@ int main() {
   std::cout << "\n";
   */
 
-  Umano giocatore_1(&test, Pezzo::Colore::bianco);
-  Umano giocatore_2(&test, Pezzo::Colore::nero);
+  bool colore = static_cast<bool>(rand() % 2); //scelta randomica dei colori dei giocatori
+  Umano giocatore_1(&test, static_cast<Pezzo::Colore>(colore));
+  Umano giocatore_2(&test, static_cast<Pezzo::Colore>(!colore));
 
-  giocatore_1.gioca();
-  giocatore_2.gioca();
-  giocatore_1.gioca(); 
+  if(!colore) // se giocatore 1 ha i neri, allora faccio giocare prima giocatore 2
+    giocatore_2.gioca();
+  
+  while(true) // da gestire controllo scaccomatto e patta
+  {
+    giocatore_1.gioca();
+    giocatore_2.gioca();
+  }
 
   return 0;
 }
