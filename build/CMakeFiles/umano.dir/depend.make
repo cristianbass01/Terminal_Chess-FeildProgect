@@ -5,6 +5,7 @@ CMakeFiles/umano.dir/src/umano.cpp.o: ../include/alfiere.h
 CMakeFiles/umano.dir/src/umano.cpp.o: ../include/casella.h
 CMakeFiles/umano.dir/src/umano.cpp.o: ../include/cavallo.h
 CMakeFiles/umano.dir/src/umano.cpp.o: ../include/eccezione.h
+CMakeFiles/umano.dir/src/umano.cpp.o: ../include/giocatore.h
 CMakeFiles/umano.dir/src/umano.cpp.o: ../include/pedone.h
 CMakeFiles/umano.dir/src/umano.cpp.o: ../include/pezzo.h
 CMakeFiles/umano.dir/src/umano.cpp.o: ../include/re.h

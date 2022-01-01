@@ -50,12 +50,14 @@ CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/alfiere.h
 CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/casella.h
 CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/cavallo.h
 CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/eccezione.h
+CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/giocatore.h
 CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/pedone.h
 CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/pezzo.h
 CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/re.h
 CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/regina.h
 CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/scacchiera.h
 CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/torre.h
+CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../include/umano.h
 CMakeFiles/Feild_Progect.dir/src/main.cpp.o: ../src/main.cpp
 
 CMakeFiles/Feild_Progect.dir/src/pedone.cpp.o: ../include/alfiere.h
@@ -122,6 +124,7 @@ CMakeFiles/Feild_Progect.dir/src/umano.cpp.o: ../include/alfiere.h
 CMakeFiles/Feild_Progect.dir/src/umano.cpp.o: ../include/casella.h
 CMakeFiles/Feild_Progect.dir/src/umano.cpp.o: ../include/cavallo.h
 CMakeFiles/Feild_Progect.dir/src/umano.cpp.o: ../include/eccezione.h
+CMakeFiles/Feild_Progect.dir/src/umano.cpp.o: ../include/giocatore.h
 CMakeFiles/Feild_Progect.dir/src/umano.cpp.o: ../include/pedone.h
 CMakeFiles/Feild_Progect.dir/src/umano.cpp.o: ../include/pezzo.h
 CMakeFiles/Feild_Progect.dir/src/umano.cpp.o: ../include/re.h

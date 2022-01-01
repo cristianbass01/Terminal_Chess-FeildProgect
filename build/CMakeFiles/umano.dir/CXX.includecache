@@ -22,6 +22,10 @@ pezzo.h
 string
 -
 
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/giocatore.h
+scacchiera.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/scacchiera.h
+
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pedone.h
 pezzo.h
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
@@ -63,6 +67,8 @@ pezzo.h
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/umano.h
 scacchiera.h
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/scacchiera.h
+giocatore.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/giocatore.h
 
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/umano.cpp
 iostream

@@ -51,12 +51,14 @@ CMakeFiles/Feild_Progect.dir/src/main.cpp.o
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/casella.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/cavallo.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/eccezione.h
+ /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/giocatore.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pedone.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/re.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/regina.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/scacchiera.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/torre.h
+ /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/umano.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/main.cpp
 CMakeFiles/Feild_Progect.dir/src/pedone.cpp.o
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/alfiere.h
@@ -123,6 +125,7 @@ CMakeFiles/Feild_Progect.dir/src/umano.cpp.o
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/casella.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/cavallo.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/eccezione.h
+ /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/giocatore.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pedone.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
  /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/re.h

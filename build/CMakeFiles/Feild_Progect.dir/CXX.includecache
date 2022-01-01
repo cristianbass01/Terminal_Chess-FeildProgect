@@ -71,6 +71,8 @@ pezzo.h
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/umano.h
 scacchiera.h
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/scacchiera.h
+giocatore.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/giocatore.h
 
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp
 ./../include/scacchiera.h
@@ -92,15 +94,13 @@ scacchiera.h
 ./../include/computer.h
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/computer.h
 
-/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/eccezione.cpp
-./../include/eccezione.h
-/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/eccezione.h
-
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/main.cpp
 iostream
 -
 ./../include/scacchiera.h
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/scacchiera.h
+./../include/umano.h
+/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/umano.h
 
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pedone.cpp
 ./../include/scacchiera.h
