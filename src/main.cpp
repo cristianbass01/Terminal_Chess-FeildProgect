@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "./../include/scacchiera.h"
+#include "./../include/umano.h"
 
 int main() {
   Scacchiera test;
@@ -29,4 +30,11 @@ int main() {
   test.mossa(alfiere, alfiere1);
   test.stampa();
   std::cout << "\n";
+
+  Umano giocatore_1(&test, Pezzo::Colore::bianco);
+  Umano giocatore_2(&test, Pezzo::Colore::nero);
+
+  giocatore_1.gioca();
+  giocatore_2.gioca();
+  giocatore_1.gioca();
 }

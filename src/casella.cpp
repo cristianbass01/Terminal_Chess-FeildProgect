@@ -1,37 +1,37 @@
 #include "./../include/casella.h"
 
-Casella::Casella(int r, int c){
-  if((r<0 || r>7) || (c<0 || c>7)) throw Eccezione("[Eccezione::CasellaErrata] Casella fuori dalla scacchiera");
+Casella::Casella(int riga, int colonna){
+  if((riga<0 || riga>7) || (colonna<0 || colonna>7)) throw Eccezione("[Eccezione::CasellaErrata] Casella fuori dalla scacchiera");
   else{
-    riga = r;
-    colonna = c;
+    riga_ = riga;
+    colonna_ = colonna;
   }
 }
 
-Casella::Casella(const Casella& pos) : riga{pos.riga}, colonna{pos.colonna} {}
+Casella::Casella(const Casella& pos) : riga_{pos.riga_}, colonna_{pos.colonna_} {}
 
-void Casella::set_riga(int r){
-  if(r<0 || r>7) throw Eccezione("[Eccezione::CasellaErrata] Casella fuori dalla scacchiera");
+void Casella::set_riga(int riga){
+  if(riga<0 || riga>7) throw Eccezione("[Eccezione::CasellaErrata] Casella fuori dalla scacchiera");
   else
-    riga = r;
+    riga_ = riga;
 }
     
 Casella& Casella::operator=(const Casella& pos){
-  riga = pos.riga;
-  colonna = pos.colonna;
+  riga_ = pos.riga_;
+  colonna_ = pos.colonna_;
   return *this;
 }
 
-void Casella::set_colonna(int c){
-  if(c<0 || c>7) throw Eccezione("[Eccezione::CasellaErrata] Casella fuori dalla scacchiera");
+void Casella::set_colonna(int colonna){
+  if(colonna<0 || colonna>7) throw Eccezione("[Eccezione::CasellaErrata] Casella fuori dalla scacchiera");
   else
-    colonna = c;
+    colonna_ = colonna;
 }
 
-void Casella::set(int r, int c){
-  if((r<0 || r>7) || (c<0 || c>7)) throw Eccezione("[Eccezione::CasellaErrata] Casella fuori dalla scacchiera");
+void Casella::set(int riga, int colonna){
+  if((riga<0 || riga>7) || (colonna<0 || colonna>7)) throw Eccezione("[Eccezione::CasellaErrata] Casella fuori dalla scacchiera");
   else{
-    riga = r;
-    colonna = c;
+    riga_ = riga;
+    colonna_ = colonna;
   }
 }

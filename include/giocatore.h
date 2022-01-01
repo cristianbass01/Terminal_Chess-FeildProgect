@@ -4,8 +4,8 @@
 #include "scacchiera.h"
 
 class Giocatore{
-  private:
-    Scacchiera scacchiera_;
+  protected:
+    Scacchiera* scacchiera_;
     Pezzo::Colore colore_;
     
   public:

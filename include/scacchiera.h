@@ -25,10 +25,7 @@ class Scacchiera {
     Pezzo* get_casella(Casella posizione);
 
     bool controllo_scacco(Pezzo::Colore colore);
-
-    enum class Colonne {
-      A ,B ,C, D, E, F, G, H
-    };
+    
   private:
     Pezzo* scacchiera[RIGHE][COLONNE]; //CONTROLLARE CHE SIA GIUSTO
 
