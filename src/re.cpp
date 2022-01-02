@@ -11,5 +11,18 @@ Re::Re(Casella posizione, Colore colore) {
 }
 
 bool Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
-  return false;
+  //calcolo di delta riga e delta colonna
+  int delta_riga = posizione_finale.get_riga() - posizione_.get_riga();
+  int delta_colonna = posizione_finale.get_colonna() - posizione_.get_colonna();
+  
+  //verifica che non ci sia una pedina dello stesso colore nella posizione finale
+  if(scacchiera.get_casella(posizione_finale) != nullptr)
+    if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
+      return false;
+  
+  //verifico che il re si sposti in una delle caselle adiacenti
+  if(abs(delta_riga) > 1 || abs(delta_colonna) > 1)
+    return false;
+
+  return true;
 }
