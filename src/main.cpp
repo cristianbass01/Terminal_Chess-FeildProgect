@@ -6,7 +6,7 @@
 int main() {
   Scacchiera test;
 
-  /**Casella cavallo(0,1);  
+  Casella cavallo(0,1);  
   Casella cavallo1(2,2);
   test.mossa(cavallo, cavallo1);
   std::cout << "\n";
@@ -30,7 +30,7 @@ int main() {
   //test.mossa(alfiere, alfiere1);
   test.stampa();
   std::cout << "\n";
-  **/
+  
 
   
   bool colore = static_cast<bool>(rand() % 2); //scelta randomica dei colori dei giocatori
@@ -45,6 +45,5 @@ int main() {
     giocatore_1.gioca();
     giocatore_2.gioca();
   }
-  **/
   return 0;
 }
