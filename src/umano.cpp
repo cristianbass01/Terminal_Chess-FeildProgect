@@ -5,6 +5,7 @@
 Umano::Umano(Scacchiera* scacchiera, Pezzo::Colore colore){
   scacchiera_ = scacchiera;
   colore_ = colore;
+  colore_avversario_ = colore_ == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
 }
 
 void Umano::gioca(){
@@ -70,6 +71,13 @@ void Umano::gioca(){
         }
       }
     }
+  }
+  if(scacchiera_.scaccomatto(colore_avversario_)){
+    std::cout << "Scacco matto!! " << std::endl;
+    std::cout << "Giocatore ";
+    colore_ == Pezzo::Colore::bianco ? std::cout << "bianco (minuscole) " : std::cout << "nero (maiuscole) ";
+    std::cout << " ha vinto!" << std::endl;
+    
   }
 }
 
