@@ -56,6 +56,11 @@ Scacchiera::Scacchiera() {
 }
 
 void Scacchiera::stampa() {
+  /* 
+  la stampa avviene in modo specchiato rispetto a com'è veramente fatta la matrice 
+  ciò consente di poter utilizzare le righe e le colonne passate dal giocatore umano
+  direttamente nella matrice modificandole di un offset
+  */
   for(int i = RIGHE - 1; i >= 0; i--) {
     std::cout<<i + 1<<' ';
     for(int j = 0; j < COLONNE; j++) {
@@ -70,19 +75,20 @@ void Scacchiera::stampa() {
 }
 
 Pezzo* Scacchiera::get_casella(Casella posizione){
+  //ritorna puntatore a pezzo salvato nella casella passata
   return (scacchiera[posizione.get_riga()][posizione.get_colonna()]);
 }
 
 bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
+  //re_scelto è un puntatore che punta al re del colore avversario
   Pezzo* re_scelto;
-  colore == Pezzo::Colore::bianco ?  re_scelto = re_bianco : re_scelto = re_nero; 
-  /**if(colore == Pezzo::Colore::bianco)
-    Re_scelto = Re_bianco;
-  else
-    Re_scelto = Re_nero; **/ 
+  colore == Pezzo::Colore::bianco ?  re_scelto = re_bianco : re_scelto = re_nero;  
+
+  //verifica che nessun pezzo presente sulla scacchiera possa mangiare il re 
   for(int i = 0; i < RIGHE ; i++){
     for(int j = 0; j< COLONNE ; j++){
-      if(scacchiera[i][j] != nullptr){
+      if(scacchiera[i][j] != nullptr){ //se si ha un pezzo in questa posizione
+        //se il pezzo ha colore avversario viene chiamato il metodo mossa valida con posizione di re 
         if(((*(scacchiera[i][j])).get_colore() != colore && (*(scacchiera[i][j])).mossa_valida((*re_scelto).get_posizione(), *this))){
           return true;
         }
