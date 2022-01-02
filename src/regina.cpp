@@ -2,8 +2,11 @@
 #include "./../include/regina.h"
 
 Regina::Regina(Casella posizione, Colore colore) {
+  //inizializzate variabili membro ereditate da pezzo
   posizione_ = posizione;
   colore_ = colore;
+
+  //inizializzata figura sulla base del colore del pezzo
   if(colore_ == Colore::nero)
     figura_ = 'D';
   else 

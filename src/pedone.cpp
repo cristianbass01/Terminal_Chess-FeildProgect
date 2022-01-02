@@ -3,8 +3,11 @@
 
 
 Pedone::Pedone(Casella posizione, Colore colore) { 
+  //inizializzate variabili membro ereditate da pezzo
   posizione_ = posizione;
   colore_ = colore;
+
+  //inizializzata figura sulla base del colore del pezzo
   if(colore == Colore::nero)
     figura_ = 'P';
   else

@@ -2,8 +2,11 @@
 #include "./../include/alfiere.h"
 
 Alfiere::Alfiere(Casella posizione, Colore colore) {
+  //inizializzate variabili membro ereditate da pezzo
   colore_ = colore;
   posizione_ = posizione;
+
+  //inizializzata figura sulla base del colore del pezzo
   if(colore == Colore::nero)
     figura_ = 'A';
   else
