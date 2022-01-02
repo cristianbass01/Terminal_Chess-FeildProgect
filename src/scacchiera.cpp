@@ -111,14 +111,14 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   try{
     mossa_valida = pezzo_mosso->mossa(posizione_fin, *(this));
   }
-  catch(const Eccezione e){
+  catch(Eccezione e){
     if((e.errore()).compare("[Eccezione::EnPassant]") == 0) //gestisce l'en passant 
     {
       en_passant = true;
     }
   }
     
-  if(mossa_valida) {
+  if(mossa_valida || en_passant) {
     scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
     scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
     if(en_passant){
@@ -131,9 +131,11 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       if(en_passant){
         scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
         scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+        static_cast<Pedone*>(pezzo_mangiato)->en_passant_valid_ = true;
       }
       else
         scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+      std::cout << "Questa mossa mette sotto scacco il tuo Re" << std::endl;
       return false;
     }
     if(pezzo_mangiato != nullptr) {
@@ -146,5 +148,5 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
 }
 
 bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
-
+  return false;
 }

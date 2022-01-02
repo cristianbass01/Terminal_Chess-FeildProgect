@@ -10,11 +10,12 @@ bool Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) { //metodo che spos
       return true;
     }
   }
-  catch(const Eccezione e)
+  catch(Eccezione e)
   {
     if((e.errore()).compare("[Eccezione::EnPassant]") == 0) //gestisce l'en passant 
       posizione_ = posizione;
     throw Eccezione("[Eccezione::EnPassant]");
+
   }
   return false;
 }

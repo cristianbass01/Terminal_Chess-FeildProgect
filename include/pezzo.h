@@ -7,7 +7,7 @@ class Scacchiera; // forward declaration
 
 class Pezzo { //classe virtuale pura
   public:
-    bool mossa(Casella posizione, Scacchiera& scacchiera); //metodo che sposta il pezzo
+    virtual bool mossa(Casella posizione, Scacchiera& scacchiera); //metodo che sposta il pezzo
 
     virtual bool mossa_valida(Casella posizione, Scacchiera& scacchiera) = 0; //metodo virtuale puro che controlla se la mossa è valida
     char get_figura() { return figura_; }
