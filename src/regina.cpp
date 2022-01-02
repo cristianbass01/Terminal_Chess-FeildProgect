@@ -32,7 +32,7 @@ bool Regina::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
         verso = 1;
       else
         verso = -1;
-      for(int i = verso; i < delta_riga ; i += verso){
+      for(int i = verso; abs(i) < abs(delta_riga) ; i += verso){
         if(scacchiera.get_casella(Casella(posizione_.get_riga() + i, posizione_.get_colonna())) != nullptr )
           return false;
       }
@@ -44,7 +44,7 @@ bool Regina::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
         verso = 1;
       else
         verso = -1;
-      for(int i = verso; i < delta_colonna ; i += verso){
+      for(int i = verso; abs(i) < abs(delta_colonna) ; i += verso){
         if(scacchiera.get_casella(Casella(posizione_.get_riga() , posizione_.get_colonna() + i)) != nullptr )
           return false;
       }
