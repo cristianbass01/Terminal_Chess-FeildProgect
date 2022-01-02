@@ -9,5 +9,8 @@ class Pedone : public Pezzo {
   public:
     Pedone(Casella posizione, Colore colore);
     bool mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
+
+  private:
+    bool en_passant_valid_;
 };
 #endif // PEDONE_H
