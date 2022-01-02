@@ -20,7 +20,7 @@ bool Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
     if((posizione_finale.get_colonna() == posizione_.get_colonna()) && (scacchiera.get_casella(posizione_finale) == nullptr)) // colonna uguale (non mangia pezzi)
       return true;
     else if((abs(posizione_finale.get_colonna() - posizione_.get_colonna()) == 1) && (scacchiera.get_casella(posizione_finale) != nullptr)) // si sposta di una colonna e una riga e mangia
-      return true;
+      return true; // da gestire en passant
   }
   else if(posizione_finale.get_riga() == posizione_.get_riga() + (indice_colore * 2)) // si sposta di due righe
   {
