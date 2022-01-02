@@ -25,10 +25,9 @@ int main() {
   std::cout << "\n";
 
 
-  Casella alfiere(0,5);  
-  Casella alfiere1(1,4);
-  test.mossa(alfiere, alfiere1);
-  test.mossa(Casella(0,3), Casella(1,4));
+  //Casella alfiere(0,5);  
+  //Casella alfiere1(1,4);
+  //test.mossa(alfiere, alfiere1);
   test.stampa();
   std::cout << "\n";
   **/
@@ -46,6 +45,6 @@ int main() {
     giocatore_1.gioca();
     giocatore_2.gioca();
   }
-  
+  **/
   return 0;
 }
