@@ -72,12 +72,12 @@ void Umano::gioca(){
       }
     }
   }
-  if(scacchiera_.scaccomatto(colore_avversario_)){
-    std::cout << "Scacco matto!! " << std::endl;
-    std::cout << "Giocatore ";
-    colore_ == Pezzo::Colore::bianco ? std::cout << "bianco (minuscole) " : std::cout << "nero (maiuscole) ";
-    std::cout << " ha vinto!" << std::endl;
-    
+  if(scacchiera_->scaccomatto(colore_avversario_)){
+    std::string messaggio_vittoria =  "Scacco matto!! " + '\n';
+    messaggio_vittoria +=  "Giocatore ";
+    colore_ == Pezzo::Colore::bianco ? messaggio_vittoria +=  "bianco (minuscole) " : messaggio_vittoria +=  "nero (maiuscole) ";
+    messaggio_vittoria += " ha vinto!";
+    throw Eccezione(messaggio_vittoria);
   }
 }
 
