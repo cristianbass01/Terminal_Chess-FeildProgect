@@ -105,21 +105,43 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
 
   Pezzo* pezzo_mosso = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
   Pezzo* pezzo_mangiato = scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()];
-  if(pezzo_mosso->mossa(posizione_fin, *(this))) {
+  
+  bool mossa_valida = false;;
+  bool en_passant = false;
+  try{
+    mossa_valida = pezzo_mosso->mossa(posizione_fin, *(this));
+  }
+  catch(const Eccezione e){
+    if((e.errore()).compare("[Eccezione::EnPassant]") == 0) //gestisce l'en passant 
+    {
+      en_passant = true;
+    }
+  }
+    
+  if(mossa_valida) {
     scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
     scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
+    if(en_passant){
+      pezzo_mangiato = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()];
+      scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = nullptr;
+    }
     if(controllo_scacco(pezzo_mosso->get_colore())){
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
-      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+      pezzo_mosso->set_posizione(posizione_in);
+      if(en_passant){
+        scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+      }
+      else
+        scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
       return false;
     }
     if(pezzo_mangiato != nullptr) {
       delete pezzo_mangiato;
-      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
     }
-
     return true;
   }
+  
   return false;
 }
 

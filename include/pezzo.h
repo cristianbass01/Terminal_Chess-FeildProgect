@@ -18,7 +18,8 @@ class Pezzo { //classe virtuale pura
     
     Pezzo::Colore get_colore() { return colore_; }
     Casella get_posizione() {return posizione_; }
-
+    void set_posizione(Casella posizione) {posizione_ = posizione;}
+    
   protected:
     //classe casella che contiene riga e colonna
     Casella posizione_;
