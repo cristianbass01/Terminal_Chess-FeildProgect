@@ -37,7 +37,7 @@ int main() {
   Umano giocatore_1(&test, static_cast<Pezzo::Colore>(colore));
   Umano giocatore_2(&test, static_cast<Pezzo::Colore>(!colore));
 
-  if(!colore) // se giocatore 1 ha i neri, allora faccio giocare prima giocatore 2
+  if(colore) // se giocatore 1 ha i neri, allora faccio giocare prima giocatore 2
     giocatore_2.gioca();
   
   while(true) // da gestire controllo scaccomatto e patta
