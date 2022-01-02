@@ -25,12 +25,14 @@ class Scacchiera {
     Pezzo* get_casella(Casella posizione);
 
     bool controllo_scacco(Pezzo::Colore colore);
+
+    bool scaccomatto(Pezzo::Colore colore);
     
   private:
     Pezzo* scacchiera[RIGHE][COLONNE]; //CONTROLLARE CHE SIA GIUSTO
 
-    Pezzo* Re_nero;
-    Pezzo* Re_bianco;
+    Pezzo* re_nero;
+    Pezzo* re_bianco;
 };
 
 

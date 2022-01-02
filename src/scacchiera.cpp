@@ -22,8 +22,11 @@ Scacchiera::Scacchiera() {
 
   scacchiera[0][3] = new Regina(Casella(0,3),Pezzo::Colore::bianco);
   scacchiera[0][4] = new Re(Casella(0,4),Pezzo::Colore::bianco);
-  Re_bianco = scacchiera[0][4];
 
+  //inizializzazione variabile Re_bianco
+  re_bianco = scacchiera[0][4];
+
+  //inizializzazione di pedoni bianchi
   constexpr int RIGA_PEDONI_BIANCHI = 1;
   for(int i = 0; i < COLONNE; i++) {
     scacchiera[RIGA_PEDONI_BIANCHI][i] = new Pedone(Casella(RIGA_PEDONI_BIANCHI, i), Pezzo::Colore::bianco);
@@ -41,8 +44,11 @@ Scacchiera::Scacchiera() {
 
   scacchiera[7][3] = new Regina(Casella(7,3),Pezzo::Colore::nero);
   scacchiera[7][4] = new Re(Casella(7,4),Pezzo::Colore::nero);
-  Re_nero = scacchiera[7][4];
 
+  //inizializzazione variabile di scacchiera che contiene posizione del re nero
+  re_nero = scacchiera[7][4];
+
+  //inizializzazione pedoni neri
   constexpr int RIGA_PEDONI_NERI = 6;
   for(int i = 0; i < COLONNE; i++) {
     scacchiera[RIGA_PEDONI_NERI][i] = new Pedone(Casella(RIGA_PEDONI_NERI, i), Pezzo::Colore::nero);
@@ -68,8 +74,8 @@ Pezzo* Scacchiera::get_casella(Casella posizione){
 }
 
 bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
-  Pezzo* Re_scelto;
-  colore == Pezzo::Colore::bianco ?  Re_scelto = Re_bianco : Re_scelto = Re_nero; 
+  Pezzo* re_scelto;
+  colore == Pezzo::Colore::bianco ?  re_scelto = re_bianco : re_scelto = re_nero; 
   /**if(colore == Pezzo::Colore::bianco)
     Re_scelto = Re_bianco;
   else
@@ -77,7 +83,7 @@ bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
   for(int i = 0; i < RIGHE ; i++){
     for(int j = 0; j< COLONNE ; j++){
       if(scacchiera[i][j] != nullptr){
-        if(((*(scacchiera[i][j])).get_colore() != colore && (*(scacchiera[i][j])).mossa_valida((*Re_scelto).get_posizione(), *this))){
+        if(((*(scacchiera[i][j])).get_colore() != colore && (*(scacchiera[i][j])).mossa_valida((*re_scelto).get_posizione(), *this))){
           return true;
         }
       }
@@ -109,4 +115,8 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
     return true;
   }
   return false;
+}
+
+bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
+
 }
