@@ -7,24 +7,17 @@ class Scacchiera; // forward declaration
 
 class Pezzo { //classe virtuale pura
   public:
-    bool mossa(Casella posizione, Scacchiera& scacchiera) { //metodo che sposta il pezzo
-      if((posizione.get_colonna() == posizione_.get_colonna() ) && (posizione.get_riga() == posizione_.get_riga()))
-        return false;
-      if(mossa_valida(posizione, scacchiera)) {
-        posizione_ = posizione;
-        return true;
-      }
-      return false;
-    }
+    bool mossa(Casella posizione, Scacchiera& scacchiera); //metodo che sposta il pezzo
 
     virtual bool mossa_valida(Casella posizione, Scacchiera& scacchiera) = 0; //metodo virtuale puro che controlla se la mossa è valida
     char get_figura() { return figura_; }
+    
     enum class Colore {
       bianco, nero        // bianco=0, nero=1
     };
     
-    Pezzo::Colore get_colore(){ return colore_; }
-    Casella get_posizione() {return posizione_;}
+    Pezzo::Colore get_colore() { return colore_; }
+    Casella get_posizione() {return posizione_; }
 
   protected:
     //classe casella che contiene riga e colonna
