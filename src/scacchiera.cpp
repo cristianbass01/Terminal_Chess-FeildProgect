@@ -157,8 +157,9 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
     
     if(pezzo_mangiato != nullptr) {
       delete pezzo_mangiato;
-      // azzerare contatore mosse perchè viene mangiato un pezzo, lo azzero dandogli come valore -1 
-      // in quanto questa mossa verrà contata
+      
+      // bisogna azzerare contatore mosse perchè viene mangiato un pezzo, 
+      //lo si pone a -1 perchè successivamente verrà incrementato di 1 o posto a 0
       conta_mosse = -1;
 
       //il pezzo che è stato mangiato viene rimosso dal rispettivo vettore pezzi_***
