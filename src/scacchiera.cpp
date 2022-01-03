@@ -150,14 +150,17 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       }
       else
         scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+      
+      //cout da implementare con try and catch
       std::cout << "Questa mossa mette sotto scacco il tuo Re" << std::endl;
+      
       return false;
     }
     //se pezzo mosso è pedone azzero il contatore mosse
     
     if(pezzo_mangiato != nullptr) {
       delete pezzo_mangiato;
-      
+
       // bisogna azzerare contatore mosse perchè viene mangiato un pezzo, 
       //lo si pone a -1 perchè successivamente verrà incrementato di 1 o posto a 0
       conta_mosse = -1;
