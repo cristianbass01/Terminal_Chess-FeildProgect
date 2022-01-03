@@ -32,6 +32,21 @@ Per compilare da terminale senza CMake:
 - Con Linux: 
 $ g++ src/*.cpp
 $ ./a.out
+
 - Con Windows
 $ g++ src/*.cpp
-$ .\a.out
+$ .\a.exe
+
+idee utili:
+implementare un vector contenenti i pezzi non mangiati per controllo patta, controllo scacco e scaccomatto
+implementare una mappa entry per controllo scacchiera per patta
+per lo scacco ritornare un vettore con tutte le posizioni che il pezzo passa per dare scacco (per lo scaccomatto)
+implementare un contatore di mosse dall'ultimo oggetto mangiato dentro if(pezzo mangiato != nullpter)
+utilizzare il vector di pezzi per controllare se ogni pezzo possa fare almeno una mossa (per lo stallo) per controllare le mosse servono funzioni a parte per ogni classe (senno diventa lento e inutile) basta controllare le caselle vicine per la maggior parte.
+
+per il pareggio per insufficienza di materiale avrò 
+- re + alfiere vs re
+- re + alfiere o cavallo vs re con alfiere o cavallo
+- re + 2 cavalli vs re (o re con 2 cavalli)
+
+richiesta di patta con due lettere dopo la mossa PP
