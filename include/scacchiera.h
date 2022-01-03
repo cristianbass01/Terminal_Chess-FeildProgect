@@ -2,6 +2,7 @@
 #define SCACCHIERA_H
 
 #include <iostream>
+#include <vector>
 
 #include "pezzo.h"
 #include "alfiere.h"
@@ -27,10 +28,19 @@ class Scacchiera {
     bool controllo_scacco(Pezzo::Colore colore);
 
     bool scaccomatto(Pezzo::Colore colore);
+
+    
     
   private:
-    Pezzo* scacchiera[RIGHE][COLONNE]; //CONTROLLARE CHE SIA GIUSTO
+    //matrice che contiene i puntatori ai singoli pezzi e rappresenta la scacchiera
+    //posizione in matrice -> posizione scacchiera - 1
+    Pezzo* scacchiera[RIGHE][COLONNE]; 
 
+    //vector contenente i puntatori a tutti i pezzi ancora presenti nella scacchiera
+    std::vector<Pezzo*> pezzi_neri;
+    std::vector<Pezzo*> pezzi_bianchi;
+
+    //puntatori ai due re (servono nello scacco)
     Pezzo* re_nero;
     Pezzo* re_bianco;
 };

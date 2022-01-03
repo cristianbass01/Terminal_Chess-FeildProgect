@@ -5,7 +5,15 @@
 
 int main() {
   Scacchiera test;
+  /*
+  for(Pezzo* t: test.pezzi_bianchi)
+    std::cout<<t->get_figura();
+  std::cout<<std::endl<<std::endl;
 
+  for(Pezzo* t: test.pezzi_neri)
+    std::cout<<t->get_figura();
+  std::cout<<std::endl;
+  */
   Casella cavallo(0,1);  
   Casella cavallo1(2,2);
   test.mossa(cavallo, cavallo1);

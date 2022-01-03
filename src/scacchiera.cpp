@@ -32,6 +32,12 @@ Scacchiera::Scacchiera() {
     scacchiera[RIGA_PEDONI_BIANCHI][i] = new Pedone(Casella(RIGA_PEDONI_BIANCHI, i), Pezzo::Colore::bianco);
   }
 
+  //inizializzazione vettore contenente i pezzi bianchi ancora vivi
+  for(int i = 0; i < COLONNE; i++) {
+    for(int j = 0; j < 2; j++)
+      pezzi_bianchi.push_back(scacchiera[j][i]);   
+  }  
+
   //inizializzazione vari puntatori caselle nere
   scacchiera[7][0] = new Torre(Casella(7,0),Pezzo::Colore::nero);
   scacchiera[7][7] = new Torre(Casella(7,7),Pezzo::Colore::nero);
@@ -53,6 +59,12 @@ Scacchiera::Scacchiera() {
   for(int i = 0; i < COLONNE; i++) {
     scacchiera[RIGA_PEDONI_NERI][i] = new Pedone(Casella(RIGA_PEDONI_NERI, i), Pezzo::Colore::nero);
   }
+
+  //inizializzazione vettore contenente i pezzi neri ancora vivi
+  for(int i = 0; i < COLONNE; i++) {
+    for(int j = 7; j > 5; j--)
+      pezzi_neri.push_back(scacchiera[j][i]);   
+  }  
 }
 
 void Scacchiera::stampa() {
