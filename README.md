@@ -55,3 +55,7 @@ per il pareggio per insufficienza di materiale avrò
 - re vs re
 
 richiesta di patta con due lettere dopo la mossa PP
+
+
+quando realizziamo il metodo della promozione ricordiamo di modi
+ficare anche i vector pezzi_bianchi e pezzi_neri

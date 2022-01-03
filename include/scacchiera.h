@@ -2,7 +2,8 @@
 #define SCACCHIERA_H
 
 #include <iostream>
-#include <vector>
+#include <vector> //incluso per utilizzare vector in pezzi_bianchi e pezzi_neri
+#include <algorithm> //incluso per poter utilizzare l'algoritmo find 
 
 #include "pezzo.h"
 #include "alfiere.h"

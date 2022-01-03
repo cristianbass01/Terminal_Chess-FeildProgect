@@ -155,7 +155,13 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
     if(pezzo_mangiato != nullptr) {
       delete pezzo_mangiato;
       // azzerare contatore mosse 
-      // togliere il pezzo mangiato da vector
+      
+
+      //il pezzo che è stato mangiato viene rimosso dal rispettivo vettore pezzi_***
+      if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
+        pezzi_bianchi.erase(std::find(pezzi_bianchi.begin(), pezzi_bianchi.end(), pezzo_mangiato));
+      if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
+        pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pezzo_mangiato));
     }
     return true;
   }
