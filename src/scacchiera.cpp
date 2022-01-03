@@ -182,6 +182,11 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   return false;
 }
 
+void Scacchiera::completa_arrocco(Casella posizione_in, Casella posizione_fin){
+  scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
+  scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
+}
+
 bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
   return false;
 }

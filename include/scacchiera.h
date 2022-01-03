@@ -30,7 +30,9 @@ class Scacchiera {
 
     bool scaccomatto(Pezzo::Colore colore);
 
-    int get_conta_mosse(){ return conta_mosse;}    
+    int get_conta_mosse(){ return conta_mosse;}
+
+    void completa_arrocco(Casella posizione_in, Casella posizione_fin); 
     
     
   private:
