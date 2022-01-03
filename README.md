@@ -59,3 +59,13 @@ richiesta di patta con due lettere dopo la mossa PP
 
 quando realizziamo il metodo della promozione ricordiamo di modi
 ficare anche i vector pezzi_bianchi e pezzi_neri
+
+ci mancano:
+- scaccomatto
+- patta 
+- computer
+- capire se eccezioni c++ serve
+- commentare
+- fare delete finale di tutti gli oggetti usati
+- "Nel caso di partite tra due computer, dovete fissare un numero massimo di mosse, oltre il quale la partita è considerata nulla."
+- arrocco
