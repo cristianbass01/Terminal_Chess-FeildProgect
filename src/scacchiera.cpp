@@ -127,6 +127,13 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
     mossa_valida = pezzo_mosso->mossa(posizione_fin, *(this));
   }
   catch(Eccezione e){
+    if((e.errore()).compare("[Eccezione::Arrocco_valido]") == 0) //gestisce l'arrocco' 
+    {
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
+      return true;
+    }
+
     if((e.errore()).compare("[Eccezione::EnPassant]") == 0) //gestisce l'en passant 
     {
       en_passant = true;
@@ -171,7 +178,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
 
     //se il pezzo mosso è un re blocco la possibilità di fare l'arrocco
     if(tolower(pezzo_mosso->get_figura()) == 'r' || tolower(pezzo_mosso->get_figura()) == 't')
-      pezzo_mosso->invalido_arrocco();
+      static_cast<Torre*>(pezzo_mosso)->invalido_arrocco();
     //se muovo un pedone azzero il contatore delle mosse
     if(tolower(pezzo_mosso->get_figura()) == 'p')
       conta_mosse = 0;
@@ -179,13 +186,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       conta_mosse++;
     return true;
   }
-  
   return false;
-}
-
-void Scacchiera::completa_arrocco(Casella posizione_in, Casella posizione_fin){
-  scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
-  scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
 }
 
 bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
