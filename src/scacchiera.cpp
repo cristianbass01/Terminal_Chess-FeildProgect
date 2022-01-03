@@ -138,8 +138,12 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       std::cout << "Questa mossa mette sotto scacco il tuo Re" << std::endl;
       return false;
     }
+    //se pezzo mosso è pedone azzero il contatore mosse
+    
     if(pezzo_mangiato != nullptr) {
       delete pezzo_mangiato;
+      // azzerare contatore mosse 
+      // togliere il pezzo mangiato da vector
     }
     return true;
   }
