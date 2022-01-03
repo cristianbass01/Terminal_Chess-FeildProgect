@@ -44,6 +44,9 @@ class Scacchiera {
     //puntatori ai due re (servono nello scacco)
     Pezzo* re_nero;
     Pezzo* re_bianco;
+
+    //contatore delle mosse in cui non si muove un pedone ne si mangia un pezzo
+    int conta_mosse;
 };
 
 

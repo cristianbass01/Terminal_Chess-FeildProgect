@@ -64,7 +64,10 @@ Scacchiera::Scacchiera() {
   for(int i = 0; i < COLONNE; i++) {
     for(int j = 7; j > 5; j--)
       pezzi_neri.push_back(scacchiera[j][i]);   
-  }  
+  } 
+
+  //inizializzo a 0 il contatore delle mosse
+  conta_mosse = 0; 
 }
 
 void Scacchiera::stampa() {
@@ -154,8 +157,9 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
     
     if(pezzo_mangiato != nullptr) {
       delete pezzo_mangiato;
-      // azzerare contatore mosse 
-      
+      // azzerare contatore mosse perchè viene mangiato un pezzo, lo azzero dandogli come valore -1 
+      // in quanto questa mossa verrà contata
+      conta_mosse = -1;
 
       //il pezzo che è stato mangiato viene rimosso dal rispettivo vettore pezzi_***
       if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
@@ -163,6 +167,12 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
         pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pezzo_mangiato));
     }
+
+    //se muovo un pedone azzero il contatore delle mosse
+    if(tolower(pezzo_mosso->get_figura()) == 'p')
+      conta_mosse = 0;
+    else
+      conta_mosse++;
     return true;
   }
   
