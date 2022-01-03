@@ -168,6 +168,9 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pezzo_mangiato));
     }
 
+    //se il pezzo mosso è un re blocco la possibilità di fare l'arrocco
+    if(tolower(pezzo_mosso->get_figura()) == 'r' || tolower(pezzo_mosso->get_figura()) == 't')
+      pezzo_mosso->invalido_arrocco();
     //se muovo un pedone azzero il contatore delle mosse
     if(tolower(pezzo_mosso->get_figura()) == 'p')
       conta_mosse = 0;
