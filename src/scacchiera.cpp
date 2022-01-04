@@ -233,4 +233,5 @@ std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){
         v.push_back(Casella(i,j));
     }
   }
+  return v;
 }

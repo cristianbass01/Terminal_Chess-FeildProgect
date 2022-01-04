@@ -31,7 +31,7 @@ class Scacchiera {
     bool scaccomatto(Pezzo::Colore colore);
 
     int get_conta_mosse(){ return conta_mosse;} 
-    
+
     std::vector<Casella> mosse_possibili(Casella posizione_pezzo);
     
   private:
@@ -54,7 +54,6 @@ class Scacchiera {
     //lo fa di default a donna
     void promuovi();
 
-    std::vector<Casella> mosse_possibili(Casella posizione_pezzo);
 };
 
 
