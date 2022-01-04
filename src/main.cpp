@@ -32,6 +32,17 @@ int main() {
   test.stampa();
   std::cout << "\n";
 
+  test.mossa(Casella(1,1), Casella(3,1));
+  test.stampa();
+  std::cout << "\n";
+
+  test.mossa(Casella(0,3), Casella(1,4));
+  test.stampa();
+  std::cout << "\n";
+
+  test.mossa(Casella(0,2), Casella(2,0));
+  test.stampa();
+  std::cout << "\n";
 
   //Casella alfiere(0,5);  
   //Casella alfiere1(1,4);
