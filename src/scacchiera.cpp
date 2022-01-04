@@ -121,8 +121,9 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   Pezzo* pezzo_mosso = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
   Pezzo* pezzo_mangiato = scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()];
   
-  bool mossa_valida = false;;
+  bool mossa_valida = false;
   bool en_passant = false;
+  bool arrocco_valido = false;
   try{
     mossa_valida = pezzo_mosso->mossa(posizione_fin, *(this));
   }
@@ -133,13 +134,13 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
       return true;
     }
-
     if((e.errore()).compare("[Eccezione::EnPassant]") == 0) //gestisce l'en passant 
     {
       en_passant = true;
     }
   }
-    
+
+
   if(mossa_valida || en_passant) {
     scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
     scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
