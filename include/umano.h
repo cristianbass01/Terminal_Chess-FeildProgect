@@ -10,7 +10,7 @@ class Umano : public Giocatore{
   public:
     Umano(Scacchiera*, Pezzo::Colore);
     void gioca();
-
+    bool ricevuta_richiesta_patta();
     void combinazioni();
 };
 
