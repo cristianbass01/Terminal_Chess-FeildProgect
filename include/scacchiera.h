@@ -32,6 +32,7 @@ class Scacchiera {
 
     int get_conta_mosse(){ return conta_mosse;} 
     
+    std::vector<Casella> mosse_possibili(Casella posizione_pezzo);
     
   private:
     //matrice che contiene i puntatori ai singoli pezzi e rappresenta la scacchiera
@@ -52,6 +53,8 @@ class Scacchiera {
     //metodo che verifica se è possibile promuovere qualche pedone e in caso sia possibile
     //lo fa di default a donna
     void promuovi();
+
+    std::vector<Casella> mosse_possibili(Casella posizione_pezzo);
 };
 
 
