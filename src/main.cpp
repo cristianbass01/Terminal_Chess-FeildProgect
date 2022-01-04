@@ -5,6 +5,7 @@
 
 int main() {
   Scacchiera test;
+  std::cout<<test.stringa_per_mappa()<<std::endl;
   /*
   for(Pezzo* t: test.pezzi_bianchi)
     std::cout<<t->get_figura();

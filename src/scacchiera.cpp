@@ -249,6 +249,7 @@ std::string Scacchiera::stringa_per_mappa() {
       if(pezzo_corrente == nullptr)
         temp.push_back(' ');
       else {
+        /*
         //caso in cui il pezzo da inserire è un pedone bianco
         if(pezzo_corrente->get_figura() == 'p') {
           if(static_cast<Pedone*>(pezzo_corrente)->en_passant_valid_)
@@ -295,6 +296,55 @@ std::string Scacchiera::stringa_per_mappa() {
             temp.push_back('G');
           else
             temp.push_back(pezzo_corrente->get_figura());
+        }
+        */
+
+        switch(pezzo_corrente->get_figura()) {
+          case 'p': //caso di pedone bianco
+            if(static_cast<Pedone*>(pezzo_corrente)->en_passant_valid_)
+              temp.push_back('f');
+            else
+              temp.push_back(pezzo_corrente->get_figura());
+            break;
+          
+          case 'P': //caso di pedone nero
+            if(static_cast<Pedone*>(pezzo_corrente)->en_passant_valid_)
+              temp.push_back('F');
+            else
+              temp.push_back(pezzo_corrente->get_figura());
+            break;
+
+          case 'r': //caso di re bianco
+            if(static_cast<Re*>(pezzo_corrente)->get_arrocco_valido())
+              temp.push_back('k');
+            else
+              temp.push_back(pezzo_corrente->get_figura());
+            break;
+          
+          case 'R': //caso di re nero
+            if(static_cast<Re*>(pezzo_corrente)->get_arrocco_valido())
+              temp.push_back('K');
+            else
+              temp.push_back(pezzo_corrente->get_figura());
+            break;
+          
+          case 't': //caso di torre bianca
+            if(static_cast<Torre*>(pezzo_corrente)->get_arrocco_valido())
+              temp.push_back('g');
+            else
+              temp.push_back(pezzo_corrente->get_figura());
+            break;
+
+          case 'T': //caso di torre nera
+            if(static_cast<Torre*>(pezzo_corrente)->get_arrocco_valido())
+              temp.push_back('G');
+            else
+              temp.push_back(pezzo_corrente->get_figura());
+            break;
+          
+          default:  //tutti i casi che non sono quelli precedenti (donna, alfiere e cavallo)
+            temp.push_back(pezzo_corrente->get_figura());
+            break;
         }
       }
     }
