@@ -56,9 +56,7 @@ int main() {
   Umano giocatore_1(&test, static_cast<Pezzo::Colore>(colore));
   Umano giocatore_2(&test, static_cast<Pezzo::Colore>(!colore));
 
-  bool patta = false;
-  bool scaccomatto = false;
-  bool stallo = false;
+  std::string fine_partita = "";
   Pezzo::Colore vincitore;
 
   try{
@@ -68,24 +66,35 @@ int main() {
   catch(Eccezione e){
     if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0)
       giocatore_1.ricevuta_richiesta_patta();
+    
+    if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione scaccomatto 
+        fine_partita = "Abbandono";
+        vincitore = giocatore_2.get_colore();
+    }
   }
 
-  while(!scaccomatto && !patta)
+  while(fine_partita.size() == 0)
   {
     try{
       giocatore_1.gioca();
     }
     catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
-        patta = giocatore_2.ricevuta_richiesta_patta();
+        if(giocatore_2.ricevuta_richiesta_patta())
+          fine_partita = "Patta";
 
       if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto 
-        scaccomatto = true;
+        fine_partita = "Scaccomatto";
         vincitore = giocatore_1.get_colore();
+      }
+
+      if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione scaccomatto 
+        fine_partita = "Abbandono";
+        vincitore = giocatore_2.get_colore();
       }
     }
 
-    if(scaccomatto || patta)
+    if(fine_partita.size() != 0)
       break;
 
     try
@@ -95,16 +104,22 @@ int main() {
     catch(Eccezione e)
     {
       if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
-        patta = giocatore_1.ricevuta_richiesta_patta();
+        if(giocatore_1.ricevuta_richiesta_patta())
+          fine_partita = "Patta";
 
       if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto 
-        scaccomatto = true;
+        fine_partita = "Scaccomatto";
+        vincitore = giocatore_2.get_colore();
+      }
+
+      if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione scaccomatto 
+        fine_partita = "Abbandono";
         vincitore = giocatore_1.get_colore();
       }
     }
   }
 
-  if(scaccomatto){
+  if(fine_partita.compare("Scaccomatto") == 0){
     std::cout << std::endl;
     std::cout << "***************************************************************" << std::endl;
     if(vincitore == Pezzo::Colore::bianco)
@@ -117,10 +132,27 @@ int main() {
     std::cout << std::endl;
   }
 
-  if(patta){
+  if(fine_partita.compare("Patta") == 0){
     std::cout << std::endl;
     std::cout << "***************************************************************" << std::endl;
     std::cout << "*       La partita si è conclusa con una patta                *" << std::endl;
+    std::cout << "***************************************************************" << std::endl;
+    std::cout << std::endl;
+  }
+
+  if(fine_partita.compare("Abbandono") == 0){
+    std::cout << std::endl;
+    std::cout << "***************************************************************" << std::endl;
+    std::cout << "*       La partita si è conclusa con un abbandono             *" << std::endl;
+    if(vincitore == Pezzo::Colore::bianco){
+      std::cout << "*       Il giocatore nero ha abbandonato                      *" << std::endl;
+      std::cout << "*       Complimenti giocatore bianco!!                        *" << std::endl;
+    }
+    else{
+      std::cout << "*       Il giocatore bianco ha abbandonato                    *" << std::endl;
+      std::cout << "*       Complimenti giocatore nero!!                          *" << std::endl;
+    }
+    std::cout << "*       Hai vinto la partita                                  *" << std::endl;
     std::cout << "***************************************************************" << std::endl;
     std::cout << std::endl;
   }
