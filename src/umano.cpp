@@ -35,7 +35,7 @@ void Umano::gioca(){
       if(mossa.compare("he lp") == 0) // Il giocatore vuole vedere le combinazioni disponibili
         combinazioni();
       else if(mossa.compare("ff ff") == 0) // Il giocatore vuole terminare la partita
-        throw Eccezione("--> Partita terminata per abbandono giocatore");
+        throw Eccezione("[Eccezione::Abbandono]");
       else if(mossa.compare("xx xx") == 0) // Il giocatore vuole vedere la scacchiera
         scacchiera_->stampa();
       else{
