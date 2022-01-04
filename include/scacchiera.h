@@ -2,7 +2,7 @@
 #define SCACCHIERA_H
 
 #include <iostream>
-#include <vector> //incluso per utilizzare vector in pezzi_bianchi e pezzi_neri
+#include <vector> 
 #include <algorithm> //incluso per poter utilizzare l'algoritmo find 
 
 #include "pezzo.h"
@@ -32,7 +32,16 @@ class Scacchiera {
 
     int get_conta_mosse(){ return conta_mosse;} 
 
+    //restituisce un vettore contentente le mosse possibili che può fare il pezzo che si
+    //trova nella posizione da indicare "posizione_pezzo"
     std::vector<Casella> mosse_possibili(Casella posizione_pezzo);
+
+    //restituisce una stringa da utilizzare nella mappa che contiene le varie disposizioni
+    //della scacchiera durante la partita
+    //pedone che può fare enpassant viene etichettato come F(P nero) e f(p bianco)
+    //torre che può fare arrocco viene etichettata come G(T nera) e g(t bianca)
+    //re che può fare arrocco viene etichettata come K(R nero) e k(r bianco)
+    std::string stringa_per_mappa();
     
   private:
     //matrice che contiene i puntatori ai singoli pezzi e rappresenta la scacchiera

@@ -10,6 +10,7 @@ class Re : public Pezzo {
     Re(Casella posizione, Colore color);
     bool mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
     void invalido_arrocco(){ arrocco_valido = false; } 
+    bool get_arrocco_valido() { return arrocco_valido; }
     
   private:
     bool arrocco_valido;

@@ -224,6 +224,7 @@ void Scacchiera::promuovi() {
   }
 }
 
+
 std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){
   std::vector<Casella> v;
   for(int i = 0; i < RIGHE; i++) {
@@ -234,4 +235,69 @@ std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){
     }
   }
   return v;
+}
+//restituisce una stringa da utilizzare nella mappa che contiene le varie disposizioni
+    //della scacchiera durante la partita
+    //pedone che può fare enpassant viene etichettato come F(P nero) e f(p bianco)
+    //torre che può fare arrocco viene etichettata come G(T nera) e g(t bianca)
+    //re che può fare arrocco viene etichettata come K(R nero) e k(r bianco)
+std::string Scacchiera::stringa_per_mappa() {
+  std::string temp = "";
+  for(int i = 0; i < RIGHE; i++) {
+    for(int j = 0; j < COLONNE; j++) {
+      Pezzo* pezzo_corrente = scacchiera[i][j];
+      if(pezzo_corrente == nullptr)
+        temp.push_back(' ');
+      else {
+        //caso in cui il pezzo da inserire è un pedone bianco
+        if(pezzo_corrente->get_figura() == 'p') {
+          if(static_cast<Pedone*>(pezzo_corrente)->en_passant_valid_)
+            temp.push_back('f');
+          else
+            temp.push_back(pezzo_corrente->get_figura());
+        }
+
+        //caso in cui il pezzo da inserire è il pedone nero
+        if(pezzo_corrente->get_figura() == 'P') {
+          if(static_cast<Pedone*>(pezzo_corrente)->en_passant_valid_)
+            temp.push_back('F');
+          else
+            temp.push_back(pezzo_corrente->get_figura());
+        }
+
+        //caso in cui il pezzo da inserire è un re bianco
+        if(pezzo_corrente->get_figura() == 'r') {
+          if(static_cast<Re*>(pezzo_corrente)->get_arrocco_valido())
+            temp.push_back('k');
+          else
+            temp.push_back(pezzo_corrente->get_figura());
+        }
+
+        //caso in cui il pezzo da inserire è un re nero
+        if(pezzo_corrente->get_figura() == 'R') {
+          if(static_cast<Re*>(pezzo_corrente)->get_arrocco_valido())
+            temp.push_back('K');
+          else
+            temp.push_back(pezzo_corrente->get_figura());
+        }
+
+        //caso in cui il pezzo da inserire è un torre bianca
+        if(pezzo_corrente->get_figura() == 't') {
+          if(static_cast<Torre*>(pezzo_corrente)->get_arrocco_valido())
+            temp.push_back('g');
+          else
+            temp.push_back(pezzo_corrente->get_figura());
+        }
+
+        //caso in cui il pezzo da inserire è un torre nera
+        if(pezzo_corrente->get_figura() == 'T') {
+          if(static_cast<Torre*>(pezzo_corrente)->get_arrocco_valido())
+            temp.push_back('G');
+          else
+            temp.push_back(pezzo_corrente->get_figura());
+        }
+      }
+    }
+  }
+  return temp;
 }
