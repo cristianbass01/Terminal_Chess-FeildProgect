@@ -5,7 +5,7 @@
 #include "./../include/umano.h"
 
 int main() {
-  char e_accentata = 'è';
+  char e_accentata = 0x00F7;
   Scacchiera test;
   std::cout<<test.stringa_per_mappa()<<std::endl;
   /*
