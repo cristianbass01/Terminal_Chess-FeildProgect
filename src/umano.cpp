@@ -94,6 +94,8 @@ void Umano::gioca(){
   if(scacchiera_->scaccomatto(colore_avversario_)){
     throw Eccezione("[Eccezione::Scaccomatto]");
   }
+  if(scacchiera_->get_conta_mosse() >= 50)
+    throw Eccezione("[Eccezione::Patta_5]");
 }
 
 void Umano::combinazioni(){
