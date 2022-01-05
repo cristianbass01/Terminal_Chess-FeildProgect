@@ -46,6 +46,9 @@ class Scacchiera {
     //re che può fare arrocco viene etichettata come K(R nero) e k(r bianco)
     std::string stringa_per_mappa();
     
+    //controllo che il giocatore colore non sia in stallo
+    bool stallo(Pezzo::Colore colore);
+
   private:
     //matrice che contiene i puntatori ai singoli pezzi e rappresenta la scacchiera
     //posizione in matrice -> posizione scacchiera - 1

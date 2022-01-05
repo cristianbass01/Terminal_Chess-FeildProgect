@@ -325,3 +325,19 @@ std::string Scacchiera::stringa_per_mappa() {
   }
   return temp;
 }
+
+bool Scacchiera::stallo(Pezzo::Colore colore){
+  if(colore == Pezzo::Colore::bianco)
+  {
+    for(int i = 0; i<pezzi_bianchi.size(); i++)
+      if((mosse_possibili(pezzi_bianchi[i]->get_posizione())).size() != 0)
+        return false;
+        
+  }
+  else{
+    for(int i = 0; i<pezzi_neri.size(); i++)
+      if((mosse_possibili(pezzi_neri[i]->get_posizione())).size() != 0)
+        return false;
+  }
+  return true;
+}

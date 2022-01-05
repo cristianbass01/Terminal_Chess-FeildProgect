@@ -64,6 +64,8 @@ ci mancano:
 - scaccomatto
 - patta 
 - computer
+- log
+- replay
 - capire se eccezioni c++ serve
 - commentare
 - fare delete finale di tutti gli oggetti usati

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string.h>
 
 #include "./../include/scacchiera.h"
 #include "./../include/umano.h"
@@ -15,6 +16,7 @@ int main() {
     std::cout<<t->get_figura();
   std::cout<<std::endl;
   */
+
   Casella cavallo(0,1);  
   Casella cavallo1(2,2);
   test.mossa(cavallo, cavallo1);
@@ -65,8 +67,9 @@ int main() {
       giocatore_2.gioca();
   }
   catch(Eccezione e){
-    if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0)
-      giocatore_1.ricevuta_richiesta_patta();
+      if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
+        if(giocatore_2.ricevuta_richiesta_patta())
+          fine_partita = "Patta_Accordo";
     
     if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione scaccomatto 
         fine_partita = "Abbandono";
@@ -80,16 +83,28 @@ int main() {
       giocatore_1.gioca();
     }
     catch(Eccezione e){
+      if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
+        fine_partita = "Patta_Stallo";
+
       if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
         if(giocatore_2.ricevuta_richiesta_patta())
-          fine_partita = "Patta";
+          fine_partita = "Patta_Accordo";
 
-      if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto 
+      if((e.errore()).compare("[Eccezione::Patta_Materiale]") == 0) // gestione patta per materiale insufficiente NON FATTA
+        fine_partita = "Patta_Insufficienza di materiale";
+      
+      if((e.errore()).compare("[Eccezione::Patta_Posizione]") == 0) // gestione patta posizione ripetuta NON FATTA
+        fine_partita = "Patta_Posizione ripetuta";
+
+      if((e.errore()).compare("[Eccezione::Patta_Mosse]") == 0) // gestione patta
+        fine_partita = "Patta_Gioco fermo (mosse)";
+
+      if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto NON FATTA
         fine_partita = "Scaccomatto";
         vincitore = giocatore_1.get_colore();
       }
 
-      if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione scaccomatto 
+      if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione abbandono partita
         fine_partita = "Abbandono";
         vincitore = giocatore_2.get_colore();
       }
@@ -104,9 +119,21 @@ int main() {
     }
     catch(Eccezione e)
     {
+      if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
+        fine_partita = "Patta_Stallo";
+
       if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
-        if(giocatore_1.ricevuta_richiesta_patta())
-          fine_partita = "Patta";
+        if(giocatore_2.ricevuta_richiesta_patta())
+          fine_partita = "Patta_Accordo";
+
+      if((e.errore()).compare("[Eccezione::Patta_Materiale]") == 0) // gestione patta per materiale insufficiente
+        fine_partita = "Patta_Insufficienza di materiale";
+      
+      if((e.errore()).compare("[Eccezione::Patta_Posizione]") == 0) // gestione patta posizione ripetuta
+        fine_partita = "Patta_Posizione ripetuta";
+
+      if((e.errore()).compare("[Eccezione::Patta_Mosse]") == 0) // gestione patta
+        fine_partita = "Patta_Gioco fermo (mosse)";
 
       if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto 
         fine_partita = "Scaccomatto";
@@ -133,10 +160,17 @@ int main() {
     std::cout << std::endl;
   }
 
-  if(fine_partita.compare("Patta") == 0){
+  if((fine_partita.substr(0,4)).compare("Patta") == 0){
+    int const FRASE_PIU_LUNGA =  strlen("Patta_Insufficienza di materiale");
+    for(int i = fine_partita.size(); i< FRASE_PIU_LUNGA; i++)
+      fine_partita += " ";
+    
     std::cout << std::endl;
     std::cout << "***************************************************************" << std::endl;
     std::cout << "*       La partita si è conclusa con una patta                *" << std::endl;
+    std::cout << "*       causa: ";
+    std::cout << fine_partita.substr(6);
+    std::cout << "               *" << std::endl;
     std::cout << "***************************************************************" << std::endl;
     std::cout << std::endl;
   }
