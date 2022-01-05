@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector> 
 #include <algorithm> //incluso per poter utilizzare l'algoritmo find 
+#include <list>
+#include <fstream>
 
 #include "pezzo.h"
 #include "alfiere.h"
@@ -19,6 +21,7 @@ class Scacchiera {
     static constexpr int RIGHE = 8;
 
     Scacchiera();
+    ~Scacchiera();
 
     void stampa(); //stampa la scacchiera
 
@@ -62,6 +65,9 @@ class Scacchiera {
     //metodo che verifica se è possibile promuovere qualche pedone e in caso sia possibile
     //lo fa di default a donna
     void promuovi();
+
+    //lista contentente le mosse fatte durante tutta la partita
+    std::list<std::string> log_mosse;
 
 };
 

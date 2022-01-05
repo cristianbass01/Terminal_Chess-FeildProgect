@@ -70,6 +70,20 @@ Scacchiera::Scacchiera() {
   conta_mosse = 0; 
 }
 
+Scacchiera::~Scacchiera() {
+  std::ofstream documento; 
+  documento.open("log.txt"); // apertura/creazione del file
+  if(!documento )  // non è riuscito ad aprire il file (errore)
+    return;
+  
+  //realizzazione del log della partita
+  for(std::string s : log_mosse) {
+    documento<<s;
+  }
+
+  documento.close();
+}
+
 void Scacchiera::stampa() {
   /* 
   la stampa avviene in modo specchiato rispetto a com'è veramente fatta la matrice 
@@ -190,7 +204,17 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       conta_mosse++;
 
     //effettua promozione dei pedoni a donna se possibile
-    //promuovi();
+    promuovi();
+
+    //inserimento mossa nel log generando una stringa che indica la mossa
+    std::string mossa_testuale;
+    mossa_testuale.append(1, posizione_in.get_riga()+1+'0');
+    mossa_testuale.append(1, posizione_in.get_colonna()+'A');
+    mossa_testuale.append(1, ' ');
+    mossa_testuale.append(1, posizione_fin.get_riga()+1+'0');
+    mossa_testuale.append(1, posizione_fin.get_colonna()+'A');
+    mossa_testuale.append(1, '\n');
+    log_mosse.push_back(mossa_testuale);
     
     return true;
   }
