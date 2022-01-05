@@ -12,6 +12,7 @@ class Umano : public Giocatore{
     void gioca();
     bool ricevuta_richiesta_patta();
     void combinazioni();
+    bool richiesta_patta();
 };
 
 #endif // UMANO_H

@@ -12,6 +12,10 @@ void Umano::gioca(){
 
   if(scacchiera_->stallo(colore_)) //controlla che il giocatore non sia in stallo
     throw Eccezione("[Eccezione::Patta_Stallo]");
+  
+  if(scacchiera_->get_ripetizioni_scacchiera() >= 3)
+    if(richiesta_patta())
+      throw Eccezione("[Eccezione::Patta_Posizione]");
 
   bool done = false; //mossa eseguita correttamente
 
@@ -62,6 +66,8 @@ void Umano::gioca(){
               std::cout << "--> Mossa eseguita" << std::endl;
               if(mossa.size() == 8){
                 if(mossa[6] == 'p' && mossa[7] == 'p'){
+                  if(scacchiera_->get_ripetizioni_scacchiera() >= 3)
+                    throw Eccezione("[Eccezione::Patta_Posizione]");
                   std::cout << "--> Richiesta di patta inviata all'altro giocatore" << std::endl;
                   throw Eccezione("[Eccezione::Richiesta_Patta]");
                 }
@@ -97,8 +103,13 @@ void Umano::gioca(){
   if(scacchiera_->scaccomatto(colore_avversario_)){
     throw Eccezione("[Eccezione::Scaccomatto]");
   }
+
   if(scacchiera_->get_conta_mosse() >= 50)
     throw Eccezione("[Eccezione::Patta_Mosse]");
+
+  if(scacchiera_->get_ripetizioni_scacchiera() >= 3)
+    if(richiesta_patta())
+      throw Eccezione("[Eccezione::Patta_Posizione]");
 }
 
 void Umano::combinazioni(){
@@ -125,6 +136,20 @@ bool Umano::ricevuta_richiesta_patta(){
     colore_ == Pezzo::Colore::bianco ? std::cout << "bianco (minuscole) " : std::cout << "nero (maiuscole) ";
     std::cout << std::endl;
     std::cout << "--> Il giocatore avversario ha chiesto di fare patta, acconsenti? Y/n" << std::endl;
+    std::string riga_risposta;
+    getline(std::cin, riga_risposta);
+    risposta = tolower(riga_risposta[0]);
+    if(risposta == 'y')
+      return true;
+  }
+  while(risposta != 'n');
+  return false;
+}
+
+bool Umano::richiesta_patta(){
+  char risposta;
+  do{
+    std::cout << "--> Posizione ripetuta per più di 3 volte, vuoi concludere la partita con una patta? Y/n" << std::endl;
     std::string riga_risposta;
     getline(std::cin, riga_risposta);
     risposta = tolower(riga_risposta[0]);

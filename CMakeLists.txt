@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.18.4)
 
 project(Feild_Progect)
 
-add_executable(${PROJECT_NAME}
+add_executable(scacchiera
 src/main.cpp
 src/scacchiera.cpp
 src/computer.cpp

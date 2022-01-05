@@ -94,10 +94,10 @@ int main() {
       if((e.errore()).compare("[Eccezione::Patta_Materiale]") == 0) // gestione patta per materiale insufficiente NON FATTA
         fine_partita = "Patta_Insufficienza di materiale";
       
-      if((e.errore()).compare("[Eccezione::Patta_Posizione]") == 0) // gestione patta posizione ripetuta NON FATTA
+      if((e.errore()).compare("[Eccezione::Patta_Posizione]") == 0) // gestione patta posizione ripetuta
         fine_partita = "Patta_Posizione ripetuta";
 
-      if((e.errore()).compare("[Eccezione::Patta_Mosse]") == 0) // gestione patta
+      if((e.errore()).compare("[Eccezione::Patta_Mosse]") == 0) // gestione patta mossa
         fine_partita = "Patta_Gioco fermo (mosse)";
 
       if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto NON FATTA

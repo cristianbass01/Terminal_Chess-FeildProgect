@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector> 
 #include <algorithm> //incluso per poter utilizzare l'algoritmo find 
+#include <map>
 #include <list>
 #include <fstream>
 
@@ -49,6 +50,10 @@ class Scacchiera {
     //controllo che il giocatore colore non sia in stallo
     bool stallo(Pezzo::Colore colore);
 
+    //gestione mappa
+    void inserisci_scacchiera();
+    int get_ripetizioni_scacchiera();
+
   private:
     //matrice che contiene i puntatori ai singoli pezzi e rappresenta la scacchiera
     //posizione in matrice -> posizione scacchiera - 1
@@ -69,6 +74,8 @@ class Scacchiera {
     //lo fa di default a donna
     void promuovi();
 
+    //mappa per tener conto delle volte in cui una posizione si ripete
+    std::map<std::string, int> mappa_posizioni; 
     //lista contentente le mosse fatte durante tutta la partita
     std::list<std::string> log_mosse;
 
