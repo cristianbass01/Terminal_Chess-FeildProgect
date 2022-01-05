@@ -5,6 +5,7 @@
 #include "./../include/umano.h"
 
 int main() {
+  char e_accentata = 'è';
   Scacchiera test;
   std::cout<<test.stringa_per_mappa()<<std::endl;
   /*
@@ -167,7 +168,7 @@ int main() {
     
     std::cout << std::endl;
     std::cout << "***************************************************************" << std::endl;
-    std::cout << "*       La partita si è conclusa con una patta                *" << std::endl;
+    std::cout << "*       La partita si "<<e_accentata<<" conclusa con una patta                *" << std::endl;
     std::cout << "*       causa: ";
     std::cout << fine_partita.substr(6);
     std::cout << "               *" << std::endl;
@@ -178,7 +179,7 @@ int main() {
   if(fine_partita.compare("Abbandono") == 0){
     std::cout << std::endl;
     std::cout << "***************************************************************" << std::endl;
-    std::cout << "*       La partita si è conclusa con un abbandono             *" << std::endl;
+    std::cout << "*       La partita si "<<e_accentata<<" conclusa con un abbandono             *" << std::endl;
     if(vincitore == Pezzo::Colore::bianco){
       std::cout << "*       Il giocatore nero ha abbandonato                      *" << std::endl;
       std::cout << "*       Complimenti giocatore bianco!!                        *" << std::endl;
