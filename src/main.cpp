@@ -16,6 +16,7 @@ int main() {
     std::cout<<t->get_figura();
   std::cout<<std::endl;
   */
+
   Casella cavallo(0,1);  
   Casella cavallo1(2,2);
   test.mossa(cavallo, cavallo1);
@@ -89,21 +90,21 @@ int main() {
         if(giocatore_2.ricevuta_richiesta_patta())
           fine_partita = "Patta_Accordo";
 
-      if((e.errore()).compare("[Eccezione::Patta_Materiale]") == 0) // gestione patta per materiale insufficiente
+      if((e.errore()).compare("[Eccezione::Patta_Materiale]") == 0) // gestione patta per materiale insufficiente NON FATTA
         fine_partita = "Patta_Insufficienza di materiale";
       
-      if((e.errore()).compare("[Eccezione::Patta_Posizione]") == 0) // gestione patta posizione ripetuta
+      if((e.errore()).compare("[Eccezione::Patta_Posizione]") == 0) // gestione patta posizione ripetuta NON FATTA
         fine_partita = "Patta_Posizione ripetuta";
 
       if((e.errore()).compare("[Eccezione::Patta_Mosse]") == 0) // gestione patta
         fine_partita = "Patta_Gioco fermo (mosse)";
 
-      if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto 
+      if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto NON FATTA
         fine_partita = "Scaccomatto";
         vincitore = giocatore_1.get_colore();
       }
 
-      if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione scaccomatto 
+      if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione abbandono partita
         fine_partita = "Abbandono";
         vincitore = giocatore_2.get_colore();
       }

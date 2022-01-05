@@ -10,6 +10,9 @@ Umano::Umano(Scacchiera* scacchiera, Pezzo::Colore colore){
 
 void Umano::gioca(){
 
+  if(scacchiera_->stallo(colore_)) //controlla che il giocatore non sia in stallo
+    throw Eccezione("[Eccezione::Patta_Stallo]");
+
   bool done = false; //mossa eseguita correttamente
 
   static constexpr int a = 97; // per trasformare da lettera a numero di colonna
@@ -95,7 +98,7 @@ void Umano::gioca(){
     throw Eccezione("[Eccezione::Scaccomatto]");
   }
   if(scacchiera_->get_conta_mosse() >= 50)
-    throw Eccezione("[Eccezione::Patta_5]");
+    throw Eccezione("[Eccezione::Patta_Mosse]");
 }
 
 void Umano::combinazioni(){
