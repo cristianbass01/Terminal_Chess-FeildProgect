@@ -71,6 +71,14 @@ Scacchiera::Scacchiera() {
 }
 
 Scacchiera::~Scacchiera() {
+  //delete di tutti i puntatori agli oggetti non mangiati
+  for(int i = 0; i < RIGHE; i++) {
+    for(int j = 0; j < COLONNE; j++) {
+      if(scacchiera[i][j] != nullptr)
+        delete scacchiera[i][j];
+    }
+  }
+
   std::ofstream documento; 
   documento.open("log.txt"); // apertura/creazione del file
   if(!documento )  // non è riuscito ad aprire il file (errore)
@@ -260,11 +268,8 @@ std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){
   }
   return v;
 }
-//restituisce una stringa da utilizzare nella mappa che contiene le varie disposizioni
-    //della scacchiera durante la partita
-    //pedone che può fare enpassant viene etichettato come F(P nero) e f(p bianco)
-    //torre che può fare arrocco viene etichettata come G(T nera) e g(t bianca)
-    //re che può fare arrocco viene etichettata come K(R nero) e k(r bianco)
+
+
 std::string Scacchiera::stringa_per_mappa() {
   std::string temp = "";
   for(int i = 0; i < RIGHE; i++) {
