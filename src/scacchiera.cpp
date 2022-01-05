@@ -71,6 +71,14 @@ Scacchiera::Scacchiera() {
 }
 
 Scacchiera::~Scacchiera() {
+  //delete di tutti i puntatori agli oggetti non mangiati
+  for(int i = 0; i < RIGHE; i++) {
+    for(int j = 0; j < COLONNE; j++) {
+      if(scacchiera[i][j] != nullptr)
+        delete scacchiera[i][j];
+    }
+  }
+
   std::ofstream documento; 
   documento.open("log.txt"); // apertura/creazione del file
   if(!documento )  // non è riuscito ad aprire il file (errore)
