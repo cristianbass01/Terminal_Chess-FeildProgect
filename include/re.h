@@ -11,12 +11,12 @@ class Re : public Pezzo {
     Re(Casella posizione, Colore colore);
 
     //metodo che sposta il pezzo
-    bool mossa(Casella posizione, Scacchiera& scacchiera); 
+    bool mossa(Casella posizione, Scacchiera& scacchiera) override; 
 
     //metodo che controlla se la mossa è valida (ANCHE controllo scacco)
     bool simulazione_mossa(Casella posizione, Scacchiera& scacchiera) override; 
 
-    void invalido_arrocco(){ arrocco_valido = false; } 
+    void invalido_arrocco(){ arrocco_valido = false; }
     bool get_arrocco_valido() { return arrocco_valido; }
     
   private:

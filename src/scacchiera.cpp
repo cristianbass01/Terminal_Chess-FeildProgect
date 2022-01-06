@@ -214,6 +214,8 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
     else
       conta_mosse++;
 
+    //mossa valida fatta, aggiorno il contatore
+    mosse_totali++;
     
 
     //inserimento mossa nel log generando una stringa che indica la mossa

@@ -70,6 +70,9 @@ class Scacchiera {
     //contatore delle mosse in cui non si muove un pedone ne si mangia un pezzo
     int conta_mosse;
 
+    //contatore delle mosse totali
+    int mosse_totali;
+    
     //metodo che verifica se è possibile promuovere qualche pedone e in caso sia possibile
     //lo fa di default a donna
     void promuovi(Pezzo* pedone);
