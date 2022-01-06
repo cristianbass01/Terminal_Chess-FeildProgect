@@ -29,26 +29,26 @@ int Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
     //controllo se il re si sposta verso destra e se all'angolo destro c'è un pezzo
     if(delta_colonna == 2 && scacchiera.get_casella(Casella(posizione_.get_riga(), 7)) != nullptr){
       //controllo che il re non subisca scacco spostandosi di una posizione a destra
-      if(this->simulazione_mossa(Casella(posizione_.get_riga(),5), scacchiera)){
+      if(scacchiera.simulazione_mossa(this->get_posizione(), Casella(posizione_.get_riga(),5))){
         //controllo che il pezzo a destra sia una torre 
         if(tolower(scacchiera.get_casella(Casella(posizione_.get_riga(), 7))->get_figura()) == 't'){
         //salvo il pezzo torre con un alias
         Torre* torre_arrocco = static_cast<Torre*>(scacchiera.get_casella(Casella(posizione_.get_riga(), 7)));
         //se la torre ha l'arrocco valido e puo fare la mossa non mettendo in scacco il re
-        if(torre_arrocco->get_arrocco_valido() && torre_arrocco->simulazione_mossa(Casella(posizione_.get_riga(), 5),scacchiera))
+        if(torre_arrocco->get_arrocco_valido() && scacchiera.simulazione_mossa(torre_arrocco->get_posizione(),Casella(posizione_.get_riga(), 5)))
           return ARROCCO;
         }
       }
     }
     if(delta_colonna == -2 && scacchiera.get_casella(Casella(posizione_.get_riga(), 0)) != nullptr){
       //controllo che il re non subisca scacco spostandosi di una posizione a sinistra
-      if(this->simulazione_mossa(Casella(posizione_.get_riga(),3), scacchiera)){
+      if(scacchiera.simulazione_mossa(this->get_posizione(), Casella(posizione_.get_riga(),3))){
         //controllo che il pezzo a sinistra sia una torre 
         if(tolower(scacchiera.get_casella(Casella(posizione_.get_riga(), 0))->get_figura()) == 't'){
         //salvo il pezzo torre con un alias
         Torre* torre_arrocco = static_cast<Torre*>(scacchiera.get_casella(Casella(posizione_.get_riga(), 0)));
         //se la torre ha l'arrocco valido e puo fare la mossa non mettendo in scacco il re
-        if(torre_arrocco->get_arrocco_valido() && torre_arrocco->simulazione_mossa(Casella(posizione_.get_riga(), 3),scacchiera))
+        if(torre_arrocco->get_arrocco_valido() && scacchiera.simulazione_mossa(torre_arrocco->get_posizione(),Casella(posizione_.get_riga(), 5)))
           return ARROCCO;
         }
       }

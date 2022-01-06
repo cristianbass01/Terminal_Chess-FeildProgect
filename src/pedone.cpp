@@ -1,6 +1,4 @@
 #include "./../include/scacchiera.h"
-#include "./../include/pedone.h"
-
 
 Pedone::Pedone(Casella posizione, Colore colore) { 
   //inizializzate variabili membro ereditate da pezzo
@@ -49,16 +47,48 @@ int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
         return SALTO_PEDONE; //la mossa è il salto del pedone di 2
         //se non si tratta della simulazione serve sapere che si tratta di una mossa
         //di due posizioni e che quindi va modificata la variabile mossa salto
+      }
     }
     
     // controllo che sia la prima mossa nera e che non ci siano pezzi nelle due caselle davanti al pedone
-    if(colore_ == Pezzo::Colore::nero) 
+    if(colore_ == Pezzo::Colore::nero) {
       if((posizione_.get_riga() == 6) && (scacchiera.get_casella(Casella(posizione_.get_riga() - 1, posizione_.get_colonna())) == nullptr) && (scacchiera.get_casella(posizione_finale)) == nullptr){
         return SALTO_PEDONE;//la mossa è il salto del pedone di 2
         //se non si tratta della simulazione serve sapere che si tratta di una mossa
         //di due posizioni e che quindi va modificata la variabile mossa salto
+      }
     }
   }
-  
   return false;
+}
+
+
+//metodo che sposta il pezzo
+int Pedone::mossa(Casella posizione, Scacchiera& scacchiera){ 
+  if((posizione.get_colonna() == posizione_.get_colonna() ) && (posizione.get_riga() == posizione_.get_riga()))
+    return false;
+  
+  Casella tmp = posizione_;
+
+  int mossa_valida = this->mossa_valida(posizione, scacchiera);
+
+  if(mossa_valida) {
+      posizione_ = posizione;
+  }
+  else if(mossa_valida == SALTO_PEDONE){
+    // gestione en passant, salto del pedone e arrocco
+    posizione_ = posizione;
+    mossa_salto = scacchiera.get_mosse_totali();
+  }
+
+  //se non da scacco do il controllo di nuovo alla funzione chiamante
+  return mossa_valida;
+}
+
+//metodo virtuale che controlla se la mossa è valida (ANCHE controllo scacco)
+int Pedone::simulazione_mossa(Casella posizione, Scacchiera& scacchiera){
+  if((posizione.get_colonna() == posizione_.get_colonna() ) && (posizione.get_riga() == posizione_.get_riga()))
+    return false;
+
+  return this->mossa_valida(posizione, scacchiera);
 }
