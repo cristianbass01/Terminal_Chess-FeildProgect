@@ -1,6 +1,4 @@
 #include "./../include/scacchiera.h"
-#include "./../include/pedone.h"
-
 
 Pedone::Pedone(Casella posizione, Colore colore) { 
   //inizializzate variabili membro ereditate da pezzo
@@ -60,5 +58,45 @@ int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
     }
   }
   
+  return false;
+}
+
+//metodo che sposta il pezzo
+int Pedone::mossa(Casella posizione, Scacchiera& scacchiera) { 
+  if((posizione.get_colonna() == posizione_.get_colonna() ) && (posizione.get_riga() == posizione_.get_riga()))
+    return false;
+  
+  Casella tmp = posizione_;
+
+  int mossa_valida = this->mossa_valida(posizione, scacchiera);
+  if(mossa_valida) {
+      posizione_ = posizione;
+  }
+  else if(mossa_valida == EN_PASSANT  || mossa_valida == ARROCCO){
+    // gestione en passant, salto del pedone e arrocco
+    posizione_ = posizione;
+  }
+  
+  //controllo scacco
+  if(scacchiera.controllo_scacco(colore_)){
+    posizione_ = tmp;
+    return false;
+  }
+
+  //se non da scacco do il controllo di nuovo alla funzione chiamante
+  return mossa_valida;
+}
+
+//metodo virtuale che controlla se la mossa è valida (ANCHE controllo scacco)
+int Pedone::simulazione_mossa(Casella posizione, Scacchiera& scacchiera){
+  Casella tmp = posizione_;
+
+  int mossa = this->mossa(posizione, scacchiera);
+
+  //se la mossa era valida e ha spostato i pezzi li faccio tornare alla posizione iniziale
+  if(mossa || mossa == EN_PASSANT || mossa == ARROCCO){
+    posizione_ = tmp;
+    return true;
+  }
   return false;
 }

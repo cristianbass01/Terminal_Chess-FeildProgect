@@ -11,8 +11,8 @@ int Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) {
   if(mossa_valida) {
       posizione_ = posizione;
   }
-  else if(mossa_valida == 2  || mossa_valida == 3){
-    // gestione en passant (2) e arrocco (3)
+  else if(mossa_valida == EN_PASSANT  || mossa_valida == ARROCCO){
+    // gestione en passant, salto del pedone e arrocco
     posizione_ = posizione;
   }
   
@@ -33,7 +33,7 @@ int Pezzo::simulazione_mossa(Casella posizione, Scacchiera& scacchiera){
   int mossa = this->mossa(posizione, scacchiera);
 
   //se la mossa era valida e ha spostato i pezzi li faccio tornare alla posizione iniziale
-  if(mossa || mossa == 2 || mossa == 3){
+  if(mossa || mossa == EN_PASSANT || mossa == ARROCCO){
     posizione_ = tmp;
     return true;
   }
