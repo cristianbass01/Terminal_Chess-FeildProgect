@@ -158,12 +158,14 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
         pezzo_mosso->set_posizione(posizione_in);
         scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+        std::cout<<"Questa mossa mette il tuo re sotto scacco"<<std::endl;
         return false;
       }
 
       break;
 
     case Pezzo::ARROCCO:
+      
       //DA FARE
       break;
 
@@ -178,105 +180,76 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
         scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
         pezzo_mosso->set_posizione(posizione_in);
-        (static_cast<Pedone*>(pezzo_mosso)).rese
+        (static_cast<Pedone*>(pezzo_mosso))->reset_mossa_salto();
+        std::cout<<"Questa mossa mette il tuo re sotto scacco"<<std::endl;
+        return false;
       }
 
+      break;
+    
+    case true:
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
+      //caso in cui metto il mio re sotto scacco
+      if(controllo_scacco(pezzo_mosso->get_colore())) {
+        //ripristinate le condizioni iniziali
+        scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
+        scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+        pezzo_mosso->set_posizione(posizione_in);
+        std::cout<<"Questa mossa mette il tuo re sotto scacco"<<std::endl;
+        return false;
+      }
+    
+      break;
 
+    case false:
+      return false;
       break;
   }
 
-  /*
-  bool mossa_valida = false;
-  bool en_passant = false;
-  bool arrocco_valido = false;
+  //caso in cui c'è stato un pezzo mangiato
+  if(pezzo_mangiato != nullptr) {
+    delete pezzo_mangiato;
 
+    // bisogna azzerare contatore mosse perchè viene mangiato un pezzo, 
+    //lo si pone a -1 perchè successivamente verrà incrementato di 1 o posto a 0
+    conta_mosse = -1;
 
-  try{
-    mossa_valida = pezzo_mosso->mossa(posizione_fin, *(this));
-  }
-  catch(Eccezione e){
-    if((e.errore()).compare("[Eccezione::Arrocco_valido]") == 0) //gestisce l'arrocco' 
-    {
-      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
-      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
-      return true;
-    }
-    if((e.errore()).compare("[Eccezione::EnPassant]") == 0) //gestisce l'en passant 
-    {
-      en_passant = true;
-    }
+    //il pezzo che è stato mangiato viene rimosso dal rispettivo vettore pezzi_***
+    if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
+      pezzi_bianchi.erase(std::find(pezzi_bianchi.begin(), pezzi_bianchi.end(), pezzo_mangiato));
+    if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
+      pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pezzo_mangiato));
   }
 
-
-  if(mossa_valida || en_passant) {
-    scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
-    scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
-    if(en_passant){
-      pezzo_mangiato = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()];
-      scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = nullptr;
-    }
-    if(controllo_scacco(pezzo_mosso->get_colore())){
-      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
-      pezzo_mosso->set_posizione(posizione_in);
-      if(en_passant){
-        scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
-        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
-        static_cast<Pedone*>(pezzo_mangiato)->en_passant_valid_ = true;
-      }
-      else
-        scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
-      
-      //cout da implementare con try and catch
-      std::cout << "Questa mossa mette sotto scacco il tuo Re" << std::endl;
-      
-      return false;
-    }
-    
-    if(pezzo_mangiato != nullptr) {
-      delete pezzo_mangiato;
-
-      // bisogna azzerare contatore mosse perchè viene mangiato un pezzo, 
-      //lo si pone a -1 perchè successivamente verrà incrementato di 1 o posto a 0
-      conta_mosse = -1;
-
-      //il pezzo che è stato mangiato viene rimosso dal rispettivo vettore pezzi_***
-      if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
-        pezzi_bianchi.erase(std::find(pezzi_bianchi.begin(), pezzi_bianchi.end(), pezzo_mangiato));
-      if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
-        pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pezzo_mangiato));
-    }
-
-    //se il pezzo mosso è un re si blocca la possibilità di fare l'arrocco
-    if(tolower(pezzo_mosso->get_figura()) == 'r' || tolower(pezzo_mosso->get_figura()) == 't')
-      static_cast<Torre*>(pezzo_mosso)->invalido_arrocco();
-    
-    //se si muove un pedone viene azzerato il contatore delle mosse
-    if(tolower(pezzo_mosso->get_figura()) == 'p'){
-      conta_mosse = 0;
-      //effettua promozione dei pedoni a donna se possibile
-      promuovi(pezzo_mosso);
-    }
-    else
-      conta_mosse++;
-
-    //mossa valida fatta, aggiorno il contatore
-    mosse_totali++;
-    
-
-    //inserimento mossa nel log generando una stringa che indica la mossa
-    std::string mossa_testuale;
-    mossa_testuale.append(1, posizione_in.get_riga()+1+'0');
-    mossa_testuale.append(1, posizione_in.get_colonna()+'A');
-    mossa_testuale.append(1, ' ');
-    mossa_testuale.append(1, posizione_fin.get_riga()+1+'0');
-    mossa_testuale.append(1, posizione_fin.get_colonna()+'A');
-    mossa_testuale.append(1, '\n');
-    log_mosse.push_back(mossa_testuale);
-    
-    return true;
+  //se il pezzo mosso è un re si blocca la possibilità di fare l'arrocco
+  if(tolower(pezzo_mosso->get_figura()) == 'r' || tolower(pezzo_mosso->get_figura()) == 't')
+    static_cast<Torre*>(pezzo_mosso)->invalido_arrocco();
+  
+  //se si muove un pedone viene azzerato il contatore delle mosse
+  if(tolower(pezzo_mosso->get_figura()) == 'p'){
+    conta_mosse = 0;
+    //effettua promozione dei pedoni a donna se possibile
+    promuovi(pezzo_mosso);
   }
-  return false;
-  */
+  else
+    conta_mosse++;
+
+  //mossa valida fatta, aggiorno il contatore
+  mosse_totali++;
+
+  //inserimento mossa nel log generando una stringa che indica la mossa
+  std::string mossa_testuale;
+  mossa_testuale.append(1, posizione_in.get_riga()+1+'0');
+  mossa_testuale.append(1, posizione_in.get_colonna()+'A');
+  mossa_testuale.append(1, ' ');
+  mossa_testuale.append(1, posizione_fin.get_riga()+1+'0');
+  mossa_testuale.append(1, posizione_fin.get_colonna()+'A');
+  mossa_testuale.append(1, '\n');
+  log_mosse.push_back(mossa_testuale);
+    
+  return true;
+
 }
 
 bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
