@@ -15,7 +15,7 @@ Pedone::Pedone(Casella posizione, Colore colore) {
     figura_ = 'p';
 }
 
-bool Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
+int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   int indice_colore = 1;
   if(colore_ == Pezzo::Colore::nero)
     indice_colore = -1;
@@ -55,7 +55,7 @@ bool Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   return false;
 }
 
-bool Pedone::mossa(Casella posizione_finale, Scacchiera& scacchiera){
+int Pedone::mossa(Casella posizione_finale, Scacchiera& scacchiera){
   int indice_colore = 1;
   if(colore_ == Pezzo::Colore::nero)
     indice_colore = -1;
