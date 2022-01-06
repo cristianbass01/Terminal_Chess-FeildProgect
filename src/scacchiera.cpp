@@ -165,8 +165,45 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       break;
 
     case Pezzo::ARROCCO:
+      //viene effettuata la mossa
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = nullptr;
+      int delta_colonna = posizione_fin.get_colonna() -posizione_in.get_colonna();
+      if(delta_colonna == 2){
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1] = scacchiera[posizione_in.get_riga()][7];
+        scacchiera[posizione_in.get_riga()][7] = nullptr;
+      }
+      else{
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1] = scacchiera[posizione_in.get_riga()][0];
+        scacchiera[posizione_in.get_riga()][0] = nullptr;
+      }
+      //caso in cui metti sotto scacco il tuo re
+      if(controllo_scacco(pezzo_mosso->get_colore())){
+        //vengono ristabilite le posizioni di partenza
+        scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
+        scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
+        pezzo_mosso->set_posizione(posizione_in);
+        //ristabilisco la poszione della torre
+        if(delta_colonna == 2){
+          scacchiera[posizione_in.get_riga()][7] = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1];
+          scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1] = nullptr;
+        }
+        else{
+          scacchiera[posizione_in.get_riga()][0] = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1];
+          scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1] = nullptr;
+        }
+
+
+        std::cout<<"Questa mossa mette il tuo re sotto scacco"<<std::endl;
+        return false;
+      }
       
-      //DA FARE
+      //aggiorno la posizione interna alla torre mossa
+      if(delta_colonna == 2)
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1]->set_posizione(Casella(posizione_in.get_riga(), posizione_fin.get_colonna() - 1));
+      else
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1]->set_posizione(Casella(posizione_in.get_riga(), posizione_fin.get_colonna() + 1);
+
       break;
 
     case Pezzo::SALTO_PEDONE:
