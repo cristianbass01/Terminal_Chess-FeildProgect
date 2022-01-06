@@ -258,11 +258,11 @@ void Scacchiera::promuovi() {
 
 
 std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){
-  std::vector<Casella> v;
+  std::vector<Casella> v(1);
   for(int i = 0; i < RIGHE; i++) {
     for(int j = 0; j < COLONNE; j++) {
       Pezzo* pezzo_mosso = scacchiera[posizione_pezzo.get_riga()][posizione_pezzo.get_colonna()];
-      if(pezzo_mosso != nullptr && pezzo_mosso->mossa(Casella(i,j), *(this)) == true)
+      if(pezzo_mosso != nullptr && pezzo_mosso->mossa_valida(Casella(i,j), *(this)) == true)
         v.push_back(Casella(i,j));
     }
   }

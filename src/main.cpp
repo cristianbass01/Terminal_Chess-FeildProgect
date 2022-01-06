@@ -16,11 +16,10 @@ int main() {
   for(Pezzo* t: test.pezzi_neri)
     std::cout<<t->get_figura();
   std::cout<<std::endl;
-  */
-
-  Casella cavallo(0,1);  
-  Casella cavallo1(2,2);
-  test.mossa(cavallo, cavallo1);
+  
+  
+  test.mossa(Casella(0,1), Casella(2,2));
+  test.stampa();
   std::cout << "\n";
 
   test.mossa(Casella(7,1), Casella(5,2));
@@ -53,7 +52,7 @@ int main() {
   //test.mossa(alfiere, alfiere1);
   test.stampa();
   std::cout << "\n";
-  
+  */
 
   
   bool colore = static_cast<bool>(rand() % 2); //scelta randomica dei colori dei giocatori

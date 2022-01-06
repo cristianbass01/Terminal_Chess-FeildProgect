@@ -71,3 +71,5 @@ ci mancano:
 - fare delete finale di tutti gli oggetti usati
 - "Nel caso di partite tra due computer, dovete fissare un numero massimo di mosse, oltre il quale la partita è considerata nulla."
 - arrocco
+
+contatore di mosse generale
