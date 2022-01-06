@@ -4,8 +4,6 @@
 int Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) { 
   if((posizione.get_colonna() == posizione_.get_colonna() ) && (posizione.get_riga() == posizione_.get_riga()))
     return false;
-  
-  Casella tmp = posizione_;
 
   int mossa_valida = this->mossa_valida(posizione, scacchiera);
   if(mossa_valida || mossa_valida == EN_PASSANT  || mossa_valida == ARROCCO) {
@@ -20,7 +18,8 @@ int Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) {
 int Pezzo::simulazione_mossa(Casella posizione, Scacchiera& scacchiera){
   if((posizione.get_colonna() == posizione_.get_colonna() ) && (posizione.get_riga() == posizione_.get_riga()))
     return false;
-  return this->mossa(posizione, scacchiera);
+
+  return this->mossa_valida(posizione, scacchiera);
 }
 
 //funzione friend che esegue ovverride del operatore <<

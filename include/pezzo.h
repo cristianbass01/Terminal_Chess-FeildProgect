@@ -16,7 +16,7 @@ class Pezzo {
     virtual int simulazione_mossa(Casella posizione, Scacchiera& scacchiera); 
 
     // il pezzo ha almeno una posizione valida in cui muoversi?
-    virtual bool bloccato(); 
+    virtual bool bloccato();
 
     //metodo che ritorna la figura
     const char get_figura() const { return figura_; }
@@ -55,6 +55,5 @@ class Pezzo {
 
     //metodo virtuale puro che controlla se la mossa è valida (SENZA controllo scacco)
     virtual int mossa_valida(Casella posizione, Scacchiera& scacchiera) = 0; 
-        
 };
 #endif  // PEZZO_H
