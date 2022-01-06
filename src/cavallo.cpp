@@ -13,7 +13,7 @@ Cavallo::Cavallo(Casella posizione, Colore colore){
     figura_ = 'c';
 }
 
-bool Cavallo::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
+int Cavallo::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   if(scacchiera.get_casella(posizione_finale) != nullptr){
     //verifica che non ci sia una pedina dello stesso colore nella posizione_finale
     if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)

@@ -11,10 +11,10 @@ class Pedone : public Pezzo {
     Pedone(Casella posizione, Colore colore);
 
     //metodo che sposta il pezzo
-    bool mossa(Casella posizione, Scacchiera& scacchiera) override;
+    int mossa(Casella posizione, Scacchiera& scacchiera) override;
 
     //metodo che controlla se la mossa è valida (ANCHE controllo scacco)
-    bool simulazione_mossa(Casella posizione, Scacchiera& scacchiera) override; 
+    int simulazione_mossa(Casella posizione, Scacchiera& scacchiera) override; 
 
     int get_mossa_salto() {return mossa_salto;}
   private:
@@ -22,6 +22,6 @@ class Pedone : public Pezzo {
     int mossa_salto = -1;
 
     //metodo che controlla se la mossa è valida (SENZA controllo scacco)
-    bool mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
+    int mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
 };
 #endif // PEDONE_H

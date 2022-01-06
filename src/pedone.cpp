@@ -6,7 +6,6 @@ Pedone::Pedone(Casella posizione, Colore colore) {
   //inizializzate variabili membro ereditate da pezzo
   posizione_ = posizione;
   colore_ = colore;
-  mossa_salto = -1; //mossa salto assumerà valore positivo solo se viene fatto un salto di 2 
 
   //inizializzata figura sulla base del colore del pezzo
   if(colore == Colore::nero)
@@ -15,7 +14,7 @@ Pedone::Pedone(Casella posizione, Colore colore) {
     figura_ = 'p';
 }
 
-bool Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
+int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   int indice_colore = 1;
   if(colore_ == Pezzo::Colore::nero)
     indice_colore = -1;
@@ -55,7 +54,7 @@ bool Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   return false;
 }
 
-bool Pedone::mossa(Casella posizione_finale, Scacchiera& scacchiera){
+int Pedone::mossa(Casella posizione_finale, Scacchiera& scacchiera){
   int indice_colore = 1;
   if(colore_ == Pezzo::Colore::nero)
     indice_colore = -1;
