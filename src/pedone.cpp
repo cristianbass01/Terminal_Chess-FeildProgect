@@ -15,15 +15,15 @@ Pedone::Pedone(Casella posizione, Colore colore) {
 }
 
 int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
+  //indice colore indica se ci si muove in negativo o positivo a seconda del colore
   int indice_colore = 1;
   if(colore_ == Pezzo::Colore::nero)
     indice_colore = -1;
 
-  if(scacchiera.get_casella(posizione_finale) != nullptr){
-    //verifica che non ci sia una pedina dello stesso colore nella posizione_finale
+  //verifica che non ci sia una pedina dello stesso colore nella posizione_finale
+  if(scacchiera.get_casella(posizione_finale) != nullptr)
     if((scacchiera.get_casella(posizione_finale))->get_colore() == colore_)
       return false;
-  }
 
   if(posizione_finale.get_riga() == posizione_.get_riga() + indice_colore){ // faccio un pass in avanti o laterale
     if((posizione_finale.get_colonna() == posizione_.get_colonna()) && (scacchiera.get_casella(posizione_finale) == nullptr)){ // colonna uguale (non mangia pezzi)
@@ -33,8 +33,11 @@ int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
       return true;
     }
     if((abs(posizione_finale.get_colonna() - posizione_.get_colonna()) == 1) && (scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna())) != nullptr)){ // mossa speciale en passant
-      if(tolower(scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna()))->get_figura()) == 'p' && scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna()))->get_colore() != colore_ && static_cast<Pedone*>(scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna())))->en_passant_valid_)
-        throw Eccezione("[Eccezione::EnPassant]");
+      Pezzo *pezzo_affianco = scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna()));
+      if(pezzo_affianco->get_figura() == 'p') //se il pezzo accanto è un pedone
+        if(pezzo_affianco->get_colore() != colore_) //il pezzo accanto è avversario
+          if(static_cast<Pedone*>(pezzo_affianco)->mossa_salto == scacchiera.get_conta_mosse()) //enpassant valido
+            return 2;
     }
   }
   
@@ -76,7 +79,7 @@ int Pedone::mossa(Casella posizione_finale, Scacchiera& scacchiera){
     }
     if((abs(posizione_finale.get_colonna() - posizione_.get_colonna()) == 1) && (scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna())) != nullptr)){ // mossa speciale en passant
       if(tolower(scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna()))->get_figura()) == 'p' && scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna()))->get_colore() != colore_ && static_cast<Pedone*>(scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna())))->en_passant_valid_)
-        throw Eccezione("[Eccezione::EnPassant]");
+        return 2;
     }
   }
   
