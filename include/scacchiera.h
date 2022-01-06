@@ -83,6 +83,9 @@ class Scacchiera {
     //lo fa di default a donna
     void promuovi(Pezzo* pedone);
 
+    //metodo che mangia utilizzando en_passant
+    void en_passant();
+
     //mappa per tener conto delle volte in cui una posizione si ripete
     std::map<std::string, int> mappa_posizioni; 
     //lista contentente le mosse fatte durante tutta la partita

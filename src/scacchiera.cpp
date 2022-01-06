@@ -143,9 +143,17 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   Pezzo* pezzo_mosso = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
   Pezzo* pezzo_mangiato = scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()];
   
+  switch(pezzo_mosso->mossa(posizione_fin, *(this))) {
+    case Pezzo::EN_PASSANT:
+      en_passant();
+
+  }
+  /*
   bool mossa_valida = false;
   bool en_passant = false;
   bool arrocco_valido = false;
+
+
   try{
     mossa_valida = pezzo_mosso->mossa(posizione_fin, *(this));
   }
@@ -231,6 +239,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
     return true;
   }
   return false;
+  */
 }
 
 bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
@@ -355,3 +364,6 @@ void Scacchiera::inserisci_scacchiera(){
   mappa_posizioni.insert(std::pair<std::string, int>(this->stringa_per_mappa(), get_ripetizioni_scacchiera()));
 }
 
+void Scacchiera::en_passant() {
+  
+}
