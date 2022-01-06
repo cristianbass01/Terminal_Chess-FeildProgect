@@ -280,14 +280,14 @@ std::string Scacchiera::stringa_per_mappa() {
       else {
         switch(pezzo_corrente->get_figura()) {
           case 'p': //caso di pedone bianco
-            if(static_cast<Pedone*>(pezzo_corrente)->)
+            if(static_cast<Pedone*>(pezzo_corrente)->get_mossa_salto() == mosse_totali - 1)
               temp.push_back('f');
             else
               temp.push_back(pezzo_corrente->get_figura());
             break;
           
           case 'P': //caso di pedone nero
-            if(static_cast<Pedone*>(pezzo_corrente)->en_passant_valid_)
+            if(static_cast<Pedone*>(pezzo_corrente)->get_mossa_salto() == mosse_totali - 1)
               temp.push_back('F');
             else
               temp.push_back(pezzo_corrente->get_figura());
