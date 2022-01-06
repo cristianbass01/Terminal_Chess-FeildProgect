@@ -7,10 +7,20 @@ class Scacchiera;
 
 class Pedone : public Pezzo {
   public:
+    //costruttore
     Pedone(Casella posizione, Colore colore);
-    bool mossa(Casella posizione, Scacchiera& scacchiera) override;
-    bool mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
-    bool en_passant_valid_;
 
+    //metodo che sposta il pezzo
+    bool mossa(Casella posizione, Scacchiera& scacchiera) override;
+
+    //metodo che controlla se la mossa è valida (ANCHE controllo scacco)
+    bool simulazione_mossa(Casella posizione, Scacchiera& scacchiera) override; 
+
+  private:
+    //membro che salva il numero della mossa alla quale è stato fatto il doppio salto iniziale
+    int mossa_en_passant;
+
+    //metodo che controlla se la mossa è valida (SENZA controllo scacco)
+    bool mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
 };
 #endif // PEDONE_H

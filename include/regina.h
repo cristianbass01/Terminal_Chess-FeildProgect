@@ -7,8 +7,12 @@ class Scacchiera;
 
 class Regina : public Pezzo{
   public:
+  //costruttore
     Regina(Casella posizione, Colore colore);
-    bool mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) override;
+
+  private:
+    //metodo che controlla se la mossa è valida (SENZA controllo scacco)
+    bool mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
 };
 
 #endif // REGINA_H

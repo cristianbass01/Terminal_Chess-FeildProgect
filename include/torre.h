@@ -7,13 +7,17 @@ class Scacchiera;
 
 class Torre : public Pezzo{
   public:
+  //costruttore
     Torre(Casella posizione, Colore colore);
-    bool mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) override;
+
     void invalido_arrocco(){ arrocco_valido = false; }
     bool get_arrocco_valido(){ return arrocco_valido; }
     
   private:
     bool arrocco_valido;
+
+    //metodo che controlla se la mossa è valida (SENZA controllo scacco)
+    bool mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
 };
 
 #endif // TORRE_H

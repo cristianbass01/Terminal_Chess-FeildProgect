@@ -206,13 +206,15 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       static_cast<Torre*>(pezzo_mosso)->invalido_arrocco();
     
     //se si muove un pedone viene azzerato il contatore delle mosse
-    if(tolower(pezzo_mosso->get_figura()) == 'p')
+    if(tolower(pezzo_mosso->get_figura()) == 'p'){
       conta_mosse = 0;
+      //effettua promozione dei pedoni a donna se possibile
+      promuovi(pezzo_mosso);
+    }
     else
       conta_mosse++;
 
-    //effettua promozione dei pedoni a donna se possibile
-    promuovi();
+    
 
     //inserimento mossa nel log generando una stringa che indica la mossa
     std::string mossa_testuale;
@@ -234,30 +236,26 @@ bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
 }
 
 
-void Scacchiera::promuovi() {
+void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
   //promozione bianchi
-  for(int i = 0; i < COLONNE; i++) {
-    //caso in cui un pedone dei bianchi è arrivato nella riga 8 (7 nella matrice)
-    if(scacchiera[7][i]!= nullptr && scacchiera[7][i]->get_figura() == 'p') {
-      delete scacchiera[7][i]; //cancellata dalla memoria dinamica
-      pezzi_bianchi.erase(std::find(pezzi_bianchi.begin(), pezzi_bianchi.end(), scacchiera[7][i]));
-      scacchiera[7][i] = new Regina(Casella(7,i), Pezzo::Colore::bianco);
-    }
+  if(pedone->get_posizione().get_riga() == 7) {
+    int riga_pedone = pedone->get_posizione().get_riga();
+    pezzi_bianchi.erase(std::find(pezzi_bianchi.begin(), pezzi_bianchi.end(), pedone));
+    delete pedone; //cancellata dalla memoria dinamica
+    scacchiera[7][riga_pedone] = new Regina(Casella(7,riga_pedone), Pezzo::Colore::bianco);
   }
 
   //promozione neri
-  for(int i = 0; i < COLONNE; i++) {
-    //caso in cui un pedone dei neri è arrivato nella riga 1 (0 nella matrice)
-    if(scacchiera[0][i]!= nullptr && scacchiera[0][i]->get_figura() == 'P') {
-      delete scacchiera[0][i]; //cancellata dalla memoria dinamica
-      pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), scacchiera[0][i]));
-      scacchiera[0][i] = new Regina(Casella(0,i), Pezzo::Colore::nero);
+  if(pedone->get_posizione().get_riga() == 0) {
+      int riga_pedone = pedone->get_posizione().get_riga();
+      pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pedone));
+      delete pedone; //cancellata dalla memoria dinamica
+      scacchiera[0][riga_pedone] = new Regina(Casella(0,riga_pedone), Pezzo::Colore::nero);
     }
-  }
 }
 
 
-std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){
+std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){ // DA OTTIMIZZARE
   std::vector<Casella> v(1);
   for(int i = 0; i < RIGHE; i++) {
     for(int j = 0; j < COLONNE; j++) {

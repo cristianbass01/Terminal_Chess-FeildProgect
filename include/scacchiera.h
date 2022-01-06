@@ -72,7 +72,7 @@ class Scacchiera {
 
     //metodo che verifica se è possibile promuovere qualche pedone e in caso sia possibile
     //lo fa di default a donna
-    void promuovi();
+    void promuovi(Pezzo* pedone);
 
     //mappa per tener conto delle volte in cui una posizione si ripete
     std::map<std::string, int> mappa_posizioni; 

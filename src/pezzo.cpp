@@ -1,20 +1,32 @@
-#include "./../include/pezzo.h"
+#include "./../include/scacchiera.h"
 
-bool Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) { //metodo che sposta il pezzo
+//metodo che sposta il pezzo
+bool Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) { 
   if((posizione.get_colonna() == posizione_.get_colonna() ) && (posizione.get_riga() == posizione_.get_riga()))
     return false;
-  try
-  {
-    if(mossa_valida(posizione, scacchiera)) {
+  
+  Casella tmp = posizione_;
+
+  if(this->mossa_valida(posizione, scacchiera)) {
       posizione_ = posizione;
-      return true;
-    }
   }
-  catch(Eccezione e)
-  {
-    if((e.errore()).compare("[Eccezione::EnPassant]") == 0) //gestisce l'en passant 
-      posizione_ = posizione;
-    throw;
+  else
+    return false;
+  
+  if(scacchiera.controllo_scacco(colore_)){
+    posizione_ = tmp;
+    return false;
+  }
+  return true;
+}
+
+//metodo virtuale che controlla se la mossa è valida (ANCHE controllo scacco)
+bool Pezzo::simulazione_mossa(Casella posizione, Scacchiera& scacchiera){
+  Casella tmp = posizione_;
+
+  if(this->mossa(posizione, scacchiera)){
+    posizione_ = tmp;
+    return true;
   }
   return false;
 }
@@ -22,7 +34,6 @@ bool Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) { //metodo che spos
 //funzione friend che esegue ovverride del operatore <<
 std::ostream& operator<<(std::ostream& os, const Pezzo& temp) {
   //conversione di un char contenuto in temp.figura_ a stringa (accede a figura_ perchè friend)
-  std::string s = std::string(1,temp.figura_);
-
-  return os<<s;
+  os << std::string(1,temp.figura_);
+  return os;
 }
