@@ -18,10 +18,16 @@
 
 class Scacchiera {
   public:
+    //costante numeri di colonne nella scacchiera
     static constexpr int COLONNE = 8;
+
+    //costante numero di righe nella scacchiera
     static constexpr int RIGHE = 8;
 
+    // costruttore della scacchiera
     Scacchiera();
+
+    //distruttore della scacchiera
     ~Scacchiera();
 
     void stampa(); //stampa la scacchiera
@@ -72,7 +78,7 @@ class Scacchiera {
 
     //contatore delle mosse totali
     int mosse_totali;
-    
+
     //metodo che verifica se è possibile promuovere qualche pedone e in caso sia possibile
     //lo fa di default a donna
     void promuovi(Pezzo* pedone);

@@ -10,8 +10,13 @@ class Giocatore{
     Pezzo::Colore colore_avversario_;
     
   public:
-    virtual void gioca() = 0; // metodo virtuale puro che fa eseguire una mossa al giocatore
-    virtual bool ricevuta_richiesta_patta() = 0; // metodo virtuale puro che riceve e gestisce la richiesta di patta dell'avversario
+    // metodo virtuale puro che fa eseguire una mossa al giocatore
+    virtual void gioca() = 0; 
+
+    // metodo virtuale puro che riceve e gestisce la richiesta di patta dell'avversario
+    virtual bool ricevuta_richiesta_patta() = 0; 
+
+    //metodo che ritorna il colore del giocatore
     Pezzo::Colore get_colore() { return colore_; }
 };
 
