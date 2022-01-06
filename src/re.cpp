@@ -36,7 +36,7 @@ int Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
         Torre* torre_arrocco = static_cast<Torre*>(scacchiera.get_casella(Casella(posizione_.get_riga(), 7)));
         //se la torre ha l'arrocco valido e puo fare la mossa non mettendo in scacco il re
         if(torre_arrocco->get_arrocco_valido() && torre_arrocco->simulazione_mossa(Casella(posizione_.get_riga(), 5),scacchiera))
-          return true;
+          return 3;
         }
       }
     }
@@ -49,7 +49,7 @@ int Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
         Torre* torre_arrocco = static_cast<Torre*>(scacchiera.get_casella(Casella(posizione_.get_riga(), 0)));
         //se la torre ha l'arrocco valido e puo fare la mossa non mettendo in scacco il re
         if(torre_arrocco->get_arrocco_valido() && torre_arrocco->simulazione_mossa(Casella(posizione_.get_riga(), 3),scacchiera))
-          return true;
+          return 3;
         }
       }
     }
