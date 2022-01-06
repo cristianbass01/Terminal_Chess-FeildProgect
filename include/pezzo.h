@@ -16,7 +16,7 @@ class Pezzo {
     virtual int simulazione_mossa(Casella posizione, Scacchiera& scacchiera); 
 
     // il pezzo ha almeno una posizione valida in cui muoversi?
-    virtual bool bloccato();
+    virtual bool bloccato(Scacchiera& scacchiera) = 0;
 
     //metodo che ritorna la figura
     const char get_figura() const { return figura_; }

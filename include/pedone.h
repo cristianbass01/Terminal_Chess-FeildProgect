@@ -18,6 +18,10 @@ class Pedone : public Pezzo {
 
     //metodo che sposta il pezzo
     int mossa(Casella posizione, Scacchiera& scacchiera) override; 
+
+    // il pezzo ha almeno una posizione valida in cui muoversi?
+    bool bloccato(Scacchiera& scacchiera) override;
+
   private:
     //membro che salva il numero della mossa alla quale è stato fatto il doppio salto iniziale
     int mossa_salto = -1;
