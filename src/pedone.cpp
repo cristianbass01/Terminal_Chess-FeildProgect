@@ -44,13 +44,15 @@ int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   if(posizione_finale.get_riga() == posizione_.get_riga() + (indice_colore * 2)) // si sposta di due righe
   {
     // controllo che sia la prima mossa bianca e che non ci siano pezzi nelle due caselle davanti al pedone
-    if((colore_ == Pezzo::Colore::bianco) && (posizione_.get_riga() == 1) && (scacchiera.get_casella(Casella(posizione_.get_riga() + 1, posizione_.get_colonna())) == nullptr) && (scacchiera.get_casella(posizione_finale)) == nullptr){
-      return true;
+    if(colore_ == Pezzo::Colore::bianco) {
+      if((posizione_.get_riga() == 1) && (scacchiera.get_casella(Casella(posizione_.get_riga() + 1, posizione_.get_colonna())) == nullptr) && (scacchiera.get_casella(posizione_finale)) == nullptr){
+        return true;
     }
-
+    
     // controllo che sia la prima mossa nera e che non ci siano pezzi nelle due caselle davanti al pedone
-    if((colore_ == Pezzo::Colore::nero) && (posizione_.get_riga() == 6) && (scacchiera.get_casella(Casella(posizione_.get_riga() - 1, posizione_.get_colonna())) == nullptr) && (scacchiera.get_casella(posizione_finale)) == nullptr){
-      return true;
+    if(colore_ == Pezzo::Colore::nero) 
+      if((posizione_.get_riga() == 6) && (scacchiera.get_casella(Casella(posizione_.get_riga() - 1, posizione_.get_colonna())) == nullptr) && (scacchiera.get_casella(posizione_finale)) == nullptr){
+        return true;
     }
   }
   

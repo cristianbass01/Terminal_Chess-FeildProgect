@@ -50,5 +50,12 @@ class Pezzo {
 
     //metodo virtuale puro che controlla se la mossa è valida (SENZA controllo scacco)
     virtual int mossa_valida(Casella posizione, Scacchiera& scacchiera) = 0; 
+
+    //costanti che indicano il tipo di mossa eseguita
+    static constexpr int EN_PASSANT = 2;
+    static constexpr int SALTO_PEDONE = 3;
+    static constexpr int ARROCCO = 4;
+    static constexpr int PROMOZIONE = 5;
+    
 };
 #endif  // PEZZO_H
