@@ -12,7 +12,7 @@ class Alfiere : public Pezzo {
 
   private:
     //metodo che controlla se la mossa è valida (SENZA controllo scacco)
-    bool mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
+    int mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
 };
 
 #endif // ALFIERE_H

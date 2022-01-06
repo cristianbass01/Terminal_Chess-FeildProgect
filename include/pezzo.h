@@ -10,10 +10,10 @@ class Scacchiera;
 class Pezzo {
   public:
     //metodo virtuale che sposta il pezzo
-    virtual bool mossa(Casella posizione, Scacchiera& scacchiera); 
+    virtual int mossa(Casella posizione, Scacchiera& scacchiera); 
 
     //metodo virtuale che controlla se la mossa è valida (ANCHE controllo scacco)
-    virtual bool simulazione_mossa(Casella posizione, Scacchiera& scacchiera); 
+    virtual int simulazione_mossa(Casella posizione, Scacchiera& scacchiera); 
 
     // il pezzo ha almeno una posizione valida in cui muoversi?
     virtual bool bloccato(); 
@@ -49,6 +49,6 @@ class Pezzo {
     Colore colore_;
 
     //metodo virtuale puro che controlla se la mossa è valida (SENZA controllo scacco)
-    virtual bool mossa_valida(Casella posizione, Scacchiera& scacchiera) = 0; 
+    virtual int mossa_valida(Casella posizione, Scacchiera& scacchiera) = 0; 
 };
 #endif  // PEZZO_H

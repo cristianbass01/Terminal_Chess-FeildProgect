@@ -14,7 +14,7 @@ Re::Re(Casella posizione, Colore colore) {
     figura_ = 'r';
 }
 
-bool Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
+int Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
   //calcolo di delta riga e delta colonna
   int delta_riga = posizione_finale.get_riga() - posizione_.get_riga();
   int delta_colonna = posizione_finale.get_colonna() - posizione_.get_colonna();
@@ -26,27 +26,33 @@ bool Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
 
   //gestisco arrocco
   if(arrocco_valido && delta_riga == 0 && abs(delta_colonna) == 2){
-    //
+    //controllo se il re si sposta verso destra e se all'angolo destro c'è un pezzo
     if(delta_colonna == 2 && scacchiera.get_casella(Casella(posizione_.get_riga(), 7)) != nullptr){
-      if(tolower((*(scacchiera.get_casella(Casella(posizione_.get_riga(), 7)))).get_figura()) == 't')
-      
-      if((*static_cast<Torre*>(scacchiera.get_casella(Casella(posizione_.get_riga(), 7)))).get_arrocco_valido() && (*static_cast<Torre*>(scacchiera.get_casella(Casella(posizione_.get_riga(), 7)))).simulazione_mossa(Casella(posizione_.get_riga(), 5)),))
-
+      //controllo che il re non subisca scacco spostandosi di una posizione a destra
+      if(this->simulazione_mossa(Casella(posizione_.get_riga(),5), scacchiera)){
+        //controllo che il pezzo a destra sia una torre 
+        if(tolower(scacchiera.get_casella(Casella(posizione_.get_riga(), 7))->get_figura()) == 't'){
+        //salvo il pezzo torre con un alias
+        Torre* torre_arrocco = static_cast<Torre*>(scacchiera.get_casella(Casella(posizione_.get_riga(), 7)));
+        //se la torre ha l'arrocco valido e puo fare la mossa non mettendo in scacco il re
+        if(torre_arrocco->get_arrocco_valido() && torre_arrocco->simulazione_mossa(Casella(posizione_.get_riga(), 5),scacchiera))
+          return true;
+        }
+      }
     }
-    if(delta_colonna == -2 && tolower((*(scacchiera.get_casella(Casella(posizione_.get_riga(), 0)))).get_figura()) == 't' && !(*static_cast<Torre*>(scacchiera.get_casella(Casella(posizione_.get_riga(), 0)))).get_arrocco_valido())
-      return false;
-    //controllo se la torre può spostarsi, e quindi se gli spazi tra re e torre sono liberi, passando per il metodo mossa aggiorno anche il contatore delle mosse
-    if(delta_colonna == 2 && scacchiera.mossa(Casella(posizione_.get_riga(), 7), Casella(posizione_.get_riga(), 5))){
-      //sposto il re
-      posizione_ = posizione_finale;
-      throw Eccezione("[Eccezione::Arrocco_valido]");
+    if(delta_colonna == -2 && scacchiera.get_casella(Casella(posizione_.get_riga(), 0)) != nullptr){
+      //controllo che il re non subisca scacco spostandosi di una posizione a destra
+      if(this->simulazione_mossa(Casella(posizione_.get_riga(),3), scacchiera)){
+        //controllo che il pezzo a destra sia una torre 
+        if(tolower(scacchiera.get_casella(Casella(posizione_.get_riga(), 0))->get_figura()) == 't'){
+        //salvo il pezzo torre con un alias
+        Torre* torre_arrocco = static_cast<Torre*>(scacchiera.get_casella(Casella(posizione_.get_riga(), 0)));
+        //se la torre ha l'arrocco valido e puo fare la mossa non mettendo in scacco il re
+        if(torre_arrocco->get_arrocco_valido() && torre_arrocco->simulazione_mossa(Casella(posizione_.get_riga(), 5),scacchiera))
+          return true;
+        }
+      }
     }
-    if(delta_colonna == -2 && scacchiera.mossa(Casella(posizione_.get_riga(), 0), Casella(posizione_.get_riga(), 3))){
-      //sposto il re
-      posizione_ = posizione_finale;
-      throw Eccezione("[Eccezione::Arrocco_valido]");
-    }
-    return true;
   }
   
   //verifico che il re si sposti in una delle caselle adiacenti

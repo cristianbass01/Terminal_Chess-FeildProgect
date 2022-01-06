@@ -1,7 +1,7 @@
 #include "./../include/scacchiera.h"
 
 //metodo che sposta il pezzo
-bool Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) { 
+int Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) { 
   if((posizione.get_colonna() == posizione_.get_colonna() ) && (posizione.get_riga() == posizione_.get_riga()))
     return false;
   
@@ -21,7 +21,7 @@ bool Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) {
 }
 
 //metodo virtuale che controlla se la mossa è valida (ANCHE controllo scacco)
-bool Pezzo::simulazione_mossa(Casella posizione, Scacchiera& scacchiera){
+int Pezzo::simulazione_mossa(Casella posizione, Scacchiera& scacchiera){
   Casella tmp = posizione_;
 
   if(this->mossa(posizione, scacchiera)){
