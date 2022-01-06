@@ -42,6 +42,7 @@ class Scacchiera {
 
     int get_conta_mosse(){ return conta_mosse;} 
 
+    int get_mosse_totali() {return mosse_totali;}
     //restituisce un vettore contentente le mosse possibili che può fare il pezzo che si
     //trova nella posizione da indicare "posizione_pezzo"
     std::vector<Casella> mosse_possibili(Casella posizione_pezzo);

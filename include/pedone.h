@@ -13,6 +13,9 @@ class Pedone : public Pezzo {
     //ritorna il numero di mosse fatte prima di far fare il salto
     int get_mossa_salto() {return mossa_salto;}
 
+    //reset mossa_salto
+    void reset_mossa_salto() {mossa_salto = -1;}
+
     //metodo che sposta il pezzo
     int mossa(Casella posizione, Scacchiera& scacchiera) override; 
 
