@@ -145,9 +145,46 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   
   switch(pezzo_mosso->mossa(posizione_fin, *(this))) {
     case Pezzo::EN_PASSANT:
-      en_passant();
+      //viene effettuata la mossa
+      pezzo_mangiato = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()];
+      scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = nullptr;
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
 
+      //caso in cui metti sotto scacco il tuo re
+      if(controllo_scacco(pezzo_mosso->get_colore())) { 
+        //vengono ristabilite le posizioni di partenza
+        scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
+        scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
+        pezzo_mosso->set_posizione(posizione_in);
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+        return false;
+      }
+
+      break;
+
+    case Pezzo::ARROCCO:
+      //DA FARE
+      break;
+
+    case Pezzo::SALTO_PEDONE:
+      //modificata scacchiera
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
+      
+      //caso in cui metto il mio re sotto scacco
+      if(controllo_scacco(pezzo_mosso->get_colore())) {
+        //ripristinate le condizioni iniziali
+        scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
+        scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
+        pezzo_mosso->set_posizione(posizione_in);
+        (static_cast<Pedone*>(pezzo_mosso)).rese
+      }
+
+
+      break;
   }
+
   /*
   bool mossa_valida = false;
   bool en_passant = false;
@@ -364,6 +401,4 @@ void Scacchiera::inserisci_scacchiera(){
   mappa_posizioni.insert(std::pair<std::string, int>(this->stringa_per_mappa(), get_ripetizioni_scacchiera()));
 }
 
-void Scacchiera::en_passant() {
-  
-}
+
