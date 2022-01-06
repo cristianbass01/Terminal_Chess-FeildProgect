@@ -41,14 +41,14 @@ bool Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
       }
     }
     if(delta_colonna == -2 && scacchiera.get_casella(Casella(posizione_.get_riga(), 0)) != nullptr){
-      //controllo che il re non subisca scacco spostandosi di una posizione a destra
+      //controllo che il re non subisca scacco spostandosi di una posizione a sinistra
       if(this->simulazione_mossa(Casella(posizione_.get_riga(),3), scacchiera)){
-        //controllo che il pezzo a destra sia una torre 
+        //controllo che il pezzo a sinistra sia una torre 
         if(tolower(scacchiera.get_casella(Casella(posizione_.get_riga(), 0))->get_figura()) == 't'){
         //salvo il pezzo torre con un alias
         Torre* torre_arrocco = static_cast<Torre*>(scacchiera.get_casella(Casella(posizione_.get_riga(), 0)));
         //se la torre ha l'arrocco valido e puo fare la mossa non mettendo in scacco il re
-        if(torre_arrocco->get_arrocco_valido() && torre_arrocco->simulazione_mossa(Casella(posizione_.get_riga(), 5),scacchiera))
+        if(torre_arrocco->get_arrocco_valido() && torre_arrocco->simulazione_mossa(Casella(posizione_.get_riga(), 3),scacchiera))
           return true;
         }
       }
