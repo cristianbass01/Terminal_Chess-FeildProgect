@@ -6,7 +6,6 @@ Pedone::Pedone(Casella posizione, Colore colore) {
   //inizializzate variabili membro ereditate da pezzo
   posizione_ = posizione;
   colore_ = colore;
-  mossa_salto = -1; //mossa salto assumerà valore positivo solo se viene fatto un salto di 2 
 
   //inizializzata figura sulla base del colore del pezzo
   if(colore == Colore::nero)

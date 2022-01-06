@@ -14,7 +14,7 @@ Torre::Torre(Casella posizione, Colore colore) {
     figura_ = 't';
 }
 
-bool Torre::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
+int Torre::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
   //calcolo di delta riga e delta colonna
   int delta_riga = posizione_finale.get_riga() - posizione_.get_riga();
   int delta_colonna = posizione_finale.get_colonna() - posizione_.get_colonna();
