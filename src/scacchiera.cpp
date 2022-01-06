@@ -280,7 +280,7 @@ std::string Scacchiera::stringa_per_mappa() {
       else {
         switch(pezzo_corrente->get_figura()) {
           case 'p': //caso di pedone bianco
-            if(static_cast<Pedone*>(pezzo_corrente)->en_passant_valid_)
+            if(static_cast<Pedone*>(pezzo_corrente)->)
               temp.push_back('f');
             else
               temp.push_back(pezzo_corrente->get_figura());
