@@ -126,7 +126,7 @@ bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
     for(int j = 0; j< COLONNE ; j++){
       if(scacchiera[i][j] != nullptr){ //se si ha un pezzo in questa posizione
         //se il pezzo ha colore avversario viene chiamato il metodo mossa valida con posizione di re 
-        if(((*(scacchiera[i][j])).get_colore() != colore && (*(scacchiera[i][j])).mossa_valida((*re_scelto).get_posizione(), *this))){
+        if(((*(scacchiera[i][j])).get_colore() != colore && (*(scacchiera[i][j])).simulazione_mossa((*re_scelto).get_posizione(), *this))){
           return true;
         }
       }
@@ -262,7 +262,7 @@ std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){ // DA
   for(int i = 0; i < RIGHE; i++) {
     for(int j = 0; j < COLONNE; j++) {
       Pezzo* pezzo_mosso = scacchiera[posizione_pezzo.get_riga()][posizione_pezzo.get_colonna()];
-      if(pezzo_mosso != nullptr && pezzo_mosso->mossa_valida(Casella(i,j), *(this)) == true)
+      if(pezzo_mosso != nullptr && pezzo_mosso->simulazione_mossa(Casella(i,j), *(this)) == true)
         v.push_back(Casella(i,j));
     }
   }
