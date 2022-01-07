@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
   
   try {
     //caso partita stampata a video
-    if(tolower(*argv[1]) != 'v') { 
+    if(tolower(*argv[1]) == 'v') { 
       Pezzo::Colore colore_ = Pezzo::Colore::bianco;
       int num_mosse = 0;
       while(!lista_mosse.empty()) { //fa proseguire partita finchè ci sono mosse
