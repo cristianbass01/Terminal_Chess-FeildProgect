@@ -10,11 +10,11 @@ Umano::Umano(Scacchiera* scacchiera, Pezzo::Colore colore){
 
 void Umano::gioca(){
 
+  std::cout << std::endl;
   if(scacchiera_->controllo_scacco(colore_)){
     std::cout<<"Sei sotto scacco!"<<std::endl;
   }
-
-  if(scacchiera_->stallo(colore_)) //controlla che il giocatore non sia in stallo
+  else if(scacchiera_->stallo(colore_)) //controlla che il giocatore non sia in stallo
     throw Eccezione("[Eccezione::Patta_Stallo]");
   
   if(scacchiera_->get_ripetizioni_scacchiera() >= 3)
@@ -27,7 +27,6 @@ void Umano::gioca(){
 
   while(!done){
 
-    std::cout << std::endl;
     std::cout << "Giocatore ";
     colore_ == Pezzo::Colore::bianco ? std::cout << "bianco (minuscole) " : std::cout << "nero (maiuscole) ";
     std::cout << "(per aiuto HE LP ):" << std::endl;
