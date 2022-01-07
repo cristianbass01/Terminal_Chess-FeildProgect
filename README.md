@@ -57,18 +57,16 @@ per il pareggio per insufficienza di materiale avrò
 richiesta di patta con due lettere dopo la mossa PP
 
 
-quando realizziamo il metodo della promozione ricordiamo di modi
-ficare anche i vector pezzi_bianchi e pezzi_neri
+quando realizziamo il metodo della promozione ricordiamo di modificare anche i vector pezzi_bianchi e pezzi_neri
 
 ci mancano:
 - scaccomatto
 - patta 
 - computer
-- log
 - replay
 - capire se eccezioni c++ serve
 - commentare
-- fare delete finale di tutti gli oggetti usati
+- fare delete finale di tutti gli oggetti usati (in teoria circa fatto)
 - "Nel caso di partite tra due computer, dovete fissare un numero massimo di mosse, oltre il quale la partita è considerata nulla."
 - arrocco
 
