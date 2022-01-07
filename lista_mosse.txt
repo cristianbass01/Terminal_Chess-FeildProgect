@@ -1,5 +1,5 @@
 
-loop infinito
+loop infinito (non più)
 d2 d4
 g7 g5
 d4 d5
@@ -13,13 +13,4 @@ c1 f4
 f8 g7
 b1 a3
 
-mossa non valida
-d2 d4
-g7 g5
-d4 d5
-e7 e5
-d5 e6
-g8 h6
-d1 d7
-b8 d7
-e6 d7
+in teoria c'è un altro loop infinito ma non trovo più le mosse
