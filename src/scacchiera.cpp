@@ -486,7 +486,7 @@ void Scacchiera::inserisci_scacchiera(){
 //- re + alfiere vs re
 //- re vs re
 //- re + alfiere o cavallo vs re con alfiere o cavallo
-//- re + 2 cavalli vs re (o re con 2 cavalli)
+//- re + 1 cavallo vs re (o re con 1 cavallo)
   
 bool Scacchiera::pezzi_insufficienti(){
   //controllo non restino solo i due re
@@ -494,16 +494,16 @@ bool Scacchiera::pezzi_insufficienti(){
     return true;
 
   if((pezzi_bianchi.size() == 2 && pezzi_neri.size() == 1) || (pezzi_bianchi.size() == 1 && pezzi_neri.size() == 2)){
-    //controllo non restino solo i due re e un alfiere bianco
+    //controllo non restino solo i due re e un alfiere bianco o un cavallo bianco
     if(pezzi_bianchi.size() == 2){
       for(unsigned int i = 0; i < pezzi_bianchi.size(); i++)
-        if(pezzi_bianchi[i]->get_figura() == 'a')
+        if(pezzi_bianchi[i]->get_figura() == 'a' || pezzi_bianchi[i]->get_figura() == 'c')
           return true;
     }
-    //controllo non restino solo i due re e un alfiere nero
+    //controllo non restino solo i due re e un alfiere nero o un cavallo nero
     if(pezzi_neri.size() == 2){
       for(unsigned int i = 0; i < pezzi_neri.size(); i++)
-        if(pezzi_neri[i]->get_figura() == 'A')
+        if(pezzi_neri[i]->get_figura() == 'A' || pezzi_neri[i]->get_figura() == 'C')
           return true;
     }
   }
@@ -521,22 +521,6 @@ bool Scacchiera::pezzi_insufficienti(){
           alfiere_cavallo_nero = true;
 
     if(alfiere_cavallo_bianco && alfiere_cavallo_nero)
-      return true;
-  }
-
-  if((pezzi_bianchi.size() == 3 && pezzi_neri.size() == 1) || (pezzi_bianchi.size() == 1 && pezzi_neri.size() == 3)){
-    int conta_cavalli = 0;
-    //conto i cavalli
-    for(unsigned int i = 0; i < pezzi_neri.size(); i++){
-      if(pezzi_neri[i]->get_figura() == 'C')
-        conta_cavalli++;
-    }
-    for(unsigned int i = 0; i < pezzi_bianchi.size(); i++){
-      if(pezzi_bianchi[i]->get_figura() == 'c')
-        conta_cavalli++;
-    }
-
-    if(conta_cavalli == 2)
       return true;
   }
 
