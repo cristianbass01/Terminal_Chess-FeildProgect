@@ -333,6 +333,7 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
     pezzi_bianchi.erase(std::find(pezzi_bianchi.begin(), pezzi_bianchi.end(), pedone));
     delete pedone; //cancellata dalla memoria dinamica
     scacchiera[7][riga_pedone] = new Regina(Casella(7,riga_pedone), Pezzo::Colore::bianco);
+    pezzi_bianchi.push_back(scacchiera[7][riga_pedone]);
   }
 
   //promozione neri
@@ -341,6 +342,7 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
       pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pedone));
       delete pedone; //cancellata dalla memoria dinamica
       scacchiera[0][riga_pedone] = new Regina(Casella(0,riga_pedone), Pezzo::Colore::nero);
+      pezzi_neri.push_back(scacchiera[0][riga_pedone]);
     }
 }
 
