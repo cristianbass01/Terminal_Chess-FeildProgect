@@ -66,6 +66,7 @@ Scacchiera::Scacchiera() {
 
   //inizializzo a 0 il contatore delle mosse
   conta_mosse = 0; 
+  mosse_totali = 0;
 }
 
 Scacchiera::~Scacchiera() {

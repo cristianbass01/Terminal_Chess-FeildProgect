@@ -33,7 +33,7 @@ int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
     }
     if((abs(posizione_finale.get_colonna() - posizione_.get_colonna()) == 1) && (scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna())) != nullptr)){ // mossa speciale en passant
       Pezzo *pezzo_affianco = scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna()));
-      if(pezzo_affianco->get_figura() == 'p') //se il pezzo accanto è un pedone
+      if(tolower(pezzo_affianco->get_figura()) == 'p') //se il pezzo accanto è un pedone
         if(pezzo_affianco->get_colore() != colore_) //il pezzo accanto è avversario
           if(static_cast<Pedone*>(pezzo_affianco)->mossa_salto == scacchiera.get_mosse_totali()) //enpassant valido
             return EN_PASSANT;  //la mossa fatta è l'enpassant 
