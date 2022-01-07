@@ -1,4 +1,5 @@
 #include "./../include/scacchiera.h"
+#include "./../include/pezzo.h"
 
 //metodo che sposta il pezzo
 int Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) { 

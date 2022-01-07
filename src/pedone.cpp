@@ -1,4 +1,5 @@
 #include "./../include/scacchiera.h"
+#include "./../include/pedone.h"
 
 Pedone::Pedone(Casella posizione, Colore colore) { 
   //inizializzate variabili membro ereditate da pezzo
