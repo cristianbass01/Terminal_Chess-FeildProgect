@@ -45,7 +45,7 @@ class Scacchiera {
     bool controllo_scacco(Pezzo::Colore colore);
 
     // metodo che restituisce il pezzo che causa lo scacco
-    Pezzo* Scacchiera::pezzo_scacco(Pezzo::Colore colore);
+    Pezzo* pezzo_scacco(Pezzo::Colore colore);
 
     bool scaccomatto(Pezzo::Colore colore);
 
