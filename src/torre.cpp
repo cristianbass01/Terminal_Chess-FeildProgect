@@ -57,3 +57,29 @@ int Torre::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
 
   return true;
 }
+
+bool Torre::bloccato(Scacchiera& scacchiera){
+  //simulo le mosse verso le 4 direzioni possibili 
+  bool bordo_alto = this->posizione_.get_riga() + 1 > 7;
+  bool bordo_basso = this->posizione_.get_riga() - 1 < 0;
+  bool bordo_destro = this->posizione_.get_colonna() + 1 > 7;
+  bool bordo_sinistro = this->posizione_.get_colonna() - 1 < 0;
+  
+  if(!bordo_alto)
+    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + 1, this->posizione_.get_colonna())))
+      return false;
+
+  if(!bordo_sinistro)
+    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga(), this->posizione_.get_colonna() - 1)))
+      return false;
+  
+  if(!bordo_destro)
+    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga(), this->posizione_.get_colonna() + 1)))
+      return false;
+  
+  if(!bordo_basso)
+    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() - 1, this->posizione_.get_colonna())))
+      return false;
+      
+  return true;
+}

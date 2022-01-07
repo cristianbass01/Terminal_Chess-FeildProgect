@@ -84,3 +84,28 @@ int Pedone::mossa(Casella posizione, Scacchiera& scacchiera){
   //se non da scacco do il controllo di nuovo alla funzione chiamante
   return mossa_valida;
 }
+
+bool Pedone::bloccato(Scacchiera& scacchiera){
+  //simulo le 4 mosse possibili in base al colore del pedone
+
+  int versore_movimento;
+
+  if(colore_ == Pezzo::Colore::bianco)
+    versore_movimento = 1;
+  else 
+   versore_movimento = -1;
+  
+  if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + versore_movimento, this->posizione_.get_colonna() )))
+    return false;
+
+  if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + (2 * versore_movimento), this->posizione_.get_colonna() )))
+    return false;
+  
+  if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + versore_movimento, this->posizione_.get_colonna() + versore_movimento)))
+    return false;
+  
+  if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + versore_movimento, this->posizione_.get_colonna() - versore_movimento)))
+    return false;
+      
+  return true;
+}

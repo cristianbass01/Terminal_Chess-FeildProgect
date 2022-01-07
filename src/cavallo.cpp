@@ -33,3 +33,8 @@ int Cavallo::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
     return true;
   return false;
 }
+
+bool Cavallo::bloccato(Scacchiera& scacchiera){
+  //simulo la mossa verso le 4 diagonali
+  
+}
