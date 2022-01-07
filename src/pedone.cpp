@@ -79,7 +79,7 @@ int Pedone::mossa(Casella posizione, Scacchiera& scacchiera){
   else if(mossa_valida == SALTO_PEDONE){
     // gestione en passant, salto del pedone e arrocco
     posizione_ = posizione;
-    mossa_salto = scacchiera.get_mosse_totali();
+    mossa_salto = scacchiera.get_mosse_totali() + 1;
   }
 
   //se non da scacco do il controllo di nuovo alla funzione chiamante
