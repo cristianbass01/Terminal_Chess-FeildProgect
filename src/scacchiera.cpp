@@ -166,7 +166,8 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       //viene effettuata la mossa
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = nullptr;
-      int delta_colonna = posizione_fin.get_colonna() -posizione_in.get_colonna();
+      int delta_colonna;
+      delta_colonna = posizione_fin.get_colonna() -posizione_in.get_colonna();
       if(delta_colonna == 2){
         scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1] = scacchiera[posizione_in.get_riga()][7];
         scacchiera[posizione_in.get_riga()][7] = nullptr;
@@ -443,7 +444,8 @@ bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) 
       //viene effettuata la mossa
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = nullptr;
-      int delta_colonna = posizione_fin.get_colonna() -posizione_in.get_colonna();
+      int delta_colonna;
+      delta_colonna = posizione_fin.get_colonna() -posizione_in.get_colonna();
       if(delta_colonna == 2){
         scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1] = scacchiera[posizione_in.get_riga()][7];
         scacchiera[posizione_in.get_riga()][7] = nullptr;
