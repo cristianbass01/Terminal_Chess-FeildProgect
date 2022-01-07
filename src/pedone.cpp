@@ -73,7 +73,7 @@ int Pedone::mossa(Casella posizione, Scacchiera& scacchiera){
 
   int mossa_valida = this->mossa_valida(posizione, scacchiera);
 
-  if(mossa_valida == true) {
+  if(mossa_valida == true || mossa_valida == EN_PASSANT) {
       posizione_ = posizione;
   }
   else if(mossa_valida == SALTO_PEDONE){
