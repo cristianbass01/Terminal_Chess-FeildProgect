@@ -7,7 +7,7 @@ int Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) {
     return false;
 
   int mossa_valida = this->mossa_valida(posizione, scacchiera);
-  if(mossa_valida || mossa_valida == EN_PASSANT  || mossa_valida == ARROCCO) {
+  if(mossa_valida == true || mossa_valida == EN_PASSANT  || mossa_valida == ARROCCO) {
       posizione_ = posizione;
   }
 
