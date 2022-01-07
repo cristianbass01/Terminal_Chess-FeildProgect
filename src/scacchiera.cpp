@@ -121,17 +121,20 @@ bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
   colore == Pezzo::Colore::bianco ?  re_scelto = re_bianco : re_scelto = re_nero;  
 
   //verifica che nessun pezzo presente sulla scacchiera possa mangiare il re 
-  for(int i = 0; i < RIGHE ; i++){
-    for(int j = 0; j< COLONNE ; j++){
-      if(scacchiera[i][j] != nullptr){ //se si ha un pezzo in questa posizione
-        //se il pezzo ha colore avversario viene chiamato il metodo mossa valida con posizione di re 
-        if(((*(scacchiera[i][j])).get_colore() != colore && (*(scacchiera[i][j])).simulazione_mossa((*re_scelto).get_posizione(), *this))){
-          return true;
-        }
-      }
-    }
+  if(colore == Pezzo::Colore::bianco)
+  {
+    for(int i = 0; i<pezzi_bianchi.size(); i++)
+      if(pezzi_bianchi[i]->simulazione_mossa((*re_scelto).get_posizione(), *this))
+        return true;
+        
+  }
+  else{
+    for(int i = 0; i<pezzi_neri.size(); i++)
+      if(pezzi_neri[i]->simulazione_mossa((*re_scelto).get_posizione(), *this))
+        return true;
   }
   return false;
+        
 }
 
 bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
@@ -395,7 +398,7 @@ bool Scacchiera::stallo(Pezzo::Colore colore){ // OTTIMIZZATO
   }
   else{
     for(int i = 0; i<pezzi_neri.size(); i++)
-      if(pezzi_bianchi[i]->bloccato(*this))
+      if(pezzi_neri[i]->bloccato(*this))
         return false;
   }
   return true;
