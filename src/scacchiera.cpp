@@ -544,6 +544,7 @@ bool Scacchiera::pezzi_insufficienti(){
 }
 
 bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
+
   //caso in cui nella posizione iniziale si trova nullptr
   if(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] == nullptr)
     throw Eccezione("[Eccezione::NessunPezzo] Nella casella selezionata non c'è nessun pezzo da muovere");
@@ -680,3 +681,4 @@ bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) 
   }
   return mossa;
 }
+
