@@ -325,13 +325,15 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
 }
 
 bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
-  if(controllo_scacco(colore)){
+  Pezzo* pezzo_attaccante = pezzo_scacco(colore);
+  if(pezzo_attaccante != nullptr){
     //re_scelto è un puntatore che punta al re del colore dato
     Pezzo* re_scelto;
     colore == Pezzo::Colore::bianco ?  re_scelto = re_bianco : re_scelto = re_nero;  
 
+    //controllo se il re può muoversi senza subire scacco
     if(re_scelto->bloccato(*this)){
-
+      return true;
     }
   }
   
