@@ -309,11 +309,11 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
 
   //inserimento mossa nel log generando una stringa che indica la mossa
   std::string mossa_testuale;
-  mossa_testuale.append(1, posizione_in.get_riga()+1+'0');
   mossa_testuale.append(1, posizione_in.get_colonna()+'A');
+  mossa_testuale.append(1, posizione_in.get_riga()+1+'0');
   mossa_testuale.append(1, ' ');
-  mossa_testuale.append(1, posizione_fin.get_riga()+1+'0');
   mossa_testuale.append(1, posizione_fin.get_colonna()+'A');
+  mossa_testuale.append(1, posizione_fin.get_riga()+1+'0');
   mossa_testuale.append(1, '\n');
   log_mosse.push_back(mossa_testuale);
     
