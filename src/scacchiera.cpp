@@ -140,7 +140,7 @@ bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
 bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   //caso in cui nella posizione iniziale si trova nullptr
   if(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] == nullptr)
-    throw Eccezione("[Eccezione::NessunPezzo] Nella casella selezionata non c'è nessun pezzo da muovere");
+    throw Eccezione("--> [ERRORE] Nella casella selezionata non c'è nessun pezzo da muovere");
 
   Pezzo* pezzo_mosso = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
   Pezzo* pezzo_mangiato = scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()];
@@ -168,7 +168,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
         pezzo_mosso->set_posizione(posizione_in);
         scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
-        std::cout<<"Questa mossa mette il tuo re sotto scacco"<<std::endl;
+        std::cout<<"--> [ERRORE] Questa mossa mette il tuo re sotto scacco"<<std::endl;
         
         //controllo se il pezzo mangiato è un pezzo effettivo
         if(pezzo_mangiato != nullptr) {
@@ -212,7 +212,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
           scacchiera[posizione_in.get_riga()][0] = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1];
           scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1] = nullptr;
         }
-        std::cout<<"Questa mossa mette il tuo re sotto scacco"<<std::endl;
+        std::cout<<"--> [ERRORE] Questa mossa mette il tuo re sotto scacco"<<std::endl;
         return false;
       }
       
@@ -236,7 +236,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
         pezzo_mosso->set_posizione(posizione_in);
         (static_cast<Pedone*>(pezzo_mosso))->reset_mossa_salto();
-        std::cout<<"Questa mossa mette il tuo re sotto scacco"<<std::endl;
+        std::cout<<"--> [ERRORE] Questa mossa mette il tuo re sotto scacco"<<std::endl;
         return false;
       }
 
@@ -259,7 +259,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
         scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
         pezzo_mosso->set_posizione(posizione_in);
-        std::cout<<"Questa mossa mette il tuo re sotto scacco"<<std::endl;
+        std::cout<<"--> [ERRORE] Questa mossa mette il tuo re sotto scacco"<<std::endl;
         
         //controllo se il pezzo mangiato è un pezzo effettivo
         if(pezzo_mangiato != nullptr) {
@@ -309,11 +309,11 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
 
   //inserimento mossa nel log generando una stringa che indica la mossa
   std::string mossa_testuale;
-  mossa_testuale.append(1, posizione_in.get_riga()+1+'0');
   mossa_testuale.append(1, posizione_in.get_colonna()+'A');
+  mossa_testuale.append(1, posizione_in.get_riga()+1+'0');
   mossa_testuale.append(1, ' ');
-  mossa_testuale.append(1, posizione_fin.get_riga()+1+'0');
   mossa_testuale.append(1, posizione_fin.get_colonna()+'A');
+  mossa_testuale.append(1, posizione_fin.get_riga()+1+'0');
   mossa_testuale.append(1, '\n');
   log_mosse.push_back(mossa_testuale);
     
