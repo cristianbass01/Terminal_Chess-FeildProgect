@@ -142,7 +142,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   Pezzo* pezzo_mangiato = scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()];
   
   switch(pezzo_mosso->mossa(posizione_fin, *(this))) {
-    case Pezzo::EN_PASSANT:
+    case Pezzo::EN_PASSANT:{
       //viene effettuata la mossa
       pezzo_mangiato = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()];
       scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = nullptr;
@@ -161,8 +161,8 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       }
 
       break;
-
-    case Pezzo::ARROCCO:
+    }
+    case Pezzo::ARROCCO:{
       //viene effettuata la mossa
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = nullptr;
@@ -204,8 +204,8 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1]->set_posizione(Casella(posizione_in.get_riga(), posizione_fin.get_colonna() + 1));
 
       break;
-
-    case Pezzo::SALTO_PEDONE:
+    }
+    case Pezzo::SALTO_PEDONE:{
       //modificata scacchiera
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
@@ -222,8 +222,8 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       }
 
       break;
-    
-    case true:
+    }
+    case true:{
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
       //caso in cui metto il mio re sotto scacco
@@ -237,10 +237,11 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       }
     
       break;
-
-    case false:
+    }
+    case false:{
       return false;
       break;
+    }
   }
 
   //caso in cui c'è stato un pezzo mangiato
