@@ -40,7 +40,7 @@ class Pezzo {
     
     //costanti che indicano il tipo di mossa eseguita
     static constexpr int EN_PASSANT = 2;
-    static constexpr int SALTO_PEDONE = 5;
+    static constexpr int SALTO_PEDONE = 3;
     static constexpr int ARROCCO = 4;
 
   protected:
