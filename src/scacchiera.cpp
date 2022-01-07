@@ -325,9 +325,40 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
 }
 
 bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
+  if(controllo_scacco(colore)){
+    //re_scelto è un puntatore che punta al re del colore dato
+    Pezzo* re_scelto;
+    colore == Pezzo::Colore::bianco ?  re_scelto = re_bianco : re_scelto = re_nero;  
+
+    if(re_scelto->bloccato(*this)){
+
+    }
+  }
+  
   return false;
 }
 
+Pezzo* Scacchiera::pezzo_scacco(Pezzo::Colore colore){
+  //re_scelto è un puntatore che punta al re del colore avversario
+  Pezzo* re_scelto;
+  colore == Pezzo::Colore::bianco ?  re_scelto = re_bianco : re_scelto = re_nero;  
+
+  //verifica che nessun pezzo presente sulla scacchiera possa mangiare il re 
+  if(colore == Pezzo::Colore::bianco)
+  {
+    for(int i = 0; i<pezzi_neri.size(); i++)
+      if(pezzi_neri[i]->simulazione_mossa(re_scelto->get_posizione(), *this))
+        return pezzi_neri[i];
+        
+  }
+  else{
+    for(int i = 0; i<pezzi_bianchi.size(); i++)
+      if(pezzi_bianchi[i]->simulazione_mossa(re_scelto->get_posizione(), *this))
+        return pezzi_bianchi[i];
+  }
+  return nullptr;
+        
+}
 
 void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
   //promozione bianchi

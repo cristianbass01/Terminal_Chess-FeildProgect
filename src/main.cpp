@@ -73,7 +73,7 @@ int main() {
     
     if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione scaccomatto 
         fine_partita = "Abbandono";
-        vincitore = giocatore_2.get_colore();
+        vincitore = giocatore_1.get_colore();
     }
   }
 
