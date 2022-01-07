@@ -1,5 +1,5 @@
 
-loop infinito
+loop infinito (non più)
 d2 d4
 g7 g5
 d4 d5
@@ -12,3 +12,5 @@ b8 d7
 c1 f4
 f8 g7
 b1 a3
+
+in teoria c'è un altro loop infinito ma non trovo più le mosse
