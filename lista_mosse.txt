@@ -28,3 +28,10 @@ e2 e4
 f4 e3
 a1 b1
 g7 g5
+
+Scaccomatto funzionante
+E2 E4
+F7 F5
+E4 F5
+G7 G5
+D1 H5
