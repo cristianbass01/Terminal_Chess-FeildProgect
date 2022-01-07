@@ -45,6 +45,8 @@ class Scacchiera {
 
     bool scaccomatto(Pezzo::Colore colore);
 
+    bool pezzi_insufficienti();
+
     int get_conta_mosse(){ return conta_mosse;} 
 
     int get_mosse_totali() {return mosse_totali;}

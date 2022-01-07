@@ -113,6 +113,9 @@ void Umano::gioca(){
   if(scacchiera_->get_ripetizioni_scacchiera() >= 3)
     if(richiesta_patta())
       throw Eccezione("[Eccezione::Patta_Posizione]");
+  if(scacchiera_->pezzi_insufficienti()){
+    throw Eccezione("[Eccezione::Patta_Insufficenza_di_Pezzi]");
+  }
 }
 
 void Umano::combinazioni(){

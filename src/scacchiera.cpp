@@ -446,6 +446,67 @@ void Scacchiera::inserisci_scacchiera(){
   mappa_posizioni.insert(std::pair<std::string, int>(this->stringa_per_mappa(), get_ripetizioni_scacchiera()));
 }
 
+//per il pareggio per insufficienza di materiale avrò 
+//- re + alfiere vs re
+//- re vs re
+//- re + alfiere o cavallo vs re con alfiere o cavallo
+//- re + 2 cavalli vs re (o re con 2 cavalli)
+  
+bool Scacchiera::pezzi_insufficienti(){
+  //controllo non restino solo i due re
+  if(pezzi_bianchi.size() == 1 && pezzi_neri.size() == 1)
+    return true;
+
+  if((pezzi_bianchi.size() == 2 && pezzi_neri.size() == 1) || (pezzi_bianchi.size() == 1 && pezzi_neri.size() == 2)){
+    //controllo non restino solo i due re e un alfiere bianco
+    if(pezzi_bianchi.size() == 2){
+      for(unsigned int i = 0; i < pezzi_bianchi.size(); i++)
+        if(pezzi_bianchi[i]->get_figura() == 'a')
+          return true;
+    }
+    //controllo non restino solo i due re e un alfiere nero
+    if(pezzi_neri.size() == 2){
+      for(unsigned int i = 0; i < pezzi_neri.size(); i++)
+        if(pezzi_neri[i]->get_figura() == 'A')
+          return true;
+    }
+  }
+  //controllo non restino solo  re + alfiere o cavallo vs re con alfiere o cavallo
+  if(pezzi_bianchi.size() == 2 && pezzi_neri.size() == 2){
+    bool alfiere_cavallo_bianco = false;
+    bool alfiere_cavallo_nero = false;
+
+    for(unsigned int i = 0; i < pezzi_bianchi.size(); i++)
+        if(pezzi_bianchi[i]->get_figura() == 'a' || pezzi_bianchi[i]->get_figura() == 'c')
+          alfiere_cavallo_bianco = true;
+
+    for(unsigned int i = 0; i < pezzi_neri.size(); i++)
+        if(pezzi_neri[i]->get_figura() == 'A' || pezzi_neri[i]->get_figura() == 'C')
+          alfiere_cavallo_nero = true;
+
+    if(alfiere_cavallo_bianco && alfiere_cavallo_nero)
+      return true;
+  }
+
+  if((pezzi_bianchi.size() == 3 && pezzi_neri.size() == 1) || (pezzi_bianchi.size() == 1 && pezzi_neri.size() == 3)){
+    int conta_cavalli = 0;
+    //conto i cavalli
+    for(unsigned int i = 0; i < pezzi_neri.size(); i++){
+      if(pezzi_neri[i]->get_figura() == 'C')
+        conta_cavalli++;
+    }
+    for(unsigned int i = 0; i < pezzi_bianchi.size(); i++){
+      if(pezzi_bianchi[i]->get_figura() == 'c')
+        conta_cavalli++;
+    }
+
+    if(conta_cavalli == 2)
+      return true;
+  }
+
+  return false;
+}
+
 bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
   //caso in cui nella posizione iniziale si trova nullptr
   if(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] == nullptr)
