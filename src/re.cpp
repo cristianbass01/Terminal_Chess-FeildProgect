@@ -62,7 +62,7 @@ int Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
   return true;
 }
 
-bool Alfiere::bloccato(Scacchiera& scacchiera){
+bool Re::bloccato(Scacchiera& scacchiera){
   //simulo le mosse possibili
   bool bordo_alto = this->posizione_.get_riga() + 1 > 7;
   bool bordo_basso = this->posizione_.get_riga() - 1 < 0;
