@@ -93,7 +93,7 @@ Scacchiera::~Scacchiera() {
 
 void Scacchiera::stampa() {
   //stampato turno corrente
-  std::cout<<"Turno: " + get_mosse_totali() + 1<<std::endl<<std::endl;
+  std::cout<<"Turno: " << get_mosse_totali() + 1 << std::endl<<std::endl;
 
   /* 
   la stampa avviene in modo specchiato rispetto a com'è veramente fatta la matrice 
