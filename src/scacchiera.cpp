@@ -426,13 +426,13 @@ bool Scacchiera::stallo(Pezzo::Colore colore){ // OTTIMIZZATO
   if(colore == Pezzo::Colore::bianco)
   {
     for(int i = 0; i<pezzi_bianchi.size(); i++)
-      if(pezzi_bianchi[i]->bloccato(*this))
+      if(!pezzi_bianchi[i]->bloccato(*this))
         return false;
         
   }
   else{
     for(int i = 0; i<pezzi_neri.size(); i++)
-      if(pezzi_neri[i]->bloccato(*this))
+      if(!pezzi_neri[i]->bloccato(*this))
         return false;
   }
   return true;
