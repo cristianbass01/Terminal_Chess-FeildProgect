@@ -1,7 +1,5 @@
 #include "./../include/scacchiera.h"
 
-
-
 Scacchiera::Scacchiera() {
 
   //inizializzazione tutti puntatori a nullptr
@@ -183,7 +181,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
         scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
         pezzo_mosso->set_posizione(posizione_in);
-        //ristabilisco la poszione della torre
+        //ristabilisco la posizione della torre
         if(delta_colonna == 2){
           scacchiera[posizione_in.get_riga()][7] = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1];
           scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1] = nullptr;
@@ -314,7 +312,7 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
 
 
 std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){ // DA OTTIMIZZARE
-  std::vector<Casella> v(1);
+  std::vector<Casella> v;
   for(int i = 0; i < RIGHE; i++) {
     for(int j = 0; j < COLONNE; j++) {
       Pezzo* pezzo_mosso = scacchiera[posizione_pezzo.get_riga()][posizione_pezzo.get_colonna()];
@@ -387,17 +385,17 @@ std::string Scacchiera::stringa_per_mappa() {
   return temp;
 }
 
-bool Scacchiera::stallo(Pezzo::Colore colore){
+bool Scacchiera::stallo(Pezzo::Colore colore){ // OTTIMIZZATO 
   if(colore == Pezzo::Colore::bianco)
   {
     for(int i = 0; i<pezzi_bianchi.size(); i++)
-      if((mosse_possibili(pezzi_bianchi[i]->get_posizione())).size() != 0)
+      if(pezzi_bianchi[i]->bloccato(*this))
         return false;
         
   }
   else{
     for(int i = 0; i<pezzi_neri.size(); i++)
-      if((mosse_possibili(pezzi_neri[i]->get_posizione())).size() != 0)
+      if(pezzi_bianchi[i]->bloccato(*this))
         return false;
   }
   return true;
@@ -411,4 +409,103 @@ void Scacchiera::inserisci_scacchiera(){
   mappa_posizioni.insert(std::pair<std::string, int>(this->stringa_per_mappa(), get_ripetizioni_scacchiera()));
 }
 
+bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
+  //caso in cui nella posizione iniziale si trova nullptr
+  if(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] == nullptr)
+    throw Eccezione("[Eccezione::NessunPezzo] Nella casella selezionata non c'è nessun pezzo da muovere");
 
+  bool mossa = true;
+
+  Pezzo* pezzo_mosso = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
+  Pezzo* pezzo_mangiato = scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()];
+  
+  switch(pezzo_mosso->mossa(posizione_fin, *(this))) {
+    case Pezzo::EN_PASSANT:
+      //viene effettuata la mossa
+      pezzo_mangiato = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()];
+      scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = nullptr;
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
+
+      //caso in cui metti sotto scacco il tuo re
+      if(controllo_scacco(pezzo_mosso->get_colore())) {
+        mossa = false;
+      }
+
+      //vengono ristabilite le posizioni di partenza
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
+      pezzo_mosso->set_posizione(posizione_in);
+      scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+      break;
+
+    case Pezzo::ARROCCO:
+      //viene effettuata la mossa
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = nullptr;
+      int delta_colonna = posizione_fin.get_colonna() -posizione_in.get_colonna();
+      if(delta_colonna == 2){
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1] = scacchiera[posizione_in.get_riga()][7];
+        scacchiera[posizione_in.get_riga()][7] = nullptr;
+      }
+      else{
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1] = scacchiera[posizione_in.get_riga()][0];
+        scacchiera[posizione_in.get_riga()][0] = nullptr;
+      }
+      //caso in cui metti sotto scacco il tuo re
+      if(controllo_scacco(pezzo_mosso->get_colore())){
+        mossa = false;
+      }
+      
+      //vengono ristabilite le posizioni di partenza
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
+      pezzo_mosso->set_posizione(posizione_in);
+      //ristabilisco la posizione della torre
+      if(delta_colonna == 2){
+        scacchiera[posizione_in.get_riga()][7] = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1];
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1] = nullptr;
+      }
+      else{
+        scacchiera[posizione_in.get_riga()][0] = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1];
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1] = nullptr;
+      }
+      break;
+
+    case Pezzo::SALTO_PEDONE:
+      //modificata scacchiera
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
+      
+      //caso in cui metto il mio re sotto scacco
+      if(controllo_scacco(pezzo_mosso->get_colore())) {
+        mossa = false;
+      }
+      //ripristinate le condizioni iniziali
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
+      pezzo_mosso->set_posizione(posizione_in);
+      (static_cast<Pedone*>(pezzo_mosso))->reset_mossa_salto();
+
+      break;
+    
+    case true:
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
+      //caso in cui metto il mio re sotto scacco
+      if(controllo_scacco(pezzo_mosso->get_colore())) {
+        mossa = false;
+      }
+
+      //ripristinate le condizioni iniziali
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
+      scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+      pezzo_mosso->set_posizione(posizione_in);
+      break;
+
+    case false:
+      mossa = false;
+      break;
+  }
+  return mossa;
+}
