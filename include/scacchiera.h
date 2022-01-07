@@ -72,6 +72,10 @@ class Scacchiera {
     //gestione mappa
     void inserisci_scacchiera();
     int get_ripetizioni_scacchiera();
+    
+    //metodi che ritornano tutti i pezzi ancora in gioco di un colore
+    std::vector<Pezzo*> const get_pezzi_bianchi() { return pezzi_bianchi;}
+    std::vector<Pezzo*> const get_pezzi_neri() {return pezzi_neri;}
 
   private:
     //matrice che contiene i puntatori ai singoli pezzi e rappresenta la scacchiera

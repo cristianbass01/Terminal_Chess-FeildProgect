@@ -4,9 +4,21 @@
 #include "./../include/scacchiera.h"
 #include "./../include/umano.h"
 
-int main() {
+int main(int argc, char** argv) {
   char e_accentata = 0x00F7;
   Scacchiera test;
+
+  //verifica il numero di argomenti passati da riga di comando
+  if(argc < 2 || argc > 3)
+    throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato");
+  
+  //argv[0] è il nome del programma quindi usiamo argv[1]
+
+  std::string arg = argv[1];
+  //verifica che l'argomento iniziale sia corretto
+  if(arg.compare("pc") != 0 || arg.compare("cc") != 0) 
+    throw Eccezione("[Eccezione::Argomento_Non_Valido]");
+
 
   bool colore = static_cast<bool>(rand() % 2); //scelta randomica dei colori dei giocatori
   Umano giocatore_1(&test, static_cast<Pezzo::Colore>(colore));
@@ -43,7 +55,7 @@ int main() {
         if(giocatore_2.ricevuta_richiesta_patta())
           fine_partita = "Patta_Accordo";
 
-      if((e.errore()).compare("[Eccezione::Patta_Materiale]") == 0) // gestione patta per materiale insufficiente NON FATTA
+      if((e.errore()).compare("[Eccezione::Patta_Materiale]") == 0) // gestione patta per materiale insufficiente
         fine_partita = "Patta_Insufficienza di materiale";
       
       if((e.errore()).compare("[Eccezione::Patta_Posizione]") == 0) // gestione patta posizione ripetuta
@@ -52,7 +64,7 @@ int main() {
       if((e.errore()).compare("[Eccezione::Patta_Mosse]") == 0) // gestione patta mossa
         fine_partita = "Patta_Gioco fermo (mosse)";
 
-      if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto NON FATTA
+      if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto
         fine_partita = "Scaccomatto";
         vincitore = giocatore_1.get_colore();
       }
