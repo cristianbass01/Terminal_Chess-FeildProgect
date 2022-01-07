@@ -10,6 +10,10 @@ Umano::Umano(Scacchiera* scacchiera, Pezzo::Colore colore){
 
 void Umano::gioca(){
 
+  if(scacchiera_->controllo_scacco(colore_)){
+    std::cout<<"Sei sotto scacco!"<<std::endl;
+  }
+
   if(scacchiera_->stallo(colore_)) //controlla che il giocatore non sia in stallo
     throw Eccezione("[Eccezione::Patta_Stallo]");
   
