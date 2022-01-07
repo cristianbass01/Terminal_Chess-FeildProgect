@@ -70,3 +70,8 @@ ci mancano:
 - "Nel caso di partite tra due computer, dovete fissare un numero massimo di mosse, oltre il quale la partita è considerata nulla."
 
 contatore di mosse generale
+
+
+per compilare replay:
+g++ -o rep replay.cpp .\src\alfiere.cpp .\src\casella.cpp .\src\cavallo.cpp .\src\computer.cpp .\src\eccezione.cpp .\src\pedone.cpp .\src\pezzo.cpp .\src\re.cpp .\src\regina.cpp .\src\scacchiera.cpp .\src\torre.cpp .\src\umano.cpp
+
