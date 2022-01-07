@@ -442,7 +442,7 @@ bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) 
     case Pezzo::ARROCCO:{
       //viene effettuata la mossa
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
-      scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = nullptr;
+      scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
       int delta_colonna;
       delta_colonna = posizione_fin.get_colonna() -posizione_in.get_colonna();
       if(delta_colonna == 2){
