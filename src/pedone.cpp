@@ -50,9 +50,9 @@ int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
         //di due posizioni e che quindi va modificata la variabile mossa salto
       }
     }
-    
+
     // controllo che sia la prima mossa nera e che non ci siano pezzi nelle due caselle davanti al pedone
-    if(colore_ == Pezzo::Colore::nero) {
+    else if(colore_ == Pezzo::Colore::nero) {
       if((posizione_.get_riga() == 6) && (scacchiera.get_casella(Casella(posizione_.get_riga() - 1, posizione_.get_colonna())) == nullptr) && (scacchiera.get_casella(posizione_finale)) == nullptr){
         return SALTO_PEDONE;//la mossa è il salto del pedone di 2
         //se non si tratta della simulazione serve sapere che si tratta di una mossa
@@ -96,17 +96,28 @@ bool Pedone::bloccato(Scacchiera& scacchiera){
   else 
    versore_movimento = -1;
   
+  bool riga_salto_bianco = this->posizione_.get_riga() == 1;
+  bool riga_salto_nero = this->posizione_.get_riga() == 6;
+  bool bordo_destro = this->posizione_.get_colonna() + 1 > 7;
+  bool bordo_sinistro = this->posizione_.get_colonna() - 1 < 0;
+
+  //simulo mossa in avanti senza catturare pezzi (se sono nell'ultima riga avrò gia fatto la promozione quindi il controllo è superfluo)
   if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + versore_movimento, this->posizione_.get_colonna() )))
     return false;
 
-  if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + (2 * versore_movimento), this->posizione_.get_colonna() )))
-    return false;
+  //simulo salto iniziale di 2 caselle controllando di trovarmi nella riga giusta per poterlo fare
+  if((riga_salto_bianco && colore_ == Pezzo::Colore::bianco) || (riga_salto_nero && colore_ == Pezzo::Colore::nero))
+    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + (2 * versore_movimento), this->posizione_.get_colonna() )))
+      return false;
+
+  //simulo lo spostamento laterale catturando un altro pezzo a destra
+  if(!bordo_destro)
+    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + versore_movimento, this->posizione_.get_colonna() + 1)))
+      return false;
   
-  if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + versore_movimento, this->posizione_.get_colonna() + versore_movimento)))
-    return false;
-  
-  if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + versore_movimento, this->posizione_.get_colonna() - versore_movimento)))
-    return false;
+  if(!bordo_sinistro)
+    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + versore_movimento, this->posizione_.get_colonna() - 1)))
+      return false;
       
   return true;
 }

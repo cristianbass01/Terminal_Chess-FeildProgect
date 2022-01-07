@@ -12,5 +12,6 @@ b8 d7
 c1 f4
 f8 g7
 b1 a3
+e8 g8
 
 in teoria c'è un altro loop infinito ma non trovo più le mosse
