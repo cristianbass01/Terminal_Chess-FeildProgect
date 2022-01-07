@@ -333,8 +333,25 @@ bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
 
     //controllo se il re può muoversi senza subire scacco
     if(re_scelto->bloccato(*this)){
+      //creo un array con tutte le posizioni in cui poter bloccare il pezzo attaccante
+      std::vector<Casella> posizioni = mosse_possibili(pezzo_attaccante->get_posizione());
+      posizioni.push_back(pezzo_attaccante->get_posizione());
+      //testo se posso mettermi in almeno una posizione in cui passa il pezzo attaccante o se posso mangiarlo senza subire ancora scacco
+      for(unsigned int i = 0; i < posizioni.size(); i++){
+        if(colore == Pezzo::Colore::bianco){
+          for(int i = 0; i<pezzi_bianchi.size(); i++)
+            if(pezzi_bianchi[i]->simulazione_mossa(posizioni[i], *this))
+              return false;
+        }
+        else{
+          for(int i = 0; i<pezzi_neri.size(); i++)
+            if(pezzi_neri[i]->simulazione_mossa(posizioni[i], *this))
+              return false;
+        }
+      }
       return true;
     }
+    return false;
   }
   
   return false;
@@ -346,8 +363,7 @@ Pezzo* Scacchiera::pezzo_scacco(Pezzo::Colore colore){
   colore == Pezzo::Colore::bianco ?  re_scelto = re_bianco : re_scelto = re_nero;  
 
   //verifica che nessun pezzo presente sulla scacchiera possa mangiare il re 
-  if(colore == Pezzo::Colore::bianco)
-  {
+  if(colore == Pezzo::Colore::bianco){
     for(int i = 0; i<pezzi_neri.size(); i++)
       if(pezzi_neri[i]->simulazione_mossa(re_scelto->get_posizione(), *this))
         return pezzi_neri[i];
@@ -383,7 +399,7 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
     }
 }
 
-
+// passi la posizione del pezzo e ti ritorna un vettore contenente tutte le caselle in cui quel pezzo può andare
 std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){ // DA OTTIMIZZARE
   std::vector<Casella> v;
   for(int i = 0; i < RIGHE; i++) {
