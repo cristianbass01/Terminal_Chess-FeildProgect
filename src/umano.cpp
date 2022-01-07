@@ -26,7 +26,6 @@ void Umano::gioca(){
   static constexpr int a = 97; // per trasformare da lettera a numero di colonna
 
   while(!done){
-
     std::cout << "Giocatore ";
     colore_ == Pezzo::Colore::bianco ? std::cout << "bianco (minuscole) " : std::cout << "nero (maiuscole) ";
     std::cout << "(per aiuto HE LP ):" << std::endl;
@@ -47,7 +46,7 @@ void Umano::gioca(){
       else if(mossa.compare("ff ff") == 0) // Il giocatore vuole terminare la partita
         throw Eccezione("[Eccezione::Abbandono]");
       else if(mossa.compare("xx xx") == 0) // Il giocatore vuole vedere la scacchiera
-        scacchiera_->stampa();
+        scacchiera_->stampa(); //OVERWRITING OPERATORE << DA IMPLEMENTARE
       else{
         //creazione colonna iniziale
         int colonna_iniziale = mossa[0] - a; // in questo modo parto da a = 0 come colonna
@@ -102,6 +101,7 @@ void Umano::gioca(){
         }
       }
     }
+    std::cout << std::endl;
   }
   if(scacchiera_->scaccomatto(colore_avversario_)){
     throw Eccezione("[Eccezione::Scaccomatto]");

@@ -1,0 +1,14 @@
+
+loop infinito
+d2 d4
+g7 g5
+d4 d5
+e7 e5
+d5 e6
+g8 h6
+d1 d7
+b8 a6
+b8 d7
+c1 f4
+f8 g7
+b1 a3

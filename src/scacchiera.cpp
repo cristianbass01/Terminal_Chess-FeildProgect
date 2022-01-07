@@ -123,14 +123,14 @@ bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
   //verifica che nessun pezzo presente sulla scacchiera possa mangiare il re 
   if(colore == Pezzo::Colore::bianco)
   {
-    for(int i = 0; i<pezzi_bianchi.size(); i++)
-      if(pezzi_bianchi[i]->simulazione_mossa((*re_scelto).get_posizione(), *this))
+    for(int i = 0; i<pezzi_neri.size(); i++)
+      if(pezzi_neri[i]->simulazione_mossa(re_scelto->get_posizione(), *this))
         return true;
         
   }
   else{
-    for(int i = 0; i<pezzi_neri.size(); i++)
-      if(pezzi_neri[i]->simulazione_mossa((*re_scelto).get_posizione(), *this))
+    for(int i = 0; i<pezzi_bianchi.size(); i++)
+      if(pezzi_bianchi[i]->simulazione_mossa(re_scelto->get_posizione(), *this))
         return true;
   }
   return false;
@@ -153,6 +153,14 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
 
+      if(pezzo_mangiato != nullptr) {
+        //il pezzo che è stato mangiato viene rimosso dal rispettivo vettore pezzi_***
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
+          pezzi_bianchi.erase(std::find(pezzi_bianchi.begin(), pezzi_bianchi.end(), pezzo_mangiato));
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
+          pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pezzo_mangiato));
+      }
+
       //caso in cui metti sotto scacco il tuo re
       if(controllo_scacco(pezzo_mosso->get_colore())) { 
         //vengono ristabilite le posizioni di partenza
@@ -161,6 +169,15 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         pezzo_mosso->set_posizione(posizione_in);
         scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
         std::cout<<"Questa mossa mette il tuo re sotto scacco"<<std::endl;
+        
+        //controllo se il pezzo mangiato è un pezzo effettivo
+        if(pezzo_mangiato != nullptr) {
+          //il pezzo che è stato mangiato viene rimesso nel rispettivo vettore pezzi_***
+          if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
+            pezzi_bianchi.push_back(pezzo_mangiato);
+          if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
+            pezzi_neri.push_back(pezzo_mangiato);
+        }
         return false;
       }
 
@@ -179,6 +196,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1] = scacchiera[posizione_in.get_riga()][0];
         scacchiera[posizione_in.get_riga()][0] = nullptr;
       }
+
       //caso in cui metti sotto scacco il tuo re
       if(controllo_scacco(pezzo_mosso->get_colore())){
         //vengono ristabilite le posizioni di partenza
@@ -227,6 +245,14 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
     case true:{
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
+
+      if(pezzo_mangiato != nullptr) {
+        //il pezzo che è stato mangiato viene rimosso dal rispettivo vettore pezzi_***
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
+          pezzi_bianchi.erase(std::find(pezzi_bianchi.begin(), pezzi_bianchi.end(), pezzo_mangiato));
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
+          pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pezzo_mangiato));
+      }
       //caso in cui metto il mio re sotto scacco
       if(controllo_scacco(pezzo_mosso->get_colore())) {
         //ripristinate le condizioni iniziali
@@ -234,6 +260,15 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
         pezzo_mosso->set_posizione(posizione_in);
         std::cout<<"Questa mossa mette il tuo re sotto scacco"<<std::endl;
+        
+        //controllo se il pezzo mangiato è un pezzo effettivo
+        if(pezzo_mangiato != nullptr) {
+          //il pezzo che è stato mangiato viene rimesso nel rispettivo vettore pezzi_***
+          if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
+            pezzi_bianchi.push_back(pezzo_mangiato);
+          if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
+            pezzi_neri.push_back(pezzo_mangiato);
+        }
         return false;
       }
     
@@ -253,11 +288,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
     //lo si pone a -1 perchè successivamente verrà incrementato di 1 o posto a 0
     conta_mosse = -1;
 
-    //il pezzo che è stato mangiato viene rimosso dal rispettivo vettore pezzi_***
-    if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
-      pezzi_bianchi.erase(std::find(pezzi_bianchi.begin(), pezzi_bianchi.end(), pezzo_mangiato));
-    if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
-      pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pezzo_mangiato));
+    
   }
 
   //se il pezzo mosso è un re si blocca la possibilità di fare l'arrocco
@@ -430,6 +461,14 @@ bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) 
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
 
+      if(pezzo_mangiato != nullptr) {
+        //il pezzo che è stato mangiato viene rimosso dal rispettivo vettore pezzi_***
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
+          pezzi_bianchi.erase(std::find(pezzi_bianchi.begin(), pezzi_bianchi.end(), pezzo_mangiato));
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
+          pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pezzo_mangiato));
+      }
+
       //caso in cui metti sotto scacco il tuo re
       if(controllo_scacco(pezzo_mosso->get_colore())) {
         mossa = false;
@@ -440,6 +479,15 @@ bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) 
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
       pezzo_mosso->set_posizione(posizione_in);
       scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
+
+      //controllo se il pezzo mangiato è un pezzo effettivo
+      if(pezzo_mangiato != nullptr) {
+        //il pezzo che è stato mangiato viene rimesso nel rispettivo vettore pezzi_***
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
+          pezzi_bianchi.push_back(pezzo_mangiato);
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
+          pezzi_neri.push_back(pezzo_mangiato);
+      }
       break;
     }
     case Pezzo::ARROCCO:{
@@ -496,6 +544,15 @@ bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) 
     case true:{
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
+
+      if(pezzo_mangiato != nullptr) {
+        //il pezzo che è stato mangiato viene rimosso dal rispettivo vettore pezzi_***
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
+          pezzi_bianchi.erase(std::find(pezzi_bianchi.begin(), pezzi_bianchi.end(), pezzo_mangiato));
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
+          pezzi_neri.erase(std::find(pezzi_neri.begin(), pezzi_neri.end(), pezzo_mangiato));
+      }
+
       //caso in cui metto il mio re sotto scacco
       if(controllo_scacco(pezzo_mosso->get_colore())) {
         mossa = false;
@@ -505,6 +562,15 @@ bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) 
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mangiato;
       pezzo_mosso->set_posizione(posizione_in);
+
+      //controllo se il pezzo mangiato è un pezzo effettivo
+      if(pezzo_mangiato != nullptr) {
+        //il pezzo che è stato mangiato viene rimesso nel rispettivo vettore pezzi_***
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::bianco) 
+          pezzi_bianchi.push_back(pezzo_mangiato);
+        if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
+          pezzi_neri.push_back(pezzo_mangiato);
+      }
       break;
     }
     case false:{
