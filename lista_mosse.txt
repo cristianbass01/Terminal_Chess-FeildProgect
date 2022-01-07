@@ -13,3 +13,8 @@ c1 f4
 f8 g7
 b1 a3
 e8 g8
+e1 c1
+g8 h8
+e6 e7
+d7 e5
+e7 e8
