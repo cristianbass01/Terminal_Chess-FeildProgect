@@ -12,7 +12,7 @@ void Umano::gioca(){
 
   std::cout << std::endl;
   if(scacchiera_->controllo_scacco(colore_)){
-    std::cout<<"Sei sotto scacco!"<<std::endl;
+    std::cout<<"--> Attenzione! Sei sotto scacco!"<<std::endl;
   }
   else if(scacchiera_->stallo(colore_)) //controlla che il giocatore non sia in stallo
     throw Eccezione("[Eccezione::Patta_Stallo]");
@@ -60,38 +60,42 @@ void Umano::gioca(){
         {
           Casella iniziale(riga_iniziale, colonna_iniziale); //
           Casella finale(riga_finale, colonna_finale);
-          if(scacchiera_->get_casella(iniziale)->get_colore() == colore_){
-            done = scacchiera_->mossa(iniziale, finale);
-            if(!done)
-              std::cout << "--> Mossa non valida" << std::endl;
-            else{ 
-              std::cout << "--> Mossa eseguita" << std::endl;
-              if(mossa.size() == 8){
-                if(mossa[6] == 'p' && mossa[7] == 'p'){
-                  if(scacchiera_->get_ripetizioni_scacchiera() >= 3)
-                    throw Eccezione("[Eccezione::Patta_Posizione]");
-                  std::cout << "--> Richiesta di patta inviata all'altro giocatore" << std::endl;
-                  throw Eccezione("[Eccezione::Richiesta_Patta]");
-                }
-                else{
-                  std::cout << "--> Richiesta di patta non inviata per combinazione errata" << std::endl;
-                  char risposta;
-                  do{
-                    std::cout << "--> Vuoi richiedere la patta? Y/n" << std::endl;
-                    std::string riga_risposta;
-                    getline(std::cin, riga_risposta);
-                    risposta = tolower(riga_risposta[0]);
-                    risposta = tolower(risposta);
-                    if(risposta == 'y')
-                      throw Eccezione("[Eccezione::Richiesta_Patta]");
+          if(scacchiera_->get_casella(iniziale) != nullptr){
+            if(scacchiera_->get_casella(iniziale)->get_colore() == colore_){
+              done = scacchiera_->mossa(iniziale, finale);
+              if(!done)
+                std::cout << "--> Mossa non valida" << std::endl;
+              else{ 
+                std::cout << "--> Mossa eseguita" << std::endl;
+                if(mossa.size() == 8){
+                  if(mossa[6] == 'p' && mossa[7] == 'p'){
+                    if(scacchiera_->get_ripetizioni_scacchiera() >= 3)
+                      throw Eccezione("[Eccezione::Patta_Posizione]");
+                    std::cout << "--> Richiesta di patta inviata all'altro giocatore" << std::endl;
+                    throw Eccezione("[Eccezione::Richiesta_Patta]");
                   }
-                  while(risposta != 'n');
+                  else{
+                    std::cout << "--> Richiesta di patta non inviata per combinazione errata" << std::endl;
+                    char risposta;
+                    do{
+                      std::cout << "--> Vuoi richiedere la patta? Y/n" << std::endl;
+                      std::string riga_risposta;
+                      getline(std::cin, riga_risposta);
+                      risposta = tolower(riga_risposta[0]);
+                      risposta = tolower(risposta);
+                      if(risposta == 'y')
+                        throw Eccezione("[Eccezione::Richiesta_Patta]");
+                    }
+                    while(risposta != 'n');
+                  }
                 }
               }
             }
+            else
+              throw Eccezione("--> [ERRORE] Il pezzo che vuoi muovere è di un colore diverso dal tuo");
           }
           else
-            throw Eccezione("--> [Pezzo_Errato] Il pezzo che vuoi muovere è di un colore diverso dal tuo");
+            throw Eccezione("--> [ERRORE] Nella casella selezionata non c'è nessun pezzo da muovere");
         }
         catch(Eccezione e) // casella errata, mossa non valida o richiesta di patta all'altro giocatore
         {
