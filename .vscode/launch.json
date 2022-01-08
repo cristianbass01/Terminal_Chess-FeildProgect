@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/../build/Feild_Progect",
-            "args": [],
+            "args": ["pc"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
