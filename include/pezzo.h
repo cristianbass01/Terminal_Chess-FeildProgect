@@ -35,7 +35,7 @@ class Pezzo {
     //metodo che imposta la posizione del pezzo
     void set_posizione(Casella posizione) {posizione_ = posizione;}
 
-    // overwriting operatore << che torna la figura 
+    // overriding operatore << che torna la figura 
     friend std::ostream& operator<<(std::ostream& os, const Pezzo& temp);
     
     //costanti che indicano il tipo di mossa eseguita

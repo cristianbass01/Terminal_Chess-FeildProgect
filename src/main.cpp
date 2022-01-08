@@ -7,7 +7,6 @@
 int main(int argc, char** argv) {
   char e_accentata = 0x00F7;
   Scacchiera test;
-
   //verifica il numero di argomenti passati da riga di comando
   if(argc < 2 || argc > 3)
     throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato");

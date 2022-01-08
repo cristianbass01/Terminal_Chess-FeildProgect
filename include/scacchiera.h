@@ -108,6 +108,9 @@ class Scacchiera {
 
 };
 
+//HELPER FUNCTION
+// overriding operatore << che torna la scacchiera in stringa 
+std::ostream& operator<<(std::ostream& os, const Scacchiera& temp);
 
 
 #endif // SCACCHIERA_H
