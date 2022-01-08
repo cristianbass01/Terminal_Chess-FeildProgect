@@ -107,6 +107,7 @@ int main(int argc, char *argv[]) {
         constexpr int NUMERO_MILLISECONDI_ATTESA = 1000;
         std::this_thread::sleep_for(std::chrono::milliseconds(NUMERO_MILLISECONDI_ATTESA)); 
         scacchiera_.stampa();
+        
 
 
         //verifica che non sia scaccomatto
