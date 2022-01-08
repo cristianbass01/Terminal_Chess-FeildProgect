@@ -58,6 +58,7 @@ int main(int argc, char** argv) {
   {
     try{
       giocatore_1->gioca();
+      std::cout << test.get_mosse_totali();
     }
     catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
@@ -73,6 +74,7 @@ int main(int argc, char** argv) {
         vincitore = giocatore_1->get_colore();
       }
     }
+    
     if(arg.compare("cc") == 0 && test.get_mosse_totali() >= Computer::MAX_MOSSE)
       fine_partita = "Patta_Max mosse Computer vs Computer superate";
     
@@ -82,6 +84,7 @@ int main(int argc, char** argv) {
     try
     {
       giocatore_2->gioca();
+      std::cout << test.get_mosse_totali();
     }
     catch(Eccezione e)
     {
@@ -105,7 +108,14 @@ int main(int argc, char** argv) {
         vincitore = giocatore_1->get_colore();
       }
     }
+    
+    if(arg.compare("cc") == 0 && test.get_mosse_totali() >= Computer::MAX_MOSSE)
+      fine_partita = "Patta_Max mosse Computer vs Computer superate";
   }
+  
+  
+  std::cout << fine_partita;
+  
   if(fine_partita.compare("Scaccomatto") == 0){
     std::cout << std::endl;
     std::cout << "***************************************************************" << std::endl;
@@ -117,7 +127,8 @@ int main(int argc, char** argv) {
     std::cout << "***************************************************************" << std::endl;
     std::cout << std::endl;
   }
-  if((fine_partita.substr(0,4)).compare("Patta") == 0){
+
+  if((fine_partita.substr(0,5)).compare("Patta") == 0){
     int const FRASE_PIU_LUNGA =  strlen("Patta_Max mosse Computer vs Computer superate");
     for(int i = fine_partita.size(); i< FRASE_PIU_LUNGA; i++)
       fine_partita += " ";
@@ -126,10 +137,11 @@ int main(int argc, char** argv) {
     std::cout << "*       La partita si "<<e_accentata<<" conclusa con una patta                *" << std::endl;
     std::cout << "*       causa: ";
     std::cout << fine_partita.substr(6);
-    std::cout << "    *" << std::endl;
+    std::cout << "        *" << std::endl;
     std::cout << "***************************************************************" << std::endl;
     std::cout << std::endl;
   }
+
   if(fine_partita.compare("Abbandono") == 0){
     std::cout << std::endl;
     std::cout << "***************************************************************" << std::endl;
