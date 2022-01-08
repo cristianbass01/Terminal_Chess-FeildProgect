@@ -14,24 +14,24 @@ int main(int argc, char** argv) {
     throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato");
   
   //argv[0] è il nome del programma quindi usiamo argv[1]
-
+ 
   std::string arg = argv[1];
   //verifica che l'argomento iniziale sia corretto
-  if(arg.compare("pc") != 0 || arg.compare("cc") != 0) 
+  if(arg.compare("pc") != 0 && arg.compare("cc") != 0) 
     throw Eccezione("[Eccezione::Argomento_Non_Valido]");
 
   bool colore = static_cast<bool>(rand() % 2); //scelta randomica dei colori dei giocatori
 
   Giocatore* giocatore_1;
   Giocatore* giocatore_2;
-  giocatore_1 = &Computer(&test, static_cast<Pezzo::Colore>(colore));
+  giocatore_1 = new Computer(&test, static_cast<Pezzo::Colore>(colore));
 
   //computer vs computer
   if(arg.compare("cc") == 0){
-    giocatore_2 = &Computer(&test, static_cast<Pezzo::Colore>(!colore));
+    giocatore_2 = new Computer(&test, static_cast<Pezzo::Colore>(!colore));
   }
   else{
-    giocatore_2 = &Umano(&test, static_cast<Pezzo::Colore>(!colore));
+    giocatore_2 =  new Umano(&test, static_cast<Pezzo::Colore>(!colore));
   }
 
   std::string fine_partita = "";
