@@ -8,7 +8,7 @@
 #include "./../include/computer.h"
 
 int main(int argc, char** argv) {
-  char e_accentata = 0x00F7;
+  unsigned char e_accentata = 0x00E8;
   Scacchiera test;
   
   //reset per i numeri randomici

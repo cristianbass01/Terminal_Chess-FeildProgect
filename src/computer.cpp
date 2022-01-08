@@ -30,20 +30,28 @@ void Computer::gioca(){
   int n_pezzo_scelto = rand() % pezzi.size();
   
   //controllo che il pezzo scelto possa muoversi
-  bool done = false;
-  while(!done){
+  bool eseguito = false;
+  while(!eseguito){
     if(pezzi[n_pezzo_scelto]->bloccato(*scacchiera_))
       n_pezzo_scelto = rand() % pezzi.size();
     else
-      done = true;
+      eseguito = true;
   }
 
   //recupero il vettore di mosse possibili e scelgo la casella in cui arrivare
   std::vector<Casella> mosse = scacchiera_->mosse_possibili(pezzi[n_pezzo_scelto]->get_posizione());
   int mossa_scelta = rand() % mosse.size();
 
-  scacchiera_->mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]);
+  eseguito = false;
+  while(!eseguito){
+    if(!scacchiera_->simulazione_mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]))
+      mossa_scelta = rand() % mosse.size();
+    else
+      eseguito = true;
+  }
 
+  scacchiera_->mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]);
+  
   if(scacchiera_->scaccomatto(colore_avversario_)){
     throw Eccezione("[Eccezione::Scaccomatto]");
   }
