@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string.h>
+#include <cstdlib>
+#include <ctime>
 
 #include "./../include/scacchiera.h"
 #include "./../include/umano.h"
@@ -8,6 +10,9 @@
 int main(int argc, char** argv) {
   char e_accentata = 0x00F7;
   Scacchiera test;
+  
+  //reset per i numeri randomici
+  srand(time(NULL));
 
   //verifica il numero di argomenti passati da riga di comando
   if(argc < 2 || argc > 3)
@@ -17,21 +22,21 @@ int main(int argc, char** argv) {
 
   std::string arg = argv[1];
   //verifica che l'argomento iniziale sia corretto
-  if(arg.compare("pc") != 0 || arg.compare("cc") != 0) 
+  if(arg.compare("pc") != 0 && arg.compare("cc") != 0) 
     throw Eccezione("[Eccezione::Argomento_Non_Valido]");
 
   bool colore = static_cast<bool>(rand() % 2); //scelta randomica dei colori dei giocatori
 
   Giocatore* giocatore_1;
   Giocatore* giocatore_2;
-  giocatore_1 = &Computer(&test, static_cast<Pezzo::Colore>(colore));
+  giocatore_1 = new Computer(&test, static_cast<Pezzo::Colore>(colore));
 
   //computer vs computer
   if(arg.compare("cc") == 0){
-    giocatore_2 = &Computer(&test, static_cast<Pezzo::Colore>(!colore));
+    giocatore_2 = new Computer(&test, static_cast<Pezzo::Colore>(!colore));
   }
   else{
-    giocatore_2 = &Umano(&test, static_cast<Pezzo::Colore>(!colore));
+    giocatore_2 = new Umano(&test, static_cast<Pezzo::Colore>(!colore));
   }
 
   std::string fine_partita = "";
