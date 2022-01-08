@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
     throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato");
   
   //argv[0] è il nome del programma quindi usiamo argv[1]
-
+ 
   std::string arg = argv[1];
   //verifica che l'argomento iniziale sia corretto
   if(arg.compare("pc") != 0 && arg.compare("cc") != 0) 
@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
     giocatore_2 = new Computer(&test, static_cast<Pezzo::Colore>(!colore));
   }
   else{
-    giocatore_2 = new Umano(&test, static_cast<Pezzo::Colore>(!colore));
+    giocatore_2 =  new Umano(&test, static_cast<Pezzo::Colore>(!colore));
   }
 
   std::string fine_partita = "";
