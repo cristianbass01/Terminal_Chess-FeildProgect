@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
         //verifica che il formato di mossa sia corretto
         if(mossa.size() != 5 || mossa[2] != ' ' )
           throw Eccezione("[Eccezione::Log_Errato]");
-
+        
         //tutte lettere in formato minuscolo
         for(int i = 0; i<mossa.size(); i++)
           mossa[i] = tolower(mossa[i]);
@@ -93,14 +93,14 @@ int main(int argc, char *argv[]) {
         //caso in cui viene selezionato una casella che non ha un pezzo
         if(scacchiera_.get_casella(iniziale) == nullptr) 
           throw Eccezione("[Eccezione::Log_Errato]");
-
+        
         //caso in cui si cerca di muovere un pezzo del colore opposto
         if(scacchiera_.get_casella(iniziale)->get_colore() != colore_)
           throw Eccezione("[Eccezione::Log_Errato]");
-
-        if(scacchiera_.mossa(iniziale, finale)) 
+        
+        if(!scacchiera_.mossa(iniziale, finale)) 
           throw Eccezione("[Eccezione::Log_Errato]");
-
+        
         if(scacchiera_.pezzi_insufficienti())
           throw Eccezione("[Eccezione::Patta_Insufficenza_di_Pezzi]");
         
@@ -123,7 +123,7 @@ int main(int argc, char *argv[]) {
         if(scacchiera_.get_conta_mosse() >= 50)
           throw Eccezione("[Eccezione::Patta_Mosse]");
 
-        
+        num_mosse++;
       }
     }
     //caso partita stampata su file
