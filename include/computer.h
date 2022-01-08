@@ -18,7 +18,7 @@ class Computer : public Giocatore{
     bool ricevuta_richiesta_patta();
 
     //numero massimo di mosse nel caso di partita computer computer
-    static constexpr int MAX_MOSSE = 200;
+    static constexpr int MAX_MOSSE = 150;
 };
 
 #endif // COMPUTER_H

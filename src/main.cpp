@@ -8,7 +8,7 @@
 #include "./../include/computer.h"
 
 int main(int argc, char** argv) {
-  char e_accentata = 0x00F7;
+  unsigned char e_accentata = 0x00E8;
   Scacchiera test;
   
   //reset per i numeri randomici
@@ -44,6 +44,7 @@ int main(int argc, char** argv) {
   try{
     if(colore) // se giocatore 1 ha i neri, allora faccio giocare prima giocatore 2
       giocatore_2->gioca();
+    test.stampa();
   }
   catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
@@ -58,6 +59,8 @@ int main(int argc, char** argv) {
   {
     try{
       giocatore_1->gioca();
+      std::cout << test.get_mosse_totali();
+      test.stampa();
     }
     catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
@@ -73,6 +76,7 @@ int main(int argc, char** argv) {
         vincitore = giocatore_1->get_colore();
       }
     }
+    
     if(arg.compare("cc") == 0 && test.get_mosse_totali() >= Computer::MAX_MOSSE)
       fine_partita = "Patta_Max mosse Computer vs Computer superate";
     
@@ -82,6 +86,8 @@ int main(int argc, char** argv) {
     try
     {
       giocatore_2->gioca();
+      std::cout << test.get_mosse_totali();
+      test.stampa();
     }
     catch(Eccezione e)
     {
@@ -105,7 +111,14 @@ int main(int argc, char** argv) {
         vincitore = giocatore_1->get_colore();
       }
     }
+    
+    if(arg.compare("cc") == 0 && test.get_mosse_totali() >= Computer::MAX_MOSSE)
+      fine_partita = "Patta_Max mosse Computer vs Computer superate";
   }
+  
+  
+  std::cout << fine_partita;
+  
   if(fine_partita.compare("Scaccomatto") == 0){
     std::cout << std::endl;
     std::cout << "***************************************************************" << std::endl;
@@ -117,7 +130,8 @@ int main(int argc, char** argv) {
     std::cout << "***************************************************************" << std::endl;
     std::cout << std::endl;
   }
-  if((fine_partita.substr(0,4)).compare("Patta") == 0){
+
+  if((fine_partita.substr(0,5)).compare("Patta") == 0){
     int const FRASE_PIU_LUNGA =  strlen("Patta_Max mosse Computer vs Computer superate");
     for(int i = fine_partita.size(); i< FRASE_PIU_LUNGA; i++)
       fine_partita += " ";
@@ -126,10 +140,11 @@ int main(int argc, char** argv) {
     std::cout << "*       La partita si "<<e_accentata<<" conclusa con una patta                *" << std::endl;
     std::cout << "*       causa: ";
     std::cout << fine_partita.substr(6);
-    std::cout << "    *" << std::endl;
+    std::cout << "        *" << std::endl;
     std::cout << "***************************************************************" << std::endl;
     std::cout << std::endl;
   }
+
   if(fine_partita.compare("Abbandono") == 0){
     std::cout << std::endl;
     std::cout << "***************************************************************" << std::endl;
