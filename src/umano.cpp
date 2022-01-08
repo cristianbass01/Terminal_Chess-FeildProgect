@@ -49,7 +49,7 @@ void Umano::gioca(){
       else if(mossa.compare("ff ff") == 0) // Il giocatore vuole terminare la partita
         throw Eccezione("[Eccezione::Abbandono]");
       else if(mossa.compare("xx xx") == 0) // Il giocatore vuole vedere la scacchiera
-        scacchiera_->stampa(); //OVERWRITING OPERATORE << DA IMPLEMENTARE
+        std::cout<<*scacchiera_; //OVERWRITING OPERATORE << DA IMPLEMENTARE
       else{
         //creazione colonna iniziale
         int colonna_iniziale = mossa[0] - a; // in questo modo parto da a = 0 come colonna

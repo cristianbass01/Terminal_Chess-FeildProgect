@@ -91,6 +91,30 @@ Scacchiera::~Scacchiera() {
   documento.close();
 }
 
+//helper function che esegue ovverride del operatore <<
+std::ostream& operator<<(std::ostream& os, const Scacchiera& scacchiera) {
+  //stampato turno corrente
+  os<<"Turno: " << ( scacchiera.get_mosse_totali() / 2 ) + 1 << '\n';
+
+  /* 
+  la stampa avviene in modo specchiato rispetto a com'è veramente fatta la matrice 
+  ciò consente di poter utilizzare le righe e le colonne passate dal giocatore umano
+  direttamente nella matrice modificandole di un offset
+  */
+  for(int i = Scacchiera::RIGHE - 1; i >= 0; i--) {
+    os<<i + 1<<' ';
+    for(int j = 0; j < Scacchiera::COLONNE; j++) {
+      if((scacchiera.get_casella(Casella(i,j)) == nullptr))
+        os<<" ";
+      else 
+        os<<scacchiera.get_casella(Casella(i,j))->get_figura();
+      }
+      os<<std::endl;
+    }
+  os<<"  "<<"ABCDEFGH"<<std::endl; 
+  return os;
+}
+
 void Scacchiera::stampa() {
   //stampato turno corrente
   std::cout<<"Turno: " << ( get_mosse_totali() / 2 ) + 1 << std::endl<<std::endl;
@@ -113,7 +137,7 @@ void Scacchiera::stampa() {
   std::cout<<"  "<<"ABCDEFGH"<<std::endl;          
 }
 
-Pezzo* Scacchiera::get_casella(Casella posizione){
+Pezzo* Scacchiera::get_casella(Casella posizione) const{
   //ritorna puntatore a pezzo salvato nella casella passata
   return (scacchiera[posizione.get_riga()][posizione.get_colonna()]);
 }

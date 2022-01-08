@@ -39,7 +39,7 @@ class Scacchiera {
     // simula la mossa (compreso controllo scacco)
     bool simulazione_mossa(Casella posizione_in, Casella posizione_fin);
 
-    Pezzo* get_casella(Casella posizione);
+    Pezzo* get_casella(Casella posizione) const;
 
     // metodo che controlla se il re è sotto scacco
     bool controllo_scacco(Pezzo::Colore colore);
@@ -51,9 +51,9 @@ class Scacchiera {
 
     bool pezzi_insufficienti();
 
-    int get_conta_mosse(){ return conta_mosse;} 
+    int get_conta_mosse() { return conta_mosse;} 
 
-    int get_mosse_totali() {return mosse_totali;}
+    int get_mosse_totali() const {return mosse_totali;}
 
     //restituisce un vettore contentente le mosse possibili che può fare il pezzo che si
     //trova nella posizione da indicare "posizione_pezzo"
@@ -108,6 +108,9 @@ class Scacchiera {
 
 };
 
+//HELPER FUNCTION
+// overriding operatore << che torna la scacchiera in stringa 
+std::ostream& operator<<(std::ostream& os, const Scacchiera& temp);
 
 
 #endif // SCACCHIERA_H
