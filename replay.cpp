@@ -128,6 +128,9 @@ int main(int argc, char *argv[]) {
     }
     //caso partita stampata su file
     else { 
+      std::ofstream cout("log_output.txt");
+      scacchiera_.stampa();
+      cout.close();
 
     }
   }
