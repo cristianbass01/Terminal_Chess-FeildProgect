@@ -92,7 +92,7 @@ Scacchiera::~Scacchiera() {
 }
 
 //helper function che esegue ovverride del operatore <<
-std::ostream& operator<<(std::ostream& os, Scacchiera& scacchiera) {
+std::ostream& operator<<(std::ostream& os, const Scacchiera& scacchiera) {
   //stampato turno corrente
   os<<"Turno: " << ( scacchiera.get_mosse_totali() / 2 ) + 1 << '\n';
 
@@ -137,7 +137,7 @@ void Scacchiera::stampa() {
   std::cout<<"  "<<"ABCDEFGH"<<std::endl;          
 }
 
-Pezzo* Scacchiera::get_casella(Casella posizione){
+Pezzo* Scacchiera::get_casella(Casella posizione) const{
   //ritorna puntatore a pezzo salvato nella casella passata
   return (scacchiera[posizione.get_riga()][posizione.get_colonna()]);
 }
