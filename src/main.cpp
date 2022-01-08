@@ -44,6 +44,7 @@ int main(int argc, char** argv) {
   try{
     if(colore) // se giocatore 1 ha i neri, allora faccio giocare prima giocatore 2
       giocatore_2->gioca();
+    test.stampa();
   }
   catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
@@ -59,6 +60,7 @@ int main(int argc, char** argv) {
     try{
       giocatore_1->gioca();
       std::cout << test.get_mosse_totali();
+      test.stampa();
     }
     catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
@@ -85,6 +87,7 @@ int main(int argc, char** argv) {
     {
       giocatore_2->gioca();
       std::cout << test.get_mosse_totali();
+      test.stampa();
     }
     catch(Eccezione e)
     {
