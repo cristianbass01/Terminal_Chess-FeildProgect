@@ -18,8 +18,6 @@ void Computer::gioca(){
   if(scacchiera_->get_ripetizioni_scacchiera() >= 5)
     throw Eccezione("[Eccezione::Patta_Posizione]");
 
-  std::cout << "Giocatore Computer: ";
-
   //recupero il vettore contenente tutti i pezzi
   std::vector<Pezzo*> pezzi;
   if(colore_ == Pezzo::Colore::bianco)
@@ -37,14 +35,10 @@ void Computer::gioca(){
     else
       eseguito = true;
   }
-  std::cout<< "passaggio1";
 
-  std::cout << pezzi[n_pezzo_scelto]->get_figura();
   //recupero il vettore di mosse possibili e scelgo la casella in cui arrivare
   std::vector<Casella> mosse = scacchiera_->mosse_possibili(pezzi[n_pezzo_scelto]->get_posizione());
   int mossa_scelta = rand() % mosse.size();
-  std::cout<< "passaggio2";
-
 
   eseguito = false;
   while(!eseguito){

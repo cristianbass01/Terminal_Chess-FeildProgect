@@ -151,13 +151,13 @@ bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
   if(colore == Pezzo::Colore::bianco)
   {
     for(int i = 0; i<pezzi_neri.size(); i++)
-      if(pezzi_neri[i]->simulazione_mossa(re_scelto->get_posizione(), *this))
+      if(this->simulazione_mossa(pezzi_neri[i]->get_posizione(),re_scelto->get_posizione()))
         return true;
         
   }
   else{
     for(int i = 0; i<pezzi_bianchi.size(); i++)
-      if(pezzi_bianchi[i]->simulazione_mossa(re_scelto->get_posizione(), *this))
+      if(this->simulazione_mossa(pezzi_bianchi[i]->get_posizione(),re_scelto->get_posizione()))
         return true;
   }
   return false;
@@ -364,12 +364,12 @@ bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
       for(unsigned int i = 0; i < posizioni.size(); i++){
         if(colore == Pezzo::Colore::bianco){
           for(int i = 0; i<pezzi_bianchi.size(); i++)
-            if(pezzi_bianchi[i]->simulazione_mossa(posizioni[i], *this))
+            if(this->simulazione_mossa(pezzi_bianchi[i]->get_posizione(),re_scelto->get_posizione()))
               return false;
         }
         else{
           for(int i = 0; i<pezzi_neri.size(); i++)
-            if(pezzi_neri[i]->simulazione_mossa(posizioni[i], *this))
+            if(this->simulazione_mossa(pezzi_neri[i]->get_posizione(),re_scelto->get_posizione()))
               return false;
         }
       }
@@ -389,13 +389,13 @@ Pezzo* Scacchiera::pezzo_scacco(Pezzo::Colore colore){
   //verifica che nessun pezzo presente sulla scacchiera possa mangiare il re 
   if(colore == Pezzo::Colore::bianco){
     for(int i = 0; i<pezzi_neri.size(); i++)
-      if(pezzi_neri[i]->simulazione_mossa(re_scelto->get_posizione(), *this))
+      if(this->simulazione_mossa(pezzi_neri[i]->get_posizione(),re_scelto->get_posizione()))
         return pezzi_neri[i];
         
   }
   else{
     for(int i = 0; i<pezzi_bianchi.size(); i++)
-      if(pezzi_bianchi[i]->simulazione_mossa(re_scelto->get_posizione(), *this))
+      if(this->simulazione_mossa(pezzi_bianchi[i]->get_posizione(),re_scelto->get_posizione()))
         return pezzi_bianchi[i];
   }
   return nullptr;
@@ -430,8 +430,8 @@ std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){ // DA
   if(pezzo_mosso != nullptr){
     for(int i = 0; i < RIGHE; i++) {
       for(int j = 0; j < COLONNE; j++) {
-        if(this->simulazione_mossa(pezzo_mosso->get_posizione(),Casella(i,j)) == true)
-          v.push_back(Casella(i,j));
+          if(this->simulazione_mossa(pezzo_mosso->get_posizione(),Casella(i,j)) == true)
+            v.push_back(Casella(i,j));
       }
     }
   }

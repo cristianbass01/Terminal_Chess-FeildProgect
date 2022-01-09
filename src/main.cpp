@@ -44,7 +44,6 @@ int main(int argc, char** argv) {
   try{
     if(colore) // se giocatore 1 ha i neri, allora faccio giocare prima giocatore 2
       giocatore_2->gioca();
-    test.stampa();
   }
   catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
@@ -59,8 +58,6 @@ int main(int argc, char** argv) {
   {
     try{
       giocatore_1->gioca();
-      std::cout << test.get_mosse_totali();
-      test.stampa();
     }
     catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
@@ -75,8 +72,6 @@ int main(int argc, char** argv) {
         fine_partita = "Scaccomatto";
         vincitore = giocatore_1->get_colore();
       }
-      std::cout << e.errore();
-
     }
     
     if(arg.compare("cc") == 0 && test.get_mosse_totali() >= Computer::MAX_MOSSE)
@@ -88,8 +83,6 @@ int main(int argc, char** argv) {
     try
     {
       giocatore_2->gioca();
-      std::cout << test.get_mosse_totali();
-      test.stampa();
     }
     catch(Eccezione e)
     {
@@ -112,7 +105,6 @@ int main(int argc, char** argv) {
         fine_partita = "Abbandono";
         vincitore = giocatore_1->get_colore();
       }
-      std::cout << e.errore();
     }
     
     if(arg.compare("cc") == 0 && test.get_mosse_totali() >= Computer::MAX_MOSSE)
@@ -120,7 +112,7 @@ int main(int argc, char** argv) {
   }
   
   
-  std::cout << fine_partita;
+  std::cout << test;
   
   if(fine_partita.compare("Scaccomatto") == 0){
     std::cout << std::endl;

@@ -12,9 +12,6 @@ class Pezzo {
     //metodo virtuale che sposta il pezzo
     virtual int mossa(Casella posizione, Scacchiera& scacchiera); 
 
-    //metodo virtuale che controlla se la mossa è valida (ANCHE controllo scacco)
-    virtual int simulazione_mossa(Casella posizione, Scacchiera& scacchiera); 
-
     // il pezzo ha almeno una posizione valida in cui muoversi?
     virtual bool bloccato(Scacchiera& scacchiera) = 0;
 
