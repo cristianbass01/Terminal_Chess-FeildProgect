@@ -680,8 +680,13 @@ bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) 
       }
 
       //caso in cui metto il mio re sotto scacco
-      if(controllo_scacco(pezzo_mosso->get_colore())) {
-        mossa = false;
+      if(pezzo_mangiato != nullptr && tolower(pezzo_mangiato->get_figura()) != 'r') {
+        if(controllo_scacco(pezzo_mosso->get_colore()))
+          mossa = false;
+      }
+      else if(pezzo_mangiato == nullptr){
+        if(controllo_scacco(pezzo_mosso->get_colore()))
+          mossa = false;
       }
 
       //ripristinate le condizioni iniziali
