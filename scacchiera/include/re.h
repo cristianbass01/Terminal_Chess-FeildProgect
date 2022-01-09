@@ -11,7 +11,7 @@ class Re : public Pezzo {
     Re(Casella posizione, Colore colore);
 
     // il pezzo ha almeno una posizione valida in cui muoversi?
-    bool bloccato(Scacchiera& scacchiera) override;
+    bool bloccato(Scacchiera& scacchiera);
 
     void invalido_arrocco(){ arrocco_valido = false; }
     bool get_arrocco_valido() { return arrocco_valido; }

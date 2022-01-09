@@ -352,8 +352,8 @@ bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
   Pezzo* pezzo_attaccante = pezzo_scacco(colore);
   if(pezzo_attaccante != nullptr){
     //re_scelto è un puntatore che punta al re del colore dato
-    Pezzo* re_scelto;
-    colore == Pezzo::Colore::bianco ?  re_scelto = re_bianco : re_scelto = re_nero;  
+    Re* re_scelto;
+    colore == Pezzo::Colore::bianco ?  re_scelto = static_cast<Re*>(re_bianco) : re_scelto = static_cast<Re*>(re_nero);  
 
     //controllo se il re può muoversi senza subire scacco
     if(re_scelto->bloccato(*this)){
@@ -504,13 +504,12 @@ bool Scacchiera::stallo(Pezzo::Colore colore){ // OTTIMIZZATO
   if(colore == Pezzo::Colore::bianco)
   {
     for(int i = 0; i<pezzi_bianchi.size(); i++)
-      if(!pezzi_bianchi[i]->bloccato(*this))
+      if(this->mosse_possibili(pezzi_bianchi[i]->get_posizione()).size() != 0)
         return false;
-        
   }
   else{
     for(int i = 0; i<pezzi_neri.size(); i++)
-      if(!pezzi_neri[i]->bloccato(*this))
+      if(this->mosse_possibili(pezzi_neri[i]->get_posizione()).size() != 0)
         return false;
   }
   return true;

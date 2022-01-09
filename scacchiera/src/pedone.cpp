@@ -85,39 +85,3 @@ int Pedone::mossa(Casella posizione, Scacchiera& scacchiera){
   //se non da scacco do il controllo di nuovo alla funzione chiamante
   return mossa_valida;
 }
-
-bool Pedone::bloccato(Scacchiera& scacchiera){
-  //simulo le 4 mosse possibili in base al colore del pedone
-
-  int versore_movimento;
-
-  if(colore_ == Pezzo::Colore::bianco)
-    versore_movimento = 1;
-  else 
-   versore_movimento = -1;
-  
-  bool riga_salto_bianco = this->posizione_.get_riga() == 1;
-  bool riga_salto_nero = this->posizione_.get_riga() == 6;
-  bool bordo_destro = this->posizione_.get_colonna() + 1 > 7;
-  bool bordo_sinistro = this->posizione_.get_colonna() - 1 < 0;
-
-  //simulo mossa in avanti senza catturare pezzi (se sono nell'ultima riga avrò gia fatto la promozione quindi il controllo è superfluo)
-  if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + versore_movimento, this->posizione_.get_colonna() )))
-    return false;
-
-  //simulo salto iniziale di 2 caselle controllando di trovarmi nella riga giusta per poterlo fare
-  if((riga_salto_bianco && colore_ == Pezzo::Colore::bianco) || (riga_salto_nero && colore_ == Pezzo::Colore::nero))
-    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + (2 * versore_movimento), this->posizione_.get_colonna() )))
-      return false;
-
-  //simulo lo spostamento laterale catturando un altro pezzo a destra
-  if(!bordo_destro)
-    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + versore_movimento, this->posizione_.get_colonna() + 1)))
-      return false;
-  
-  if(!bordo_sinistro)
-    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + versore_movimento, this->posizione_.get_colonna() - 1)))
-      return false;
-      
-  return true;
-}

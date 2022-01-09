@@ -64,29 +64,3 @@ int Alfiere::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   }
   return true;
 }
-
-bool Alfiere::bloccato(Scacchiera& scacchiera){
-  //simulo la mossa verso le 4 diagonali
-  bool bordo_alto = this->posizione_.get_riga() + 1 > 7;
-  bool bordo_basso = this->posizione_.get_riga() - 1 < 0;
-  bool bordo_destro = this->posizione_.get_colonna() + 1 > 7;
-  bool bordo_sinistro = this->posizione_.get_colonna() - 1 < 0;
-  
-  if(!bordo_alto && !bordo_destro)
-    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + 1, this->posizione_.get_colonna() + 1)))
-      return false;
-
-  if(!bordo_alto && !bordo_sinistro)
-    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + 1, this->posizione_.get_colonna() - 1)))
-      return false;
-  
-  if(!bordo_basso && !bordo_destro)
-    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() - 1, this->posizione_.get_colonna() + 1)))
-      return false;
-  
-  if(!bordo_basso && !bordo_sinistro)
-    if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() - 1, this->posizione_.get_colonna() - 1)))
-      return false;
-      
-  return true;
-}

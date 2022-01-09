@@ -10,9 +10,6 @@ class Torre : public Pezzo{
   //costruttore
     Torre(Casella posizione, Colore colore);
 
-    // il pezzo ha almeno una posizione valida in cui muoversi?
-    bool bloccato(Scacchiera& scacchiera) override;
-
     void invalido_arrocco(){ arrocco_valido = false; }
     bool get_arrocco_valido(){ return arrocco_valido; }
     
