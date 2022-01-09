@@ -361,15 +361,15 @@ bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
       std::vector<Casella> posizioni = mosse_possibili(pezzo_attaccante->get_posizione());
       posizioni.push_back(pezzo_attaccante->get_posizione());
       //testo se posso mettermi in almeno una posizione in cui passa il pezzo attaccante o se posso mangiarlo senza subire ancora scacco
-      for(unsigned int i = 0; i < posizioni.size(); i++){
+      for(unsigned int j = 0; j < posizioni.size(); j++){
         if(colore == Pezzo::Colore::bianco){
           for(int i = 0; i<pezzi_bianchi.size(); i++)
-            if(this->simulazione_mossa(pezzi_bianchi[i]->get_posizione(),re_scelto->get_posizione()))
+            if(this->simulazione_mossa(pezzi_bianchi[i]->get_posizione(),posizioni[j]))
               return false;
         }
         else{
           for(int i = 0; i<pezzi_neri.size(); i++)
-            if(this->simulazione_mossa(pezzi_neri[i]->get_posizione(),re_scelto->get_posizione()))
+            if(this->simulazione_mossa(pezzi_neri[i]->get_posizione(),posizioni[j]))
               return false;
         }
       }
