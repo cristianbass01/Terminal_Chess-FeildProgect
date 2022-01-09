@@ -9,12 +9,14 @@ Computer::Computer(Scacchiera* scacchiera, Pezzo::Colore colore){
 }
 
 void Computer::gioca(){
+  if(scacchiera_->controllo_scacco(colore_))
+    std::cout << "ATTENZIONE SCACCCOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO";
 
   if(!scacchiera_->controllo_scacco(colore_)){
     if(scacchiera_->stallo(colore_)) //controlla che il giocatore non sia in stallo
       throw Eccezione("[Eccezione::Patta_Stallo]");
   }
-  
+
   if(scacchiera_->get_ripetizioni_scacchiera() >= 5)
     throw Eccezione("[Eccezione::Patta_Posizione]");
 
@@ -29,15 +31,16 @@ void Computer::gioca(){
 
   //controllo che il pezzo scelto possa muoversi
   bool eseguito = false;
+  std::vector<Casella> mosse;
   while(!eseguito){
-    if(pezzi[n_pezzo_scelto]->bloccato(*scacchiera_))
+    mosse = scacchiera_->mosse_possibili(pezzi[n_pezzo_scelto]->get_posizione());
+    if(mosse.size() == 0)
       n_pezzo_scelto = rand() % pezzi.size();
     else
       eseguito = true;
   }
 
   //recupero il vettore di mosse possibili e scelgo la casella in cui arrivare
-  std::vector<Casella> mosse = scacchiera_->mosse_possibili(pezzi[n_pezzo_scelto]->get_posizione());
   int mossa_scelta = rand() % mosse.size();
 
   eseguito = false;
@@ -61,7 +64,7 @@ void Computer::gioca(){
     throw Eccezione("[Eccezione::Patta_Posizione]");
       
   if(scacchiera_->pezzi_insufficienti()){
-    throw Eccezione("[Eccezione::Patta_Insufficenza_di_Pezzi]");
+    throw Eccezione("[Eccezione::Patta_Materiale]");
   }
 }
 

@@ -54,7 +54,10 @@ int Regina::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
     }
   }
   else{     //verifico che il movimento sia una diagonale, dato che non si muove come una torre
-  
+
+    //verifica che il movimento sia in diagonale controllando che moduli siano uguali
+    if( abs(delta_colonna) != abs(delta_riga))
+      return false;
     //temp_*** sono variabili temporanee che consentono di determinare di quanto si è spostato 
     //fin adesso la regina
     int temp_driga;
@@ -90,14 +93,8 @@ int Regina::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
       else
         temp_dcolonna++;
     }
-    //calcolo del modulo di delta_riga e delta_colonna
-    if( delta_colonna < 0)
-      delta_colonna *= -1; 
-    if( delta_riga < 0)
-      delta_riga *= -1;
-    //verifica che il movimento sia in diagonale controllando che moduli siano uguali
-    if( delta_colonna != delta_riga)
-      return false;
+   
+    
   }
   return true;
 }

@@ -108,7 +108,7 @@ int main(int argc, char *argv[]) {
         throw Eccezione("[Eccezione::Log_Errato]");
       
       if(scacchiera_.pezzi_insufficienti())
-        throw Eccezione("[Eccezione::Patta_Insufficenza_di_Pezzi]");
+        throw Eccezione("[Eccezione::Patta_Materiale]");
       
       constexpr int NUMERO_MILLISECONDI_ATTESA = 1000;
       if(tolower(*argv[1]) == 'v') { 
@@ -161,10 +161,13 @@ int main(int argc, char *argv[]) {
       fine_partita = "Scaccomatto";
     }
 
-    if(tolower(*argv[1]) == 'v') 
-      std::cout<<"Partita conclusa per: "<<fine_partita;
+    if(tolower(*argv[1]) == 'v'){
+      std::cout << scacchiera_;
+      std::cout << "Partita conclusa per: "<< fine_partita;
+    }
     else {
-      log_output<<"Partita conclusa per: "<<fine_partita;
+      log_output << scacchiera_;
+      log_output << "Partita conclusa per: "<< fine_partita;
       log_output.close();
     }
   }

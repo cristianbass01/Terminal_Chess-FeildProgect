@@ -125,7 +125,7 @@ void Umano::gioca(){
   }
 
   if(scacchiera_->pezzi_insufficienti()){
-    throw Eccezione("[Eccezione::Patta_Insufficenza_di_Pezzi]");
+    throw Eccezione("[Eccezione::Patta_Materiale]");
   }
 }
 

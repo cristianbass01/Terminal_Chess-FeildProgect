@@ -9,7 +9,7 @@
                 "-g",
                 "*.cpp",
                 "-o",
-                "${fileDirname}/../build/Feild_Progect"
+                "${fileDirname}/scacchiera"
             ],
             "options": {
                 "cwd": "${fileDirname}"
