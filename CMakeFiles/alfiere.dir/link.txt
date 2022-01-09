@@ -1,2 +1,0 @@
-/usr/bin/ar qc libalfiere.a CMakeFiles/alfiere.dir/src/alfiere.cpp.o
-/usr/bin/ranlib libalfiere.a

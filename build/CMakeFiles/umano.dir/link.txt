@@ -1,2 +1,0 @@
-/bin/x86_64-linux-gnu-ar qc libumano.a CMakeFiles/umano.dir/src/umano.cpp.o
-/bin/x86_64-linux-gnu-ranlib libumano.a

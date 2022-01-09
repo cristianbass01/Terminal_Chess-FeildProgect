@@ -1,2 +1,0 @@
-/bin/x86_64-linux-gnu-ar qc libtorre.a CMakeFiles/torre.dir/src/torre.cpp.o
-/bin/x86_64-linux-gnu-ranlib libtorre.a

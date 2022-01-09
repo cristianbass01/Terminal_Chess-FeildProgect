@@ -1,2 +1,0 @@
-/usr/bin/ar qc libscacchi.a CMakeFiles/scacchi.dir/src/scacchiera.cpp.o
-/usr/bin/ranlib libscacchi.a

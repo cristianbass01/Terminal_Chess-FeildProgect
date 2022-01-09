@@ -1,2 +1,0 @@
-/bin/x86_64-linux-gnu-ar qc libeccezione.a CMakeFiles/eccezione.dir/src/eccezione.cpp.o
-/bin/x86_64-linux-gnu-ranlib libeccezione.a
