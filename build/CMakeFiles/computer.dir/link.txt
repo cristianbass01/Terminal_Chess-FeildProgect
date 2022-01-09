@@ -1,2 +1,2 @@
-/usr/bin/ar qc libcomputer.a CMakeFiles/computer.dir/src/computer.cpp.o
-/usr/bin/ranlib libcomputer.a
+/bin/x86_64-linux-gnu-ar qc libcomputer.a CMakeFiles/computer.dir/src/computer.cpp.o
+/bin/x86_64-linux-gnu-ranlib libcomputer.a

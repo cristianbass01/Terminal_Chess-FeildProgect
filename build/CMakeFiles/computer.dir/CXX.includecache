@@ -49,6 +49,16 @@ pezzo.h
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/scacchiera.h
 iostream
 -
+vector
+-
+algorithm
+-
+map
+-
+list
+-
+fstream
+-
 pezzo.h
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
 alfiere.h
@@ -69,6 +79,8 @@ pezzo.h
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/pezzo.h
 
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/computer.cpp
+iostream
+-
 ./../include/computer.h
 /home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/include/computer.h
 

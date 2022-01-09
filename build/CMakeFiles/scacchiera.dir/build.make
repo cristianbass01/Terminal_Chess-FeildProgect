@@ -76,35 +76,214 @@ include CMakeFiles/scacchiera.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/scacchiera.dir/flags.make
 
+CMakeFiles/scacchiera.dir/src/main.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/scacchiera.dir/src/main.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/main.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/main.cpp"
+
+CMakeFiles/scacchiera.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/main.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/main.cpp" > CMakeFiles/scacchiera.dir/src/main.cpp.i
+
+CMakeFiles/scacchiera.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/main.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/main.cpp" -o CMakeFiles/scacchiera.dir/src/main.cpp.s
+
 CMakeFiles/scacchiera.dir/src/scacchiera.cpp.o: CMakeFiles/scacchiera.dir/flags.make
 CMakeFiles/scacchiera.dir/src/scacchiera.cpp.o: ../src/scacchiera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/scacchiera.dir/src/scacchiera.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/scacchiera.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/scacchiera.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/scacchiera.dir/src/scacchiera.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/scacchiera.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/scacchiera.cpp"
 
 CMakeFiles/scacchiera.dir/src/scacchiera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/scacchiera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/scacchiera.cpp" > CMakeFiles/scacchiera.dir/src/scacchiera.cpp.i
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/scacchiera.cpp" > CMakeFiles/scacchiera.dir/src/scacchiera.cpp.i
 
 CMakeFiles/scacchiera.dir/src/scacchiera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/scacchiera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/scacchiera.cpp" -o CMakeFiles/scacchiera.dir/src/scacchiera.cpp.s
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/scacchiera.cpp" -o CMakeFiles/scacchiera.dir/src/scacchiera.cpp.s
+
+CMakeFiles/scacchiera.dir/src/computer.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/computer.cpp.o: ../src/computer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/scacchiera.dir/src/computer.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/computer.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/computer.cpp"
+
+CMakeFiles/scacchiera.dir/src/computer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/computer.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/computer.cpp" > CMakeFiles/scacchiera.dir/src/computer.cpp.i
+
+CMakeFiles/scacchiera.dir/src/computer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/computer.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/computer.cpp" -o CMakeFiles/scacchiera.dir/src/computer.cpp.s
+
+CMakeFiles/scacchiera.dir/src/umano.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/umano.cpp.o: ../src/umano.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/scacchiera.dir/src/umano.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/umano.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/umano.cpp"
+
+CMakeFiles/scacchiera.dir/src/umano.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/umano.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/umano.cpp" > CMakeFiles/scacchiera.dir/src/umano.cpp.i
+
+CMakeFiles/scacchiera.dir/src/umano.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/umano.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/umano.cpp" -o CMakeFiles/scacchiera.dir/src/umano.cpp.s
+
+CMakeFiles/scacchiera.dir/src/eccezione.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/eccezione.cpp.o: ../src/eccezione.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/scacchiera.dir/src/eccezione.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/eccezione.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/eccezione.cpp"
+
+CMakeFiles/scacchiera.dir/src/eccezione.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/eccezione.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/eccezione.cpp" > CMakeFiles/scacchiera.dir/src/eccezione.cpp.i
+
+CMakeFiles/scacchiera.dir/src/eccezione.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/eccezione.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/eccezione.cpp" -o CMakeFiles/scacchiera.dir/src/eccezione.cpp.s
+
+CMakeFiles/scacchiera.dir/src/alfiere.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/alfiere.cpp.o: ../src/alfiere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/scacchiera.dir/src/alfiere.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/alfiere.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp"
+
+CMakeFiles/scacchiera.dir/src/alfiere.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/alfiere.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp" > CMakeFiles/scacchiera.dir/src/alfiere.cpp.i
+
+CMakeFiles/scacchiera.dir/src/alfiere.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/alfiere.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/alfiere.cpp" -o CMakeFiles/scacchiera.dir/src/alfiere.cpp.s
+
+CMakeFiles/scacchiera.dir/src/casella.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/casella.cpp.o: ../src/casella.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/scacchiera.dir/src/casella.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/casella.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/casella.cpp"
+
+CMakeFiles/scacchiera.dir/src/casella.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/casella.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/casella.cpp" > CMakeFiles/scacchiera.dir/src/casella.cpp.i
+
+CMakeFiles/scacchiera.dir/src/casella.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/casella.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/casella.cpp" -o CMakeFiles/scacchiera.dir/src/casella.cpp.s
+
+CMakeFiles/scacchiera.dir/src/cavallo.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/cavallo.cpp.o: ../src/cavallo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/scacchiera.dir/src/cavallo.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/cavallo.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/cavallo.cpp"
+
+CMakeFiles/scacchiera.dir/src/cavallo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/cavallo.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/cavallo.cpp" > CMakeFiles/scacchiera.dir/src/cavallo.cpp.i
+
+CMakeFiles/scacchiera.dir/src/cavallo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/cavallo.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/cavallo.cpp" -o CMakeFiles/scacchiera.dir/src/cavallo.cpp.s
+
+CMakeFiles/scacchiera.dir/src/pedone.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/pedone.cpp.o: ../src/pedone.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/scacchiera.dir/src/pedone.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/pedone.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pedone.cpp"
+
+CMakeFiles/scacchiera.dir/src/pedone.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/pedone.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pedone.cpp" > CMakeFiles/scacchiera.dir/src/pedone.cpp.i
+
+CMakeFiles/scacchiera.dir/src/pedone.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/pedone.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pedone.cpp" -o CMakeFiles/scacchiera.dir/src/pedone.cpp.s
+
+CMakeFiles/scacchiera.dir/src/re.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/re.cpp.o: ../src/re.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/scacchiera.dir/src/re.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/re.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/re.cpp"
+
+CMakeFiles/scacchiera.dir/src/re.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/re.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/re.cpp" > CMakeFiles/scacchiera.dir/src/re.cpp.i
+
+CMakeFiles/scacchiera.dir/src/re.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/re.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/re.cpp" -o CMakeFiles/scacchiera.dir/src/re.cpp.s
+
+CMakeFiles/scacchiera.dir/src/regina.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/regina.cpp.o: ../src/regina.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/scacchiera.dir/src/regina.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/regina.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/regina.cpp"
+
+CMakeFiles/scacchiera.dir/src/regina.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/regina.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/regina.cpp" > CMakeFiles/scacchiera.dir/src/regina.cpp.i
+
+CMakeFiles/scacchiera.dir/src/regina.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/regina.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/regina.cpp" -o CMakeFiles/scacchiera.dir/src/regina.cpp.s
+
+CMakeFiles/scacchiera.dir/src/torre.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/torre.cpp.o: ../src/torre.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/scacchiera.dir/src/torre.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/torre.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/torre.cpp"
+
+CMakeFiles/scacchiera.dir/src/torre.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/torre.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/torre.cpp" > CMakeFiles/scacchiera.dir/src/torre.cpp.i
+
+CMakeFiles/scacchiera.dir/src/torre.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/torre.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/torre.cpp" -o CMakeFiles/scacchiera.dir/src/torre.cpp.s
+
+CMakeFiles/scacchiera.dir/src/pezzo.cpp.o: CMakeFiles/scacchiera.dir/flags.make
+CMakeFiles/scacchiera.dir/src/pezzo.cpp.o: ../src/pezzo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/scacchiera.dir/src/pezzo.cpp.o"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scacchiera.dir/src/pezzo.cpp.o -c "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pezzo.cpp"
+
+CMakeFiles/scacchiera.dir/src/pezzo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scacchiera.dir/src/pezzo.cpp.i"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pezzo.cpp" > CMakeFiles/scacchiera.dir/src/pezzo.cpp.i
+
+CMakeFiles/scacchiera.dir/src/pezzo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scacchiera.dir/src/pezzo.cpp.s"
+	/bin/x86_64-linux-gnu-g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/src/pezzo.cpp" -o CMakeFiles/scacchiera.dir/src/pezzo.cpp.s
 
 # Object files for target scacchiera
 scacchiera_OBJECTS = \
-"CMakeFiles/scacchiera.dir/src/scacchiera.cpp.o"
+"CMakeFiles/scacchiera.dir/src/main.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/scacchiera.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/computer.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/umano.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/eccezione.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/alfiere.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/casella.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/cavallo.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/pedone.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/re.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/regina.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/torre.cpp.o" \
+"CMakeFiles/scacchiera.dir/src/pezzo.cpp.o"
 
 # External object files for target scacchiera
 scacchiera_EXTERNAL_OBJECTS =
 
-libscacchiera.a: CMakeFiles/scacchiera.dir/src/scacchiera.cpp.o
-libscacchiera.a: CMakeFiles/scacchiera.dir/build.make
-libscacchiera.a: CMakeFiles/scacchiera.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libscacchiera.a"
-	$(CMAKE_COMMAND) -P CMakeFiles/scacchiera.dir/cmake_clean_target.cmake
+scacchiera: CMakeFiles/scacchiera.dir/src/main.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/scacchiera.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/computer.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/umano.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/eccezione.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/alfiere.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/casella.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/cavallo.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/pedone.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/re.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/regina.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/torre.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/src/pezzo.cpp.o
+scacchiera: CMakeFiles/scacchiera.dir/build.make
+scacchiera: CMakeFiles/scacchiera.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable scacchiera"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/scacchiera.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/scacchiera.dir/build: libscacchiera.a
+CMakeFiles/scacchiera.dir/build: scacchiera
 
 .PHONY : CMakeFiles/scacchiera.dir/build
 

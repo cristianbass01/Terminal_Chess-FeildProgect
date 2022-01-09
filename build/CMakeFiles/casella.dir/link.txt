@@ -1,2 +1,2 @@
-/usr/bin/ar qc libcasella.a CMakeFiles/casella.dir/src/casella.cpp.o
-/usr/bin/ranlib libcasella.a
+/bin/x86_64-linux-gnu-ar qc libcasella.a CMakeFiles/casella.dir/src/casella.cpp.o
+/bin/x86_64-linux-gnu-ranlib libcasella.a

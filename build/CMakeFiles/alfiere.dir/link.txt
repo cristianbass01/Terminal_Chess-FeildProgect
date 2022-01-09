@@ -1,2 +1,2 @@
-/usr/bin/ar qc libalfiere.a CMakeFiles/alfiere.dir/src/alfiere.cpp.o
-/usr/bin/ranlib libalfiere.a
+/bin/x86_64-linux-gnu-ar qc libalfiere.a CMakeFiles/alfiere.dir/src/alfiere.cpp.o
+/bin/x86_64-linux-gnu-ranlib libalfiere.a

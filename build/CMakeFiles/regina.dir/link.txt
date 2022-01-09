@@ -1,2 +1,2 @@
-/usr/bin/ar qc libregina.a CMakeFiles/regina.dir/src/regina.cpp.o
-/usr/bin/ranlib libregina.a
+/bin/x86_64-linux-gnu-ar qc libregina.a CMakeFiles/regina.dir/src/regina.cpp.o
+/bin/x86_64-linux-gnu-ranlib libregina.a

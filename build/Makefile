@@ -130,56 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Feild_Progect
+# Target rules for targets named pezzo
 
 # Build rule for target.
-Feild_Progect: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Feild_Progect
-.PHONY : Feild_Progect
+pezzo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pezzo
+.PHONY : pezzo
 
 # fast build rule for target.
-Feild_Progect/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/build
-.PHONY : Feild_Progect/fast
-
-#=============================================================================
-# Target rules for targets named casella
-
-# Build rule for target.
-casella: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 casella
-.PHONY : casella
-
-# fast build rule for target.
-casella/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/casella.dir/build.make CMakeFiles/casella.dir/build
-.PHONY : casella/fast
-
-#=============================================================================
-# Target rules for targets named alfiere
-
-# Build rule for target.
-alfiere: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 alfiere
-.PHONY : alfiere
-
-# fast build rule for target.
-alfiere/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/alfiere.dir/build.make CMakeFiles/alfiere.dir/build
-.PHONY : alfiere/fast
-
-#=============================================================================
-# Target rules for targets named pedone
-
-# Build rule for target.
-pedone: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pedone
-.PHONY : pedone
-
-# fast build rule for target.
-pedone/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pedone.dir/build.make CMakeFiles/pedone.dir/build
-.PHONY : pedone/fast
+pezzo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pezzo.dir/build.make CMakeFiles/pezzo.dir/build
+.PHONY : pezzo/fast
 
 #=============================================================================
 # Target rules for targets named regina
@@ -195,17 +156,30 @@ regina/fast:
 .PHONY : regina/fast
 
 #=============================================================================
-# Target rules for targets named torre
+# Target rules for targets named replay
 
 # Build rule for target.
-torre: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 torre
-.PHONY : torre
+replay: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 replay
+.PHONY : replay
 
 # fast build rule for target.
-torre/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torre.dir/build.make CMakeFiles/torre.dir/build
-.PHONY : torre/fast
+replay/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/build
+.PHONY : replay/fast
+
+#=============================================================================
+# Target rules for targets named alfiere
+
+# Build rule for target.
+alfiere: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 alfiere
+.PHONY : alfiere
+
+# fast build rule for target.
+alfiere/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/alfiere.dir/build.make CMakeFiles/alfiere.dir/build
+.PHONY : alfiere/fast
 
 #=============================================================================
 # Target rules for targets named computer
@@ -219,6 +193,45 @@ computer: cmake_check_build_system
 computer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/computer.dir/build.make CMakeFiles/computer.dir/build
 .PHONY : computer/fast
+
+#=============================================================================
+# Target rules for targets named torre
+
+# Build rule for target.
+torre: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 torre
+.PHONY : torre
+
+# fast build rule for target.
+torre/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torre.dir/build.make CMakeFiles/torre.dir/build
+.PHONY : torre/fast
+
+#=============================================================================
+# Target rules for targets named pedone
+
+# Build rule for target.
+pedone: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pedone
+.PHONY : pedone
+
+# fast build rule for target.
+pedone/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pedone.dir/build.make CMakeFiles/pedone.dir/build
+.PHONY : pedone/fast
+
+#=============================================================================
+# Target rules for targets named eccezione
+
+# Build rule for target.
+eccezione: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 eccezione
+.PHONY : eccezione
+
+# fast build rule for target.
+eccezione/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/eccezione.dir/build.make CMakeFiles/eccezione.dir/build
+.PHONY : eccezione/fast
 
 #=============================================================================
 # Target rules for targets named cavallo
@@ -247,17 +260,17 @@ re/fast:
 .PHONY : re/fast
 
 #=============================================================================
-# Target rules for targets named eccezione
+# Target rules for targets named scacchiera
 
 # Build rule for target.
-eccezione: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 eccezione
-.PHONY : eccezione
+scacchiera: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scacchiera
+.PHONY : scacchiera
 
 # fast build rule for target.
-eccezione/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/eccezione.dir/build.make CMakeFiles/eccezione.dir/build
-.PHONY : eccezione/fast
+scacchiera/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/build
+.PHONY : scacchiera/fast
 
 #=============================================================================
 # Target rules for targets named umano
@@ -273,17 +286,57 @@ umano/fast:
 .PHONY : umano/fast
 
 #=============================================================================
-# Target rules for targets named scacchiera
+# Target rules for targets named casella
 
 # Build rule for target.
-scacchiera: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scacchiera
-.PHONY : scacchiera
+casella: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 casella
+.PHONY : casella
 
 # fast build rule for target.
-scacchiera/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/build
-.PHONY : scacchiera/fast
+casella/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/casella.dir/build.make CMakeFiles/casella.dir/build
+.PHONY : casella/fast
+
+#=============================================================================
+# Target rules for targets named scacchi
+
+# Build rule for target.
+scacchi: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scacchi
+.PHONY : scacchi
+
+# fast build rule for target.
+scacchi/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchi.dir/build.make CMakeFiles/scacchi.dir/build
+.PHONY : scacchi/fast
+
+replay.o: replay.cpp.o
+
+.PHONY : replay.o
+
+# target to build an object file
+replay.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/replay.cpp.o
+.PHONY : replay.cpp.o
+
+replay.i: replay.cpp.i
+
+.PHONY : replay.i
+
+# target to preprocess a source file
+replay.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/replay.cpp.i
+.PHONY : replay.cpp.i
+
+replay.s: replay.cpp.s
+
+.PHONY : replay.s
+
+# target to generate assembly for a file
+replay.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/replay.cpp.s
+.PHONY : replay.cpp.s
 
 src/alfiere.o: src/alfiere.cpp.o
 
@@ -291,8 +344,9 @@ src/alfiere.o: src/alfiere.cpp.o
 
 # target to build an object file
 src/alfiere.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/alfiere.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/alfiere.dir/build.make CMakeFiles/alfiere.dir/src/alfiere.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/alfiere.cpp.o
 .PHONY : src/alfiere.cpp.o
 
 src/alfiere.i: src/alfiere.cpp.i
@@ -301,8 +355,9 @@ src/alfiere.i: src/alfiere.cpp.i
 
 # target to preprocess a source file
 src/alfiere.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/alfiere.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/alfiere.dir/build.make CMakeFiles/alfiere.dir/src/alfiere.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/alfiere.cpp.i
 .PHONY : src/alfiere.cpp.i
 
 src/alfiere.s: src/alfiere.cpp.s
@@ -311,8 +366,9 @@ src/alfiere.s: src/alfiere.cpp.s
 
 # target to generate assembly for a file
 src/alfiere.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/alfiere.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/alfiere.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/alfiere.dir/build.make CMakeFiles/alfiere.dir/src/alfiere.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/alfiere.cpp.s
 .PHONY : src/alfiere.cpp.s
 
 src/casella.o: src/casella.cpp.o
@@ -321,7 +377,8 @@ src/casella.o: src/casella.cpp.o
 
 # target to build an object file
 src/casella.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/casella.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/casella.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/casella.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/casella.dir/build.make CMakeFiles/casella.dir/src/casella.cpp.o
 .PHONY : src/casella.cpp.o
 
@@ -331,7 +388,8 @@ src/casella.i: src/casella.cpp.i
 
 # target to preprocess a source file
 src/casella.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/casella.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/casella.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/casella.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/casella.dir/build.make CMakeFiles/casella.dir/src/casella.cpp.i
 .PHONY : src/casella.cpp.i
 
@@ -341,7 +399,8 @@ src/casella.s: src/casella.cpp.s
 
 # target to generate assembly for a file
 src/casella.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/casella.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/casella.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/casella.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/casella.dir/build.make CMakeFiles/casella.dir/src/casella.cpp.s
 .PHONY : src/casella.cpp.s
 
@@ -351,8 +410,9 @@ src/cavallo.o: src/cavallo.cpp.o
 
 # target to build an object file
 src/cavallo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/cavallo.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cavallo.dir/build.make CMakeFiles/cavallo.dir/src/cavallo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/cavallo.cpp.o
 .PHONY : src/cavallo.cpp.o
 
 src/cavallo.i: src/cavallo.cpp.i
@@ -361,8 +421,9 @@ src/cavallo.i: src/cavallo.cpp.i
 
 # target to preprocess a source file
 src/cavallo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/cavallo.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cavallo.dir/build.make CMakeFiles/cavallo.dir/src/cavallo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/cavallo.cpp.i
 .PHONY : src/cavallo.cpp.i
 
 src/cavallo.s: src/cavallo.cpp.s
@@ -371,8 +432,9 @@ src/cavallo.s: src/cavallo.cpp.s
 
 # target to generate assembly for a file
 src/cavallo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/cavallo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/cavallo.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cavallo.dir/build.make CMakeFiles/cavallo.dir/src/cavallo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/cavallo.cpp.s
 .PHONY : src/cavallo.cpp.s
 
 src/computer.o: src/computer.cpp.o
@@ -381,8 +443,9 @@ src/computer.o: src/computer.cpp.o
 
 # target to build an object file
 src/computer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/computer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/computer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/computer.dir/build.make CMakeFiles/computer.dir/src/computer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/computer.cpp.o
 .PHONY : src/computer.cpp.o
 
 src/computer.i: src/computer.cpp.i
@@ -391,8 +454,9 @@ src/computer.i: src/computer.cpp.i
 
 # target to preprocess a source file
 src/computer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/computer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/computer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/computer.dir/build.make CMakeFiles/computer.dir/src/computer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/computer.cpp.i
 .PHONY : src/computer.cpp.i
 
 src/computer.s: src/computer.cpp.s
@@ -401,8 +465,9 @@ src/computer.s: src/computer.cpp.s
 
 # target to generate assembly for a file
 src/computer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/computer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/computer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/computer.dir/build.make CMakeFiles/computer.dir/src/computer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/computer.cpp.s
 .PHONY : src/computer.cpp.s
 
 src/eccezione.o: src/eccezione.cpp.o
@@ -411,8 +476,9 @@ src/eccezione.o: src/eccezione.cpp.o
 
 # target to build an object file
 src/eccezione.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/eccezione.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/eccezione.dir/build.make CMakeFiles/eccezione.dir/src/eccezione.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/eccezione.cpp.o
 .PHONY : src/eccezione.cpp.o
 
 src/eccezione.i: src/eccezione.cpp.i
@@ -421,8 +487,9 @@ src/eccezione.i: src/eccezione.cpp.i
 
 # target to preprocess a source file
 src/eccezione.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/eccezione.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/eccezione.dir/build.make CMakeFiles/eccezione.dir/src/eccezione.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/eccezione.cpp.i
 .PHONY : src/eccezione.cpp.i
 
 src/eccezione.s: src/eccezione.cpp.s
@@ -431,8 +498,9 @@ src/eccezione.s: src/eccezione.cpp.s
 
 # target to generate assembly for a file
 src/eccezione.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/eccezione.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/eccezione.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/eccezione.dir/build.make CMakeFiles/eccezione.dir/src/eccezione.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/eccezione.cpp.s
 .PHONY : src/eccezione.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -441,7 +509,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -450,7 +518,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -459,7 +527,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/pedone.o: src/pedone.cpp.o
@@ -468,8 +536,9 @@ src/pedone.o: src/pedone.cpp.o
 
 # target to build an object file
 src/pedone.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/pedone.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/pedone.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pedone.dir/build.make CMakeFiles/pedone.dir/src/pedone.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/pedone.cpp.o
 .PHONY : src/pedone.cpp.o
 
 src/pedone.i: src/pedone.cpp.i
@@ -478,8 +547,9 @@ src/pedone.i: src/pedone.cpp.i
 
 # target to preprocess a source file
 src/pedone.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/pedone.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/pedone.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pedone.dir/build.make CMakeFiles/pedone.dir/src/pedone.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/pedone.cpp.i
 .PHONY : src/pedone.cpp.i
 
 src/pedone.s: src/pedone.cpp.s
@@ -488,9 +558,43 @@ src/pedone.s: src/pedone.cpp.s
 
 # target to generate assembly for a file
 src/pedone.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/pedone.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/pedone.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pedone.dir/build.make CMakeFiles/pedone.dir/src/pedone.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/pedone.cpp.s
 .PHONY : src/pedone.cpp.s
+
+src/pezzo.o: src/pezzo.cpp.o
+
+.PHONY : src/pezzo.o
+
+# target to build an object file
+src/pezzo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pezzo.dir/build.make CMakeFiles/pezzo.dir/src/pezzo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/pezzo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/pezzo.cpp.o
+.PHONY : src/pezzo.cpp.o
+
+src/pezzo.i: src/pezzo.cpp.i
+
+.PHONY : src/pezzo.i
+
+# target to preprocess a source file
+src/pezzo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pezzo.dir/build.make CMakeFiles/pezzo.dir/src/pezzo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/pezzo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/pezzo.cpp.i
+.PHONY : src/pezzo.cpp.i
+
+src/pezzo.s: src/pezzo.cpp.s
+
+.PHONY : src/pezzo.s
+
+# target to generate assembly for a file
+src/pezzo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pezzo.dir/build.make CMakeFiles/pezzo.dir/src/pezzo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/pezzo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/pezzo.cpp.s
+.PHONY : src/pezzo.cpp.s
 
 src/re.o: src/re.cpp.o
 
@@ -498,8 +602,9 @@ src/re.o: src/re.cpp.o
 
 # target to build an object file
 src/re.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/re.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/re.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/re.dir/build.make CMakeFiles/re.dir/src/re.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/re.cpp.o
 .PHONY : src/re.cpp.o
 
 src/re.i: src/re.cpp.i
@@ -508,8 +613,9 @@ src/re.i: src/re.cpp.i
 
 # target to preprocess a source file
 src/re.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/re.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/re.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/re.dir/build.make CMakeFiles/re.dir/src/re.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/re.cpp.i
 .PHONY : src/re.cpp.i
 
 src/re.s: src/re.cpp.s
@@ -518,8 +624,9 @@ src/re.s: src/re.cpp.s
 
 # target to generate assembly for a file
 src/re.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/re.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/re.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/re.dir/build.make CMakeFiles/re.dir/src/re.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/re.cpp.s
 .PHONY : src/re.cpp.s
 
 src/regina.o: src/regina.cpp.o
@@ -528,8 +635,9 @@ src/regina.o: src/regina.cpp.o
 
 # target to build an object file
 src/regina.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/regina.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/regina.dir/build.make CMakeFiles/regina.dir/src/regina.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/regina.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/regina.cpp.o
 .PHONY : src/regina.cpp.o
 
 src/regina.i: src/regina.cpp.i
@@ -538,8 +646,9 @@ src/regina.i: src/regina.cpp.i
 
 # target to preprocess a source file
 src/regina.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/regina.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/regina.dir/build.make CMakeFiles/regina.dir/src/regina.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/regina.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/regina.cpp.i
 .PHONY : src/regina.cpp.i
 
 src/regina.s: src/regina.cpp.s
@@ -548,8 +657,9 @@ src/regina.s: src/regina.cpp.s
 
 # target to generate assembly for a file
 src/regina.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/regina.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/regina.dir/build.make CMakeFiles/regina.dir/src/regina.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/regina.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/regina.cpp.s
 .PHONY : src/regina.cpp.s
 
 src/scacchiera.o: src/scacchiera.cpp.o
@@ -558,8 +668,9 @@ src/scacchiera.o: src/scacchiera.cpp.o
 
 # target to build an object file
 src/scacchiera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/scacchiera.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/scacchiera.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchi.dir/build.make CMakeFiles/scacchi.dir/src/scacchiera.cpp.o
 .PHONY : src/scacchiera.cpp.o
 
 src/scacchiera.i: src/scacchiera.cpp.i
@@ -568,8 +679,9 @@ src/scacchiera.i: src/scacchiera.cpp.i
 
 # target to preprocess a source file
 src/scacchiera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/scacchiera.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/scacchiera.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchi.dir/build.make CMakeFiles/scacchi.dir/src/scacchiera.cpp.i
 .PHONY : src/scacchiera.cpp.i
 
 src/scacchiera.s: src/scacchiera.cpp.s
@@ -578,8 +690,9 @@ src/scacchiera.s: src/scacchiera.cpp.s
 
 # target to generate assembly for a file
 src/scacchiera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/scacchiera.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/scacchiera.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/scacchiera.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchi.dir/build.make CMakeFiles/scacchi.dir/src/scacchiera.cpp.s
 .PHONY : src/scacchiera.cpp.s
 
 src/torre.o: src/torre.cpp.o
@@ -588,8 +701,9 @@ src/torre.o: src/torre.cpp.o
 
 # target to build an object file
 src/torre.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/torre.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/torre.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torre.dir/build.make CMakeFiles/torre.dir/src/torre.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/torre.cpp.o
 .PHONY : src/torre.cpp.o
 
 src/torre.i: src/torre.cpp.i
@@ -598,8 +712,9 @@ src/torre.i: src/torre.cpp.i
 
 # target to preprocess a source file
 src/torre.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/torre.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/torre.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torre.dir/build.make CMakeFiles/torre.dir/src/torre.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/torre.cpp.i
 .PHONY : src/torre.cpp.i
 
 src/torre.s: src/torre.cpp.s
@@ -608,8 +723,9 @@ src/torre.s: src/torre.cpp.s
 
 # target to generate assembly for a file
 src/torre.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/torre.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/torre.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torre.dir/build.make CMakeFiles/torre.dir/src/torre.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/torre.cpp.s
 .PHONY : src/torre.cpp.s
 
 src/umano.o: src/umano.cpp.o
@@ -618,7 +734,8 @@ src/umano.o: src/umano.cpp.o
 
 # target to build an object file
 src/umano.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/umano.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/umano.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/umano.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/umano.dir/build.make CMakeFiles/umano.dir/src/umano.cpp.o
 .PHONY : src/umano.cpp.o
 
@@ -628,7 +745,8 @@ src/umano.i: src/umano.cpp.i
 
 # target to preprocess a source file
 src/umano.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/umano.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/umano.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/umano.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/umano.dir/build.make CMakeFiles/umano.dir/src/umano.cpp.i
 .PHONY : src/umano.cpp.i
 
@@ -638,7 +756,8 @@ src/umano.s: src/umano.cpp.s
 
 # target to generate assembly for a file
 src/umano.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Feild_Progect.dir/build.make CMakeFiles/Feild_Progect.dir/src/umano.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/replay.dir/build.make CMakeFiles/replay.dir/src/umano.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scacchiera.dir/build.make CMakeFiles/scacchiera.dir/src/umano.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/umano.dir/build.make CMakeFiles/umano.dir/src/umano.cpp.s
 .PHONY : src/umano.cpp.s
 
@@ -650,18 +769,23 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Feild_Progect"
 	@echo "... alfiere"
 	@echo "... casella"
 	@echo "... cavallo"
 	@echo "... computer"
 	@echo "... eccezione"
 	@echo "... pedone"
+	@echo "... pezzo"
 	@echo "... re"
 	@echo "... regina"
+	@echo "... replay"
+	@echo "... scacchi"
 	@echo "... scacchiera"
 	@echo "... torre"
 	@echo "... umano"
+	@echo "... replay.o"
+	@echo "... replay.i"
+	@echo "... replay.s"
 	@echo "... src/alfiere.o"
 	@echo "... src/alfiere.i"
 	@echo "... src/alfiere.s"
@@ -683,6 +807,9 @@ help:
 	@echo "... src/pedone.o"
 	@echo "... src/pedone.i"
 	@echo "... src/pedone.s"
+	@echo "... src/pezzo.o"
+	@echo "... src/pezzo.i"
+	@echo "... src/pezzo.s"
 	@echo "... src/re.o"
 	@echo "... src/re.i"
 	@echo "... src/re.s"

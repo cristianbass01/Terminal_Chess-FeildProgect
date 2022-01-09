@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpedone.a CMakeFiles/pedone.dir/src/pedone.cpp.o
+/usr/bin/ranlib libpedone.a

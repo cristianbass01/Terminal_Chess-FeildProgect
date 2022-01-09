@@ -1,0 +1,2 @@
+/usr/bin/ar qc libumano.a CMakeFiles/umano.dir/src/umano.cpp.o
+/usr/bin/ranlib libumano.a

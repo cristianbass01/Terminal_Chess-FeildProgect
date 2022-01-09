@@ -1,0 +1,2 @@
+/usr/bin/ar qc libre.a CMakeFiles/re.dir/src/re.cpp.o
+/usr/bin/ranlib libre.a

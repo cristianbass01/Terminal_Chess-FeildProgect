@@ -1,2 +1,2 @@
-/usr/bin/ar qc libcavallo.a CMakeFiles/cavallo.dir/src/cavallo.cpp.o
-/usr/bin/ranlib libcavallo.a
+/bin/x86_64-linux-gnu-ar qc libcavallo.a CMakeFiles/cavallo.dir/src/cavallo.cpp.o
+/bin/x86_64-linux-gnu-ranlib libcavallo.a

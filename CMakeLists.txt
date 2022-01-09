@@ -16,6 +16,23 @@ src/pedone.cpp
 src/re.cpp
 src/regina.cpp
 src/torre.cpp
+src/pezzo.cpp
+)
+
+add_executable(replay
+replay.cpp
+src/scacchiera.cpp
+src/computer.cpp
+src/umano.cpp
+src/eccezione.cpp
+src/alfiere.cpp
+src/casella.cpp
+src/cavallo.cpp
+src/pedone.cpp
+src/re.cpp
+src/regina.cpp
+src/torre.cpp
+src/pezzo.cpp
 )
 
 add_library(alfiere
@@ -68,7 +85,7 @@ include/eccezione.h
 src/eccezione.cpp
 )
 
-add_library(scacchiera
+add_library(scacchi
 include/scacchiera.h
 src/scacchiera.cpp
 )
@@ -79,7 +96,12 @@ include/umano.h
 src/umano.cpp
 )
 
-target_link_libraries(${PROJECT_NAME}
+add_library(pezzo
+include/pezzo.h
+src/pezzo.cpp
+)
+
+target_link_libraries(
 alfiere
 cavallo
 pedone
@@ -89,6 +111,7 @@ torre
 casella
 computer
 eccezione
-scacchiera
+scacchi
 umano
+pezzo
 )
