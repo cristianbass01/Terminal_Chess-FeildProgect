@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.18.4)
 
 project(scacchiera)
 
+include_directories(${PROJECT_NAME}/include)
+    
 add_executable(${PROJECT_NAME}
 src/main.cpp
 src/scacchiera.cpp

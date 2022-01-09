@@ -44,12 +44,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/Replay/cmake_install.cmake")
+  include("/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/replay/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/Scacchiera/cmake_install.cmake")
+  include("/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/scacchiera/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

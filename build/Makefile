@@ -139,7 +139,7 @@ replay: cmake_check_build_system
 
 # fast build rule for target.
 replay/fast:
-	$(MAKE) $(MAKESILENT) -f Replay/CMakeFiles/replay.dir/build.make Replay/CMakeFiles/replay.dir/build
+	$(MAKE) $(MAKESILENT) -f replay/CMakeFiles/replay.dir/build.make replay/CMakeFiles/replay.dir/build
 .PHONY : replay/fast
 
 #=============================================================================
@@ -152,7 +152,7 @@ regina: cmake_check_build_system
 
 # fast build rule for target.
 regina/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/regina.dir/build.make Scacchiera/CMakeFiles/regina.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/regina.dir/build.make scacchiera/CMakeFiles/regina.dir/build
 .PHONY : regina/fast
 
 #=============================================================================
@@ -165,7 +165,7 @@ alfiere: cmake_check_build_system
 
 # fast build rule for target.
 alfiere/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/alfiere.dir/build.make Scacchiera/CMakeFiles/alfiere.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/alfiere.dir/build.make scacchiera/CMakeFiles/alfiere.dir/build
 .PHONY : alfiere/fast
 
 #=============================================================================
@@ -178,7 +178,7 @@ computer: cmake_check_build_system
 
 # fast build rule for target.
 computer/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/computer.dir/build.make Scacchiera/CMakeFiles/computer.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/computer.dir/build.make scacchiera/CMakeFiles/computer.dir/build
 .PHONY : computer/fast
 
 #=============================================================================
@@ -191,7 +191,7 @@ torre: cmake_check_build_system
 
 # fast build rule for target.
 torre/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/torre.dir/build.make Scacchiera/CMakeFiles/torre.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/torre.dir/build.make scacchiera/CMakeFiles/torre.dir/build
 .PHONY : torre/fast
 
 #=============================================================================
@@ -204,7 +204,7 @@ pedone: cmake_check_build_system
 
 # fast build rule for target.
 pedone/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/pedone.dir/build.make Scacchiera/CMakeFiles/pedone.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/pedone.dir/build.make scacchiera/CMakeFiles/pedone.dir/build
 .PHONY : pedone/fast
 
 #=============================================================================
@@ -217,7 +217,7 @@ eccezione: cmake_check_build_system
 
 # fast build rule for target.
 eccezione/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/eccezione.dir/build.make Scacchiera/CMakeFiles/eccezione.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/eccezione.dir/build.make scacchiera/CMakeFiles/eccezione.dir/build
 .PHONY : eccezione/fast
 
 #=============================================================================
@@ -230,7 +230,7 @@ cavallo: cmake_check_build_system
 
 # fast build rule for target.
 cavallo/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/cavallo.dir/build.make Scacchiera/CMakeFiles/cavallo.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/cavallo.dir/build.make scacchiera/CMakeFiles/cavallo.dir/build
 .PHONY : cavallo/fast
 
 #=============================================================================
@@ -243,7 +243,7 @@ re: cmake_check_build_system
 
 # fast build rule for target.
 re/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/re.dir/build.make Scacchiera/CMakeFiles/re.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/re.dir/build.make scacchiera/CMakeFiles/re.dir/build
 .PHONY : re/fast
 
 #=============================================================================
@@ -256,7 +256,7 @@ scacchiera: cmake_check_build_system
 
 # fast build rule for target.
 scacchiera/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/scacchiera.dir/build.make Scacchiera/CMakeFiles/scacchiera.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/scacchiera.dir/build.make scacchiera/CMakeFiles/scacchiera.dir/build
 .PHONY : scacchiera/fast
 
 #=============================================================================
@@ -269,7 +269,7 @@ umano: cmake_check_build_system
 
 # fast build rule for target.
 umano/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/umano.dir/build.make Scacchiera/CMakeFiles/umano.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/umano.dir/build.make scacchiera/CMakeFiles/umano.dir/build
 .PHONY : umano/fast
 
 #=============================================================================
@@ -282,7 +282,7 @@ casella: cmake_check_build_system
 
 # fast build rule for target.
 casella/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/casella.dir/build.make Scacchiera/CMakeFiles/casella.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/casella.dir/build.make scacchiera/CMakeFiles/casella.dir/build
 .PHONY : casella/fast
 
 #=============================================================================
@@ -295,7 +295,7 @@ pezzo: cmake_check_build_system
 
 # fast build rule for target.
 pezzo/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/pezzo.dir/build.make Scacchiera/CMakeFiles/pezzo.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/pezzo.dir/build.make scacchiera/CMakeFiles/pezzo.dir/build
 .PHONY : pezzo/fast
 
 #=============================================================================
@@ -308,7 +308,7 @@ scacchi: cmake_check_build_system
 
 # fast build rule for target.
 scacchi/fast:
-	$(MAKE) $(MAKESILENT) -f Scacchiera/CMakeFiles/scacchi.dir/build.make Scacchiera/CMakeFiles/scacchi.dir/build
+	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/scacchi.dir/build.make scacchiera/CMakeFiles/scacchi.dir/build
 .PHONY : scacchi/fast
 
 # Help Target
