@@ -40,7 +40,7 @@ int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
     }
   }
   
-  if(posizione_finale.get_riga() == posizione_.get_riga() + (indice_colore * 2)) // si sposta di due righe
+  if((posizione_finale.get_riga() == posizione_.get_riga() + (indice_colore * 2)) && posizione_finale.get_colonna() == posizione_.get_colonna()) // si sposta di due righe
   {
     // controllo che sia la prima mossa bianca e che non ci siano pezzi nelle due caselle davanti al pedone
     if(colore_ == Pezzo::Colore::bianco) {

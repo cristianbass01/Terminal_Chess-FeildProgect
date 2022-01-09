@@ -28,7 +28,7 @@ void Computer::gioca(){
     pezzi = scacchiera_->get_pezzi_neri();
 
   int n_pezzo_scelto = rand() % pezzi.size();
-  
+
   //controllo che il pezzo scelto possa muoversi
   bool eseguito = false;
   while(!eseguito){
@@ -37,10 +37,14 @@ void Computer::gioca(){
     else
       eseguito = true;
   }
+  std::cout<< "passaggio1";
 
+  std::cout << pezzi[n_pezzo_scelto]->get_figura();
   //recupero il vettore di mosse possibili e scelgo la casella in cui arrivare
   std::vector<Casella> mosse = scacchiera_->mosse_possibili(pezzi[n_pezzo_scelto]->get_posizione());
   int mossa_scelta = rand() % mosse.size();
+  std::cout<< "passaggio2";
+
 
   eseguito = false;
   while(!eseguito){

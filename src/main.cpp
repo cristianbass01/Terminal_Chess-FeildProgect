@@ -75,6 +75,8 @@ int main(int argc, char** argv) {
         fine_partita = "Scaccomatto";
         vincitore = giocatore_1->get_colore();
       }
+      std::cout << e.errore();
+
     }
     
     if(arg.compare("cc") == 0 && test.get_mosse_totali() >= Computer::MAX_MOSSE)
@@ -110,6 +112,7 @@ int main(int argc, char** argv) {
         fine_partita = "Abbandono";
         vincitore = giocatore_1->get_colore();
       }
+      std::cout << e.errore();
     }
     
     if(arg.compare("cc") == 0 && test.get_mosse_totali() >= Computer::MAX_MOSSE)
