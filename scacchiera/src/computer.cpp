@@ -9,8 +9,6 @@ Computer::Computer(Scacchiera* scacchiera, Pezzo::Colore colore){
 }
 
 void Computer::gioca(){
-  if(scacchiera_->controllo_scacco(colore_))
-    std::cout << "ATTENZIONE SCACCCOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO";
 
   if(!scacchiera_->controllo_scacco(colore_)){
     if(scacchiera_->stallo(colore_)) //controlla che il giocatore non sia in stallo

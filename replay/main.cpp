@@ -18,14 +18,28 @@ int main(int argc, char *argv[]) {
   static constexpr int a = 97; 
 
   //verifica il numero di argomenti passati da riga di comando
-  if(argc < 3 || argc > 4)
-    throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato");
+  if(argc < 3 || argc > 4){
+    std::cout << "[Eccezione::Numero_Di_Argomenti_Errato]"<< std::endl;
+    throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato]");
+  }
   
   //argv[0] è il nome del programma quindi usiamo argv[1]
 
   //verifica che l'argomento iniziale sia corretto
-  if(tolower(*argv[1]) != 'v' && tolower(*argv[1]) != 'f' ) 
+  if(tolower(*argv[1]) != 'v' && tolower(*argv[1]) != 'f' ) {
+    std::cout << "[Eccezione::Argomento_Non_Valido]"<< std::endl;
     throw Eccezione("[Eccezione::Argomento_Non_Valido]");
+  }
+  
+  if(tolower(*argv[1]) == 'f' && argc != 4){
+    std::cout << "[Eccezione::Numero_Di_Argomenti_Errato]"<< std::endl;
+    throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato]");
+  }
+
+  if(tolower(*argv[1]) == 'v' && argc != 3){
+    std::cout << "[Eccezione::Numero_Di_Argomenti_Errato]"<< std::endl;
+    throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato]");
+  }
   
   Scacchiera scacchiera_; 
   
@@ -46,7 +60,7 @@ int main(int argc, char *argv[]) {
     log_input.close();
   }   
   else {
-    std::cout << "Impossibile apire il file di input";
+    std::cout << "Impossibile apire il file di input"<< std::endl;
     throw Eccezione("File_Non_Trovato");
   }
 
@@ -56,11 +70,13 @@ int main(int argc, char *argv[]) {
     //apertura file in output
     log_output.open(argv[3], std::ofstream::out | std::ofstream::trunc);
 	  if(!log_output.is_open()) {
-      std::cout << "Impossibile apire il file di output";
+      std::cout << "Impossibile apire il file di output" << std::endl;
       throw Eccezione("File_Non_Trovato");
     }
   }
   
+  std::string fine_partita; 
+
   try {
     Pezzo::Colore colore_ = Pezzo::Colore::bianco;
     int num_mosse = 0;
@@ -116,7 +132,7 @@ int main(int argc, char *argv[]) {
         scacchiera_.stampa();
       }
       else {
-        log_output<<scacchiera_;
+        log_output<<scacchiera_<< std::endl;
       }
       
       //verifica che non sia scaccomatto
@@ -144,7 +160,6 @@ int main(int argc, char *argv[]) {
   }
   catch(Eccezione e){
     //stringa contenente il motivo della fine della partita
-    std::string fine_partita; 
     if((e.errore()).compare("[Eccezione::Log_Errato]") == 0) // fine partita perché formato log non corretto
       fine_partita = "Log_Errato";
 
@@ -160,15 +175,18 @@ int main(int argc, char *argv[]) {
     if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto 
       fine_partita = "Scaccomatto";
     }
+  }
 
-    if(tolower(*argv[1]) == 'v'){
-      std::cout << scacchiera_;
-      std::cout << "Partita conclusa per: "<< fine_partita;
-    }
-    else {
-      log_output << scacchiera_;
-      log_output << "Partita conclusa per: "<< fine_partita;
-      log_output.close();
-    }
+  if(fine_partita.length() == 0)
+    fine_partita = "fine mosse";
+
+  if(tolower(*argv[1]) == 'v'){
+    std::cout << scacchiera_<< std::endl;
+    std::cout << "Partita conclusa per: "<< fine_partita;
+  }
+  else {
+    log_output << scacchiera_<< std::endl;
+    log_output << "Partita conclusa per: "<< fine_partita;
+    log_output.close();
   }
 }

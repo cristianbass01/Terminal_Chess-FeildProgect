@@ -94,8 +94,8 @@ Scacchiera::~Scacchiera() {
 //helper function che esegue ovverride del operatore <<
 std::ostream& operator<<(std::ostream& os, const Scacchiera& scacchiera) {
   //stampato turno corrente
-  os<<"Turno: " << ( scacchiera.get_mosse_totali() / 2 ) + 1 << '\n';
-
+  os << "Turno: " << ( scacchiera.get_mosse_totali() / 2 ) + 1 << '\n';
+  os << "Mosse totali: " <<  scacchiera.get_mosse_totali() << '\n';
   /* 
   la stampa avviene in modo specchiato rispetto a com'è veramente fatta la matrice 
   ciò consente di poter utilizzare le righe e le colonne passate dal giocatore umano
@@ -360,7 +360,8 @@ bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
       //creo un array con tutte le posizioni in cui poter bloccare il pezzo attaccante
       std::vector<Casella> posizioni = mosse_possibili(pezzo_attaccante->get_posizione());
       posizioni.push_back(pezzo_attaccante->get_posizione());
-      //testo se posso mettermi in almeno una posizione in cui passa il pezzo attaccante o se posso mangiarlo senza subire ancora scacco
+      //testo se posso mettermi in almeno una posizione in cui passa il pezzo attaccante 
+      //o se posso mangiarlo senza subire ancora scacco
       for(unsigned int j = 0; j < posizioni.size(); j++){
         if(colore == Pezzo::Colore::bianco){
           for(int i = 0; i<pezzi_bianchi.size(); i++)
