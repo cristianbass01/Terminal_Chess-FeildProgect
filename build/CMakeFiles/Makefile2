@@ -207,6 +207,9 @@ scacchiera/CMakeFiles/regina.dir/clean:
 # Target rules for target scacchiera/CMakeFiles/alfiere.dir
 
 # All Build rule for target.
+scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/casella.dir/all
+scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/pezzo.dir/all
+scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/scacchi.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/regina.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/computer.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/torre.dir/all
@@ -215,9 +218,6 @@ scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/eccezione.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/cavallo.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/re.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/umano.dir/all
-scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/casella.dir/all
-scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/pezzo.dir/all
-scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/scacchi.dir/all
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/alfiere.dir/build.make scacchiera/CMakeFiles/alfiere.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/alfiere.dir/build.make scacchiera/CMakeFiles/alfiere.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=1,2 "Built target alfiere"

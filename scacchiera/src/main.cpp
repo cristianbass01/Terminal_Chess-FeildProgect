@@ -133,7 +133,7 @@ int main(int argc, char** argv) {
       fine_partita += " ";
     std::cout << std::endl;
     std::cout << "***************************************************************" << std::endl;
-    std::cout << "*       Fine partita causata da:                              *" << std::endl;
+    std::cout << "*       Partita finita con una patta causata da:              *" << std::endl;
     std::cout << "*       ";
     std::cout << fine_partita.substr(6);
     std::cout << "               *" << std::endl;

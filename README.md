@@ -1,14 +1,5 @@
 # Feild_Progect
 
-Come modificare la cartella senza problemi:
-- git pull 
-- git add file
-- git commit -m "commento"
-- git push
-
-Per vedere come e quali file sono stati modiicati o per aiuti
-- git status
-
 Per lo stile: https://google.github.io/styleguide/cppguide.html
 
 
@@ -48,22 +39,7 @@ implementare un contatore di mosse dall'ultimo oggetto mangiato dentro if(pezzo 
 
 utilizzare il vector di pezzi per controllare se ogni pezzo possa fare almeno una mossa (per lo stallo) per controllare le mosse servono funzioni a parte per ogni classe (senno diventa lento e inutile) basta controllare le caselle vicine per la maggior parte.
 
-per il pareggio per insufficienza di materiale avrò 
-- re + alfiere vs re
-- re + alfiere o cavallo vs re con alfiere o cavallo
-- re + 2 cavalli vs re (o re con 2 cavalli)
-- re vs re
-
-richiesta di patta con due lettere dopo la mossa PP
-
-
-quando realizziamo il metodo della promozione ricordiamo di modificare anche i vector pezzi_bianchi e pezzi_neri
-
 ci mancano:
-- scaccomatto
-- patta 
-- computer
-- replay
 - capire se eccezioni c++ serve
 - commentare
 - fare delete finale di tutti gli oggetti usati (in teoria circa fatto)
