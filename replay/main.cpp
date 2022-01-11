@@ -182,11 +182,11 @@ int main(int argc, char *argv[]) {
 
   if(tolower(*argv[1]) == 'v'){
     std::cout << scacchiera_<< std::endl;
-    std::cout << "Partita conclusa per: "<< fine_partita;
+    std::cout << "Partita conclusa per: "<< fine_partita << std::endl;
   }
   else {
     log_output << scacchiera_<< std::endl;
-    log_output << "Partita conclusa per: "<< fine_partita;
+    log_output << "Partita conclusa per: "<< fine_partita << std::endl;
     log_output.close();
   }
 }
