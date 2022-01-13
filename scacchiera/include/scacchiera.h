@@ -18,13 +18,13 @@
 
 class Scacchiera {
   public:
-    //costante numeri di colonne nella scacchiera
+    //numero di colonne nella scacchiera
     static constexpr int COLONNE = 8;
 
-    //costante numero di righe nella scacchiera
+    //numero di righe nella scacchiera
     static constexpr int RIGHE = 8;
 
-    // costruttore della scacchiera
+    //costruttore della scacchiera
     Scacchiera();
 
     //distruttore della scacchiera
@@ -33,29 +33,35 @@ class Scacchiera {
     //stampa la scacchiera
     void stampa() const; 
 
-    //controllo mossa fatto prima
+    //metodo che esegue la mossa
     bool mossa(Casella posizione_in, Casella posizione_fin); 
 
-    // simula la mossa (compreso controllo scacco)
+    //simula la mossa (compreso controllo scacco)
     bool simulazione_mossa(Casella posizione_in, Casella posizione_fin);
 
+    //metodo che restituisce il pezzo presente nella scacchiera alla casella passata come parametro
     Pezzo* get_casella(Casella posizione) const;
 
-    // metodo che controlla se il re è sotto scacco
+    //metodo che controlla se il re è sotto scacco
     bool controllo_scacco(Pezzo::Colore colore);
 
-    // metodo che restituisce il pezzo che causa lo scacco
+    //metodo che restituisce il pezzo che causa lo scacco
     Pezzo* pezzo_scacco(Pezzo::Colore colore);
 
+    //metodo che controlla se il re è sotto scaccomatto
     bool scaccomatto(Pezzo::Colore colore);
 
+    //metodo che controlla che ci siano un numero di pezzi sufficienti affinchè la partita non sia patta
     bool pezzi_insufficienti();
 
-    int get_conta_mosse() const { return conta_mosse;} 
+    //metodo che restituisce il numero di mosse eseguite dall'ultima volta che è stato mosso 
+    //un pedone o mangiato un pezzo (utilizzato per il controllo della patta)
+    int get_conta_mosse() const { return conta_mosse;}
 
+    //metodo che restituisce il numero totale di mosse eseguite
     int get_mosse_totali() const {return mosse_totali;}
 
-    //restituisce un vettore contentente le mosse possibili che può fare il pezzo che si
+    //metodo che restituisce un vettore contentente le mosse possibili che può fare il pezzo che si
     //trova nella posizione da indicare "posizione_pezzo"
     std::vector<Casella> mosse_possibili(Casella posizione_pezzo);
 
@@ -66,20 +72,20 @@ class Scacchiera {
     //re che può fare arrocco viene etichettata come K(R nero) e k(r bianco)
     std::string stringa_per_mappa();
     
-    //controllo che il giocatore colore non sia in stallo
+    //metodo che controlla che il giocatore del colore passatto per parametro non sia in stallo
     bool stallo(Pezzo::Colore colore);
 
     //gestione mappa
     void inserisci_scacchiera();
     int get_ripetizioni_scacchiera();
     
-    //metodi che ritornano tutti i pezzi ancora in gioco di un colore
+    //metodi che ritornano tutti i pezzi ancora in gioco rispettivamente per i pezzi bianchi e neri
     std::vector<Pezzo*> const get_pezzi_bianchi() { return pezzi_bianchi;}
     std::vector<Pezzo*> const get_pezzi_neri() {return pezzi_neri;}
 
   private:
     //matrice che contiene i puntatori ai singoli pezzi e rappresenta la scacchiera
-    //posizione in matrice -> posizione scacchiera - 1
+    //posizione in matrice -> posizione scacchiera - 1 (sia per riga che per colonna)
     Pezzo* scacchiera[RIGHE][COLONNE]; 
 
     //vector contenente i puntatori a tutti i pezzi ancora presenti nella scacchiera
@@ -97,7 +103,7 @@ class Scacchiera {
     int mosse_totali;
 
     //metodo che verifica se è possibile promuovere qualche pedone e in caso sia possibile
-    //lo fa di default a donna
+    //attua la promozione a donna
     void promuovi(Pezzo* pedone);
 
 

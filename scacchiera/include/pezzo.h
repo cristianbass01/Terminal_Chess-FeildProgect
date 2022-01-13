@@ -3,7 +3,7 @@
 
 #include "casella.h"
 
-// forward declaration
+
 class Scacchiera; 
 
 //classe virtuale pura
@@ -22,10 +22,10 @@ class Pezzo {
     };
     
     //metodo che restituisce il colore del pezzo
-    Pezzo::Colore get_colore() { return colore_; }
+    Pezzo::Colore get_colore() const { return colore_; }
 
     //metodo che restituisce la casella del pezzo
-    Casella get_posizione() {return posizione_; }
+    Casella get_posizione() const {return posizione_; }
 
     //metodo che imposta la posizione del pezzo
     void set_posizione(Casella posizione) {posizione_ = posizione;}
