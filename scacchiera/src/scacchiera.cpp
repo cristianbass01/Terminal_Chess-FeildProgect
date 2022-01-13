@@ -516,12 +516,12 @@ bool Scacchiera::stallo(Pezzo::Colore colore){ // OTTIMIZZATO
   return true;
 }
 
-int Scacchiera::get_ripetizioni_scacchiera(){
+int Scacchiera::get_ripetizioni_scacchiera() {
   return mappa_posizioni[this->stringa_per_mappa()];
 }
 
 void Scacchiera::inserisci_scacchiera(){
-  mappa_posizioni.insert(std::pair<std::string, int>(this->stringa_per_mappa(), get_ripetizioni_scacchiera()));
+  mappa_posizioni[this->stringa_per_mappa()] = this->get_ripetizioni_scacchiera() + 1;
 }
 
 //per il pareggio per insufficienza di materiale avrò 
