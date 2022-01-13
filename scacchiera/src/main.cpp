@@ -57,7 +57,6 @@ int main(int argc, char** argv) {
   {
     try{
       giocatore_1->gioca();
-      std::cout << test;
     }
     catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
@@ -83,7 +82,6 @@ int main(int argc, char** argv) {
     try
     {
       giocatore_2->gioca();
-      std::cout << test;
     }
     catch(Eccezione e)
     {
@@ -111,9 +109,6 @@ int main(int argc, char** argv) {
     if(arg.compare("cc") == 0 && test.get_mosse_totali() >= Computer::MAX_MOSSE)
       fine_partita = "Patta_Max mosse Computer vs Computer superate";
   }
-  
-  
-  std::cout << test;
   
   if(fine_partita.compare("Scaccomatto") == 0){
     std::cout << std::endl;

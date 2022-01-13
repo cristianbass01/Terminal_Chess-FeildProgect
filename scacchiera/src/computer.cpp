@@ -69,5 +69,10 @@ void Computer::gioca(){
 
 
 bool Computer::ricevuta_richiesta_patta(){
-  return rand()%2;
+  int risposta = rand()%2;
+  if(risposta)
+    std::cout << "--> Richiesta accettata";
+  else
+    std::cout << "--> Richiesta rifiutata";
+  return risposta;
 }
