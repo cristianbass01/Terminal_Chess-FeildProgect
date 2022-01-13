@@ -4,8 +4,6 @@
 #include "giocatore.h"
 
 class Computer : public Giocatore{
-  private:
-
 
   public:
     // costruttore
