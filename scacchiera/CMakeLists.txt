@@ -10,14 +10,14 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 project(scacchiera)
 
-include_directories(${PROJECT_NAME}/include)
+include_directories(include)
+include_directories(src)
     
 add_executable(${PROJECT_NAME}
 src/main.cpp
 src/scacchiera.cpp
 src/computer.cpp
 src/umano.cpp
-src/eccezione.cpp
 src/alfiere.cpp
 src/casella.cpp
 src/cavallo.cpp
@@ -75,7 +75,6 @@ src/computer.cpp
 
 add_library(eccezione
 include/eccezione.h
-src/eccezione.cpp
 )
 
 add_library(scacchi

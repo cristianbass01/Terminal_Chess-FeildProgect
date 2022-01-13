@@ -1,3 +1,6 @@
+/*
+  Cinel Giovanni 2000147
+*/
 #ifndef GIOCATORE_H
 #define GIOCATORE_H
 

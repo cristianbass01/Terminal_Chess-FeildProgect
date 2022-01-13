@@ -1,3 +1,7 @@
+/*
+  Nordio Gianluca 2007959
+*/
+
 #ifndef PEDONE_H
 #define PEDONE_H
 

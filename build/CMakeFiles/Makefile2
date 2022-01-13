@@ -156,12 +156,12 @@ scacchiera/clean: scacchiera/CMakeFiles/scacchi.dir/clean
 replay/CMakeFiles/replay.dir/all:
 	$(MAKE) $(MAKESILENT) -f replay/CMakeFiles/replay.dir/build.make replay/CMakeFiles/replay.dir/depend
 	$(MAKE) $(MAKESILENT) -f replay/CMakeFiles/replay.dir/build.make replay/CMakeFiles/replay.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=19,20,21,22,23,24,25,26,27,28,29,30,31,32 "Built target replay"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=17,18,19,20,21,22,23,24,25,26,27,28,29 "Built target replay"
 .PHONY : replay/CMakeFiles/replay.dir/all
 
 # Build rule for subdir invocation for target.
 replay/CMakeFiles/replay.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 14
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 replay/CMakeFiles/replay.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 0
 .PHONY : replay/CMakeFiles/replay.dir/rule
@@ -183,7 +183,7 @@ replay/CMakeFiles/replay.dir/clean:
 scacchiera/CMakeFiles/regina.dir/all:
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/regina.dir/build.make scacchiera/CMakeFiles/regina.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/regina.dir/build.make scacchiera/CMakeFiles/regina.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=17,18 "Built target regina"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=15,16 "Built target regina"
 .PHONY : scacchiera/CMakeFiles/regina.dir/all
 
 # Build rule for subdir invocation for target.
@@ -207,9 +207,6 @@ scacchiera/CMakeFiles/regina.dir/clean:
 # Target rules for target scacchiera/CMakeFiles/alfiere.dir
 
 # All Build rule for target.
-scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/casella.dir/all
-scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/pezzo.dir/all
-scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/scacchi.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/regina.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/computer.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/torre.dir/all
@@ -218,6 +215,9 @@ scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/eccezione.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/cavallo.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/re.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/umano.dir/all
+scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/casella.dir/all
+scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/pezzo.dir/all
+scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/scacchi.dir/all
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/alfiere.dir/build.make scacchiera/CMakeFiles/alfiere.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/alfiere.dir/build.make scacchiera/CMakeFiles/alfiere.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=1,2 "Built target alfiere"
@@ -225,7 +225,7 @@ scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/umano.dir/all
 
 # Build rule for subdir invocation for target.
 scacchiera/CMakeFiles/alfiere.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 24
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scacchiera/CMakeFiles/alfiere.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 0
 .PHONY : scacchiera/CMakeFiles/alfiere.dir/rule
@@ -274,7 +274,7 @@ scacchiera/CMakeFiles/computer.dir/clean:
 scacchiera/CMakeFiles/torre.dir/all:
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/torre.dir/build.make scacchiera/CMakeFiles/torre.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/torre.dir/build.make scacchiera/CMakeFiles/torre.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=49,50 "Built target torre"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=45,46 "Built target torre"
 .PHONY : scacchiera/CMakeFiles/torre.dir/all
 
 # Build rule for subdir invocation for target.
@@ -301,7 +301,7 @@ scacchiera/CMakeFiles/torre.dir/clean:
 scacchiera/CMakeFiles/pedone.dir/all:
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/pedone.dir/build.make scacchiera/CMakeFiles/pedone.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/pedone.dir/build.make scacchiera/CMakeFiles/pedone.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=11,12 "Built target pedone"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=9,10 "Built target pedone"
 .PHONY : scacchiera/CMakeFiles/pedone.dir/all
 
 # Build rule for subdir invocation for target.
@@ -328,12 +328,12 @@ scacchiera/CMakeFiles/pedone.dir/clean:
 scacchiera/CMakeFiles/eccezione.dir/all:
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/eccezione.dir/build.make scacchiera/CMakeFiles/eccezione.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/eccezione.dir/build.make scacchiera/CMakeFiles/eccezione.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=9,10 "Built target eccezione"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num= "Built target eccezione"
 .PHONY : scacchiera/CMakeFiles/eccezione.dir/all
 
 # Build rule for subdir invocation for target.
 scacchiera/CMakeFiles/eccezione.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scacchiera/CMakeFiles/eccezione.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 0
 .PHONY : scacchiera/CMakeFiles/eccezione.dir/rule
@@ -382,7 +382,7 @@ scacchiera/CMakeFiles/cavallo.dir/clean:
 scacchiera/CMakeFiles/re.dir/all:
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/re.dir/build.make scacchiera/CMakeFiles/re.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/re.dir/build.make scacchiera/CMakeFiles/re.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=15,16 "Built target re"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=13,14 "Built target re"
 .PHONY : scacchiera/CMakeFiles/re.dir/all
 
 # Build rule for subdir invocation for target.
@@ -409,12 +409,12 @@ scacchiera/CMakeFiles/re.dir/clean:
 scacchiera/CMakeFiles/scacchiera.dir/all:
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/scacchiera.dir/build.make scacchiera/CMakeFiles/scacchiera.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/scacchiera.dir/build.make scacchiera/CMakeFiles/scacchiera.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=35,36,37,38,39,40,41,42,43,44,45,46,47,48 "Built target scacchiera"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=32,33,34,35,36,37,38,39,40,41,42,43,44 "Built target scacchiera"
 .PHONY : scacchiera/CMakeFiles/scacchiera.dir/all
 
 # Build rule for subdir invocation for target.
 scacchiera/CMakeFiles/scacchiera.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 14
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scacchiera/CMakeFiles/scacchiera.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 0
 .PHONY : scacchiera/CMakeFiles/scacchiera.dir/rule
@@ -436,7 +436,7 @@ scacchiera/CMakeFiles/scacchiera.dir/clean:
 scacchiera/CMakeFiles/umano.dir/all:
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/umano.dir/build.make scacchiera/CMakeFiles/umano.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/umano.dir/build.make scacchiera/CMakeFiles/umano.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=51,52 "Built target umano"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=47,48 "Built target umano"
 .PHONY : scacchiera/CMakeFiles/umano.dir/all
 
 # Build rule for subdir invocation for target.
@@ -490,7 +490,7 @@ scacchiera/CMakeFiles/casella.dir/clean:
 scacchiera/CMakeFiles/pezzo.dir/all:
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/pezzo.dir/build.make scacchiera/CMakeFiles/pezzo.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/pezzo.dir/build.make scacchiera/CMakeFiles/pezzo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=13,14 "Built target pezzo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=11,12 "Built target pezzo"
 .PHONY : scacchiera/CMakeFiles/pezzo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -517,7 +517,7 @@ scacchiera/CMakeFiles/pezzo.dir/clean:
 scacchiera/CMakeFiles/scacchi.dir/all:
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/scacchi.dir/build.make scacchiera/CMakeFiles/scacchi.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/scacchi.dir/build.make scacchiera/CMakeFiles/scacchi.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=33,34 "Built target scacchi"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=30,31 "Built target scacchi"
 .PHONY : scacchiera/CMakeFiles/scacchi.dir/all
 
 # Build rule for subdir invocation for target.

@@ -1,3 +1,6 @@
+/*
+  Nordio Gianluca 2007959
+*/
 #include <iostream>
 
 #include "./../include/computer.h"

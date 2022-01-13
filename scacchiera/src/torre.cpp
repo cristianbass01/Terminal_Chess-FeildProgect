@@ -1,3 +1,7 @@
+/*
+  Bassotto Cristian 2000169
+*/
+
 #include "./../include/scacchiera.h"
 #include "./../include/torre.h"
 

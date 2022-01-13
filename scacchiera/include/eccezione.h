@@ -1,3 +1,6 @@
+/*
+  Bassotto Cristian 2000169
+*/
 #ifndef ECCEZIONE_H
 #define ECCEZIONE_H
 

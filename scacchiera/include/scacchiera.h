@@ -1,3 +1,9 @@
+/*
+  Bassotto Cristian 2000169
+  Nordio Gianluca 2007959
+  Cinel Giovanni 2000147
+*/
+
 #ifndef SCACCHIERA_H
 #define SCACCHIERA_H
 

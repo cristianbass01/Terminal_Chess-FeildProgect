@@ -1,3 +1,7 @@
+/*
+  Nordio Gianluca 2007959
+*/
+
 #include "./../include/scacchiera.h"
 #include "./../include/regina.h"
 

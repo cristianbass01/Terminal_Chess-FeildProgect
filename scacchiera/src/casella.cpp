@@ -1,3 +1,6 @@
+/*
+  Bassotto Cristian 2000169
+*/
 #include "./../include/casella.h"
 
 //costruttore con riga e colonna (lancia [Eccezione::CasellaErrata])
