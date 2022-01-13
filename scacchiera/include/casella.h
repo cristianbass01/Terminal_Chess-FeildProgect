@@ -26,10 +26,10 @@ class Casella{
 
   //metodi base
     //restituisce la riga
-    int get_riga() {return riga_;}
+    int get_riga() const {return riga_;}
 
     //restituisce la colonna
-    int get_colonna() {return colonna_;}
+    int get_colonna() const {return colonna_;}
 
     //imposta la riga (lancia [Eccezione::CasellaErrata])
     void set_riga(int riga);

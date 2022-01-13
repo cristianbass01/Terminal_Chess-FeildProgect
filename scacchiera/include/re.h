@@ -15,7 +15,7 @@ class Re : public Pezzo {
 
     //metodi per controllare e modificare la variabile che controlla se l'arrocco è valido
     void invalido_arrocco(){ arrocco_valido = false; }
-    bool get_arrocco_valido() { return arrocco_valido; }
+    bool get_arrocco_valido() const { return arrocco_valido; }
     
   private:
     //variabile booleana che determina se il re non si è mai mosso, quindi può eseguire l'arrocco o meno

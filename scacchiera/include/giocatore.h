@@ -17,7 +17,7 @@ class Giocatore{
     virtual bool ricevuta_richiesta_patta() = 0; 
 
     //metodo che ritorna il colore del giocatore
-    Pezzo::Colore get_colore() { return colore_; }
+    Pezzo::Colore get_colore() const { return colore_; }
 };
 
 #endif // GIOCATORE_H
