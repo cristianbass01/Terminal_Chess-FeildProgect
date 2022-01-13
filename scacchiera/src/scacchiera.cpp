@@ -429,7 +429,7 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
 }
 
 // passi la posizione del pezzo e ti ritorna un vettore contenente tutte le caselle in cui quel pezzo può andare
-std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){ // DA OTTIMIZZARE
+std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){ 
   std::vector<Casella> v;
   Pezzo* pezzo_mosso = scacchiera[posizione_pezzo.get_riga()][posizione_pezzo.get_colonna()];
   if(pezzo_mosso != nullptr){

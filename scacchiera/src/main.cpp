@@ -164,5 +164,10 @@ int main(int argc, char** argv) {
     std::cout << "***************************************************************" << std::endl;
     std::cout << std::endl;
   }
+
+  //libero free store
+  delete giocatore_1;
+  delete giocatore_2;
+
   return 0;
 }
