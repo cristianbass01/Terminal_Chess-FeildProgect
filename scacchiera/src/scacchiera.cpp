@@ -712,4 +712,3 @@ bool Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) 
   }
   return mossa;
 }
-

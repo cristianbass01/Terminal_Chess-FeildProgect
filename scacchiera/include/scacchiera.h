@@ -31,7 +31,7 @@ class Scacchiera {
     ~Scacchiera();
 
     //stampa la scacchiera
-    void stampa(); 
+    void stampa() const; 
 
     //controllo mossa fatto prima
     bool mossa(Casella posizione_in, Casella posizione_fin); 
@@ -51,7 +51,7 @@ class Scacchiera {
 
     bool pezzi_insufficienti();
 
-    int get_conta_mosse() { return conta_mosse;} 
+    int get_conta_mosse() const { return conta_mosse;} 
 
     int get_mosse_totali() const {return mosse_totali;}
 
