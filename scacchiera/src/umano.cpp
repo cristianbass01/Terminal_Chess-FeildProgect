@@ -117,6 +117,7 @@ void Umano::gioca(){
   if(scacchiera_->get_conta_mosse() >= 50)
     throw Eccezione("[Eccezione::Patta_Mosse]");
 
+  scacchiera_->inserisci_scacchiera();
   if(scacchiera_->get_ripetizioni_scacchiera() >= 3){
     if(scacchiera_->get_ripetizioni_scacchiera() >= 5)
       throw Eccezione("[Eccezione::Patta_Posizione]");
