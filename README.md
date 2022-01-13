@@ -1,5 +1,12 @@
 # Feild_Progect
 
+Proggetto realizzato da:
+- Bassotto Cristian
+- Cinel Giovanni
+- Nordio Gianluca
+
+
+
 Per lo stile: https://google.github.io/styleguide/cppguide.html
 
 
