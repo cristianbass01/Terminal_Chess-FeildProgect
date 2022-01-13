@@ -115,7 +115,7 @@ std::ostream& operator<<(std::ostream& os, const Scacchiera& scacchiera) {
   return os;
 }
 
-void Scacchiera::stampa() {
+void Scacchiera::stampa() const{
   //stampato turno corrente
   std::cout<<"Turno: " << ( get_mosse_totali() / 2 ) + 1 << std::endl<<std::endl;
 
