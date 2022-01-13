@@ -167,6 +167,9 @@ bool Umano::ricevuta_richiesta_patta(){
 bool Umano::richiesta_patta(){
   char risposta;
   do{
+    std::cout << "Giocatore ";
+    colore_ == Pezzo::Colore::bianco ? std::cout << "bianco (minuscole) " : std::cout << "nero (maiuscole) ";
+    std::cout << std::endl;
     std::cout << "--> Posizione ripetuta per più di 3 volte, vuoi concludere la partita con una patta? Y/n" << std::endl;
     std::string riga_risposta;
     getline(std::cin, riga_risposta);

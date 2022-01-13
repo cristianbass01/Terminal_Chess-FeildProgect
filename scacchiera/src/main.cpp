@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
   }
   catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
-        if(giocatore_2->ricevuta_richiesta_patta())
+        if(giocatore_1->ricevuta_richiesta_patta())
           fine_partita = "Patta_Accordo";
     if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione scaccomatto 
         fine_partita = "Abbandono";
@@ -90,7 +90,7 @@ int main(int argc, char** argv) {
       if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
         fine_partita = "Patta_Stallo";
       if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
-        if(giocatore_2->ricevuta_richiesta_patta())
+        if(giocatore_1->ricevuta_richiesta_patta())
           fine_partita = "Patta_Accordo";
       if((e.errore()).compare("[Eccezione::Patta_Materiale]") == 0) // gestione patta per materiale insufficiente
         fine_partita = "Patta_Insufficienza di materiale";
