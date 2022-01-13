@@ -7,21 +7,24 @@
 
 //metodo che sposta il pezzo
 int Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) { 
+  //Controllo che la casella di arrivo non sia quella di partenza
   if((posizione.get_colonna() == posizione_.get_colonna() ) && (posizione.get_riga() == posizione_.get_riga()))
     return false;
 
+  //Chiamata al metodo mossa_valida che controlla che la mossa passata sia valida 
   int mossa_valida = this->mossa_valida(posizione, scacchiera);
+  //Se la mossa è valida aggiorno lo stato dell'oggetto, ovvero la sua posizione
   if(mossa_valida == true || mossa_valida == EN_PASSANT  || mossa_valida == ARROCCO) {
       posizione_ = posizione;
   }
 
-  //se non da scacco do il controllo di nuovo alla funzione chiamante
+  //Se la mossa non da scacco la restituisco alla funzione chiamante
   return mossa_valida;
 }
 
-//funzione friend che esegue ovverride del operatore <<
+//ovverride dell'operatore <<
 std::ostream& operator<<(std::ostream& os, const Pezzo& temp) {
-  //conversione di un char contenuto in temp.figura_ a stringa (accede a figura_ perchè friend)
+  //conversione del char contenuto in temp.figura_ a stringa
   os << std::string(1,temp.get_figura());
   return os;
 }
