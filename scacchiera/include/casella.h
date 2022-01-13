@@ -5,10 +5,10 @@
 
 class Casella{
 
-    //salvataggio riga
+    //riga della casella
     int riga_;
 
-    //salvataggio colonna
+    //colonna della casella
     int colonna_;
     
   public:

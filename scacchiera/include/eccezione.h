@@ -21,6 +21,7 @@ class Eccezione {
 		}
 
 	private:
+		//Stringa di descrizione per un errore generico
 		std::string descrizione_{"[Eccezione::Generica] Errore Generico"};
 };
 #endif // ECCEZIONE_H

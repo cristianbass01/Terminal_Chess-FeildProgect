@@ -10,7 +10,7 @@ class Pedone : public Pezzo {
     //costruttore
     Pedone(Casella posizione, Colore colore);
 
-    //ritorna il numero di mosse fatte prima di far fare il salto
+    //metodo che ritorna il numero di mosse fatte prima di far fare il salto
     int get_mossa_salto() {return mossa_salto;}
 
     //reset mossa_salto
