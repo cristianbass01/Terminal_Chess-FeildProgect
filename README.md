@@ -1,9 +1,14 @@
 # Feild_Progect
 
 Proggetto realizzato da:
-- Bassotto Cristian
-- Cinel Giovanni
-- Nordio Gianluca
+- Bassotto Cristian 2000169
+- Cinel Giovanni 2000147
+- Nordio Gianluca 2007959
+
+Stile seguito: https://google.github.io/styleguide/cppguide.html
+
+Sui file scacchiera.h e scacchiera.cpp abbiamo scritto i nomi di tutti i componenti dato che il contributo nei citati file è stato uguale da parte di tutti.
+In generale al proggetto la partecipazione è stata 
 
 
 
