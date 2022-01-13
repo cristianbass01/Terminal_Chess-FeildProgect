@@ -5,7 +5,6 @@
 #include "giocatore.h"
 
 class Umano : public Giocatore{
-  private:
 
   public:
     //costruttore
