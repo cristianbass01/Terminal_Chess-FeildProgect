@@ -11,18 +11,19 @@ class Scacchiera;
 
 //classe virtuale pura
 class Pezzo {
+
   public:
+    
+    //enum dei colori dei pezzi
+    enum class Colore {
+      bianco, nero        //bianco=0, nero=1
+    };
+
     //metodo virtuale che sposta il pezzo
     virtual int mossa(Casella posizione, Scacchiera& scacchiera); 
 
-
     //metodo che ritorna la figura
     const char get_figura() const { return figura_; }
-    
-    // enum dei colori dei pezzi
-    enum class Colore {
-      bianco, nero        // bianco=0, nero=1
-    };
     
     //metodo che restituisce il colore del pezzo
     Pezzo::Colore get_colore() const { return colore_; }
@@ -32,21 +33,25 @@ class Pezzo {
 
     //metodo che imposta la posizione del pezzo
     void set_posizione(Casella posizione) {posizione_ = posizione;}
-    
+
+  public:
+
     //costanti che indicano il tipo di mossa eseguita
     static constexpr int EN_PASSANT = 2;
     static constexpr int SALTO_PEDONE = 3;
     static constexpr int ARROCCO = 4;
 
   protected:
-    //classe casella che contiene riga e colonna
+    //posizione del pezzo nella scacchiera
     Casella posizione_;
         
-    //contiene la figura che viene rappresentata nella scachiera
+    //figura che viene rappresentata nella scachiera
     char figura_; 
 
-    //contiene il colore del pezzo
+    //colore del pezzo
     Colore colore_;
+
+  protected:
 
     //metodo virtuale puro che controlla se la mossa è valida (SENZA controllo scacco)
     virtual int mossa_valida(Casella posizione, Scacchiera& scacchiera) = 0; 
@@ -54,6 +59,6 @@ class Pezzo {
 
 //HELPER FUNCTION
 
-// overriding operatore << che torna la figura 
+//overriding operatore << che torna la figura 
 std::ostream& operator<<(std::ostream& os, const Pezzo& temp);
-#endif  // PEZZO_H
+#endif  //PEZZO_H

@@ -14,31 +14,37 @@
 int main(int argc, char** argv) {
   Scacchiera test;
 
-  //reset per i numeri randomici
+  //reset per i numeri randomici 
   srand(time(NULL));
 
-  //verifica il numero di argomenti passati da riga di comando
+  //verifica che il numero di argomenti passati da riga di comando sia corretto
   if(argc < 2 || argc > 3)
     throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato");
   
   //argv[0] è il nome del programma quindi usiamo argv[1]
- 
   std::string arg = argv[1];
+
   //verifica che l'argomento iniziale sia corretto
   if(arg.compare("pc") != 0 && arg.compare("cc") != 0) 
     throw Eccezione("[Eccezione::Argomento_Non_Valido]");
 
-  bool colore = static_cast<bool>(rand() % 2); //scelta randomica dei colori dei giocatori
+  //scelta randomica dei colori dei giocatori
+  bool colore = static_cast<bool>(rand() % 2);
 
+  //creo i giocatori per la partita
   Giocatore* giocatore_1;
   Giocatore* giocatore_2;
   giocatore_1 = new Computer(&test, static_cast<Pezzo::Colore>(colore));
 
-  //computer vs computer
+  //creo secondo giocatore in base al valore di passato come argomento da riga di comando
   if(arg.compare("cc") == 0){
+
+    //caso partita computer vs computer
     giocatore_2 = new Computer(&test, static_cast<Pezzo::Colore>(!colore));
   }
   else{
+
+    //caso partita umano vs computer
     giocatore_2 =  new Umano(&test, static_cast<Pezzo::Colore>(!colore));
   }
 
@@ -114,6 +120,8 @@ int main(int argc, char** argv) {
       fine_partita = "Patta_Max mosse Computer vs Computer superate";
   }
   
+  //gestisco le stampe per la fine della partita
+
   if(fine_partita.compare("Scaccomatto") == 0){
     std::cout << std::endl;
     std::cout << "***************************************************************" << std::endl;

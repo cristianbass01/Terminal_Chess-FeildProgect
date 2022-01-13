@@ -1,6 +1,7 @@
 /*
   Cinel Giovanni 2000147
 */
+
 #ifndef COMPUTER_H
 #define COMPUTER_H
 
@@ -9,13 +10,14 @@
 class Computer : public Giocatore{
 
   public:
-    // costruttore
+
+    //costruttore
     Computer(Scacchiera*, Pezzo::Colore);
 
-    //chiede la mossa finche non ne esegue una
+    //metodo che gestisce la richiesta della mossa finche non viene passata una mossa valida
     void gioca();
 
-    //riceve la richiesta di patta fatta dall'avversario
+    //metodo che gestisce la richiesta di patta fatta dall'avversario
     bool ricevuta_richiesta_patta();
 
     //numero massimo di mosse nel caso di partita computer vs computer
