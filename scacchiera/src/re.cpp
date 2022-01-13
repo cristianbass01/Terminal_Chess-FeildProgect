@@ -1,3 +1,7 @@
+/*
+  Bassotto Cristian 2000169
+*/
+
 #include "./../include/scacchiera.h"
 #include "./../include/re.h"
 
@@ -5,7 +9,7 @@ Re::Re(Casella posizione, Colore colore) {
   //inizializzate variabili membro ereditate da pezzo
   posizione_ = posizione;
   colore_ = colore;
-  arrocco_valido = true;
+  arrocco_valido_ = true;
 
   //inizializzata figura sulla base del colore del pezzo
   if(colore_ == Colore::nero)
@@ -25,7 +29,7 @@ int Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
       return false;
 
   //gestisco arrocco
-  if(arrocco_valido && delta_riga == 0 && abs(delta_colonna) == 2){
+  if(arrocco_valido_ && delta_riga == 0 && abs(delta_colonna) == 2){
     //controllo se il re si sposta verso destra e se all'angolo destro c'è un pezzo
     if(delta_colonna == 2 && scacchiera.get_casella(Casella(posizione_.get_riga(), 7)) != nullptr){
       //controllo che il re non subisca scacco spostandosi di una posizione a destra

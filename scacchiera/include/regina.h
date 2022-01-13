@@ -1,3 +1,7 @@
+/*
+  Nordio Gianluca 2007959
+*/
+
 #ifndef REGINA_H
 #define REGINA_H
 

@@ -1,3 +1,9 @@
+/*
+  Bassotto Cristian 2000169
+  Nordio Gianluca 2007959
+  Cinel Giovanni 2000147
+*/
+
 #ifndef SCACCHIERA_H
 #define SCACCHIERA_H
 
@@ -56,10 +62,10 @@ class Scacchiera {
 
     //metodo che restituisce il numero di mosse eseguite dall'ultima volta che è stato mosso 
     //un pedone o mangiato un pezzo (utilizzato per il controllo della patta)
-    int get_conta_mosse() const { return conta_mosse;}
+    int get_conta_mosse() const { return conta_mosse_;}
 
     //metodo che restituisce il numero totale di mosse eseguite
-    int get_mosse_totali() const {return mosse_totali;}
+    int get_mosse_totali() const {return mosse_totali_;}
 
     //metodo che restituisce un vettore contentente le mosse possibili che può fare il pezzo che si
     //trova nella posizione da indicare "posizione_pezzo"
@@ -80,8 +86,8 @@ class Scacchiera {
     int get_ripetizioni_scacchiera();
     
     //metodi che ritornano tutti i pezzi ancora in gioco rispettivamente per i pezzi bianchi e neri
-    std::vector<Pezzo*> const get_pezzi_bianchi() { return pezzi_bianchi;}
-    std::vector<Pezzo*> const get_pezzi_neri() {return pezzi_neri;}
+    std::vector<Pezzo*> const get_pezzi_bianchi() { return pezzi_bianchi_;}
+    std::vector<Pezzo*> const get_pezzi_neri() {return pezzi_neri_;}
 
   private:
     //matrice che contiene i puntatori ai singoli pezzi e rappresenta la scacchiera
@@ -89,18 +95,18 @@ class Scacchiera {
     Pezzo* scacchiera[RIGHE][COLONNE]; 
 
     //vector contenente i puntatori a tutti i pezzi ancora presenti nella scacchiera
-    std::vector<Pezzo*> pezzi_neri;
-    std::vector<Pezzo*> pezzi_bianchi;
+    std::vector<Pezzo*> pezzi_neri_;
+    std::vector<Pezzo*> pezzi_bianchi_;
 
     //puntatori ai due re (servono nello scacco)
-    Pezzo* re_nero;
-    Pezzo* re_bianco;
+    Pezzo* re_nero_;
+    Pezzo* re_bianco_;
 
     //contatore delle mosse in cui non si muove un pedone ne si mangia un pezzo
-    int conta_mosse;
+    int conta_mosse_;
 
     //contatore delle mosse totali
-    int mosse_totali;
+    int mosse_totali_;
 
     //metodo che verifica se è possibile promuovere qualche pedone e in caso sia possibile
     //attua la promozione a donna
@@ -108,9 +114,9 @@ class Scacchiera {
 
 
     //mappa per tener conto delle volte in cui una posizione si ripete
-    std::map<std::string, int> mappa_posizioni; 
+    std::map<std::string, int> mappa_posizioni_; 
     //lista contentente le mosse fatte durante tutta la partita
-    std::list<std::string> log_mosse;
+    std::list<std::string> log_mosse_;
 
 };
 

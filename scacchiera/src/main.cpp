@@ -1,3 +1,7 @@
+/*
+  Cinel Giovanni 2000147
+*/
+
 #include <iostream>
 #include <string.h>
 #include <cstdlib>
@@ -46,7 +50,7 @@ int main(int argc, char** argv) {
   }
   catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
-        if(giocatore_2->ricevuta_richiesta_patta())
+        if(giocatore_1->ricevuta_richiesta_patta())
           fine_partita = "Patta_Accordo";
     if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione scaccomatto 
         fine_partita = "Abbandono";
@@ -57,7 +61,6 @@ int main(int argc, char** argv) {
   {
     try{
       giocatore_1->gioca();
-      std::cout << test;
     }
     catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
@@ -83,14 +86,13 @@ int main(int argc, char** argv) {
     try
     {
       giocatore_2->gioca();
-      std::cout << test;
     }
     catch(Eccezione e)
     {
       if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
         fine_partita = "Patta_Stallo";
       if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
-        if(giocatore_2->ricevuta_richiesta_patta())
+        if(giocatore_1->ricevuta_richiesta_patta())
           fine_partita = "Patta_Accordo";
       if((e.errore()).compare("[Eccezione::Patta_Materiale]") == 0) // gestione patta per materiale insufficiente
         fine_partita = "Patta_Insufficienza di materiale";
@@ -111,9 +113,6 @@ int main(int argc, char** argv) {
     if(arg.compare("cc") == 0 && test.get_mosse_totali() >= Computer::MAX_MOSSE)
       fine_partita = "Patta_Max mosse Computer vs Computer superate";
   }
-  
-  
-  std::cout << test;
   
   if(fine_partita.compare("Scaccomatto") == 0){
     std::cout << std::endl;

@@ -1,3 +1,7 @@
+/*
+  Bassotto Cristian 2000169
+*/
+
 #ifndef RE_H
 #define RE_H
 
@@ -14,12 +18,12 @@ class Re : public Pezzo {
     bool bloccato(Scacchiera& scacchiera);
 
     //metodi per controllare e modificare la variabile che controlla se l'arrocco è valido
-    void invalido_arrocco(){ arrocco_valido = false; }
-    bool get_arrocco_valido() const { return arrocco_valido; }
+    void invalido_arrocco(){ arrocco_valido_ = false; }
+    bool get_arrocco_valido() const { return arrocco_valido_; }
     
   private:
     //variabile booleana che determina se il re non si è mai mosso, quindi può eseguire l'arrocco o meno
-    bool arrocco_valido;
+    bool arrocco_valido_;
 
     //metodo che controlla se la mossa è valida (SENZA controllo scacco)
     int mossa_valida(Casella posizione, Scacchiera& scacchiera) override;

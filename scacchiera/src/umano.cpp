@@ -1,3 +1,6 @@
+/*
+  Bassotto Cristian 2000169
+*/
 #include <iostream>
 
 #include "./../include/umano.h"
@@ -49,7 +52,7 @@ void Umano::gioca(){
       else if(mossa.compare("ff ff") == 0) // Il giocatore vuole terminare la partita
         throw Eccezione("[Eccezione::Abbandono]");
       else if(mossa.compare("xx xx") == 0) // Il giocatore vuole vedere la scacchiera
-        std::cout<<*scacchiera_; //OVERWRITING OPERATORE << DA IMPLEMENTARE
+        std::cout<<*scacchiera_; //OVERWRITING OPERATORE <<
       else{
         //creazione colonna iniziale
         int colonna_iniziale = mossa[0] - a; // in questo modo parto da a = 0 come colonna
@@ -167,6 +170,9 @@ bool Umano::ricevuta_richiesta_patta(){
 bool Umano::richiesta_patta(){
   char risposta;
   do{
+    std::cout << "Giocatore ";
+    colore_ == Pezzo::Colore::bianco ? std::cout << "bianco (minuscole) " : std::cout << "nero (maiuscole) ";
+    std::cout << std::endl;
     std::cout << "--> Posizione ripetuta per più di 3 volte, vuoi concludere la partita con una patta? Y/n" << std::endl;
     std::string riga_risposta;
     getline(std::cin, riga_risposta);

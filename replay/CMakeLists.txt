@@ -10,14 +10,13 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 project(replay)
 
-include_directories(./../scacchiera)
+include_directories(./../scacchiera/src)
 
 add_executable(${PROJECT_NAME}
 main.cpp
 ./../scacchiera/src/scacchiera.cpp
 ./../scacchiera/src/computer.cpp
 ./../scacchiera/src/umano.cpp
-./../scacchiera/src/eccezione.cpp
 ./../scacchiera/src/alfiere.cpp
 ./../scacchiera/src/casella.cpp
 ./../scacchiera/src/cavallo.cpp

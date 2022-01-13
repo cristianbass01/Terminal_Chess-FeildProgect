@@ -1,9 +1,11 @@
+/*
+  Nordio Gianluca 2007959
+*/
+
 #include <iostream>
 #include <string.h>
 #include <fstream>
 #include <list>
-
-//DA CONTROLLARE
 #include <chrono>
 #include <thread>
 

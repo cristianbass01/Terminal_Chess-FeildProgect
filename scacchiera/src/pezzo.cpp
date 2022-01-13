@@ -1,3 +1,7 @@
+/*
+  Cinel Giovanni 2000147
+*/
+
 #include "./../include/scacchiera.h"
 #include "./../include/pezzo.h"
 
