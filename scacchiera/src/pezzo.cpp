@@ -18,6 +18,6 @@ int Pezzo::mossa(Casella posizione, Scacchiera& scacchiera) {
 //funzione friend che esegue ovverride del operatore <<
 std::ostream& operator<<(std::ostream& os, const Pezzo& temp) {
   //conversione di un char contenuto in temp.figura_ a stringa (accede a figura_ perchè friend)
-  os << std::string(1,temp.figura_);
+  os << std::string(1,temp.get_figura());
   return os;
 }
