@@ -29,9 +29,6 @@ class Pezzo {
 
     //metodo che imposta la posizione del pezzo
     void set_posizione(Casella posizione) {posizione_ = posizione;}
-
-    // overriding operatore << che torna la figura 
-    friend std::ostream& operator<<(std::ostream& os, const Pezzo& temp);
     
     //costanti che indicano il tipo di mossa eseguita
     static constexpr int EN_PASSANT = 2;
@@ -51,4 +48,9 @@ class Pezzo {
     //metodo virtuale puro che controlla se la mossa è valida (SENZA controllo scacco)
     virtual int mossa_valida(Casella posizione, Scacchiera& scacchiera) = 0; 
 };
+
+//HELPER FUNCTION
+
+// overriding operatore << che torna la figura 
+std::ostream& operator<<(std::ostream& os, const Pezzo& temp);
 #endif  // PEZZO_H
