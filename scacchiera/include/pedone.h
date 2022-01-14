@@ -28,6 +28,7 @@ class Pedone : public Pezzo {
     //membro che salva il numero della mossa alla quale è stato fatto il doppio salto iniziale
     int mossa_salto_ = -1;
 
+  private:
     //metodo che controlla se la mossa è valida (SENZA controllo scacco)
     int mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
 

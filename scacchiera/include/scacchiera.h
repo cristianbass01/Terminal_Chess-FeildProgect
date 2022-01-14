@@ -30,6 +30,7 @@ class Scacchiera {
     //numero di righe nella scacchiera
     static constexpr int RIGHE = 8;
 
+  public:
     //costruttore della scacchiera
     Scacchiera();
 
@@ -108,15 +109,18 @@ class Scacchiera {
     //contatore delle mosse totali
     int mosse_totali_;
 
+    //mappa per tener conto delle volte in cui una posizione si ripete
+    std::map<std::string, int> mappa_posizioni_; 
+    //lista contentente le mosse fatte durante tutta la partita
+    std::list<std::string> log_mosse_;
+
+  private:
     //metodo che verifica se è possibile promuovere qualche pedone e in caso sia possibile
     //attua la promozione a donna
     void promuovi(Pezzo* pedone);
 
 
-    //mappa per tener conto delle volte in cui una posizione si ripete
-    std::map<std::string, int> mappa_posizioni_; 
-    //lista contentente le mosse fatte durante tutta la partita
-    std::list<std::string> log_mosse_;
+    
 
 };
 

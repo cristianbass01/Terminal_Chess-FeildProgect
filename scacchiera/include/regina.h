@@ -14,7 +14,6 @@ class Regina : public Pezzo{
   //costruttore
     Regina(Casella posizione, Colore colore);
 
-
   private:
     //metodo che controlla se la mossa è valida (SENZA controllo scacco)
     int mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
