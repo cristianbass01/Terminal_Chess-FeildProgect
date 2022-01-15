@@ -69,42 +69,67 @@ int Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
 
 bool Re::bloccato(Scacchiera& scacchiera){
   //simulo le mosse possibili
+
+  //variabile che salva true se il re si trova sul bordo alto della scacchiera, false altrimenti
   bool bordo_alto = this->posizione_.get_riga() + 1 > 7;
+
+  //variabile che salva true se il re si trova sul bordo basso della scacchiera, false altrimenti
   bool bordo_basso = this->posizione_.get_riga() - 1 < 0;
+
+  //variabile che salva true se il re si trova sul bordo destro della scacchiera, false altrimenti
   bool bordo_destro = this->posizione_.get_colonna() + 1 > 7;
+
+  //variabile che salva true se il re si trova sul bordo sinistro della scacchiera, false altrimenti
   bool bordo_sinistro = this->posizione_.get_colonna() - 1 < 0;
   
+  // controllo che il re non si trovi sul'angolo destro della scacchiera
   if(!bordo_alto && !bordo_destro)
+    // simulo lo spostamento del re verso l'angolo alto dentro
     if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + 1, this->posizione_.get_colonna() + 1)))
       return false;
 
+  // controllo che il re non si trovi sull'angolo alto sinistro della scacchiera
   if(!bordo_alto && !bordo_sinistro)
+    // simulo la mossa del re verso l'angolo alto sinistro
     if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + 1, this->posizione_.get_colonna() - 1)))
       return false;
   
+  // controllo che il re non si trovi sull'angolo basso destro della scacchiera
   if(!bordo_basso && !bordo_destro)
+    // simulo la mossa del re verso l'angolo basso destro
     if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() - 1, this->posizione_.get_colonna() + 1)))
       return false;
   
+  // controllo che il re non si trovi sull'angolo basso sinistro della scacchiera
   if(!bordo_basso && !bordo_sinistro)
+    // simulo la mossa del re verso l'angolo basso sinistro
     if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() - 1, this->posizione_.get_colonna() - 1)))
       return false;
 
+  // controllo che il re non si trovi lungo il bordo basso della scacchiera
   if (!bordo_alto)
+    // simulo la mossa del re verso l'alto
     if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() + 1, this->posizione_.get_colonna())))
       return false;
 
+  // controllo che il re non si trovi lungo il bordo basso della scacchiera
   if (!bordo_basso)
+    // simulo la mossa del re verso il basso
     if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga() - 1, this->posizione_.get_colonna())))
       return false;
 
+  // controllo che il re non si trovi lungo il bordo destro della scacchiera
   if (!bordo_destro)
+    // simulo la mossa del re verso destra
     if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga(), this->posizione_.get_colonna() + 1)))
       return false;
 
+  // controllo che il re non si trovi lungo il bordo sinistro della scacchiera
   if (!bordo_sinistro)
+    // simulo la mossa del re verso sinistra
     if(scacchiera.simulazione_mossa(this->posizione_, Casella(this->posizione_.get_riga(), this->posizione_.get_colonna() - 1)))
       return false;
 
+  // Non controllo l'arrocco perchè se il re non si può spostare a sinistra o destra, non potrà nemmeno compiere l'arrocco
   return true;
 }
