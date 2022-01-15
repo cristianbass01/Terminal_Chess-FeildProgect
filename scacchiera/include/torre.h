@@ -11,15 +11,18 @@ class Scacchiera;
 
 class Torre : public Pezzo{
   public:
-  //costruttore
+    //costruttore
     Torre(Casella posizione, Colore colore);
 
-    //metodi per controllare e modificare la variabile che controlla se l'arrocco è valido
+    //metodo che invalida l'arrocco
     void invalido_arrocco(){ arrocco_valido_ = false; }
+
+    //metodo che restituisce true se l'arrocco è valido, false altrimenti
     bool get_arrocco_valido() const { return arrocco_valido_; }
     
   private:
-    //variabile booleana che determina se il cavallo non si è mai mosso, quindi può eseguire l'arrocco o meno
+    //variabile booleana che salva true se il cavallo non si è mai mosso 
+    //(arrocco valido per il cavallo), false altrimenti
     bool arrocco_valido_;
 
     //metodo che controlla se la mossa è valida (SENZA controllo scacco)
