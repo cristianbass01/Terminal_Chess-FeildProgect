@@ -339,8 +339,6 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   //se si muove un pedone viene azzerato il contatore delle mosse
   if(tolower(pezzo_mosso->get_figura()) == 'p'){
     conta_mosse_ = 0;
-    //effettua promozione dei pedoni a donna se possibile
-    promuovi(pezzo_mosso);
   }
   else
     conta_mosse_++;
@@ -403,13 +401,19 @@ Pezzo* Scacchiera::pezzo_scacco(Pezzo::Colore colore){
         
 }
 
-void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
+int Scacchiera::promuovi(Casella pos_pedone) { // OTTIMIZZATA
   //promozione bianchi
+  Pezzo* pedone;
+  if(tolower(scacchiera[pos_pedone.get_riga()][pos_pedone.get_colonna()]->get_figura()) == 'p')
+    pedone = scacchiera[pos_pedone.get_riga()][pos_pedone.get_colonna()];
+  else
+    return -1;
+
   if(pedone->get_posizione().get_riga() == 7) {
     int colonna_pedone = pedone->get_posizione().get_colonna();
     pezzi_bianchi_.erase(std::find(pezzi_bianchi_.begin(), pezzi_bianchi_.end(), pedone));
     delete pedone; //cancellata dalla memoria dinamica
-    throw Eccezione("[Eccezione::Promozione]" + colonna_pedone);
+    return colonna_pedone;
   }
 
   //promozione neri
@@ -418,7 +422,7 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
       int colonna_pedone = pedone->get_posizione().get_colonna();
       pezzi_neri_.erase(std::find(pezzi_neri_.begin(), pezzi_neri_.end(), pedone));
       delete pedone; //cancellata dalla memoria dinamica
-      throw Eccezione("[Eccezione::Promozione]" + colonna_pedone);
+      return colonna_pedone;
     }
 }
 
@@ -448,6 +452,15 @@ void Scacchiera::fine_promozione(char figura_pezzo, Pezzo::Colore colore_pezzo,i
     pezzi_bianchi_.push_back(scacchiera[riga_promozione][colonna_promozione]);
   else
     pezzi_neri_.push_back(scacchiera[riga_promozione][colonna_promozione]);
+  
+  std::string mossa_testuale;
+  mossa_testuale.append(1, colonna_promozione+'A');
+  mossa_testuale.append(1, riga_promozione+1+'0');
+  mossa_testuale.append(1, ' ');
+  mossa_testuale.append(1, '=');
+  mossa_testuale.append(1, figura_pezzo);
+  mossa_testuale.append(1, '\n');
+  log_mosse_.push_back(mossa_testuale);
 
 }
 

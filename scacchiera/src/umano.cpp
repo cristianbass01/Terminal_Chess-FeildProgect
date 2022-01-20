@@ -68,21 +68,16 @@ void Umano::gioca(){
           Casella finale(riga_finale, colonna_finale);
           if(scacchiera_->get_casella(iniziale) != nullptr){
             if(scacchiera_->get_casella(iniziale)->get_colore() == colore_){
-              try{
                 done = scacchiera_->mossa(iniziale, finale);
-              }
-              catch(Eccezione e){
-                if(e.errore().compare("[Eccezione::Promozione]")){
-                  char figura_pezzo = scelta_promozione();
-                  int colonna_promozione = std::stoi(e.errore().substr(23));
-                  scacchiera_->fine_promozione(figura_pezzo, colore_, colonna_promozione);
-                  done = true;
-                }
-              }
               if(!done)
                 std::cout << "--> Mossa non valida" << std::endl;
               else{ 
                 std::cout << "--> Mossa eseguita" << std::endl;
+                int colonna_promozione = scacchiera_->promuovi(finale);
+                if(colonna_promozione > 0){
+                  char figura_pezzo = scelta_promozione();
+                  scacchiera_->fine_promozione(figura_pezzo, colore_, colonna_promozione);
+                }
                 if(mossa.size() == 8){
                   if(mossa[6] == 'p' && mossa[7] == 'p'){
                     if(scacchiera_->get_ripetizioni_scacchiera() >= 3)
