@@ -428,6 +428,39 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
     }
 }
 
+void Scacchiera::fine_promozione(char figura_pezzo, Pezzo::Colore colore_pezzo){
+  
+  int riga_promozione;
+  int colonna_promozione = colore_pezzo == Pezzo::Colore::bianco ? 7 : 0;
+
+  for(int i = 0; i<8; i++){
+    if(scacchiera[7][i]->get_figura() == 'p'){
+      riga_promozione = i;
+      colonna_promozione = 7;
+    }
+  }
+  if(riga_promozione == 4){
+    for(int i = 0; i<8; i++){
+      if(scacchiera[0][i]->get_figura() == 'P'){
+        riga_promozione = i;
+        colonna_promozione = 0;
+      }
+    }
+  }
+
+  switch (figura_pezzo)
+  {
+  case 'd':
+      scacchiera[riga_promozione][colonna_promozione] = new Regina(Casella(riga_promozione,colonna_promozione), Pezzo::Colore::nero);
+    break;
+  
+  default:
+    break;
+  }
+}
+
+
+
 // passi la posizione del pezzo e ti ritorna un vettore contenente tutte le caselle in cui quel pezzo può andare
 std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){ 
   std::vector<Casella> v;
