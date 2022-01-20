@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
     throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato]");
   }
   
-  Scacchiera scacchiera_; 
+  Scacchiera scacchiera; 
   
   //lista in cui vengono inserite tutte le mosse lette da file
   std::list<std::string> lista_mosse;
@@ -80,14 +80,14 @@ int main(int argc, char *argv[]) {
   std::string fine_partita; 
 
   try {
-    Pezzo::Colore colore_ = Pezzo::Colore::bianco;
+    Pezzo::Colore colore = Pezzo::Colore::bianco;
     int num_mosse = 0;
     while(!lista_mosse.empty()) { //fa proseguire partita finchè ci sono mosse
       //settato colore sulla base di chi numero di mossa si tratta
       if(num_mosse % 2 == 0) //caso in cui la mossa è del bianco
-        colore_ = Pezzo::Colore::bianco;
+        colore = Pezzo::Colore::bianco;
       else //caso in cui la mossa è del bianco
-        colore_ = Pezzo::Colore::nero;
+        colore = Pezzo::Colore::nero;
 
       //inserita la mossa corrente in stringa mossa
       std::string mossa = lista_mosse.front();
@@ -111,38 +111,38 @@ int main(int argc, char *argv[]) {
       Casella finale(riga_finale, colonna_finale);
 
       //controlla che il giocatore non sia in stallo
-      if(scacchiera_.stallo(colore_)) 
+      if(scacchiera.stallo(colore)) 
         throw Eccezione("[Eccezione::Patta_Stallo]");
       
       //caso in cui viene selezionato una casella che non ha un pezzo
-      if(scacchiera_.get_casella(iniziale) == nullptr) 
+      if(scacchiera.get_casella(iniziale) == nullptr) 
         throw Eccezione("[Eccezione::Log_Errato]");
       
       //caso in cui si cerca di muovere un pezzo del colore opposto
-      if(scacchiera_.get_casella(iniziale)->get_colore() != colore_)
+      if(scacchiera.get_casella(iniziale)->get_colore() != colore)
         throw Eccezione("[Eccezione::Log_Errato]");
       
-      if(!scacchiera_.mossa(iniziale, finale)) 
+      if(!scacchiera.mossa(iniziale, finale)) 
         throw Eccezione("[Eccezione::Log_Errato]");
       
-      if(scacchiera_.pezzi_insufficienti())
+      if(scacchiera.pezzi_insufficienti())
         throw Eccezione("[Eccezione::Patta_Materiale]");
       
       constexpr int NUMERO_MILLISECONDI_ATTESA = 1000;
       if(tolower(*argv[1]) == 'v') { 
         std::this_thread::sleep_for(std::chrono::milliseconds(NUMERO_MILLISECONDI_ATTESA));
-        scacchiera_.stampa();
+        scacchiera.stampa();
       }
       else {
-        log_output<<scacchiera_<< std::endl;
+        log_output<<scacchiera<< std::endl;
       }
       
       //verifica che non sia scaccomatto
-      Pezzo::Colore colore_avversario_ = (colore_ == Pezzo::Colore::nero) ? Pezzo::Colore::bianco : Pezzo::Colore::nero ;
+      Pezzo::Colore colore_avversario = (colore == Pezzo::Colore::nero) ? Pezzo::Colore::bianco : Pezzo::Colore::nero ;
       std::string vittoria;
-      if(scacchiera_.scaccomatto(colore_avversario_)) {
+      if(scacchiera.scaccomatto(colore_avversario)) {
         vittoria += "Ha vinto il giocatore ";
-        if(colore_ == Pezzo::Colore::bianco)
+        if(colore == Pezzo::Colore::bianco)
           vittoria += "bianco!\n";
         else
           vittoria += "nero!\n";
@@ -155,7 +155,7 @@ int main(int argc, char *argv[]) {
         throw Eccezione("[Eccezione::Scaccomatto]");
       }
       
-      if(scacchiera_.get_conta_mosse() >= 50)
+      if(scacchiera.get_conta_mosse() >= 50)
         throw Eccezione("[Eccezione::Patta_Mosse]");
       num_mosse++;
     }
@@ -183,11 +183,11 @@ int main(int argc, char *argv[]) {
     fine_partita = "fine mosse";
 
   if(tolower(*argv[1]) == 'v'){
-    std::cout << scacchiera_<< std::endl;
+    std::cout << scacchiera<< std::endl;
     std::cout << "Partita conclusa per: "<< fine_partita << std::endl;
   }
   else {
-    log_output << scacchiera_<< std::endl;
+    log_output << scacchiera<< std::endl;
     log_output << "Partita conclusa per: "<< fine_partita << std::endl;
     log_output.close();
   }
