@@ -57,8 +57,8 @@ void Computer::gioca(){
   }
   catch(Eccezione e){
     if(e.errore().compare("[Eccezione::Promozione]")){
-      char pez = scelta_promozione();
-      scacchiera_->fine_promozione(pez);
+      char figura_pezzo = scelta_promozione();
+      scacchiera_->fine_promozione(figura_pezzo, colore_);
     }
   }
 
@@ -86,4 +86,23 @@ bool Computer::ricevuta_richiesta_patta(){
   else
     std::cout << "--> Richiesta rifiutata";
   return risposta;
+}
+
+char Computer::scelta_promozione() {
+  //costanti
+  constexpr char TORRE = 't';
+  constexpr char REGINA = 'd';
+  constexpr char ALFIERE = 'a';
+  constexpr char CAVALLO = 'c';
+
+  //scelta casuale del pezzo a cui fare la promozione
+  int random = rand() % 4;
+  if(random == 0)
+    return REGINA;
+  if(random == 1) 
+    return CAVALLO;
+  if(random == 2)
+    return TORRE;
+  if(random == 3)
+    return ALFIERE;
 }

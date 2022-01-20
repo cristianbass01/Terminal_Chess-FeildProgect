@@ -68,7 +68,16 @@ void Umano::gioca(){
           Casella finale(riga_finale, colonna_finale);
           if(scacchiera_->get_casella(iniziale) != nullptr){
             if(scacchiera_->get_casella(iniziale)->get_colore() == colore_){
-              done = scacchiera_->mossa(iniziale, finale);
+              try{
+                done = scacchiera_->mossa(iniziale, finale);
+              }
+              catch(Eccezione e){
+                if(e.errore().compare("[Eccezione::Promozione]")){
+                  char figura_pezzo = scelta_promozione();
+                  scacchiera_->fine_promozione(figura_pezzo, colore_);
+                  done = true;
+                }
+              }
               if(!done)
                 std::cout << "--> Mossa non valida" << std::endl;
               else{ 
