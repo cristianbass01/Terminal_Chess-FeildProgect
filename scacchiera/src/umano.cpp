@@ -74,7 +74,7 @@ void Umano::gioca(){
               catch(Eccezione e){
                 if(e.errore().compare("[Eccezione::Promozione]")){
                   char figura_pezzo = scelta_promozione();
-                  scacchiera_->fine_promozione(figura_pezzo);
+                  scacchiera_->fine_promozione(figura_pezzo, colore_);
                   done = true;
                 }
               }
