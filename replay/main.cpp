@@ -122,22 +122,25 @@ int main(int argc, char *argv[]) {
       if(scacchiera.get_casella(iniziale)->get_colore() != colore)
         throw Eccezione("[Eccezione::Log_Errato]");
       
+      //caso in cui mossa non è valida
       if(!scacchiera.mossa(iniziale, finale)) 
         throw Eccezione("[Eccezione::Log_Errato]");
       
+      //caso in cui i pezzi sono insufficienti
       if(scacchiera.pezzi_insufficienti())
         throw Eccezione("[Eccezione::Patta_Materiale]");
-      
+    
+      //caso in cui bisogna stampare a video
       constexpr int NUMERO_MILLISECONDI_ATTESA = 1000;
       if(tolower(*argv[1]) == 'v') { 
         std::this_thread::sleep_for(std::chrono::milliseconds(NUMERO_MILLISECONDI_ATTESA));
         scacchiera.stampa();
       }
-      else {
+      else { //caso in cui bisogna stampare da file
         log_output<<scacchiera<< std::endl;
       }
       
-      //verifica che non sia scaccomatto
+      //verifica se si tratta di scaccomatto
       Pezzo::Colore colore_avversario = (colore == Pezzo::Colore::nero) ? Pezzo::Colore::bianco : Pezzo::Colore::nero ;
       std::string vittoria;
       if(scacchiera.scaccomatto(colore_avversario)) {
@@ -155,6 +158,7 @@ int main(int argc, char *argv[]) {
         throw Eccezione("[Eccezione::Scaccomatto]");
       }
       
+      //verifica che non vanga superato il limite di mosse senza pezzi mangiati o pedoni mossi
       if(scacchiera.get_conta_mosse() >= 50)
         throw Eccezione("[Eccezione::Patta_Mosse]");
       num_mosse++;
@@ -179,14 +183,16 @@ int main(int argc, char *argv[]) {
     }
   }
 
+  //caso in cui la partita finisce perchcé non ci sono più mosse
   if(fine_partita.length() == 0)
     fine_partita = "fine mosse";
 
+  //stampa a video se si è in modalità video
   if(tolower(*argv[1]) == 'v'){
     std::cout << scacchiera<< std::endl;
     std::cout << "Partita conclusa per: "<< fine_partita << std::endl;
   }
-  else {
+  else {  //stampa nel file nel caso in cui si sia in modalità file
     log_output << scacchiera<< std::endl;
     log_output << "Partita conclusa per: "<< fine_partita << std::endl;
     log_output.close();
