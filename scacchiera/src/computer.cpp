@@ -6,9 +6,10 @@
 #include "./../include/computer.h"
 
 Computer::Computer(Scacchiera* scacchiera, Pezzo::Colore colore){
+  //inizializzati membri della classe
   scacchiera_ = scacchiera;
   colore_ = colore;
-  colore_avversario_ = colore_ == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
+  colore_avversario_ = (colore_ == Pezzo::Colore::bianco) ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
 }
 
 void Computer::gioca(){
@@ -21,7 +22,7 @@ void Computer::gioca(){
   if(scacchiera_->get_ripetizioni_scacchiera() >= 5)
     throw Eccezione("[Eccezione::Patta_Posizione]");
 
-  //recupero il vettore contenente tutti i pezzi
+  //recupera il vettore contenente tutti i pezzi
   std::vector<Pezzo*> pezzi;
   if(colore_ == Pezzo::Colore::bianco)
     pezzi = scacchiera_->get_pezzi_bianchi();
@@ -80,7 +81,7 @@ void Computer::gioca(){
 
 
 bool Computer::ricevuta_richiesta_patta(){
-  int risposta = rand()%2;
+  int risposta = rand() % 2;
   if(risposta)
     std::cout << "--> Richiesta accettata";
   else
