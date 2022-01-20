@@ -57,9 +57,10 @@ void Computer::gioca(){
     scacchiera_->mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]);
   }
   catch(Eccezione e){
-    if(e.errore().compare("[Eccezione::Promozione]")){
+    if(e.errore().substr(0,23).compare("[Eccezione::Promozione]")){
       char figura_pezzo = scelta_promozione();
-      scacchiera_->fine_promozione(figura_pezzo, colore_);
+      int colonna_promozione = std::stoi(e.errore().substr(23));
+      scacchiera_->fine_promozione(figura_pezzo, colore_, colonna_promozione);
     }
   }
 

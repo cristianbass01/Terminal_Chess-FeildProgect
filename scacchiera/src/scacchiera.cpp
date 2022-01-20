@@ -409,10 +409,7 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
     int colonna_pedone = pedone->get_posizione().get_colonna();
     pezzi_bianchi_.erase(std::find(pezzi_bianchi_.begin(), pezzi_bianchi_.end(), pedone));
     delete pedone; //cancellata dalla memoria dinamica
-    throw Eccezione("[Eccezione::Promozione]");
-    
-    //scacchiera[7][colonna_pedone] = new Regina(Casella(7, colonna_pedone), Pezzo::Colore::bianco);
-    //pezzi_bianchi_.push_back(scacchiera[7][colonna_pedone]);
+    throw Eccezione("[Eccezione::Promozione]" + colonna_pedone);
   }
 
   //promozione neri
@@ -421,42 +418,37 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
       int colonna_pedone = pedone->get_posizione().get_colonna();
       pezzi_neri_.erase(std::find(pezzi_neri_.begin(), pezzi_neri_.end(), pedone));
       delete pedone; //cancellata dalla memoria dinamica
-      throw Eccezione("[Eccezione::Promozione]");
-
-      //scacchiera[0][colonna_pedone] = new Regina(Casella(0,colonna_pedone), Pezzo::Colore::nero);
-      //pezzi_neri_.push_back(scacchiera[0][colonna_pedone]);
+      throw Eccezione("[Eccezione::Promozione]" + colonna_pedone);
     }
 }
 
-void Scacchiera::fine_promozione(char figura_pezzo, Pezzo::Colore colore_pezzo){
+void Scacchiera::fine_promozione(char figura_pezzo, Pezzo::Colore colore_pezzo,int colonna_promozione){
   
-  int riga_promozione;
-  int colonna_promozione = colore_pezzo == Pezzo::Colore::bianco ? 7 : 0;
-
-  for(int i = 0; i<8; i++){
-    if(scacchiera[7][i]->get_figura() == 'p'){
-      riga_promozione = i;
-      colonna_promozione = 7;
-    }
-  }
-  if(riga_promozione == 4){
-    for(int i = 0; i<8; i++){
-      if(scacchiera[0][i]->get_figura() == 'P'){
-        riga_promozione = i;
-        colonna_promozione = 0;
-      }
-    }
-  }
+  int riga_promozione = colore_pezzo == Pezzo::Colore::bianco ? 7 : 0;
 
   switch (figura_pezzo)
   {
   case 'd':
-      scacchiera[riga_promozione][colonna_promozione] = new Regina(Casella(riga_promozione,colonna_promozione), Pezzo::Colore::nero);
+      scacchiera[riga_promozione][colonna_promozione] = new Regina(Casella(riga_promozione,colonna_promozione), colore_pezzo);
     break;
-  
+  case 't':
+      scacchiera[riga_promozione][colonna_promozione] = new Torre(Casella(riga_promozione,colonna_promozione), colore_pezzo);
+    break;
+  case 'a':
+      scacchiera[riga_promozione][colonna_promozione] = new Alfiere(Casella(riga_promozione,colonna_promozione), colore_pezzo);
+    break;
+  case 'c':
+      scacchiera[riga_promozione][colonna_promozione] = new Cavallo(Casella(riga_promozione,colonna_promozione), colore_pezzo);
+    break;
   default:
     break;
   }
+
+  if(colore_pezzo == Pezzo::Colore::bianco)
+    pezzi_bianchi_.push_back(scacchiera[riga_promozione][colonna_promozione]);
+  else
+    pezzi_neri_.push_back(scacchiera[riga_promozione][colonna_promozione]);
+
 }
 
 
