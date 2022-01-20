@@ -409,8 +409,10 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
     int colonna_pedone = pedone->get_posizione().get_colonna();
     pezzi_bianchi_.erase(std::find(pezzi_bianchi_.begin(), pezzi_bianchi_.end(), pedone));
     delete pedone; //cancellata dalla memoria dinamica
-    scacchiera[7][colonna_pedone] = new Regina(Casella(7, colonna_pedone), Pezzo::Colore::bianco);
-    pezzi_bianchi_.push_back(scacchiera[7][colonna_pedone]);
+    throw Eccezione("[Eccezione::Promozione]");
+    
+    //scacchiera[7][colonna_pedone] = new Regina(Casella(7, colonna_pedone), Pezzo::Colore::bianco);
+    //pezzi_bianchi_.push_back(scacchiera[7][colonna_pedone]);
   }
 
   //promozione neri
@@ -419,8 +421,10 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
       int colonna_pedone = pedone->get_posizione().get_colonna();
       pezzi_neri_.erase(std::find(pezzi_neri_.begin(), pezzi_neri_.end(), pedone));
       delete pedone; //cancellata dalla memoria dinamica
-      scacchiera[0][colonna_pedone] = new Regina(Casella(0,colonna_pedone), Pezzo::Colore::nero);
-      pezzi_neri_.push_back(scacchiera[0][colonna_pedone]);
+      throw Eccezione("[Eccezione::Promozione]");
+
+      //scacchiera[0][colonna_pedone] = new Regina(Casella(0,colonna_pedone), Pezzo::Colore::nero);
+      //pezzi_neri_.push_back(scacchiera[0][colonna_pedone]);
     }
 }
 
