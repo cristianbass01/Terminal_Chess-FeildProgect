@@ -15,7 +15,7 @@ class Umano : public Giocatore{
     Umano(Scacchiera*, Pezzo::Colore);
 
     // chiede la mossa finchè non ne esegue una
-    void gioca();
+    void gioca() override;
 
     // riceve la richiesta di patta fatta dall'avversario e
     // restituisce true se è d'accordo sulla patta, false altrimenti
@@ -27,6 +27,8 @@ class Umano : public Giocatore{
     // richiede se si vuole eseguire la patta per posizioni ripetute
     // restituisce true se il giocatore umano acconsente, false altrimenti
     bool richiesta_patta();
+
+    char scelta_promozione() override;
 };
 
 #endif // UMANO_H

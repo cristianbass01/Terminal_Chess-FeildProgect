@@ -183,3 +183,20 @@ bool Umano::richiesta_patta(){
   while(risposta != 'n');
   return false;
 }
+
+char Umano::scelta_promozione(){
+  char risposta;
+  do{
+    std::cout << "Giocatore ";
+    colore_ == Pezzo::Colore::bianco ? std::cout << "bianco (minuscole) " : std::cout << "nero (maiuscole) ";
+    std::cout << std::endl;
+    std::cout << "--> A che pezzo vuoi promuovere il pedone?" << std::endl;
+    std::string riga_risposta;
+    getline(std::cin, riga_risposta);
+    risposta = tolower(riga_risposta[0]);
+    if(risposta == 't' && risposta == 't')
+      return true;
+  }
+  while(risposta != 'n');
+  return false;
+}
