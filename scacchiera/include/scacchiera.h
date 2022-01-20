@@ -90,7 +90,7 @@ class Scacchiera {
     std::vector<Pezzo*> const get_pezzi_bianchi() { return pezzi_bianchi_;}
     std::vector<Pezzo*> const get_pezzi_neri() {return pezzi_neri_;}
 
-    void fine_promozione(char pezzo_scelto, Pezzo::Colore colore);
+    void fine_promozione(char pezzo_scelto, Pezzo::Colore colore, int colonna_promozione);
 
   private:
     //matrice che contiene i puntatori ai singoli pezzi e rappresenta la scacchiera
