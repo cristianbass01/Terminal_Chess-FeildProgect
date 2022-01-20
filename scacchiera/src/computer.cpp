@@ -52,8 +52,16 @@ void Computer::gioca(){
       eseguito = true;
   }
 
-  scacchiera_->mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]);
-  
+  try{
+    scacchiera_->mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]);
+  }
+  catch(Eccezione e){
+    if(e.errore().compare("[Eccezione::Promozione]")){
+      char pez = scelta_promozione();
+      scacchiera_->fine_promozione(pez);
+    }
+  }
+
   if(scacchiera_->scaccomatto(colore_avversario_)){
     throw Eccezione("[Eccezione::Scaccomatto]");
   }

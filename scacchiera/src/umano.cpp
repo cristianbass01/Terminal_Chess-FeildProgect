@@ -186,6 +186,7 @@ bool Umano::richiesta_patta(){
 
 char Umano::scelta_promozione(){
   char risposta;
+  risposta = 'd';  //posta di default a donna
   do{
     std::cout << "Giocatore ";
     colore_ == Pezzo::Colore::bianco ? std::cout << "bianco (minuscole) " : std::cout << "nero (maiuscole) ";
@@ -194,9 +195,7 @@ char Umano::scelta_promozione(){
     std::string riga_risposta;
     getline(std::cin, riga_risposta);
     risposta = tolower(riga_risposta[0]);
-    if(risposta == 't' && risposta == 't')
-      return true;
   }
-  while(risposta != 'n');
-  return false;
+  while(!(risposta == 't' && risposta == 'a' && risposta == 'c' && risposta == 'd'));
+  return risposta;
 }
