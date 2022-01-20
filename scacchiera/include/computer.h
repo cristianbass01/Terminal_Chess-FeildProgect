@@ -20,6 +20,8 @@ class Computer : public Giocatore{
     //metodo che gestisce la richiesta di patta fatta dall'avversario
     bool ricevuta_richiesta_patta();
 
+    char scelta_promozione() override;
+
     //numero massimo di mosse nel caso di partita computer vs computer
     static constexpr int MAX_MOSSE = 300;
 };
