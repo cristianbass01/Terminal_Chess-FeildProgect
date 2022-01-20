@@ -74,7 +74,8 @@ void Umano::gioca(){
               catch(Eccezione e){
                 if(e.errore().compare("[Eccezione::Promozione]")){
                   char figura_pezzo = scelta_promozione();
-                  scacchiera_->fine_promozione(figura_pezzo, colore_);
+                  int colonna_promozione = std::stoi(e.errore().substr(23));
+                  scacchiera_->fine_promozione(figura_pezzo, colore_, colonna_promozione);
                   done = true;
                 }
               }
