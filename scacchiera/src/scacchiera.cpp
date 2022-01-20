@@ -167,7 +167,6 @@ bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
         return true;
   }
   return false;
-        
 }
 
 bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
@@ -213,7 +212,6 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         }
         return false;
       }
-
       break;
     }
     case Pezzo::ARROCCO:{
@@ -272,7 +270,6 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
         std::cout<<"--> [ERRORE] Questa mossa mette il tuo re sotto scacco"<<std::endl;
         return false;
       }
-
       break;
     }
     case true:{
@@ -326,15 +323,6 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   if(tolower(pezzo_mosso->get_figura()) == 'r' || tolower(pezzo_mosso->get_figura()) == 't')
     static_cast<Torre*>(pezzo_mosso)->invalido_arrocco();
   
-  //se si muove un pedone viene azzerato il contatore delle mosse
-  if(tolower(pezzo_mosso->get_figura()) == 'p'){
-    conta_mosse_ = 0;
-    //effettua promozione dei pedoni a donna se possibile
-    promuovi(pezzo_mosso);
-  }
-  else
-    conta_mosse_++;
-
   //mossa valida fatta, aggiorno il contatore
   mosse_totali_++;
 
@@ -348,8 +336,16 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   mossa_testuale.append(1, '\n');
   log_mosse_.push_back(mossa_testuale);
     
-  return true;
+  //se si muove un pedone viene azzerato il contatore delle mosse
+  if(tolower(pezzo_mosso->get_figura()) == 'p'){
+    conta_mosse_ = 0;
+    //effettua promozione dei pedoni a donna se possibile
+    promuovi(pezzo_mosso);
+  }
+  else
+    conta_mosse_++;
 
+  return true;
 }
 
 bool Scacchiera::scaccomatto(Pezzo::Colore colore) {
@@ -418,7 +414,7 @@ void Scacchiera::promuovi(Pezzo* pedone) { // OTTIMIZZATA
   }
 
   //promozione neri
-  else  
+  else
     if(pedone->get_posizione().get_riga() == 0) {
       int colonna_pedone = pedone->get_posizione().get_colonna();
       pezzi_neri_.erase(std::find(pezzi_neri_.begin(), pezzi_neri_.end(), pedone));
