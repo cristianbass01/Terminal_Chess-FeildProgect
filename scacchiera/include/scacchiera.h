@@ -114,7 +114,7 @@ class Scacchiera {
     //lista contentente le mosse fatte durante tutta la partita
     std::list<std::string> log_mosse_;
 
-    void fine_promozione(char pezzo_scelto);
+    void fine_promozione(char pezzo_scelto, Pezzo::Colore colore);
 
   private:
     //metodo che verifica se è possibile promuovere qualche pedone e in caso sia possibile
