@@ -90,6 +90,8 @@ class Scacchiera {
     std::vector<Pezzo*> const get_pezzi_bianchi() { return pezzi_bianchi_;}
     std::vector<Pezzo*> const get_pezzi_neri() {return pezzi_neri_;}
 
+    void fine_promozione(char pezzo_scelto);
+
   private:
     //matrice che contiene i puntatori ai singoli pezzi e rappresenta la scacchiera
     //posizione in matrice -> posizione scacchiera - 1 (sia per riga che per colonna)
@@ -114,7 +116,6 @@ class Scacchiera {
     //lista contentente le mosse fatte durante tutta la partita
     std::list<std::string> log_mosse_;
 
-    void fine_promozione(char pezzo_scelto);
 
   private:
     //metodo che verifica se è possibile promuovere qualche pedone e in caso sia possibile
