@@ -27,13 +27,13 @@ int Regina::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
     if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
       return false;
   
-  //verifico che il movimento ia lungo una riga o lungo una colonna
+  //verifica che il movimento ia lungo una riga o lungo una colonna
   if(delta_colonna == 0 || delta_riga == 0){
 
     //variabile che indica il verso
     int verso;
 
-    //verifico non ci siano pedine nel cammino della regina se si muove lungo la riga
+    //verifica non ci siano pedine nel cammino della regina se si muove lungo la riga
     if(delta_colonna == 0){
       if(delta_riga > 0)
         verso = 1;
@@ -45,7 +45,7 @@ int Regina::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
       }
     }
 
-    //verifico non ci siano pedine nel cammino della regina se si muove lungo la colonna
+    //verifica non ci siano pedine nel cammino della regina se si muove lungo la colonna
     if(delta_riga == 0){
       if(delta_colonna > 0)
         verso = 1;
@@ -57,11 +57,12 @@ int Regina::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
       }
     }
   }
-  else{     //verifico che il movimento sia una diagonale, dato che non si muove come una torre
+  else{  //verifica che il movimento sia una diagonale, dato che non si muove come una torre
 
     //verifica che il movimento sia in diagonale controllando che moduli siano uguali
     if( abs(delta_colonna) != abs(delta_riga))
       return false;
+
     //temp_*** sono variabili temporanee che consentono di determinare di quanto si è spostato 
     //fin adesso la regina
     int temp_driga;
@@ -96,9 +97,7 @@ int Regina::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
         temp_dcolonna--;
       else
         temp_dcolonna++;
-    }
-   
-    
+    } 
   }
   return true;
 }
