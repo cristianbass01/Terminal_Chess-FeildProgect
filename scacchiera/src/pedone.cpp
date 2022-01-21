@@ -28,14 +28,20 @@ int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
     if((scacchiera.get_casella(posizione_finale))->get_colore() == colore_)
       return false;
 
-  if(posizione_finale.get_riga() == posizione_.get_riga() + indice_colore){ // faccio un pass in avanti o laterale
-    if((posizione_finale.get_colonna() == posizione_.get_colonna()) && (scacchiera.get_casella(posizione_finale) == nullptr)){ // colonna uguale (non mangia pezzi)
+  //verifica che il movimento sia corretto
+  if(posizione_finale.get_riga() == posizione_.get_riga() + indice_colore){ 
+    // colonna uguale (non mangia pezzi)
+    if((posizione_finale.get_colonna() == posizione_.get_colonna()) && (scacchiera.get_casella(posizione_finale) == nullptr)){ 
       return true;
     }
-    if((abs(posizione_finale.get_colonna() - posizione_.get_colonna()) == 1) && (scacchiera.get_casella(posizione_finale) != nullptr)){ // si sposta di una colonna e una riga e mangia
+
+    //si sposta di una colonna e una riga e mangia
+    if((abs(posizione_finale.get_colonna() - posizione_.get_colonna()) == 1) && (scacchiera.get_casella(posizione_finale) != nullptr)){ 
       return true;
     }
-    if((abs(posizione_finale.get_colonna() - posizione_.get_colonna()) == 1) && (scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna())) != nullptr)){ // mossa speciale en passant
+
+    //mossa speciale en passant
+    if((abs(posizione_finale.get_colonna() - posizione_.get_colonna()) == 1) && (scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna())) != nullptr)){ 
       Pezzo *pezzo_affianco = scacchiera.get_casella(Casella(posizione_.get_riga(), posizione_finale.get_colonna()));
       if(tolower(pezzo_affianco->get_figura()) == 'p') //se il pezzo accanto è un pedone
         if(pezzo_affianco->get_colore() != colore_) //il pezzo accanto è avversario
@@ -44,9 +50,10 @@ int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
     }
   }
   
-  if((posizione_finale.get_riga() == posizione_.get_riga() + (indice_colore * 2)) && posizione_finale.get_colonna() == posizione_.get_colonna()) // si sposta di due righe
+  //caso in cui si sposta di due righe
+  if((posizione_finale.get_riga() == posizione_.get_riga() + (indice_colore * 2)) && posizione_finale.get_colonna() == posizione_.get_colonna()) 
   {
-    // controllo che sia la prima mossa bianca e che non ci siano pezzi nelle due caselle davanti al pedone
+    //controlla che sia la prima mossa bianca e che non ci siano pezzi nelle due caselle davanti al pedone
     if(colore_ == Pezzo::Colore::bianco) {
       if((posizione_.get_riga() == 1) && (scacchiera.get_casella(Casella(posizione_.get_riga() + 1, posizione_.get_colonna())) == nullptr) && (scacchiera.get_casella(posizione_finale)) == nullptr){
         return SALTO_PEDONE; //la mossa è il salto del pedone di 2
@@ -70,6 +77,7 @@ int Pedone::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
 
 //metodo che sposta il pezzo
 int Pedone::mossa(Casella posizione, Scacchiera& scacchiera){ 
+  //caso in cui non ci si sposta
   if((posizione.get_colonna() == posizione_.get_colonna() ) && (posizione.get_riga() == posizione_.get_riga()))
     return false;
   
@@ -77,15 +85,15 @@ int Pedone::mossa(Casella posizione, Scacchiera& scacchiera){
 
   int mossa_valida = this->mossa_valida(posizione, scacchiera);
 
+  //si modifica la posizione se la mossa è valida
   if(mossa_valida == true || mossa_valida == EN_PASSANT) {
       posizione_ = posizione;
   }
-  else if(mossa_valida == SALTO_PEDONE){
-    // gestione en passant, salto del pedone e arrocco
+  else if(mossa_valida == SALTO_PEDONE){  //caso del salto di due posizioni
     posizione_ = posizione;
-    mossa_salto_ = scacchiera.get_mosse_totali() + 1;
+    mossa_salto_ = scacchiera.get_mosse_totali() + 1; // serve per gestione en passant, salto del pedone e arrocco
   }
 
-  //se non da scacco do il controllo di nuovo alla funzione chiamante
+  //se non da scacco si passa il controllo di nuovo alla funzione chiamante
   return mossa_valida;
 }
