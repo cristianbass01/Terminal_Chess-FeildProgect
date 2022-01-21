@@ -74,7 +74,7 @@ void Umano::gioca(){
               else{ 
                 std::cout << "--> Mossa eseguita" << std::endl;
                 int colonna_promozione = scacchiera_->promuovi(finale);
-                if(colonna_promozione > 0){
+                if(colonna_promozione >= 0){
                   char figura_pezzo = scelta_promozione();
                   scacchiera_->fine_promozione(figura_pezzo, colore_, colonna_promozione);
                 }
@@ -201,6 +201,6 @@ char Umano::scelta_promozione(){
     getline(std::cin, riga_risposta);
     risposta = tolower(riga_risposta[0]);
   }
-  while(!(risposta == 't' && risposta == 'a' && risposta == 'c' && risposta == 'd'));
+  while(!(risposta == 't' || risposta == 'a' || risposta == 'c' || risposta == 'd'));
   return risposta;
 }

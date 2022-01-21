@@ -96,6 +96,8 @@ class Scacchiera {
     int promuovi(Casella pos_pedone);
     void fine_promozione(char pezzo_scelto, Pezzo::Colore colore, int colonna_promozione);
 
+    std::string log_mosse();
+
   private:
     //matrice che contiene i puntatori ai singoli pezzi e rappresenta la scacchiera
     //posizione in matrice -> posizione scacchiera - 1 (sia per riga che per colonna)

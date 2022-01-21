@@ -13,7 +13,7 @@ project(scacchiera)
 include_directories(include)
 include_directories(src)
     
-add_executable(${PROJECT_NAME}
+add_executable(scacchiera
 src/main.cpp
 src/scacchiera.cpp
 src/computer.cpp
@@ -29,66 +29,73 @@ src/pezzo.cpp
 )
 
 add_library(alfiere
+include/eccezione.h
 include/pezzo.h
 include/alfiere.h
 src/alfiere.cpp
 )
 
 add_library(cavallo
+include/eccezione.h
 include/pezzo.h
 include/cavallo.h
 src/cavallo.cpp
 )
 
 add_library(pedone
+include/eccezione.h
 include/pezzo.h    
 include/pedone.h
 src/pedone.cpp
 )
 
 add_library(re
+include/eccezione.h
 include/pezzo.h
 include/re.h
 src/re.cpp
 )
 add_library(regina
+include/eccezione.h
 include/pezzo.h
 include/regina.h
 src/regina.cpp
 )
 add_library(torre
+include/eccezione.h
 include/pezzo.h
 include/torre.h
 src/torre.cpp
 )
 
 add_library(casella
+include/eccezione.h
 include/casella.h
 src/casella.cpp
 )
 
 add_library(computer
+include/eccezione.h
 include/giocatore.h
 include/computer.h
 src/computer.cpp
 )
 
-add_library(eccezione
-include/eccezione.h
-)
-
 add_library(scacchi
+include/eccezione.h
 include/scacchiera.h
 src/scacchiera.cpp
 )
 
 add_library(umano
+include/eccezione.h
 include/giocatore.h
 include/umano.h
 src/umano.cpp
 )
 
 add_library(pezzo
+include/eccezione.h
 include/pezzo.h
 src/pezzo.cpp
 )
@@ -102,7 +109,6 @@ regina
 torre
 casella
 computer
-eccezione
 scacchi
 umano
 pezzo

@@ -53,13 +53,14 @@ void Computer::gioca(){
       eseguito = true;
   }
 
-  
-  scacchiera_->mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]);
-  
-  int colonna_promozione = scacchiera_->promuovi(pezzi[n_pezzo_scelto]->get_posizione());
-  if(colonna_promozione > 0){
-    char figura_pezzo = scelta_promozione();
-    scacchiera_->fine_promozione(figura_pezzo, colore_, colonna_promozione);
+  scacchiera_->mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]); 
+
+  if(tolower(pezzi[n_pezzo_scelto]->get_figura()) == 'p'){
+    int colonna_promozione = scacchiera_->promuovi(pezzi[n_pezzo_scelto]->get_posizione());
+    if(colonna_promozione >= 0){
+      char figura_pezzo = scelta_promozione();
+      scacchiera_->fine_promozione(figura_pezzo, colore_, colonna_promozione);
+    }
   }
 
   if(scacchiera_->scaccomatto(colore_avversario_)){
@@ -111,6 +112,9 @@ char Computer::scelta_promozione() {
     
     case 3:
       return ALFIERE;
+      break;
+    default:
+      return REGINA;
       break;
   }
 }

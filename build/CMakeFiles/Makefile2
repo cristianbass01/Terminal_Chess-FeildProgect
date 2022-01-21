@@ -116,7 +116,6 @@ scacchiera/all: scacchiera/CMakeFiles/alfiere.dir/all
 scacchiera/all: scacchiera/CMakeFiles/computer.dir/all
 scacchiera/all: scacchiera/CMakeFiles/torre.dir/all
 scacchiera/all: scacchiera/CMakeFiles/pedone.dir/all
-scacchiera/all: scacchiera/CMakeFiles/eccezione.dir/all
 scacchiera/all: scacchiera/CMakeFiles/cavallo.dir/all
 scacchiera/all: scacchiera/CMakeFiles/re.dir/all
 scacchiera/all: scacchiera/CMakeFiles/scacchiera.dir/all
@@ -138,7 +137,6 @@ scacchiera/clean: scacchiera/CMakeFiles/alfiere.dir/clean
 scacchiera/clean: scacchiera/CMakeFiles/computer.dir/clean
 scacchiera/clean: scacchiera/CMakeFiles/torre.dir/clean
 scacchiera/clean: scacchiera/CMakeFiles/pedone.dir/clean
-scacchiera/clean: scacchiera/CMakeFiles/eccezione.dir/clean
 scacchiera/clean: scacchiera/CMakeFiles/cavallo.dir/clean
 scacchiera/clean: scacchiera/CMakeFiles/re.dir/clean
 scacchiera/clean: scacchiera/CMakeFiles/scacchiera.dir/clean
@@ -211,7 +209,6 @@ scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/regina.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/computer.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/torre.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/pedone.dir/all
-scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/eccezione.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/cavallo.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/re.dir/all
 scacchiera/CMakeFiles/alfiere.dir/all: scacchiera/CMakeFiles/umano.dir/all
@@ -320,33 +317,6 @@ pedone: scacchiera/CMakeFiles/pedone.dir/rule
 scacchiera/CMakeFiles/pedone.dir/clean:
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/pedone.dir/build.make scacchiera/CMakeFiles/pedone.dir/clean
 .PHONY : scacchiera/CMakeFiles/pedone.dir/clean
-
-#=============================================================================
-# Target rules for target scacchiera/CMakeFiles/eccezione.dir
-
-# All Build rule for target.
-scacchiera/CMakeFiles/eccezione.dir/all:
-	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/eccezione.dir/build.make scacchiera/CMakeFiles/eccezione.dir/depend
-	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/eccezione.dir/build.make scacchiera/CMakeFiles/eccezione.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num= "Built target eccezione"
-.PHONY : scacchiera/CMakeFiles/eccezione.dir/all
-
-# Build rule for subdir invocation for target.
-scacchiera/CMakeFiles/eccezione.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scacchiera/CMakeFiles/eccezione.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" 0
-.PHONY : scacchiera/CMakeFiles/eccezione.dir/rule
-
-# Convenience name for target.
-eccezione: scacchiera/CMakeFiles/eccezione.dir/rule
-
-.PHONY : eccezione
-
-# clean rule for target.
-scacchiera/CMakeFiles/eccezione.dir/clean:
-	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/eccezione.dir/build.make scacchiera/CMakeFiles/eccezione.dir/clean
-.PHONY : scacchiera/CMakeFiles/eccezione.dir/clean
 
 #=============================================================================
 # Target rules for target scacchiera/CMakeFiles/cavallo.dir

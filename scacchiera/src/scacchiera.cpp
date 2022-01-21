@@ -83,18 +83,15 @@ Scacchiera::~Scacchiera() {
         delete scacchiera[i][j];
     }
   }
+}
 
-  std::ofstream documento; 
-  documento.open("log.txt"); // apertura/creazione del file
-  if(!documento )  // non è riuscito ad aprire il file (errore)
-    return;
-  
+std::string Scacchiera::log_mosse(){
+  std::string mosse;
   //realizzazione del log della partita
   for(std::string s : log_mosse_) {
-    documento<<s;
+    mosse += s;
   }
-
-  documento.close();
+  return mosse;
 }
 
 //helper function che esegue ovverride del operatore <<
@@ -323,6 +320,13 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   if(tolower(pezzo_mosso->get_figura()) == 'r' || tolower(pezzo_mosso->get_figura()) == 't')
     static_cast<Torre*>(pezzo_mosso)->invalido_arrocco();
   
+  //se si muove un pedone viene azzerato il contatore delle mosse
+  if(tolower(pezzo_mosso->get_figura()) == 'p'){
+    conta_mosse_ = 0;
+  }
+  else
+    conta_mosse_++;
+
   //mossa valida fatta, aggiorno il contatore
   mosse_totali_++;
 
@@ -335,14 +339,7 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   mossa_testuale.append(1, posizione_fin.get_riga()+1+'0');
   mossa_testuale.append(1, '\n');
   log_mosse_.push_back(mossa_testuale);
-    
-  //se si muove un pedone viene azzerato il contatore delle mosse
-  if(tolower(pezzo_mosso->get_figura()) == 'p'){
-    conta_mosse_ = 0;
-  }
-  else
-    conta_mosse_++;
-
+  
   return true;
 }
 
@@ -404,6 +401,8 @@ Pezzo* Scacchiera::pezzo_scacco(Pezzo::Colore colore){
 int Scacchiera::promuovi(Casella pos_pedone) { // OTTIMIZZATA
   //promozione bianchi
   Pezzo* pedone;
+  if(scacchiera[pos_pedone.get_riga()][pos_pedone.get_colonna()] == nullptr)
+    return -1;
   if(tolower(scacchiera[pos_pedone.get_riga()][pos_pedone.get_colonna()]->get_figura()) == 'p')
     pedone = scacchiera[pos_pedone.get_riga()][pos_pedone.get_colonna()];
   else
@@ -424,6 +423,7 @@ int Scacchiera::promuovi(Casella pos_pedone) { // OTTIMIZZATA
       delete pedone; //cancellata dalla memoria dinamica
       return colonna_pedone;
     }
+  return -1;
 }
 
 void Scacchiera::fine_promozione(char figura_pezzo, Pezzo::Colore colore_pezzo,int colonna_promozione){

@@ -165,6 +165,19 @@ int main(int argc, char** argv) {
     std::cout << std::endl;
   }
 
+  //salvo la partita in un file di log
+  std::ofstream documento; 
+  documento.open("log.txt"); // apertura/creazione del file
+  if(!documento )  // non è riuscito ad aprire il file (errore)
+    std::cout << "Impossibile aprire file di log";
+  else{
+    //realizzazione del log della partita
+    std::string log_mosse = test.log_mosse();
+    documento << log_mosse;
+
+    documento.close();
+  }
+  
   //libero free store
   delete giocatore_1;
   delete giocatore_2;

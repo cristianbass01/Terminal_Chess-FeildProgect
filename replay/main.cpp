@@ -9,8 +9,8 @@
 #include <chrono>
 #include <thread>
 
-#include "./include/scacchiera.h"
-#include "./include/umano.h"
+#include "./../scacchiera/include/scacchiera.h"
+#include "./../scacchiera/include/umano.h"
 
 
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
     throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato]");
   }
   
-  Scacchiera scacchiera_; 
+  Scacchiera scacchiera; 
   
   //lista in cui vengono inserite tutte le mosse lette da file
   std::list<std::string> lista_mosse;
@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
     log_input.close();
   }   
   else {
-    std::cout << "Impossibile apire il file di input"<< std::endl;
+    std::cout << "Impossibile aprire il file di input"<< std::endl;
     throw Eccezione("File_Non_Trovato");
   }
 
@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
     //apertura file in output
     log_output.open(argv[3], std::ofstream::out | std::ofstream::trunc);
 	  if(!log_output.is_open()) {
-      std::cout << "Impossibile apire il file di output" << std::endl;
+      std::cout << "Impossibile aprire il file di output" << std::endl;
       throw Eccezione("File_Non_Trovato");
     }
   }
@@ -104,43 +104,77 @@ int main(int argc, char *argv[]) {
       //creazione colonna iniziale
       int colonna_iniziale = mossa[0] - a; // in questo modo parto da a = 0 come colonna
       int riga_iniziale = mossa[1] - 49;
+      Casella iniziale(riga_iniziale, colonna_iniziale); 
+      
       //creazione colonna finale
       int colonna_finale = mossa[3] - a; // in questo modo parto da a = 0 come colonna
       int riga_finale = mossa[4] - 49;
-      Casella iniziale(riga_iniziale, colonna_iniziale); 
-      Casella finale(riga_finale, colonna_finale);
+      Casella finale = Casella(riga_finale, colonna_finale);
+
+      //caso in cui si cerca di muovere un pezzo del colore opposto
+      if(scacchiera.get_casella(iniziale)->get_colore() != colore_)
+        throw Eccezione("[Eccezione::Log_Errato]");
+
+      //caso in cui viene selezionato una casella che non ha un pezzo
+      if(scacchiera.get_casella(iniziale) == nullptr) 
+        throw Eccezione("[Eccezione::Log_Errato]");
+
+      //faccio la mossa
+      if(!scacchiera.mossa(iniziale, finale)) 
+        throw Eccezione("[Eccezione::Log_Errato]");
+
+      //gestisco il caso della promozione
+      int mossa_promozione = scacchiera.promuovi(finale);
+      if(mossa_promozione >= 0){
+        try{
+          mossa = lista_mosse.front();
+          lista_mosse.pop_front();
+        }
+        catch(...){
+          throw Eccezione("[Eccezione::Log_Errato]");
+        }
+        //verifica che il formato di mossa sia corretto
+        if(mossa.size() != 5 || mossa[2] != ' ' )
+          throw Eccezione("[Eccezione::Log_Errato]");
+
+        //tutte lettere in formato minuscolo
+        for(int i = 0; i<mossa.size(); i++)
+          mossa[i] = tolower(mossa[i]);
+
+        int colonna_promozione = mossa[0] - a; // in questo modo parto da a = 0 come colonna
+        int riga_promozione = mossa[1] - 49;
+
+        if(colonna_promozione != mossa_promozione)
+          throw Eccezione("[Eccezione::Log_Errato]");
+
+        if(mossa[3] == '='){
+          char figura_pezzo = mossa[4];
+          scacchiera.fine_promozione(figura_pezzo, colore_, colonna_promozione);
+        }
+        else
+          throw Eccezione("[Eccezione::Log_Errato]");
+      }
 
       //controlla che il giocatore non sia in stallo
-      if(scacchiera_.stallo(colore_)) 
+      if(scacchiera.stallo(colore_)) 
         throw Eccezione("[Eccezione::Patta_Stallo]");
       
-      //caso in cui viene selezionato una casella che non ha un pezzo
-      if(scacchiera_.get_casella(iniziale) == nullptr) 
-        throw Eccezione("[Eccezione::Log_Errato]");
-      
-      //caso in cui si cerca di muovere un pezzo del colore opposto
-      if(scacchiera_.get_casella(iniziale)->get_colore() != colore_)
-        throw Eccezione("[Eccezione::Log_Errato]");
-      
-      if(!scacchiera_.mossa(iniziale, finale)) 
-        throw Eccezione("[Eccezione::Log_Errato]");
-      
-      if(scacchiera_.pezzi_insufficienti())
+      if(scacchiera.pezzi_insufficienti())
         throw Eccezione("[Eccezione::Patta_Materiale]");
-      
-      constexpr int NUMERO_MILLISECONDI_ATTESA = 1000;
+    
+      constexpr static int NUMERO_MILLISECONDI_ATTESA = 1000;
       if(tolower(*argv[1]) == 'v') { 
         std::this_thread::sleep_for(std::chrono::milliseconds(NUMERO_MILLISECONDI_ATTESA));
-        scacchiera_.stampa();
+        std::cout<<scacchiera<< std::endl;
       }
       else {
-        log_output<<scacchiera_<< std::endl;
+        log_output<<scacchiera<< std::endl;
       }
-      
+       
       //verifica che non sia scaccomatto
       Pezzo::Colore colore_avversario_ = (colore_ == Pezzo::Colore::nero) ? Pezzo::Colore::bianco : Pezzo::Colore::nero ;
       std::string vittoria;
-      if(scacchiera_.scaccomatto(colore_avversario_)) {
+      if(scacchiera.scaccomatto(colore_avversario_)) {
         vittoria += "Ha vinto il giocatore ";
         if(colore_ == Pezzo::Colore::bianco)
           vittoria += "bianco!\n";
@@ -155,15 +189,19 @@ int main(int argc, char *argv[]) {
         throw Eccezione("[Eccezione::Scaccomatto]");
       }
       
-      if(scacchiera_.get_conta_mosse() >= 50)
+      if(scacchiera.get_conta_mosse() >= 50)
         throw Eccezione("[Eccezione::Patta_Mosse]");
-      num_mosse++;
+        num_mosse++;
     }
   }
   catch(Eccezione e){
     //stringa contenente il motivo della fine della partita
     if((e.errore()).compare("[Eccezione::Log_Errato]") == 0) // fine partita perché formato log non corretto
       fine_partita = "Log_Errato";
+
+    if((e.errore()).compare("[Eccezione::CasellaErrata]") == 0) // fine partita perché formato log non corretto
+      fine_partita = "Log_Errato";
+
 
     if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
       fine_partita = "Patta_Stallo";
@@ -183,11 +221,9 @@ int main(int argc, char *argv[]) {
     fine_partita = "fine mosse";
 
   if(tolower(*argv[1]) == 'v'){
-    std::cout << scacchiera_<< std::endl;
     std::cout << "Partita conclusa per: "<< fine_partita << std::endl;
   }
   else {
-    log_output << scacchiera_<< std::endl;
     log_output << "Partita conclusa per: "<< fine_partita << std::endl;
     log_output.close();
   }

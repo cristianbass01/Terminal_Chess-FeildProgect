@@ -14,6 +14,7 @@ include_directories(./../scacchiera/src)
 
 add_executable(${PROJECT_NAME}
 main.cpp
+./../scacchiera/include/eccezione.h
 ./../scacchiera/src/scacchiera.cpp
 ./../scacchiera/src/computer.cpp
 ./../scacchiera/src/umano.cpp
