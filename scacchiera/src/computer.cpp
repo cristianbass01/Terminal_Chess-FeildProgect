@@ -19,6 +19,7 @@ void Computer::gioca(){
       throw Eccezione("[Eccezione::Patta_Stallo]");
   }
 
+  //verifica che la scacchiera non si sia già ripetuta 4 volte prima di questa
   if(scacchiera_->get_ripetizioni_scacchiera() >= 5)
     throw Eccezione("[Eccezione::Patta_Posizione]");
 
@@ -29,32 +30,36 @@ void Computer::gioca(){
   else
     pezzi = scacchiera_->get_pezzi_neri();
 
+  //selezione randomica di un pezzo
   int n_pezzo_scelto = rand() % pezzi.size();
 
-  //controllo che il pezzo scelto possa muoversi
+  //controlla che il pezzo scelto possa muoversi
   bool eseguito = false;
   std::vector<Casella> mosse;
   while(!eseguito){
     mosse = scacchiera_->mosse_possibili(pezzi[n_pezzo_scelto]->get_posizione());
-    if(mosse.size() == 0)
+    if(mosse.size() == 0) //caso in cui il pezzo è bloccato
       n_pezzo_scelto = rand() % pezzi.size();
     else
       eseguito = true;
   }
 
-  //recupero il vettore di mosse possibili e scelgo la casella in cui arrivare
+  //recupera il vettore di mosse possibili e viene scelta la casella in cui arrivare
   int mossa_scelta = rand() % mosse.size();
 
   eseguito = false;
   while(!eseguito){
+    //verifica se la mossa è consentatia (verificato tramite il metodo simulazione mossa)
     if(!scacchiera_->simulazione_mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]))
       mossa_scelta = rand() % mosse.size();
     else
       eseguito = true;
   }
 
+  //viene effettuata la mossa
   scacchiera_->mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]); 
 
+  //gestione della promozione
   if(tolower(pezzi[n_pezzo_scelto]->get_figura()) == 'p'){
     int colonna_promozione = scacchiera_->promuovi(pezzi[n_pezzo_scelto]->get_posizione());
     if(colonna_promozione >= 0){
@@ -63,23 +68,26 @@ void Computer::gioca(){
     }
   }
 
-  if(scacchiera_->scaccomatto(colore_avversario_)){
+  //casi particolari
+  if(scacchiera_->scaccomatto(colore_avversario_)){ //scaccomatto
     throw Eccezione("[Eccezione::Scaccomatto]");
   }
-
-  if(scacchiera_->get_conta_mosse() >= 50)
+  if(scacchiera_->get_conta_mosse() >= 50)  //numero mosse senza mangiare o muovere pedone
     throw Eccezione("[Eccezione::Patta_Mosse]");
 
-  scacchiera_->inserisci_scacchiera();
+  //caso ripezioni scacchiera
+  scacchiera_->inserisci_scacchiera(); 
   if(scacchiera_->get_ripetizioni_scacchiera() >= 5)
     throw Eccezione("[Eccezione::Patta_Posizione]");
-      
+  
+  //caso pezzi insufficienti
   if(scacchiera_->pezzi_insufficienti()){
     throw Eccezione("[Eccezione::Patta_Materiale]");
   }
 }
 
 bool Computer::ricevuta_richiesta_patta(){
+  //sceglie casualmente se accettare patta generando due valori
   int risposta = rand() % 2;
   if(risposta)
     std::cout << "--> Richiesta accettata";
@@ -113,6 +121,7 @@ char Computer::scelta_promozione() {
     case 3:
       return ALFIERE;
       break;
+      
     default:
       return REGINA;
       break;
