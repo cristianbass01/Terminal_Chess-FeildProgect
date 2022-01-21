@@ -47,15 +47,6 @@ void Computer::gioca(){
   //recupera il vettore di mosse possibili e viene scelta la casella in cui arrivare
   int mossa_scelta = rand() % mosse.size();
 
-  eseguito = false;
-  while(!eseguito){
-    //verifica se la mossa è consentatia (verificato tramite il metodo simulazione mossa)
-    if(!scacchiera_->simulazione_mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]))
-      mossa_scelta = rand() % mosse.size();
-    else
-      eseguito = true;
-  }
-
   //viene effettuata la mossa
   scacchiera_->mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]); 
 

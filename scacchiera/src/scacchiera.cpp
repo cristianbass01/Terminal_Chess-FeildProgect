@@ -120,8 +120,8 @@ std::ostream& operator<<(std::ostream& os, const Scacchiera& scacchiera) {
 
 void Scacchiera::stampa() const{
   //stampato turno corrente
-  std::cout<<"Turno: " << ( get_mosse_totali() / 2 ) + 1 << std::endl<<std::endl;
-
+  std::cout << "Turno: " << ( get_mosse_totali() / 2 ) + 1 << std::endl<<std::endl;
+  std::cout << "Mosse totali: " <<  this->get_mosse_totali() << std::endl;
   /* 
   la stampa avviene in modo specchiato rispetto a com'è veramente fatta la matrice 
   ciò consente di poter utilizzare le righe e le colonne passate dal giocatore umano
@@ -131,9 +131,9 @@ void Scacchiera::stampa() const{
     std::cout<<i + 1<<' ';
     for(int j = 0; j < COLONNE; j++) {
       if((scacchiera[i][j] == nullptr))
-        std::cout<<" ";
+        std::cout << " ";
       else 
-        std::cout<<(*scacchiera[i][j]).get_figura();
+        std::cout << scacchiera[i][j]->get_figura();
       }
       std::cout<<std::endl;
     }
@@ -639,13 +639,14 @@ int Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
           pezzi_neri_.erase(std::find(pezzi_neri_.begin(), pezzi_neri_.end(), pezzo_mangiato));
       }
 
+      Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
+      if(controllo_scacco(colore_avversario))
+        mossa = Pezzo::SCACCO_AVVERSARIO;
+      
       //caso in cui metti sotto scacco il tuo re
       if(controllo_scacco(pezzo_mosso->get_colore())) {
         mossa = false;
       }
-      Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
-      if(controllo_scacco(colore_avversario))
-        mossa = Pezzo::SCACCO_AVVERSARIO;
 
       //vengono ristabilite le posizioni di partenza
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
@@ -678,19 +679,27 @@ int Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
         scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1] = scacchiera[posizione_in.get_riga()][0];
         scacchiera[posizione_in.get_riga()][0] = nullptr;
       }
+
+      //aggiorno la posizione interna alla torre mossa
+      if(delta_colonna == 2)
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1]->set_posizione(Casella(posizione_in.get_riga(), posizione_fin.get_colonna() - 1));
+      else
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1]->set_posizione(Casella(posizione_in.get_riga(), posizione_fin.get_colonna() + 1));
+
+      Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
+      if(controllo_scacco(colore_avversario))
+        mossa = Pezzo::SCACCO_AVVERSARIO;
+
       //caso in cui metti sotto scacco il tuo re
       if(controllo_scacco(pezzo_mosso->get_colore())){
         mossa = false;
       }
-      Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
-      if(controllo_scacco(colore_avversario))
-        mossa = Pezzo::SCACCO_AVVERSARIO;
       
       //vengono ristabilite le posizioni di partenza
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = nullptr;
       pezzo_mosso->set_posizione(posizione_in);
-      //ristabilisco la posizione della torre
+      //ristabilisco la posizione della torre nella scacchiera
       if(delta_colonna == 2){
         scacchiera[posizione_in.get_riga()][7] = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1];
         scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1] = nullptr;
@@ -699,6 +708,13 @@ int Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
         scacchiera[posizione_in.get_riga()][0] = scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1];
         scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1] = nullptr;
       }
+
+      //ristabilisco la posizione interna alla torre mossa
+      if(delta_colonna == 2)
+        scacchiera[posizione_in.get_riga()][7]->set_posizione(Casella(posizione_in.get_riga(), 7));
+      else
+        scacchiera[posizione_in.get_riga()][0]->set_posizione(Casella(posizione_in.get_riga(), 0));
+
       break;
     }
     case Pezzo::SALTO_PEDONE:{
@@ -706,13 +722,14 @@ int Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
       
+      Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
+      if(controllo_scacco(colore_avversario))
+        mossa = Pezzo::SCACCO_AVVERSARIO;
+
       //caso in cui metto il mio re sotto scacco
       if(controllo_scacco(pezzo_mosso->get_colore())) {
         mossa = false;
       }
-      Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
-      if(controllo_scacco(colore_avversario))
-        mossa = Pezzo::SCACCO_AVVERSARIO;
       
       //ripristinate le condizioni iniziali
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = pezzo_mosso;
@@ -736,18 +753,18 @@ int Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
 
       //caso in cui metto il mio re sotto scacco
       if(pezzo_mangiato != nullptr && tolower(pezzo_mangiato->get_figura()) != 'r') {
-        if(controllo_scacco(pezzo_mosso->get_colore()))
-          mossa = false;
         Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
         if(controllo_scacco(colore_avversario))
           mossa = Pezzo::SCACCO_AVVERSARIO;
+        if(controllo_scacco(pezzo_mosso->get_colore()))
+          mossa = false;
       }
       else if(pezzo_mangiato == nullptr){
-        if(controllo_scacco(pezzo_mosso->get_colore()))
-          mossa = false;
         Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
         if(controllo_scacco(colore_avversario))
           mossa = Pezzo::SCACCO_AVVERSARIO;
+        if(controllo_scacco(pezzo_mosso->get_colore()))
+          mossa = false;
       }
 
 

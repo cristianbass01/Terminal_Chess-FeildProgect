@@ -25,7 +25,7 @@ int Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
 
   //verifica che non ci sia una pedina dello stesso colore nella posizione finale
   if(scacchiera.get_casella(posizione_finale) != nullptr)
-    if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
+    if(scacchiera.get_casella(posizione_finale)->get_colore() == colore_)
       return false;
 
   //gestisco arrocco
@@ -33,7 +33,7 @@ int Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
     //controllo se il re si sposta verso destra e se all'angolo destro c'è un pezzo
     if(delta_colonna == 2 && scacchiera.get_casella(Casella(posizione_.get_riga(), 7)) != nullptr){
       //controllo che il re non subisca scacco spostandosi di una posizione a destra
-      if(scacchiera.simulazione_mossa(this->get_posizione(), Casella(posizione_.get_riga(),5))){
+      if(scacchiera.get_casella(Casella(posizione_.get_riga(),5)) == nullptr && scacchiera.simulazione_mossa(this->get_posizione(), Casella(posizione_.get_riga(),5))){
         //controllo che il pezzo a destra sia una torre 
         if(tolower(scacchiera.get_casella(Casella(posizione_.get_riga(), 7))->get_figura()) == 't'){
           //salvo il pezzo torre con un alias
@@ -46,7 +46,7 @@ int Re::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
     }
     else if(delta_colonna == -2 && scacchiera.get_casella(Casella(posizione_.get_riga(), 0)) != nullptr){
       //controllo che il re non subisca scacco spostandosi di una posizione a sinistra
-      if(scacchiera.simulazione_mossa(this->get_posizione(), Casella(posizione_.get_riga(),3))){
+      if(scacchiera.get_casella(Casella(posizione_.get_riga(),3)) == nullptr && scacchiera.simulazione_mossa(this->get_posizione(), Casella(posizione_.get_riga(),3))){
         //controllo che il pezzo a sinistra sia una torre 
         if(tolower(scacchiera.get_casella(Casella(posizione_.get_riga(), 0))->get_figura()) == 't'){
           //salvo il pezzo torre con un alias

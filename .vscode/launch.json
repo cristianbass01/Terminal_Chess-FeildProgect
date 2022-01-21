@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/scacchiera",
-            "args": ["pc"],
+            "args": ["cc"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],

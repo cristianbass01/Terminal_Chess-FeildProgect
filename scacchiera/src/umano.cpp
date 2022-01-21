@@ -52,7 +52,7 @@ void Umano::gioca(){
       else if(mossa.compare("ff ff") == 0) // Il giocatore vuole terminare la partita
         throw Eccezione("[Eccezione::Abbandono]");
       else if(mossa.compare("xx xx") == 0) // Il giocatore vuole vedere la scacchiera
-        std::cout<<*scacchiera_; //OVERWRITING OPERATORE <<
+        std::cout<< *scacchiera_; //OVERWRITING OPERATORE <<
       else{
         try
         {

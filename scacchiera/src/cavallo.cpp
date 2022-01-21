@@ -21,7 +21,7 @@ Cavallo::Cavallo(Casella posizione, Colore colore){
 int Cavallo::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera){
   if(scacchiera.get_casella(posizione_finale) != nullptr){
     //verifico che non ci sia un pezzo dello stesso colore nella posizione_finale
-    if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
+    if(scacchiera.get_casella(posizione_finale)->get_colore() == colore_)
       return false;
   }
   //calcolo di delta riga e delta colonna (spostamento lungo riga e colonna)
