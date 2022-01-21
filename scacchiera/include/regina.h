@@ -15,7 +15,8 @@ class Regina : public Pezzo{
     Regina(Casella posizione, Colore colore);
 
   private:
-    //metodo che controlla se la mossa è valida (SENZA controllo scacco)
+    //metodo che controlla se la mossa è valida (SENZA fare il controllo dello scacco)
+    //posizione è la posizione finale in cui muoversi
     int mossa_valida(Casella posizione, Scacchiera& scacchiera) override;
 };
 
