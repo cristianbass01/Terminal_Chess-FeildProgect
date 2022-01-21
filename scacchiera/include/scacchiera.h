@@ -44,7 +44,7 @@ class Scacchiera {
     bool mossa(Casella posizione_in, Casella posizione_fin); 
 
     //simula la mossa (compreso controllo scacco)
-    bool simulazione_mossa(Casella posizione_in, Casella posizione_fin);
+    int simulazione_mossa(Casella posizione_in, Casella posizione_fin);
 
     //metodo che restituisce il pezzo presente nella scacchiera alla casella passata come parametro
     Pezzo* get_casella(Casella posizione) const;

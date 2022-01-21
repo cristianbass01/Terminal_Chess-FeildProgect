@@ -232,6 +232,17 @@ void Umano::mosse_lecite(Casella pos_pezzo){
         mossa_testuale.append(1, ' ');
         mossa_testuale.append(1, pos_mossa.get_colonna()+'A');
         mossa_testuale.append(1, pos_mossa.get_riga()+1+'0');
+        int simula_mossa = scacchiera_->simulazione_mossa(pos_pezzo, pos_mossa);
+        if(simula_mossa == Pezzo::SCACCO_AVVERSARIO){
+          std::cout << "*       " << mossa_testuale << " --> Mette sotto scacco il re avversario         *" << std::endl;
+          if(scacchiera_->get_casella(pos_mossa) != nullptr)
+            std::cout << "*                e catturi un pezzo avversario                               *" << std::endl;
+        }
+        else if(simula_mossa == Pezzo::ARROCCO)
+          std::cout << "*       " << mossa_testuale << " --> Arrocco                                     *" << std::endl;
+        else if(simula_mossa == Pezzo::EN_PASSANT)
+          std::cout << "*       " << mossa_testuale << " --> En Passant                                  *" << std::endl;
+        
         if(scacchiera_->get_casella(pos_mossa) != nullptr)
           std::cout << "*       " << mossa_testuale << " --> Catturi un pezzo avversario                 *" << std::endl;
         else  
