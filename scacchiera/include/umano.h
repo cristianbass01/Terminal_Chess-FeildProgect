@@ -29,6 +29,8 @@ class Umano : public Giocatore{
     bool richiesta_patta();
 
     char scelta_promozione() override;
+
+    void mosse_lecite(Casella pos_pezzo);
 };
 
 #endif // UMANO_H
