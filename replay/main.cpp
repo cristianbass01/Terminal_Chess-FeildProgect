@@ -112,7 +112,7 @@ int main(int argc, char *argv[]) {
       Casella finale = Casella(riga_finale, colonna_finale);
 
       //caso in cui si cerca di muovere un pezzo del colore opposto
-      if(scacchiera.get_casella(iniziale)->get_colore() != colore_)
+      if(scacchiera.get_casella(iniziale)->get_colore() != colore)
         throw Eccezione("[Eccezione::Log_Errato]");
 
       //caso in cui viene selezionato una casella che non ha un pezzo
@@ -149,14 +149,14 @@ int main(int argc, char *argv[]) {
 
         if(mossa[3] == '='){
           char figura_pezzo = mossa[4];
-          scacchiera.fine_promozione(figura_pezzo, colore_, colonna_promozione);
+          scacchiera.fine_promozione(figura_pezzo, colore, colonna_promozione);
         }
         else
           throw Eccezione("[Eccezione::Log_Errato]");
       }
 
       //controlla che il giocatore non sia in stallo
-      if(scacchiera.stallo(colore_)) 
+      if(scacchiera.stallo(colore)) 
         throw Eccezione("[Eccezione::Patta_Stallo]");
       
       if(scacchiera.pezzi_insufficienti())
