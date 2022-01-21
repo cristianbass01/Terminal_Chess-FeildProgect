@@ -22,6 +22,9 @@ class Giocatore{
     //metodo virtuale puro che riceve e gestisce la richiesta di patta dell'avversario
     virtual bool ricevuta_richiesta_patta() = 0; 
 
+    //metodo virtuale puro
+    virtual char scelta_promozione() = 0;
+
     //metodo che ritorna il colore del giocatore
     Pezzo::Colore get_colore() const { return colore_; }
 };

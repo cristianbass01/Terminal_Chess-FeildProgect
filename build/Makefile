@@ -208,19 +208,6 @@ pedone/fast:
 .PHONY : pedone/fast
 
 #=============================================================================
-# Target rules for targets named eccezione
-
-# Build rule for target.
-eccezione: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 eccezione
-.PHONY : eccezione
-
-# fast build rule for target.
-eccezione/fast:
-	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/eccezione.dir/build.make scacchiera/CMakeFiles/eccezione.dir/build
-.PHONY : eccezione/fast
-
-#=============================================================================
 # Target rules for targets named cavallo
 
 # Build rule for target.
@@ -323,7 +310,6 @@ help:
 	@echo "... casella"
 	@echo "... cavallo"
 	@echo "... computer"
-	@echo "... eccezione"
 	@echo "... pedone"
 	@echo "... pezzo"
 	@echo "... re"

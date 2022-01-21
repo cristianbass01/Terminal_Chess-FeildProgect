@@ -6,9 +6,10 @@
 #include "./../include/computer.h"
 
 Computer::Computer(Scacchiera* scacchiera, Pezzo::Colore colore){
+  //inizializzati membri della classe
   scacchiera_ = scacchiera;
   colore_ = colore;
-  colore_avversario_ = colore_ == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
+  colore_avversario_ = (colore_ == Pezzo::Colore::bianco) ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
 }
 
 void Computer::gioca(){
@@ -21,7 +22,7 @@ void Computer::gioca(){
   if(scacchiera_->get_ripetizioni_scacchiera() >= 5)
     throw Eccezione("[Eccezione::Patta_Posizione]");
 
-  //recupero il vettore contenente tutti i pezzi
+  //recupera il vettore contenente tutti i pezzi
   std::vector<Pezzo*> pezzi;
   if(colore_ == Pezzo::Colore::bianco)
     pezzi = scacchiera_->get_pezzi_bianchi();
@@ -52,8 +53,16 @@ void Computer::gioca(){
       eseguito = true;
   }
 
-  scacchiera_->mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]);
-  
+  scacchiera_->mossa(pezzi[n_pezzo_scelto]->get_posizione(), mosse[mossa_scelta]); 
+
+  if(tolower(pezzi[n_pezzo_scelto]->get_figura()) == 'p'){
+    int colonna_promozione = scacchiera_->promuovi(pezzi[n_pezzo_scelto]->get_posizione());
+    if(colonna_promozione >= 0){
+      char figura_pezzo = scelta_promozione();
+      scacchiera_->fine_promozione(figura_pezzo, colore_, colonna_promozione);
+    }
+  }
+
   if(scacchiera_->scaccomatto(colore_avversario_)){
     throw Eccezione("[Eccezione::Scaccomatto]");
   }
@@ -70,12 +79,42 @@ void Computer::gioca(){
   }
 }
 
-
 bool Computer::ricevuta_richiesta_patta(){
-  int risposta = rand()%2;
+  int risposta = rand() % 2;
   if(risposta)
     std::cout << "--> Richiesta accettata";
   else
     std::cout << "--> Richiesta rifiutata";
   return risposta;
+}
+
+char Computer::scelta_promozione() {
+  //costanti che indicano lettere
+  constexpr char TORRE = 't';
+  constexpr char REGINA = 'd';
+  constexpr char ALFIERE = 'a';
+  constexpr char CAVALLO = 'c';
+
+  //scelta casuale del pezzo a cui fare la promozione
+  int random = rand() % 4;
+  switch(random) {
+    case 0:
+      return REGINA;
+      break;
+    
+    case 1:
+      return CAVALLO;
+      break;
+    
+    case 2:
+      return TORRE;
+      break;
+    
+    case 3:
+      return ALFIERE;
+      break;
+    default:
+      return REGINA;
+      break;
+  }
 }
