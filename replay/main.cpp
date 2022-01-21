@@ -33,11 +33,13 @@ int main(int argc, char *argv[]) {
     throw Eccezione("[Eccezione::Argomento_Non_Valido]");
   }
   
+  //caso in cui su usa scrittura su file, ma non vengono passati i nomi di due file
   if(tolower(*argv[1]) == 'f' && argc != 4){
     std::cout << "[Eccezione::Numero_Di_Argomenti_Errato]"<< std::endl;
     throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato]");
   }
 
+  //caso in cui si fa la stampa a video, ma non viene passato un file log da cui leggere
   if(tolower(*argv[1]) == 'v' && argc != 3){
     std::cout << "[Eccezione::Numero_Di_Argomenti_Errato]"<< std::endl;
     throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato]");
@@ -69,7 +71,7 @@ int main(int argc, char *argv[]) {
   std::ofstream log_output;
   //nel caso si abbia come argomento f un file viene aperto in scrittura
   if(tolower(*argv[1]) == 'f') {
-    //apertura file in output
+    //apertura file di output
     log_output.open(argv[3], std::ofstream::out | std::ofstream::trunc);
 	  if(!log_output.is_open()) {
       std::cout << "Impossibile aprire il file di output" << std::endl;
@@ -77,6 +79,7 @@ int main(int argc, char *argv[]) {
     }
   }
   
+  //stringa che conterrà il messaggio che indica il motivo per cui è finita la partita
   std::string fine_partita; 
 
   try {
@@ -123,16 +126,18 @@ int main(int argc, char *argv[]) {
       if(!scacchiera.mossa(iniziale, finale)) 
         throw Eccezione("[Eccezione::Log_Errato]");
 
-      //gestisco il caso della promozione
-      int mossa_promozione = scacchiera.promuovi(finale);
+      //gestione del caso della promozione
+      int mossa_promozione = scacchiera.promuovi(finale); //mossa in cui viene fatta la promozione
       if(mossa_promozione >= 0){
         try{
+          //viene salvata la mossa corrente in mossa
           mossa = lista_mosse.front();
           lista_mosse.pop_front();
         }
-        catch(...){
+        catch(...){ //caso in cui la partita finisca per fine mosse e non per altri motivi
           throw Eccezione("[Eccezione::Log_Errato]");
         }
+
         //verifica che il formato di mossa sia corretto
         if(mossa.size() != 5 || mossa[2] != ' ' )
           throw Eccezione("[Eccezione::Log_Errato]");
@@ -144,6 +149,7 @@ int main(int argc, char *argv[]) {
         int colonna_promozione = mossa[0] - a; // in questo modo parto da a = 0 come colonna
         int riga_promozione = mossa[1] - 49;
 
+        //gestione promozione
         if(colonna_promozione != mossa_promozione)
           throw Eccezione("[Eccezione::Log_Errato]");
 
@@ -197,7 +203,6 @@ int main(int argc, char *argv[]) {
     }
   }
   catch(Eccezione e){
-    //stringa contenente il motivo della fine della partita
     if((e.errore()).compare("[Eccezione::Log_Errato]") == 0) // fine partita perché formato log non corretto
       fine_partita = "Log_Errato";
 
@@ -227,8 +232,10 @@ int main(int argc, char *argv[]) {
   if(tolower(*argv[1]) == 'v'){
     std::cout << "Partita conclusa per: "<< fine_partita << std::endl;
   }
-  else {
+  else { //stampa su file se si è in modalita file
     log_output << "Partita conclusa per: "<< fine_partita << std::endl;
     log_output.close();
   }
+
+  return 0;
 }
