@@ -8,7 +8,7 @@ set(CMAKE_CXX_FLAGS "-O2")
 set(CMAKE_CXX_FLAGS_DEBUG "-O2")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
-project(replay)
+project(replay VERSION 2.0 DESCRIPTION "Replay della partita a scacchi")
 
 include_directories(./../scacchiera/src)
 
