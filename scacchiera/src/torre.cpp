@@ -42,7 +42,7 @@ int Torre::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
     else
       verso = -1;
     for(int i = verso; abs(i) < abs(delta_riga) ; i += verso){
-      if(scacchiera.get_casella(Casella(posizione_.get_riga() + i, posizione_.get_colonna())) != nullptr )
+      if(scacchiera.get_casella(Casella{posizione_.get_riga() + i, posizione_.get_colonna()}) != nullptr )
         return false;
     }
   }
@@ -54,7 +54,7 @@ int Torre::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
     else
       verso = -1;
     for(int i = verso; abs(i) < abs(delta_colonna) ; i += verso){
-      if(scacchiera.get_casella(Casella(posizione_.get_riga() , posizione_.get_colonna() + i)) != nullptr )
+      if(scacchiera.get_casella(Casella{posizione_.get_riga() , posizione_.get_colonna() + i}) != nullptr )
         return false;
     }
   }

@@ -10,7 +10,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 project(replay VERSION 2.0 DESCRIPTION "Replay della partita a scacchi")
 
-include_directories(./../scacchiera/src)
+include_directories(./../scacchiera/include)
 
 add_executable(${PROJECT_NAME}
 main.cpp

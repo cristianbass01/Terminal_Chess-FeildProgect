@@ -7,9 +7,9 @@
 #include <cstdlib>
 #include <ctime>
 
-#include "./../include/scacchiera.h"
-#include "./../include/umano.h"
-#include "./../include/computer.h"
+#include "scacchiera.h"
+#include "umano.h"
+#include "computer.h"
 
 int main(int argc, char** argv) {
   Scacchiera test;

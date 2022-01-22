@@ -37,10 +37,10 @@ class Pezzo {
   public:
 
     //costanti che indicano il tipo di mossa eseguita
-    static constexpr int EN_PASSANT = 2;
-    static constexpr int SALTO_PEDONE = 3;
-    static constexpr int ARROCCO = 4;
-    static constexpr int SCACCO_AVVERSARIO = 5;
+    static constexpr int EN_PASSANT {2};
+    static constexpr int SALTO_PEDONE {3};
+    static constexpr int ARROCCO {4};
+    static constexpr int SCACCO_AVVERSARIO {5};
 
   protected:
     //posizione del pezzo nella scacchiera
