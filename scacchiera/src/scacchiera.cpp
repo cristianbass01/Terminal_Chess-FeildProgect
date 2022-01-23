@@ -7,7 +7,6 @@
 #include "./../include/scacchiera.h"
 
 Scacchiera::Scacchiera() {
-
   //inizializzazione tutti puntatori a nullptr
   for(int i = 0; i < RIGHE; i++) 
     for(int j = 0; j < COLONNE; j++) 
@@ -15,17 +14,17 @@ Scacchiera::Scacchiera() {
 
 
   //inizializzazione vari puntatori caselle bianche 
-  scacchiera[0][0] = new Torre(Casella(0,0),Pezzo::Colore::bianco);
-  scacchiera[0][7] = new Torre(Casella(0,7),Pezzo::Colore::bianco);
+  scacchiera[0][0] = new Torre{Casella{0,0},Pezzo::Colore::bianco};
+  scacchiera[0][7] = new Torre{Casella{0,7},Pezzo::Colore::bianco};
 
-  scacchiera[0][1] = new Cavallo(Casella(0,1),Pezzo::Colore::bianco);
-  scacchiera[0][6] = new Cavallo(Casella(0,6),Pezzo::Colore::bianco);
+  scacchiera[0][1] = new Cavallo{Casella{0,1},Pezzo::Colore::bianco};
+  scacchiera[0][6] = new Cavallo{Casella{0,6},Pezzo::Colore::bianco};
 
-  scacchiera[0][2] = new Alfiere(Casella(0,2),Pezzo::Colore::bianco);
-  scacchiera[0][5] = new Alfiere(Casella(0,5),Pezzo::Colore::bianco);
+  scacchiera[0][2] = new Alfiere{Casella{0,2},Pezzo::Colore::bianco};
+  scacchiera[0][5] = new Alfiere{Casella{0,5},Pezzo::Colore::bianco};
 
-  scacchiera[0][3] = new Regina(Casella(0,3),Pezzo::Colore::bianco);
-  scacchiera[0][4] = new Re(Casella(0,4),Pezzo::Colore::bianco);
+  scacchiera[0][3] = new Regina{Casella{0,3},Pezzo::Colore::bianco};
+  scacchiera[0][4] = new Re{Casella{0,4},Pezzo::Colore::bianco};
 
   //inizializzazione variabile re_bianco_
   re_bianco_ = scacchiera[0][4];
@@ -33,7 +32,7 @@ Scacchiera::Scacchiera() {
   //inizializzazione di pedoni bianchi
   constexpr int RIGA_PEDONI_BIANCHI = 1;
   for(int i = 0; i < COLONNE; i++) {
-    scacchiera[RIGA_PEDONI_BIANCHI][i] = new Pedone(Casella(RIGA_PEDONI_BIANCHI, i), Pezzo::Colore::bianco);
+    scacchiera[RIGA_PEDONI_BIANCHI][i] = new Pedone{Casella{RIGA_PEDONI_BIANCHI, i}, Pezzo::Colore::bianco};
   }
 
   //inizializzazione vettore contenente i pezzi bianchi ancora vivi
@@ -43,17 +42,17 @@ Scacchiera::Scacchiera() {
   }  
 
   //inizializzazione vari puntatori caselle nere
-  scacchiera[7][0] = new Torre(Casella(7,0),Pezzo::Colore::nero);
-  scacchiera[7][7] = new Torre(Casella(7,7),Pezzo::Colore::nero);
+  scacchiera[7][0] = new Torre{Casella{7,0},Pezzo::Colore::nero};
+  scacchiera[7][7] = new Torre{Casella{7,7},Pezzo::Colore::nero};
 
-  scacchiera[7][1] = new Cavallo(Casella(7,1),Pezzo::Colore::nero);
-  scacchiera[7][6] = new Cavallo(Casella(7,6),Pezzo::Colore::nero);
+  scacchiera[7][1] = new Cavallo{Casella{7,1},Pezzo::Colore::nero};
+  scacchiera[7][6] = new Cavallo{Casella{7,6},Pezzo::Colore::nero};
 
-  scacchiera[7][2] = new Alfiere(Casella(7,2),Pezzo::Colore::nero);
-  scacchiera[7][5] = new Alfiere(Casella(7,5),Pezzo::Colore::nero);
+  scacchiera[7][2] = new Alfiere{Casella{7,2},Pezzo::Colore::nero};
+  scacchiera[7][5] = new Alfiere{Casella{7,5},Pezzo::Colore::nero};
 
-  scacchiera[7][3] = new Regina(Casella(7,3),Pezzo::Colore::nero);
-  scacchiera[7][4] = new Re(Casella(7,4),Pezzo::Colore::nero);
+  scacchiera[7][3] = new Regina{Casella{7,3},Pezzo::Colore::nero};
+  scacchiera[7][4] = new Re{Casella{7,4},Pezzo::Colore::nero};
 
   //inizializzazione variabile di scacchiera che contiene posizione del re nero
   re_nero_ = scacchiera[7][4];
@@ -61,7 +60,7 @@ Scacchiera::Scacchiera() {
   //inizializzazione pedoni neri
   constexpr int RIGA_PEDONI_NERI = 6;
   for(int i = 0; i < COLONNE; i++) {
-    scacchiera[RIGA_PEDONI_NERI][i] = new Pedone(Casella(RIGA_PEDONI_NERI, i), Pezzo::Colore::nero);
+    scacchiera[RIGA_PEDONI_NERI][i] = new Pedone{Casella{RIGA_PEDONI_NERI, i}, Pezzo::Colore::nero};
   }
 
   //inizializzazione vettore contenente i pezzi neri ancora vivi
@@ -94,7 +93,6 @@ std::string Scacchiera::log_mosse(){
   return mosse;
 }
 
-//helper function che esegue ovverride del operatore <<
 std::ostream& operator<<(std::ostream& os, const Scacchiera& scacchiera) {
   //stampato turno corrente
   os << "Turno: " << ( scacchiera.get_mosse_totali() / 2 ) + 1 << '\n';
@@ -107,10 +105,10 @@ std::ostream& operator<<(std::ostream& os, const Scacchiera& scacchiera) {
   for(int i = Scacchiera::RIGHE - 1; i >= 0; i--) {
     os<<i + 1<<' ';
     for(int j = 0; j < Scacchiera::COLONNE; j++) {
-      if((scacchiera.get_casella(Casella(i,j)) == nullptr))
+      if((scacchiera.get_casella(Casella{i,j}) == nullptr))
         os<<" ";
       else 
-        os<<scacchiera.get_casella(Casella(i,j))->get_figura();
+        os<<scacchiera.get_casella(Casella{i,j})->get_figura();
       }
       os<<std::endl;
     }
@@ -139,6 +137,7 @@ void Scacchiera::stampa() const{
     }
   std::cout<<"  "<<"ABCDEFGH"<<std::endl;          
 }
+
 
 Pezzo* Scacchiera::get_casella(Casella posizione) const{
   //ritorna puntatore a pezzo salvato nella casella passata
@@ -169,7 +168,7 @@ bool Scacchiera::controllo_scacco(Pezzo::Colore colore){
 bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
   //caso in cui nella posizione iniziale si trova nullptr
   if(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] == nullptr)
-    throw Eccezione("--> [ERRORE] Nella casella selezionata non c'è nessun pezzo da muovere");
+    throw Eccezione{"--> [ERRORE] Nella casella selezionata non c'è nessun pezzo da muovere"};
 
   Pezzo* pezzo_mosso = scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()];
   Pezzo* pezzo_mangiato = scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()];
@@ -246,9 +245,9 @@ bool Scacchiera::mossa(Casella posizione_in, Casella posizione_fin) {
       
       //aggiorno la posizione interna alla torre mossa
       if(delta_colonna == 2)
-        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1]->set_posizione(Casella(posizione_in.get_riga(), posizione_fin.get_colonna() - 1));
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1]->set_posizione(Casella{posizione_in.get_riga(), posizione_fin.get_colonna() - 1});
       else
-        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1]->set_posizione(Casella(posizione_in.get_riga(), posizione_fin.get_colonna() + 1));
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1]->set_posizione(Casella{posizione_in.get_riga(), posizione_fin.get_colonna() + 1});
 
       break;
     }
@@ -430,29 +429,33 @@ void Scacchiera::fine_promozione(char figura_pezzo, Pezzo::Colore colore_pezzo,i
   
   int riga_promozione = colore_pezzo == Pezzo::Colore::bianco ? 7 : 0;
 
+  // crea il nuovo pezzo da sostituire al pedone promosso
   switch (figura_pezzo)
   {
   case 'd':
-      scacchiera[riga_promozione][colonna_promozione] = new Regina(Casella(riga_promozione,colonna_promozione), colore_pezzo);
+      scacchiera[riga_promozione][colonna_promozione] = new Regina{Casella{riga_promozione,colonna_promozione}, colore_pezzo};
     break;
   case 't':
-      scacchiera[riga_promozione][colonna_promozione] = new Torre(Casella(riga_promozione,colonna_promozione), colore_pezzo);
+      scacchiera[riga_promozione][colonna_promozione] = new Torre{Casella{riga_promozione,colonna_promozione}, colore_pezzo};
     break;
   case 'a':
-      scacchiera[riga_promozione][colonna_promozione] = new Alfiere(Casella(riga_promozione,colonna_promozione), colore_pezzo);
+      scacchiera[riga_promozione][colonna_promozione] = new Alfiere{Casella{riga_promozione,colonna_promozione}, colore_pezzo};
     break;
   case 'c':
-      scacchiera[riga_promozione][colonna_promozione] = new Cavallo(Casella(riga_promozione,colonna_promozione), colore_pezzo);
+      scacchiera[riga_promozione][colonna_promozione] = new Cavallo{Casella{riga_promozione,colonna_promozione}, colore_pezzo};
     break;
   default:
+      scacchiera[riga_promozione][colonna_promozione] = new Regina{Casella{riga_promozione,colonna_promozione}, colore_pezzo};
     break;
   }
 
+  // inserisce il pezzo nel vettore dei pezzi
   if(colore_pezzo == Pezzo::Colore::bianco)
     pezzi_bianchi_.push_back(scacchiera[riga_promozione][colonna_promozione]);
   else
     pezzi_neri_.push_back(scacchiera[riga_promozione][colonna_promozione]);
   
+  // salva la promozione nel log
   std::string mossa_testuale;
   mossa_testuale.append(1, colonna_promozione+'A');
   mossa_testuale.append(1, riga_promozione+1+'0');
@@ -464,23 +467,23 @@ void Scacchiera::fine_promozione(char figura_pezzo, Pezzo::Colore colore_pezzo,i
 
 }
 
-
-
-// passi la posizione del pezzo e ti ritorna un vettore contenente tutte le caselle in cui quel pezzo può andare
 std::vector<Casella> Scacchiera::mosse_possibili(Casella posizione_pezzo){ 
   std::vector<Casella> v;
   Pezzo* pezzo_mosso = scacchiera[posizione_pezzo.get_riga()][posizione_pezzo.get_colonna()];
+  //controlla se c'è un pezzo nella casella data
   if(pezzo_mosso != nullptr){
+    // controlla se può andare in qualsiasi casella della scacchiera
     for(int i = 0; i < RIGHE; i++) {
       for(int j = 0; j < COLONNE; j++) {
-          if(this->simulazione_mossa(pezzo_mosso->get_posizione(),Casella(i,j)))
-            v.push_back(Casella(i,j));
+          // simula la mossa
+          if(this->simulazione_mossa(pezzo_mosso->get_posizione(),Casella{i,j}))
+            // se può eseguire la mossa allora la salva nel vettore
+            v.push_back(Casella{i,j});
       }
     }
   }
   return v;
 }
-
 
 std::string Scacchiera::stringa_per_mappa() {
   std::string temp = "";
@@ -543,7 +546,8 @@ std::string Scacchiera::stringa_per_mappa() {
   return temp;
 }
 
-bool Scacchiera::stallo(Pezzo::Colore colore){ // OTTIMIZZATO 
+bool Scacchiera::stallo(Pezzo::Colore colore){
+  // controlla tra i pezi di un colore se almeno uno si possa muovere senza subire scacco
   if(colore == Pezzo::Colore::bianco)
   {
     for(int i = 0; i<pezzi_bianchi_.size(); i++)
@@ -559,10 +563,12 @@ bool Scacchiera::stallo(Pezzo::Colore colore){ // OTTIMIZZATO
 }
 
 int Scacchiera::get_ripetizioni_scacchiera() {
+  //va a prendere nella mappa la key della scacchiera attuale
   return mappa_posizioni_[this->stringa_per_mappa()];
 }
 
 void Scacchiera::inserisci_scacchiera(){
+  // inserisce la scacchiera attuale nella mappa incrementando il numero se già presente 
   mappa_posizioni_[this->stringa_per_mappa()] = this->get_ripetizioni_scacchiera() + 1;
 }
 
@@ -615,7 +621,7 @@ int Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
 
   //caso in cui nella posizione iniziale si trova nullptr
   if(scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] == nullptr)
-    throw Eccezione("[Eccezione::NessunPezzo] Nella casella selezionata non c'è nessun pezzo da muovere");
+    throw Eccezione{"[Eccezione::NessunPezzo] Nella casella selezionata non c'è nessun pezzo da muovere"};
 
   int mossa = true;
 
@@ -638,7 +644,7 @@ int Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
         if(pezzo_mangiato->get_colore() == Pezzo::Colore::nero) 
           pezzi_neri_.erase(std::find(pezzi_neri_.begin(), pezzi_neri_.end(), pezzo_mangiato));
       }
-
+      //controllo se con questa mossa metto sotto scacco l'avversario
       Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
       if(controllo_scacco(colore_avversario))
         mossa = Pezzo::SCACCO_AVVERSARIO;
@@ -682,10 +688,11 @@ int Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
 
       //aggiorno la posizione interna alla torre mossa
       if(delta_colonna == 2)
-        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1]->set_posizione(Casella(posizione_in.get_riga(), posizione_fin.get_colonna() - 1));
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() - 1]->set_posizione(Casella{posizione_in.get_riga(), posizione_fin.get_colonna() - 1});
       else
-        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1]->set_posizione(Casella(posizione_in.get_riga(), posizione_fin.get_colonna() + 1));
+        scacchiera[posizione_in.get_riga()][posizione_fin.get_colonna() + 1]->set_posizione(Casella{posizione_in.get_riga(), posizione_fin.get_colonna() + 1});
 
+      //controllo se con questa mossa metto sotto scacco l'avversario
       Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
       if(controllo_scacco(colore_avversario))
         mossa = Pezzo::SCACCO_AVVERSARIO;
@@ -711,9 +718,9 @@ int Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
 
       //ristabilisco la posizione interna alla torre mossa
       if(delta_colonna == 2)
-        scacchiera[posizione_in.get_riga()][7]->set_posizione(Casella(posizione_in.get_riga(), 7));
+        scacchiera[posizione_in.get_riga()][7]->set_posizione(Casella{posizione_in.get_riga(), 7});
       else
-        scacchiera[posizione_in.get_riga()][0]->set_posizione(Casella(posizione_in.get_riga(), 0));
+        scacchiera[posizione_in.get_riga()][0]->set_posizione(Casella{posizione_in.get_riga(), 0});
 
       break;
     }
@@ -722,6 +729,7 @@ int Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
       scacchiera[posizione_fin.get_riga()][posizione_fin.get_colonna()] = pezzo_mosso;
       scacchiera[posizione_in.get_riga()][posizione_in.get_colonna()] = nullptr;
       
+      //controllo se con questa mossa metto sotto scacco l'avversario
       Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
       if(controllo_scacco(colore_avversario))
         mossa = Pezzo::SCACCO_AVVERSARIO;
@@ -753,6 +761,7 @@ int Scacchiera::simulazione_mossa(Casella posizione_in, Casella posizione_fin) {
 
       //caso in cui metto il mio re sotto scacco
       if(pezzo_mangiato != nullptr && tolower(pezzo_mangiato->get_figura()) != 'r') {
+        //controllo se con questa mossa metto sotto scacco l'avversario
         Pezzo::Colore colore_avversario = pezzo_mosso->get_colore() == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
         if(controllo_scacco(colore_avversario))
           mossa = Pezzo::SCACCO_AVVERSARIO;

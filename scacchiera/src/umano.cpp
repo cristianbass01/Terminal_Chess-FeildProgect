@@ -5,14 +5,12 @@
 
 #include "./../include/umano.h"
 
-//costruttore con argomenti il puntatore alla scacchiera di gioco e il colore del giocatore
 Umano::Umano(Scacchiera* scacchiera, Pezzo::Colore colore){
   scacchiera_ = scacchiera;
   colore_ = colore;
   colore_avversario_ = colore_ == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
 }
 
-// Metodo che implementa la giocata (una mossa per volta)
 void Umano::gioca(){
 
   std::cout << std::endl;
@@ -168,7 +166,6 @@ void Umano::gioca(){
   }
 }
 
-// metodo informativo che stampa le combinazioni di mosse possibili
 void Umano::combinazioni(){
   std::cout << std::endl;
   std::cout << "***************************************************************" << std::endl;
@@ -186,7 +183,6 @@ void Umano::combinazioni(){
   std::cout << std::endl;
 }
 
-// metodo che gestisce la richiesta di patta fatta dal giocatore avversario
 bool Umano::ricevuta_richiesta_patta(){
   char risposta;
   do{
@@ -205,7 +201,6 @@ bool Umano::ricevuta_richiesta_patta(){
   return false;
 }
 
-// metodo che restituisce chiede al giocatore se vuole eseguire la patta per posizioni ripetute
 bool Umano::richiesta_patta(){
   char risposta;
   do{
@@ -223,7 +218,6 @@ bool Umano::richiesta_patta(){
   return false;
 }
 
-// metodo che chiede al giocatore il pezzo con cui vuole promuovere il pedone
 char Umano::scelta_promozione(){
   char risposta;
   risposta = 'd';  //posta di default a donna
@@ -240,8 +234,6 @@ char Umano::scelta_promozione(){
   return risposta;
 }
 
-// metodo che restituisce data una casella che mosse può eseguire il pezzo in quella casella
-// e cosa implica lo spostamento ai fini della partita
 void Umano::mosse_lecite(Casella pos_pezzo){
   // controllo se c'è un pezzo nella casella scelta
   if(scacchiera_->get_casella(pos_pezzo) == nullptr){

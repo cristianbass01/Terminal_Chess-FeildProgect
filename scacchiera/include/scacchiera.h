@@ -82,7 +82,7 @@ class Scacchiera {
     //metodo che controlla che il giocatore del colore passatto per parametro non sia in stallo
     bool stallo(Pezzo::Colore colore);
 
-    //gestione mappa
+    //gestione mappa per salvataggio delle scacchiere per patta posizione
     void inserisci_scacchiera();
     int get_ripetizioni_scacchiera();
     
@@ -92,10 +92,14 @@ class Scacchiera {
 
 
     //metodo che verifica se è possibile promuovere qualche pedone e in caso sia possibile
-    //attua la promozione a donna
+    // chiede al giocatore che con che figura vuole promuoverlo ed elimina il pedone
     int promuovi(Casella pos_pedone);
-    void fine_promozione(char pezzo_scelto, Pezzo::Colore colore, int colonna_promozione);
 
+    // seconda fase della promozione in cui il pezzo scelto per la promozione viene passao
+    // assieme al colore del giocatore e la colonna alla quale era il pezzo da promuovere
+    void fine_promozione(char pezzo_scelto, Pezzo::Colore colore, int colonna_promozione);
+    
+    // Metodo che ritorna sotto forma di stringa il log delle mosse effettuate
     std::string log_mosse();
 
   private:
@@ -119,14 +123,9 @@ class Scacchiera {
 
     //mappa per tener conto delle volte in cui una posizione si ripete
     std::map<std::string, int> mappa_posizioni_; 
+
     //lista contentente le mosse fatte durante tutta la partita
     std::list<std::string> log_mosse_;
-
-  private:
-
-
-    
-
 };
 
 //HELPER FUNCTION
