@@ -39,7 +39,7 @@ void Computer::gioca(){
   while(!eseguito){
     mosse = scacchiera_->mosse_possibili(pezzi[n_pezzo_scelto]->get_posizione());
     if(mosse.size() == 0) //caso in cui il pezzo è bloccato
-      n_pezzo_scelto = rand() % pezzi.size();
+      n_pezzo_scelto = rand() % pezzi.size(); //viene scelto un altro pezzo
     else
       eseguito = true;
   }
