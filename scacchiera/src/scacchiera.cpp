@@ -96,23 +96,25 @@ std::string Scacchiera::log_mosse(){
 std::ostream& operator<<(std::ostream& os, const Scacchiera& scacchiera) {
   //stampato turno corrente
   os << "Turno: " << ( scacchiera.get_mosse_totali() / 2 ) + 1 << '\n';
-  os << "Mosse totali: " <<  scacchiera.get_mosse_totali() << '\n';
+  os << "Mosse totali: " <<  scacchiera.get_mosse_totali() << '\n' << '\n';
   /* 
   la stampa avviene in modo specchiato rispetto a com'è veramente fatta la matrice 
   ciò consente di poter utilizzare le righe e le colonne passate dal giocatore umano
   direttamente nella matrice modificandole di un offset
   */
+  os<< "   ---------------------------------" << std::endl;
   for(int i = Scacchiera::RIGHE - 1; i >= 0; i--) {
     os<<i + 1<<' ';
     for(int j = 0; j < Scacchiera::COLONNE; j++) {
       if((scacchiera.get_casella(Casella{i,j}) == nullptr))
-        os<<" ";
+        os<<" |  ";
       else 
-        os<<scacchiera.get_casella(Casella{i,j})->get_figura();
+        os<<" | " << scacchiera.get_casella(Casella{i,j})->get_figura();
       }
-      os<<std::endl;
+      os<<" |" << std::endl;
+      os<< "   ---------------------------------" << std::endl;
     }
-  os<<"  "<<"ABCDEFGH"<<std::endl; 
+  os<<"   "<<"  A   B   C   D   E   F   G   H"<<std::endl; 
   return os;
 }
 
@@ -125,17 +127,19 @@ void Scacchiera::stampa() const{
   ciò consente di poter utilizzare le righe e le colonne passate dal giocatore umano
   direttamente nella matrice modificandole di un offset
   */
+  std::cout << "   ---------------------------------" << std::endl;
   for(int i = RIGHE - 1; i >= 0; i--) {
     std::cout<<i + 1<<' ';
     for(int j = 0; j < COLONNE; j++) {
-      if((scacchiera[i][j] == nullptr))
-        std::cout << " ";
+      if(scacchiera[i][j] == nullptr)
+        std::cout << " |  ";
       else 
-        std::cout << scacchiera[i][j]->get_figura();
+        std::cout <<" | " << scacchiera[i][j]->get_figura();
       }
-      std::cout<<std::endl;
+      std::cout<<" |" << std::endl;
+      std::cout << "   ---------------------------------" << std::endl;
     }
-  std::cout<<"  "<<"ABCDEFGH"<<std::endl;          
+  std::cout<<"   "<<"  A   B   C   D   E   F   G   H"<<std::endl;          
 }
 
 
