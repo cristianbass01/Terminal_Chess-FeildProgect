@@ -28,8 +28,10 @@ class Umano : public Giocatore{
     // restituisce true se il giocatore umano acconsente, false altrimenti
     bool richiesta_patta();
 
+    // metodo che chiede al giocatore con che pezzo voglio eseguire la promozione sul pedone
     char scelta_promozione() override;
 
+    // metodo che data una casella stampa tutte le mosse possibili che può fare il pezzo in quella casella
     void mosse_lecite(Casella pos_pezzo);
 };
 

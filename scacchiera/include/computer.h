@@ -20,6 +20,7 @@ class Computer : public Giocatore{
     //metodo che gestisce la richiesta di patta fatta dall'avversario
     bool ricevuta_richiesta_patta();
 
+    // metodo che chiede al giocatore con che pezzo voglio eseguire la promozione sul pedone
     char scelta_promozione() override;
 
     //numero massimo di mosse nel caso di partita computer vs computer

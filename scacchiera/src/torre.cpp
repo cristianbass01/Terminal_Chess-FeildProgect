@@ -25,7 +25,7 @@ int Torre::mossa_valida(Casella posizione_finale, Scacchiera& scacchiera) {
   
   //verifica che non ci sia una pedina dello stesso colore nella posizione finale
   if(scacchiera.get_casella(posizione_finale) != nullptr)
-    if((*(scacchiera.get_casella(posizione_finale))).get_colore() == colore_)
+    if(scacchiera.get_casella(posizione_finale)->get_colore() == colore_)
       return false;
 
   //verifico che il movimento ia lungo una riga o lungo una colonna

@@ -5,21 +5,26 @@
 
 #include "./../include/umano.h"
 
+//costruttore con argomenti il puntatore alla scacchiera di gioco e il colore del giocatore
 Umano::Umano(Scacchiera* scacchiera, Pezzo::Colore colore){
   scacchiera_ = scacchiera;
   colore_ = colore;
   colore_avversario_ = colore_ == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
 }
 
+// Metodo che implementa la giocata (una mossa per volta)
 void Umano::gioca(){
 
   std::cout << std::endl;
+  
+  // controllo se il giocatore che esegue la mossa è sotto scacco
   if(scacchiera_->controllo_scacco(colore_)){
     std::cout<<"--> Attenzione! Sei sotto scacco!"<<std::endl;
   }
-  else if(scacchiera_->stallo(colore_)) //controlla che il giocatore non sia in stallo
+  else if(scacchiera_->stallo(colore_)) // se il giocatore non è sotto scacco controllo che non sia in stallo
     throw Eccezione("[Eccezione::Patta_Stallo]");
   
+  //controllo se è possibile fare patta perposizione ripetuta
   if(scacchiera_->get_ripetizioni_scacchiera() >= 3){
     if(scacchiera_->get_ripetizioni_scacchiera() >= 5)
       throw Eccezione{"[Eccezione::Patta_Posizione]"};
@@ -27,9 +32,11 @@ void Umano::gioca(){
       throw Eccezione{"[Eccezione::Patta_Posizione]"};
   }
 
-  bool done = false; //mossa eseguita correttamente
+  //mossa eseguita correttamente
+  bool done = false; 
 
-  static constexpr int a = 97; // per trasformare da lettera a numero di colonna
+  // per trasformare da lettera a numero di colonna
+  static constexpr int a = 97; 
 
   while(!done){
     std::cout << "Giocatore ";
@@ -40,6 +47,7 @@ void Umano::gioca(){
     std::string mossa;
     getline(std::cin, mossa);
 
+    // controllo il formato corretto mm mm oppure mm mm pp
     if((mossa.size() != 5 && mossa.size() != 8) || mossa[2] != ' ' || (mossa.size() == 8 && mossa[5] != ' '))
         std::cout << "--> Combinazione errata, riprova" << "\n";
     else{
@@ -52,22 +60,26 @@ void Umano::gioca(){
       else if(mossa.compare("ff ff") == 0) // Il giocatore vuole terminare la partita
         throw Eccezione{"[Eccezione::Abbandono]"};
       else if(mossa.compare("xx xx") == 0) // Il giocatore vuole vedere la scacchiera
-        std::cout<< *scacchiera_; //OVERWRITING OPERATORE <<
+        std::cout<< *scacchiera_; //OVERRIDING OPERATORE <<
       else{
         try
         {
-          //creazione colonna iniziale
+          //creazione Casella iniziale
           int colonna_iniziale = mossa[0] - a; // in questo modo parto da a = 0 come colonna
           int riga_iniziale = mossa[1] - 49;
           Casella iniziale{riga_iniziale, colonna_iniziale};
+
+          // controllo se il giocatore vuole vedere le mosse valide
           if(mossa[3] == 'm' && mossa[4] == 'm')
             mosse_lecite(iniziale);
           else{
-            //creazione colonna finale
+            //creazione Casella finale
             int colonna_finale = mossa[3] - a; // in questo modo parto da a = 0 come colonna
             int riga_finale = mossa[4] - 49;
             Casella finale{riga_finale, colonna_finale};
 
+            // controllo se la casella iniziale abbia un pezzo 
+            // e se questo sia del colore giusto prima di eseguire la mossa
             if(scacchiera_->get_casella(iniziale) != nullptr){
               if(scacchiera_->get_casella(iniziale)->get_colore() == colore_){
                 done = scacchiera_->mossa(iniziale, finale);
@@ -75,19 +87,27 @@ void Umano::gioca(){
                   std::cout << "--> Mossa non valida, riprova" << std::endl;
                 else{
                   std::cout << "--> Mossa eseguita" << std::endl;
+                  //controllo se ci sono pezzi da promuovere e nel caso elimino il pedone da promuovere
                   int colonna_promozione = scacchiera_->promuovi(finale);
                   if(colonna_promozione >= 0){
+                    // chiedo con che pezzo voglio promuovere il pedone
                     char figura_pezzo = scelta_promozione();
+                    // Finisco la promozione impostando il nuovo pezzo
                     scacchiera_->fine_promozione(figura_pezzo, colore_, colonna_promozione);
                   }
+
+                  // controllo se il giocatore vuole richiedere la patta dopo la mossa
                   if(mossa.size() == 8){
                     if(mossa[6] == 'p' && mossa[7] == 'p'){
-                      if(scacchiera_->get_ripetizioni_scacchiera() >= 3)
+                      //controllo se può richiedere la patta per posizioni ripetute prima di chiedere patta all'avversario
+                      if(scacchiera_->get_ripetizioni_scacchiera() >= 2)
                         throw Eccezione{"[Eccezione::Patta_Posizione]"};
+                      //richiedo la patta all'avversario
                       std::cout << "--> Richiesta di patta inviata all'altro giocatore" << std::endl;
                       throw Eccezione{"[Eccezione::Richiesta_Patta]"};
                     }
                     else{
+                      // se la combinazione non era esattamente la stessa chiedo se volesse eseguire la patta o meno
                       std::cout << "--> Richiesta di patta non inviata per combinazione errata" << std::endl;
                       char risposta;
                       do{
@@ -111,7 +131,7 @@ void Umano::gioca(){
               throw Eccezione{"--> [ERRORE] Nella casella selezionata non c'è nessun pezzo da muovere"};
           }
         }
-        catch(Eccezione e) // casella errata, mossa non valida o richiesta di patta all'altro giocatore
+        catch(Eccezione e) // casella errata o richiesta di patta all'altro giocatore
         {
           if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0)
             throw;
@@ -124,13 +144,16 @@ void Umano::gioca(){
     }
     std::cout << std::endl;
   }
+  // controllo se con la mossa eseguita ho messo in scaccomatto l'avversario
   if(scacchiera_->scaccomatto(colore_avversario_)){
     throw Eccezione{"[Eccezione::Scaccomatto]"};
   }
 
+  //controllo se le mosse eseguite senza mangiare o spostare pedoni siano abbastanza per la patta per mosse 
   if(scacchiera_->get_conta_mosse() >= 50)
     throw Eccezione{"[Eccezione::Patta_Mosse]"};
 
+  // inserisco la scacchiera nella mappa per il conteggio delle posizioni ripetute
   scacchiera_->inserisci_scacchiera();
   if(scacchiera_->get_ripetizioni_scacchiera() >= 3){
     if(scacchiera_->get_ripetizioni_scacchiera() >= 5)
@@ -139,11 +162,13 @@ void Umano::gioca(){
       throw Eccezione{"[Eccezione::Patta_Posizione]"};
   }
 
+  //controllo se nella scacchiera ci sono pezzi sufficienti per non finire in patta
   if(scacchiera_->pezzi_insufficienti()){
     throw Eccezione{"[Eccezione::Patta_Materiale]"};
   }
 }
 
+// metodo informativo che stampa le combinazioni di mosse possibili
 void Umano::combinazioni(){
   std::cout << std::endl;
   std::cout << "***************************************************************" << std::endl;
@@ -161,6 +186,7 @@ void Umano::combinazioni(){
   std::cout << std::endl;
 }
 
+// metodo che gestisce la richiesta di patta fatta dal giocatore avversario
 bool Umano::ricevuta_richiesta_patta(){
   char risposta;
   do{
@@ -179,6 +205,7 @@ bool Umano::ricevuta_richiesta_patta(){
   return false;
 }
 
+// metodo che restituisce chiede al giocatore se vuole eseguire la patta per posizioni ripetute
 bool Umano::richiesta_patta(){
   char risposta;
   do{
@@ -196,6 +223,7 @@ bool Umano::richiesta_patta(){
   return false;
 }
 
+// metodo che chiede al giocatore il pezzo con cui vuole promuovere il pedone
 char Umano::scelta_promozione(){
   char risposta;
   risposta = 'd';  //posta di default a donna
@@ -212,15 +240,20 @@ char Umano::scelta_promozione(){
   return risposta;
 }
 
+// metodo che restituisce data una casella che mosse può eseguire il pezzo in quella casella
+// e cosa implica lo spostamento ai fini della partita
 void Umano::mosse_lecite(Casella pos_pezzo){
+  // controllo se c'è un pezzo nella casella scelta
   if(scacchiera_->get_casella(pos_pezzo) == nullptr){
     std::cout << "--> Nessun pezzo nella casella scelta" << std::endl;
   }
   else{
+    // controllo se è un pezzo del giocatore o dell'avversario
     if(scacchiera_->get_casella(pos_pezzo)->get_colore() != colore_){
       std::cout << "--> Pezzo del colore avversario" << std::endl;
     }
     else{
+      // trovo le mosse possibili
       std::vector<Casella> mosse = scacchiera_->mosse_possibili(pos_pezzo);
       std::cout << "***************************************************************" << std::endl;
       if(mosse.size() == 0)
@@ -228,6 +261,7 @@ void Umano::mosse_lecite(Casella pos_pezzo){
       else
         std::cout << "*       Mosse lecite possibili:                               *" << std::endl;
 
+      // per ogni mossa creo il testo della mossa e controllo se questa catturi un pezzo avversario, metta sotto scacco o sia una mossa speciale
       for(Casella pos_mossa : mosse){
         std::string mossa_testuale;
         mossa_testuale.append(1, pos_pezzo.get_colonna()+'A');
@@ -235,18 +269,22 @@ void Umano::mosse_lecite(Casella pos_pezzo){
         mossa_testuale.append(1, ' ');
         mossa_testuale.append(1, pos_mossa.get_colonna()+'A');
         mossa_testuale.append(1, pos_mossa.get_riga()+1+'0');
+        //simulo la mossa
         int simula_mossa = scacchiera_->simulazione_mossa(pos_pezzo, pos_mossa);
+        //controllo se metto sotto scacco l'avversario
         if(simula_mossa == Pezzo::SCACCO_AVVERSARIO){
           std::cout << "*       " << mossa_testuale << " --> Mette sotto scacco il re avversario         *" << std::endl;
           if(scacchiera_->get_casella(pos_mossa) != nullptr)
             std::cout << "*                e catturi un pezzo avversario                               *" << std::endl;
         }
+        // controllo se la mossa è un arrocco
         else if(simula_mossa == Pezzo::ARROCCO)
           std::cout << "*       " << mossa_testuale << " --> Arrocco                                     *" << std::endl;
+        // controllo se la mossa è l'en passant
         else if(simula_mossa == Pezzo::EN_PASSANT)
           std::cout << "*       " << mossa_testuale << " --> En Passant                                  *" << std::endl;
-        
-        if(scacchiera_->get_casella(pos_mossa) != nullptr)
+        //controllo se catturo un pezzo avversario
+        else if(scacchiera_->get_casella(pos_mossa) != nullptr)
           std::cout << "*       " << mossa_testuale << " --> Catturi un pezzo avversario                 *" << std::endl;
         else  
           std::cout << "*       " << mossa_testuale << "                                                 *" << std::endl;
