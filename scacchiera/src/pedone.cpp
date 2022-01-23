@@ -80,8 +80,6 @@ int Pedone::mossa(Casella posizione, Scacchiera& scacchiera){
   //caso in cui non ci si sposta
   if((posizione.get_colonna() == posizione_.get_colonna() ) && (posizione.get_riga() == posizione_.get_riga()))
     return false;
-  
-  Casella tmp = posizione_;
 
   int mossa_valida = this->mossa_valida(posizione, scacchiera);
 
