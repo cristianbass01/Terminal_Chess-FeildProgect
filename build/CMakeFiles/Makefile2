@@ -367,17 +367,17 @@ scacchiera/CMakeFiles/re.dir/clean:
 # Target rules for target scacchiera/CMakeFiles/scacchiera.dir
 
 # All Build rule for target.
-scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/casella.dir/all
-scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/pezzo.dir/all
-scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/scacchi.dir/all
+scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/regina.dir/all
+scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/alfiere.dir/all
+scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/computer.dir/all
 scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/torre.dir/all
 scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/pedone.dir/all
 scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/cavallo.dir/all
 scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/re.dir/all
 scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/umano.dir/all
-scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/regina.dir/all
-scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/alfiere.dir/all
-scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/computer.dir/all
+scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/casella.dir/all
+scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/pezzo.dir/all
+scacchiera/CMakeFiles/scacchiera.dir/all: scacchiera/CMakeFiles/scacchi.dir/all
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/scacchiera.dir/build.make scacchiera/CMakeFiles/scacchiera.dir/depend
 	$(MAKE) $(MAKESILENT) -f scacchiera/CMakeFiles/scacchiera.dir/build.make scacchiera/CMakeFiles/scacchiera.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cristian/OneDrive/2 anno/Laboratorio di programmazione/Feild_Progect/build/CMakeFiles" --progress-num=32,33,34,35,36,37,38,39,40,41,42,43,44 "Built target scacchiera"
