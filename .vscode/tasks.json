@@ -8,8 +8,9 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "*.cpp",
+                "./../scacchiera/src/*.cpp",
                 "-o",
-                "${fileDirname}/scacchiera"
+                "${fileDirname}/replay"
             ],
             "options": {
                 "cwd": "${fileDirname}"

@@ -164,7 +164,7 @@ int main(int argc, char** argv) {
     std::cout << "***************************************************************" << std::endl;
     std::cout << std::endl;
   }
-
+  
   //salvo la partita in un file di log
   std::ofstream documento; 
   documento.open("log.txt"); // apertura/creazione del file

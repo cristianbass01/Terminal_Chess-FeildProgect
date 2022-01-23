@@ -595,17 +595,21 @@ std::string Scacchiera::stringa_per_mappa() {
 
 bool Scacchiera::stallo(Pezzo::Colore colore){
   // controlla tra i pezi di un colore se almeno uno si possa muovere senza subire scacco
+  
+  std::vector<Pezzo*> pezzi;
   if(colore == Pezzo::Colore::bianco)
   {
-    for(int i = 0; i < pezzi_bianchi_.size(); i++)
-      if(this->mosse_possibili(pezzi_bianchi_[i]->get_posizione()).size() != 0)
-        return false;
+    for(int i = 0; i<pezzi_bianchi_.size();i++)
+      pezzi.push_back(pezzi_bianchi_[i]);
   }
   else{
-    for(int i = 0; i<pezzi_neri_.size(); i++)
-      if(this->mosse_possibili(pezzi_neri_[i]->get_posizione()).size() != 0)
-        return false;
+    for(int i = 0; i<pezzi_neri_.size();i++)
+      pezzi.push_back(pezzi_neri_[i]);
   }
+
+  for(int i = 0; i < pezzi.size(); i++)
+    if(this->mosse_possibili(pezzi[i]->get_posizione()).size() != 0)
+      return false;
   return true;
 }
 

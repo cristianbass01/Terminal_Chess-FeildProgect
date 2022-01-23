@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
     Pezzo::Colore colore = Pezzo::Colore::bianco;
     int num_mosse = 0;
     while(!lista_mosse.empty()) { //fa proseguire partita finchè ci sono mosse
-      //settato colore sulla base di chi numero di mossa si tratta
+
       if(num_mosse % 2 == 0) //caso in cui la mossa è del bianco
         colore = Pezzo::Colore::bianco;
       else //caso in cui la mossa è del bianco
@@ -161,10 +161,6 @@ int main(int argc, char *argv[]) {
           throw Eccezione("[Eccezione::Log_Errato]");
       }
 
-      //controlla che il giocatore non sia in stallo
-      if(scacchiera.controllo_scacco(colore) == false)
-        if(scacchiera.stallo(colore)) 
-          throw Eccezione("[Eccezione::Patta_Stallo]");
       
       if(scacchiera.pezzi_insufficienti())
         throw Eccezione("[Eccezione::Patta_Materiale]");
@@ -179,8 +175,12 @@ int main(int argc, char *argv[]) {
         log_output << scacchiera << std::endl;
       }
       
+      Pezzo::Colore colore_avversario = colore == Pezzo::Colore::bianco ? Pezzo::Colore::nero : Pezzo::Colore::bianco;
+      //controlla che il giocatore non sia in stallo
+      if(scacchiera.controllo_scacco(colore_avversario) == false)
+        if(scacchiera.stallo(colore_avversario)) 
+          throw Eccezione("[Eccezione::Patta_Stallo]");
       //verifica se si tratta di scaccomatto
-      Pezzo::Colore colore_avversario = (colore == Pezzo::Colore::nero) ? Pezzo::Colore::bianco : Pezzo::Colore::nero ;
       std::string vittoria;
       if(scacchiera.scaccomatto(colore_avversario)) {
         //stampa su file o a video che giocatore ha vinto
