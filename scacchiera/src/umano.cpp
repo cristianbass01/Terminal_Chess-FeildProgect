@@ -58,7 +58,7 @@ void Umano::gioca(){
       else if(mossa.compare("ff ff") == 0) // Il giocatore vuole terminare la partita
         throw Eccezione{"[Eccezione::Abbandono]"};
       else if(mossa.compare("xx xx") == 0) // Il giocatore vuole vedere la scacchiera
-        std::cout<< *scacchiera_; //OVERRIDING OPERATORE <<
+        scacchiera_->stampa(); //OVERRIDING OPERATORE <<
       else{
         try
         {
@@ -220,7 +220,6 @@ bool Umano::richiesta_patta(){
 
 char Umano::scelta_promozione(){
   char risposta;
-  risposta = 'd';  //posta di default a donna
   do{
     std::cout << "Giocatore ";
     colore_ == Pezzo::Colore::bianco ? std::cout << "bianco (minuscole) " : std::cout << "nero (maiuscole) ";
@@ -230,7 +229,7 @@ char Umano::scelta_promozione(){
     getline(std::cin, riga_risposta);
     risposta = tolower(riga_risposta[0]);
   }
-  while(!(risposta == 't' || risposta == 'a' || risposta == 'c' || risposta == 'd'));
+  while(!(tolower(risposta) == 't' || tolower(risposta) == 'a' || tolower(risposta) == 'c' || tolower(risposta) == 'd'));
   return risposta;
 }
 

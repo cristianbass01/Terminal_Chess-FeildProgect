@@ -108,12 +108,13 @@ std::ostream& operator<<(std::ostream& os, const Scacchiera& scacchiera) {
     for(int j = 0; j < Scacchiera::COLONNE; j++) {
       if((scacchiera.get_casella(Casella{i,j}) == nullptr))
         os<<" |  ";
-      else 
+      else{
         os<<" | " << scacchiera.get_casella(Casella{i,j})->get_figura();
       }
+    }
       os<<" |" << std::endl;
       os<< "   ---------------------------------" << std::endl;
-    }
+  }
   os<<"   "<<"  A   B   C   D   E   F   G   H"<<std::endl; 
   return os;
 }
@@ -133,12 +134,54 @@ void Scacchiera::stampa() const{
     for(int j = 0; j < COLONNE; j++) {
       if(scacchiera[i][j] == nullptr)
         std::cout << " |  ";
-      else 
-        std::cout <<" | " << scacchiera[i][j]->get_figura();
+      else{
+        std::cout <<" | ";
+        switch (scacchiera[i][j]->get_figura())
+        {
+        case 'P':
+            std::cout<< "♙";
+          break;
+        case 'p':
+            std::cout<< "♟";
+          break;
+        case 'R':
+          std::cout<< "♔";
+          break;
+        case 'r':
+          std::cout<< "♚";
+          break;
+        case 'D':
+          std::cout<< "♕";
+          break;
+        case 'd':
+          std::cout<< "♛";
+          break;
+        case 'A':
+          std::cout<< "♗";
+          break;
+        case 'a':
+          std::cout<< "♝";
+          break;
+        case 'T':
+          std::cout<< "♖";
+          break;
+        case 't':
+          std::cout<< "♜";
+          break;
+        case 'C':
+          std::cout<< "♘";
+          break;
+        case 'c':
+          std::cout<< "♞";
+          break;
+        default:
+          break;
+        } ;
       }
+    }
       std::cout<<" |" << std::endl;
       std::cout << "   ---------------------------------" << std::endl;
-    }
+  }
   std::cout<<"   "<<"  A   B   C   D   E   F   G   H"<<std::endl;          
 }
 
@@ -554,7 +597,7 @@ bool Scacchiera::stallo(Pezzo::Colore colore){
   // controlla tra i pezi di un colore se almeno uno si possa muovere senza subire scacco
   if(colore == Pezzo::Colore::bianco)
   {
-    for(int i = 0; i<pezzi_bianchi_.size(); i++)
+    for(int i = 0; i < pezzi_bianchi_.size(); i++)
       if(this->mosse_possibili(pezzi_bianchi_[i]->get_posizione()).size() != 0)
         return false;
   }

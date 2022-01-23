@@ -162,8 +162,9 @@ int main(int argc, char *argv[]) {
       }
 
       //controlla che il giocatore non sia in stallo
-      if(scacchiera.stallo(colore)) 
-        throw Eccezione("[Eccezione::Patta_Stallo]");
+      if(scacchiera.controllo_scacco(colore) == false)
+        if(scacchiera.stallo(colore)) 
+          throw Eccezione("[Eccezione::Patta_Stallo]");
       
       if(scacchiera.pezzi_insufficienti())
         throw Eccezione("[Eccezione::Patta_Materiale]");
@@ -172,10 +173,10 @@ int main(int argc, char *argv[]) {
       constexpr int NUMERO_MILLISECONDI_ATTESA = 1000;
       if(tolower(*argv[1]) == 'v') { 
         std::this_thread::sleep_for(std::chrono::milliseconds(NUMERO_MILLISECONDI_ATTESA));
-        std::cout<<scacchiera<< std::endl;
+        scacchiera.stampa();
       }
       else { //caso in cui bisogna stampare da file
-        log_output<<scacchiera<< std::endl;
+        log_output << scacchiera << std::endl;
       }
       
       //verifica se si tratta di scaccomatto
@@ -209,7 +210,6 @@ int main(int argc, char *argv[]) {
 
     if((e.errore()).compare("[Eccezione::CasellaErrata]") == 0) // fine partita perché formato log non corretto
       fine_partita = "Log_Errato";
-
 
     if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
       fine_partita = "Patta_Stallo";
