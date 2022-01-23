@@ -182,6 +182,7 @@ int main(int argc, char *argv[]) {
       Pezzo::Colore colore_avversario = (colore == Pezzo::Colore::nero) ? Pezzo::Colore::bianco : Pezzo::Colore::nero ;
       std::string vittoria;
       if(scacchiera.scaccomatto(colore_avversario)) {
+        //stampa su file o a video che giocatore ha vinto
         vittoria += "Ha vinto il giocatore ";
         if(colore == Pezzo::Colore::bianco)
           vittoria += "bianco!\n";
