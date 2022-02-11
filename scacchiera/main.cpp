@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
   std::string arg = argv[1];
 
   //verifica che l'argomento iniziale sia corretto
-  if(arg.compare("pc") != 0 && arg.compare("cc") != 0) 
+  if(arg.compare("pc") != 0 && arg.compare("cc") != 0 && arg.compare("pp") != 0) 
     throw Eccezione("[Eccezione::Argomento_Non_Valido]");
 
   //scelta randomica dei colori dei giocatori
@@ -34,18 +34,24 @@ int main(int argc, char** argv) {
   //creo i giocatori per la partita
   Giocatore* giocatore_1;
   Giocatore* giocatore_2;
-  giocatore_1 = new Computer(&test, static_cast<Pezzo::Colore>(colore));
 
   //creo secondo giocatore in base al valore di passato come argomento da riga di comando
   if(arg.compare("cc") == 0){
 
     //caso partita computer vs computer
+    giocatore_1 = new Computer(&test, static_cast<Pezzo::Colore>(colore));
     giocatore_2 = new Computer(&test, static_cast<Pezzo::Colore>(!colore));
   }
   else{
-
-    //caso partita umano vs computer
-    giocatore_2 =  new Umano(&test, static_cast<Pezzo::Colore>(!colore));
+    if(arg.compare("pc") == 0){
+      //caso partita umano vs computer
+      giocatore_1 = new Computer(&test, static_cast<Pezzo::Colore>(colore));
+      giocatore_2 =  new Umano(&test, static_cast<Pezzo::Colore>(!colore));
+    }
+    else{
+      giocatore_1 = new Umano(&test, static_cast<Pezzo::Colore>(colore));
+      giocatore_2 =  new Umano(&test, static_cast<Pezzo::Colore>(!colore));
+    }
   }
 
   std::string fine_partita = "";
@@ -71,15 +77,22 @@ int main(int argc, char** argv) {
     catch(Eccezione e){
       if((e.errore()).compare("[Eccezione::Patta_Stallo]") == 0) // gestione patta per stallo
         fine_partita = "Patta_Stallo";
+      if((e.errore()).compare("[Eccezione::Richiesta_Patta]") == 0) // gestione richiesta patta
+        if(giocatore_2->ricevuta_richiesta_patta())
+          fine_partita = "Patta_Accordo";
       if((e.errore()).compare("[Eccezione::Patta_Materiale]") == 0) // gestione patta per materiale insufficiente
         fine_partita = "Patta_Insufficienza di materiale";
       if((e.errore()).compare("[Eccezione::Patta_Posizione]") == 0) // gestione patta posizione ripetuta
         fine_partita = "Patta_Posizione ripetuta";
-      if((e.errore()).compare("[Eccezione::Patta_Mosse]") == 0) // gestione patta mossa
+      if((e.errore()).compare("[Eccezione::Patta_Mosse]") == 0) // gestione patta
         fine_partita = "Patta_Gioco fermo (mosse)";
-      if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto
+      if((e.errore()).compare("[Eccezione::Scaccomatto]") == 0){ // gestione scaccomatto 
         fine_partita = "Scaccomatto";
         vincitore = giocatore_1->get_colore();
+      }
+      if((e.errore()).compare("[Eccezione::Abbandono]") == 0){ // gestione scaccomatto 
+        fine_partita = "Abbandono";
+        vincitore = giocatore_2->get_colore();
       }
     }
     
