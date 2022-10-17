@@ -1,9 +1,9 @@
 # Feild_Progect
 
 Proggetto realizzato da:
-- Bassotto Cristian 2000169
-- Cinel Giovanni 2000147
-- Nordio Gianluca 2007959
+- Bassotto Cristian
+- Cinel Giovanni
+- Nordio Gianluca
 
 Sui file scacchiera.h e scacchiera.cpp abbiamo scritto i nomi di tutti i componenti dato che il contributo nei citati file è stato uguale da parte di tutti.
 In generale nel progetto il lavoro è stato ripartito con equità tra i componenti del gruppo.
