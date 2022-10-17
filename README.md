@@ -1,6 +1,6 @@
 # Terminal Chess
 
-Proggetto realizzato da Feild_progect:
+Progetto realizzato da Feild_progect:
 - Bassotto Cristian
 - Cinel Giovanni
 - Nordio Gianluca
