@@ -31,6 +31,7 @@ Il programma verifica che siano rispettate e rispetta in ogni caso le regole di 
 - https://www.scuolascacchipordenone.eu/scacco-scaccomatto-patta-.html
 
 ## Compilare l'eseguibile
+Scaricare il file scacchi_definitivo.zip
 Con CMake
 1) Andare sulla cartella Feild_Progect e da terminale $cmake -S . -B ./build
 2) Entrare su build ($ cd build)
