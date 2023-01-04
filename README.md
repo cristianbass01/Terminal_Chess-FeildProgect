@@ -39,3 +39,9 @@ Con CMake
 
 ## Lanciare l'eseguibile
 4) Eseguire $ ./Feild_Progect
+
+## Descrizione iniziale progetto
+![Assegnamento_scacchiera_Pagina_1](https://user-images.githubusercontent.com/72708597/210579828-b075a0f8-8f02-408f-95d3-41b63e83e32d.jpg)
+![Assegnamento_scacchiera_Pagina_2](https://user-images.githubusercontent.com/72708597/210579850-ac9de2d6-83c4-42b5-a0ec-620f2c138fbb.jpg)
+![Assegnamento_scacchiera_Pagina_3](https://user-images.githubusercontent.com/72708597/210579859-e0d8192c-3949-459f-b859-9598a30cb5d3.jpg)
+![Assegnamento_scacchiera_Pagina_4](https://user-images.githubusercontent.com/72708597/210579871-e75570b1-f158-4705-97d5-b480306b3b58.jpg)
