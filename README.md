@@ -30,9 +30,11 @@ Il programma verifica che siano rispettate e rispetta in ogni caso le regole di 
 - https://www.scuolascacchipordenone.eu/le-mosse-speciali-.html
 - https://www.scuolascacchipordenone.eu/scacco-scaccomatto-patta-.html
 
-## Lanciare l'eseguibile
+## Compilare l'eseguibile
 Con CMake
 1) Andare sulla cartella Feild_Progect e da terminale $cmake -S . -B ./build
 2) Entrare su build ($ cd build)
 3) Compilare con $ make
+
+## Lanciare l'eseguibile
 4) Eseguire $ ./Feild_Progect
