@@ -18,15 +18,31 @@ int main(int argc, char** argv) {
   srand(time(NULL));
 
   //verifica che il numero di argomenti passati da riga di comando sia corretto
-  if(argc < 2 || argc > 3)
-    throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato");
+  if(argc < 2 || argc > 3){
+    std::cout << "***************************************************************" << std::endl;
+    std::cout << "*       Errore: numero di argomenti non valido                *" << std::endl;
+    std::cout << "*       Utilizzo: ./scacchiera [cc|pc|pp]                     *" << std::endl;
+    std::cout << "*        - cc: computer vs computer                           *" << std::endl;
+    std::cout << "*        - pc: player vs computer                             *" << std::endl;
+    std::cout << "*        - pp: player vs player                               *" << std::endl;
+    std::cout << "***************************************************************" << std::endl;
+    return 1;
+  }
   
   //argv[0] è il nome del programma quindi usiamo argv[1]
   std::string arg = argv[1];
 
   //verifica che l'argomento iniziale sia corretto
-  if(arg.compare("pc") != 0 && arg.compare("cc") != 0 && arg.compare("pp") != 0) 
-    throw Eccezione("[Eccezione::Argomento_Non_Valido]");
+  if(arg.compare("pc") != 0 && arg.compare("cc") != 0 && arg.compare("pp") != 0){
+    std::cout << "***************************************************************" << std::endl;
+    std::cout << "*       Errore: numero di argomenti non valido                *" << std::endl;
+    std::cout << "*       Utilizzo: ./scacchiera [cc|pc|pp]                     *" << std::endl;
+    std::cout << "*        - cc: computer vs computer                           *" << std::endl;
+    std::cout << "*        - pc: player vs computer                             *" << std::endl;
+    std::cout << "*        - pp: player vs player                               *" << std::endl;
+    std::cout << "***************************************************************" << std::endl;
+    return 1;
+  }
 
   //scelta randomica dei colori dei giocatori
   bool colore = static_cast<bool>(rand() % 2);
@@ -69,6 +85,7 @@ int main(int argc, char** argv) {
         vincitore = giocatore_1->get_colore();
     }
   }
+
   while(fine_partita.size() == 0)
   {
     try{
@@ -96,6 +113,7 @@ int main(int argc, char** argv) {
       }
     }
     
+
     if(arg.compare("cc") == 0 && test.get_mosse_totali() >= Computer::MAX_MOSSE)
       fine_partita = "Patta_Max mosse Computer vs Computer superate";
     

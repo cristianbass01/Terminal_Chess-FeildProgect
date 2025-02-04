@@ -21,28 +21,43 @@ int main(int argc, char *argv[]) {
 
   //verifica il numero di argomenti passati da riga di comando
   if(argc < 3 || argc > 4){
-    std::cout << "[Eccezione::Numero_Di_Argomenti_Errato]"<< std::endl;
-    throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato]");
+    std::cout << "***************************************************************" << std::endl;
+    std::cout << "*       Errore: numero di argomenti non valido                *" << std::endl;
+    std::cout << "*       Utilizzo: ./replay [v|f] [file_log] [file_output]     *" << std::endl;
+    std::cout << "*        - v: stampa a video                                  *" << std::endl;
+    std::cout << "*        - f: stampa su file                                  *" << std::endl;
+    std::cout << "***************************************************************" << std::endl;
+    return 1;
   }
   
-  //argv[0] è il nome del programma quindi usiamo argv[1]
-
   //verifica che l'argomento iniziale sia corretto
   if(tolower(*argv[1]) != 'v' && tolower(*argv[1]) != 'f' ) {
-    std::cout << "[Eccezione::Argomento_Non_Valido]"<< std::endl;
-    throw Eccezione("[Eccezione::Argomento_Non_Valido]");
+    std::cout << "***************************************************************" << std::endl;
+    std::cout << "*       Errore: primo argomento non valido                    *" << std::endl;
+    std::cout << "*        - v: stampa a video                                  *" << std::endl;
+    std::cout << "*        - f: stampa su file                                  *" << std::endl;
+    std::cout << "***************************************************************" << std::endl;
+    return 1;
   }
   
-  //caso in cui su usa scrittura su file, ma non vengono passati i nomi di due file
+  //caso in cui si usi scrittura su file, ma non vengono passati i nomi di due file
   if(tolower(*argv[1]) == 'f' && argc != 4){
-    std::cout << "[Eccezione::Numero_Di_Argomenti_Errato]"<< std::endl;
-    throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato]");
+    std::cout << "***************************************************************" << std::endl;
+    std::cout << "*       Errore: numero di argomenti non valido                *" << std::endl;
+    std::cout << "*       Utilizzo: ./replay f [file_log] [file_output]     *" << std::endl;
+    std::cout << "*        - f: stampa su file                                  *" << std::endl;
+    std::cout << "***************************************************************" << std::endl;
+    return 1;
   }
 
   //caso in cui si fa la stampa a video, ma non viene passato un file log da cui leggere
   if(tolower(*argv[1]) == 'v' && argc != 3){
-    std::cout << "[Eccezione::Numero_Di_Argomenti_Errato]"<< std::endl;
-    throw Eccezione("[Eccezione::Numero_Di_Argomenti_Errato]");
+    std::cout << "***************************************************************" << std::endl;
+    std::cout << "*       Errore: numero di argomenti non valido                *" << std::endl;
+    std::cout << "*       Utilizzo: ./replay v [file_log]                       *" << std::endl;
+    std::cout << "*        - v: stampa a video                                  *" << std::endl;
+    std::cout << "***************************************************************" << std::endl;
+    return 1;
   }
   
   Scacchiera scacchiera; 
