@@ -48,7 +48,7 @@ Dove 'v' stampa a video/terminale e 'f' stampa su un file.
 
 Ulteriori dettagli sul progetto sono disponibili nella descrizione generale 'progetto_scacchiera.pdf'.
 
-## Autori:
+## Autori
 
 Progetto realizzato da Feild_progect:
 - Bassotto Cristian
