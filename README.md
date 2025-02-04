@@ -1,13 +1,6 @@
 # Terminal Chess
 
-Progetto realizzato da Feild_progect:
-- Bassotto Cristian
-- Cinel Giovanni
-- Nordio Gianluca
-
-In generale nel progetto il lavoro è stato ripartito con equità tra i componenti del gruppo.
-
-Inoltre il programma risulta funzionare al 100% e non presenta alcuna parte mancante.
+Implementazione del gioco degli scacchi da terminale in C++ per un progetto di programmazione dell'Università di Padova.
 
 Stile seguito: https://google.github.io/styleguide/cppguide.html
 
@@ -17,6 +10,8 @@ Il programma verifica che siano rispettate e rispetta in ogni caso le regole di 
 - https://www.scuolascacchipordenone.eu/scacco-scaccomatto-patta-.html
 
 ## Creare l'eseguibile
+Il progetto è compilabile tramite cmake.
+
 All'interno della cartella, aprire un terminale e lanciare:
 ```sh
 cmake -S . -B ./build
@@ -52,3 +47,10 @@ Dove 'v' stampa a video/terminale e 'f' stampa su un file.
 ## Ulteriori informazioni
 
 Ulteriori dettagli sul progetto sono disponibili nella descrizione generale 'progetto_scacchiera.pdf'.
+
+## Autori:
+
+Progetto realizzato da Feild_progect:
+- Bassotto Cristian
+- Cinel Giovanni
+- Nordio Gianluca
