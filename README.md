@@ -33,7 +33,7 @@ Le possibili combinazioni di lettere per le mosse sono:
 - XX XX : per visualizzare la scacchiera completa      
 - HE LP : per visualizzare i comandi                   
 - FF FF : per lasciare il gioco                        
-Il formato delle lettere non influisce (a = A)
+Il formato delle lettere non influisce (a = A).
 
 Questo messaggio è anche visualizzabile all'interno del programma scrivendo HE LP.
 
